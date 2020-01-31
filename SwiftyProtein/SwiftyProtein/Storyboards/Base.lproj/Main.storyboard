@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SXh-EO-Ma8">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="jhM-vp-mcM">
+            <objects>
+                <viewController id="SXh-EO-Ma8" customClass="LoginViewController" customModule="SwiftyProtein" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ke3-Xv-wq1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6WY-4Y-uMt"/>
+                    </view>
+                    <connections>
+                        <segue destination="P8X-YD-bXu" kind="show" identifier="hasLoginSegue" id="GSb-vO-oAX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4kh-ft-eDg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1781" y="73"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gAv-Lc-TTY">
+            <objects>
+                <navigationController modalPresentationStyle="overFullScreen" id="P8X-YD-bXu" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="iEy-Sl-WsH"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SAJ-0G-Jdz">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="QuS-et-5rh" kind="relationship" relationship="rootViewController" id="XwS-eW-of5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UT7-ym-hrB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-696" y="75"/>
+        </scene>
+        <!--Protein List View Controller-->
+        <scene sceneID="dM1-7h-w6H">
+            <objects>
+                <viewController modalPresentationStyle="overFullScreen" id="QuS-et-5rh" customClass="ProteinListViewController" customModule="SwiftyProtein" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bVp-rc-4BY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="p3d-UV-EEw"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="e3U-hH-ete"/>
+                    <connections>
+                        <segue destination="h5y-ge-lqT" kind="show" identifier="showProteinSegue" id="ikk-YW-oJR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1ds-UB-Rgd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="300" y="73"/>
+        </scene>
+        <!--Protein View Controller-->
+        <scene sceneID="mN2-7e-gaS">
+            <objects>
+                <viewController modalPresentationStyle="overFullScreen" id="h5y-ge-lqT" customClass="ProteinViewController" customModule="SwiftyProtein" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="D7t-xy-STr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="cXR-W2-CzA"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fA6-qw-YE2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qiW-30-fSW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1316" y="73"/>
+        </scene>
+    </scenes>
+</document>
