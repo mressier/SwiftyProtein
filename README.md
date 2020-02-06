@@ -31,6 +31,8 @@ Les lignes « ATOM__ » concernent les acides aminés ou les acides nucléiques,
 
 Source [Wikipedia](https://fr.wikipedia.org/wiki/Protein_Data_Bank#Le_format_PDB)
 
+Comprendre le format PDB [PDB-101](https://pdb101.rcsb.org/learn/guide-to-understanding-pdb-data/introduction)
+
 ### 
 
 # Autres
