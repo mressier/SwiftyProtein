@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		67C9F62C356FD0256A1EA28B /* Pods_SwiftyProtein.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4A3E128A04CCEBD67AFF16F /* Pods_SwiftyProtein.framework */; };
+		A91B544C23ECD38E00CA7881 /* ligands.txt in Resources */ = {isa = PBXBuildFile; fileRef = A91B544B23ECD38E00CA7881 /* ligands.txt */; };
 		A93DFDED23E43C3B0018C6B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93DFDEC23E43C3B0018C6B7 /* AppDelegate.swift */; };
 		A93DFDEF23E43C3B0018C6B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93DFDEE23E43C3B0018C6B7 /* SceneDelegate.swift */; };
 		A93DFDF123E43C3B0018C6B7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93DFDF023E43C3B0018C6B7 /* LoginViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A91B544B23ECD38E00CA7881 /* ligands.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ligands.txt; sourceTree = "<group>"; };
 		A93DFDE923E43C3B0018C6B7 /* SwiftyProtein.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyProtein.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A93DFDEC23E43C3B0018C6B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A93DFDEE23E43C3B0018C6B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			children = (
 				A93DFE0C23E443DC0018C6B7 /* Generated */,
 				A93DFDF523E43C3D0018C6B7 /* Assets.xcassets */,
+				A91B544B23ECD38E00CA7881 /* ligands.txt */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				A93DFDF923E43C3D0018C6B7 /* LaunchScreen.storyboard in Resources */,
 				A93DFDF623E43C3D0018C6B7 /* Assets.xcassets in Resources */,
 				A93DFDF423E43C3B0018C6B7 /* Main.storyboard in Resources */,
+				A91B544C23ECD38E00CA7881 /* ligands.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
