@@ -39,3 +39,5 @@ Comprendre le format PDB [PDB-101](https://pdb101.rcsb.org/learn/guide-to-unders
 # Autres
 
 - Lien de l'image du ligan http://cdn.rcsb.org/etl/ligand/img/{1st-ligan-character}/{ligan-name}/{ligan-name}-270.png
+- Liste des documents telechargeables pour un ligan: http://ligand-expo.rcsb.org/reports/P/PDB/index.html
+- Dealing with corrdinates (pdb format): https://pdb101.rcsb.org/learn/guide-to-understanding-pdb-data/dealing-with-coordinates
