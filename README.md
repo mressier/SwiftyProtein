@@ -7,6 +7,7 @@
 - [Web service overview](https://www.rcsb.org/pages/webservices)
   - [Fetch](https://www.rcsb.org/pages/webservices/rest-fetch)
   - [Get chemical element](https://www.rcsb.org/pdb/rest/describeHet?chemicalID=13R) https://www.rcsb.org/pdb/rest/describeHet?chemicalID={id}
+  - [!!!Get ligand chemical coordinates](http://ligand-expo.rcsb.org/reports/A/ATP/ATP_ideal.pdb) http://ligand-expo.rcsb.org/reports/A/ATP/ATP_ideal.pdb
 - [Ligand visualisation online](http://www.rcsb.org/ligand/ATP)
   
 # Vocabulary
