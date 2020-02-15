@@ -3,12 +3,14 @@
 
 # Links
 
-- [Sujet](https://cdn.intra.42.fr/pdf/pdf/6867/fr.subject.pdf)
+- [Sujet](https://cdn.intra.42.fr/pdf/pdf/9373/fr.subject.pdf)
 - [Web service overview](https://www.rcsb.org/pages/webservices)
   - [Fetch](https://www.rcsb.org/pages/webservices/rest-fetch)
   - [Get chemical element](https://www.rcsb.org/pdb/rest/describeHet?chemicalID=13R) https://www.rcsb.org/pdb/rest/describeHet?chemicalID={id}
   - [!!!Get ligand chemical coordinates](http://ligand-expo.rcsb.org/reports/A/ATP/ATP_ideal.pdb) http://ligand-expo.rcsb.org/reports/A/ATP/ATP_ideal.pdb
 - [Ligand visualisation online](http://www.rcsb.org/ligand/ATP)
+- [Code couleur CPK](https://fr.wikipedia.org/wiki/Code_de_couleurs_CPK)
+  - [Jmol color table](http://jmol.sourceforge.net/jscolors/)
   
 # Vocabulary
 
