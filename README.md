@@ -4,13 +4,17 @@
 # Links
 
 - [Sujet](https://cdn.intra.42.fr/pdf/pdf/9373/fr.subject.pdf)
-- [Web service overview](https://www.rcsb.org/pages/webservices)
-  - [Fetch](https://www.rcsb.org/pages/webservices/rest-fetch)
-  - [Get chemical element](https://www.rcsb.org/pdb/rest/describeHet?chemicalID=13R) https://www.rcsb.org/pdb/rest/describeHet?chemicalID={id}
-  - [!!!Get ligand chemical coordinates](http://ligand-expo.rcsb.org/reports/A/ATP/ATP_ideal.pdb) http://ligand-expo.rcsb.org/reports/A/ATP/ATP_ideal.pdb
-- [Ligand visualisation online](http://www.rcsb.org/ligand/ATP)
+- [Ligand expo](http://ligand-expo.rcsb.org/)
+  - [Get ligand chemical coordinates](http://ligand-expo.rcsb.org/reports/A/ATP/ATP_ideal.pdb) http://ligand-expo.rcsb.org/reports/A/ATP/ATP_ideal.pdb
+  - [Ligand expo guide](http://ligand-expo.rcsb.org/ld-download.html)
 - [Code couleur CPK](https://fr.wikipedia.org/wiki/Code_de_couleurs_CPK)
   - [Jmol color table](http://jmol.sourceforge.net/jscolors/)
+  
+Autres
+- [ligand contained in molecules](http://ligand-expo.rcsb.org/dictionaries/cc-to-pdb.tdd)
+- [Web service overview](https://www.rcsb.org/pages/webservices)
+  - [Get chemical element](https://www.rcsb.org/pdb/rest/describeHet?chemicalID=13R) https://www.rcsb.org/pdb/rest/describeHet?chemicalID={id}
+- [Ligand visualisation online](http://www.rcsb.org/ligand/ATP)
   
 # Vocabulary
 
@@ -34,12 +38,17 @@ Les lignes « ATOM__ » concernent les acides aminés ou les acides nucléiques,
 
 Source [Wikipedia](https://fr.wikipedia.org/wiki/Protein_Data_Bank#Le_format_PDB)
 
-Comprendre le format PDB [PDB-101](https://pdb101.rcsb.org/learn/guide-to-understanding-pdb-data/introduction)
+- Comprendre le format PDB [PDB-101](https://pdb101.rcsb.org/learn/guide-to-understanding-pdb-data/introduction)
+- Les ligands - dernier paragraphe de la page (https://pdb101.rcsb.org/learn/guide-to-understanding-pdb-data/small-molecule-ligands)
 
-### 
+
+- ATOM record is used to identify proteins or nucleic acid atoms, and the HETATM record is used to identify atoms in small molecules
 
 # Autres
 
 - Lien de l'image du ligan http://cdn.rcsb.org/etl/ligand/img/{1st-ligan-character}/{ligan-name}/{ligan-name}-270.png
 - Liste des documents telechargeables pour un ligan: http://ligand-expo.rcsb.org/reports/P/PDB/index.html
 - Dealing with corrdinates (pdb format): https://pdb101.rcsb.org/learn/guide-to-understanding-pdb-data/dealing-with-coordinates
+
+- Tuto start with Scene Kit [create a cube](https://code.tutsplus.com/tutorials/an-introduction-to-scenekit-fundamentals--cms-23847)
+- SceneKit features [Resources](https://www.invasivecode.com/weblog/scenekit-tutorial-part-1/)
