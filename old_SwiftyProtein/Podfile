@@ -7,5 +7,6 @@ target 'SwiftyProtein' do
 
   # Pods for SwiftyProtein
   pod 'SwiftGen'
+  pod 'SceneKit'
 
 end
