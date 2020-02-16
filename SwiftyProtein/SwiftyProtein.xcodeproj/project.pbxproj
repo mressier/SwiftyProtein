@@ -20,6 +20,7 @@
 		A922804023F846A700BA4F5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A922803D23F846A700BA4F5D /* Assets.xcassets */; };
 		A922804123F846A700BA4F5D /* ligands.txt in Resources */ = {isa = PBXBuildFile; fileRef = A922803E23F846A700BA4F5D /* ligands.txt */; };
 		A922804723F84E2C00BA4F5D /* SCNNode+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A922804623F84E2C00BA4F5D /* SCNNode+extension.swift */; };
+		A9A3A9FD23F9CC5D00A19E17 /* SCNVector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A3A9FC23F9CC5D00A19E17 /* SCNVector3.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		A922803D23F846A700BA4F5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A922803E23F846A700BA4F5D /* ligands.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ligands.txt; sourceTree = "<group>"; };
 		A922804623F84E2C00BA4F5D /* SCNNode+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNNode+extension.swift"; sourceTree = "<group>"; };
+		A9A3A9FC23F9CC5D00A19E17 /* SCNVector3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCNVector3.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 			children = (
 				A922804623F84E2C00BA4F5D /* SCNNode+extension.swift */,
 				A910E40423F85DF0008F9020 /* SCNGeometry+extension.swift */,
+				A9A3A9FC23F9CC5D00A19E17 /* SCNVector3.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A922802B23F83DB100BA4F5D /* GameViewController.swift in Sources */,
+				A9A3A9FD23F9CC5D00A19E17 /* SCNVector3.swift in Sources */,
 				A922804723F84E2C00BA4F5D /* SCNNode+extension.swift in Sources */,
 				A922802723F83DB100BA4F5D /* AppDelegate.swift in Sources */,
 				A922803F23F846A700BA4F5D /* Assets.swift in Sources */,

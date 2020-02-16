@@ -4,6 +4,12 @@ import SceneKit
 struct AtomNode {
   let atom: Atom
   let node: SCNNode
+
+  var isSelected: Bool = false
+
+  var expectedColor: UIColor? {
+    return isSelected ? atom.color : atom.color?.withAlphaComponent(0.7)
+  }
 }
 
 typealias AtomPair = PathBounds<AtomNode>
@@ -18,7 +24,7 @@ extension Array where Element == AtomNode {
   func extractAtomPairs() -> [AtomPair] {
     var atomsPairs = [AtomPair]()
 
-    for (index, atom) in self.enumerated() {
+    for atom in self {
       let linkedAtoms = getLinkedAtoms(to: atom.atom)
       let pairs = linkedAtoms.pair(to: atom)
       atomsPairs.append(contentsOf: pairs)

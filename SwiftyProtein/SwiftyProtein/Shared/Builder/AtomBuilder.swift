@@ -2,6 +2,9 @@ import UIKit
 
 class AtomBuilder {
   static func build() -> [Atom] {
+//    return [
+//      Atom(index: 0, name: "Vagin", position: AtomPosition(x: 0, y: 0, z: 0), linkedAtoms: [], color: UIColor.cyan.withAlphaComponent(0.5))
+//    ]
     return [
       Atom(index: 0, name: "0", position: AtomPosition(x: 1.200, y: -0.226, z: -6.850), linkedAtoms: [2, 4], color: .cyan),
       Atom(index: 1, name: "1", position: AtomPosition(x: 1.740, y: 1.140, z: -6.672), linkedAtoms: [4], color: .blue),

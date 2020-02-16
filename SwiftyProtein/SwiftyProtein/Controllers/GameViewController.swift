@@ -23,6 +23,7 @@ class GameViewController: UIViewController {
 
   /// Atoms to show on the scene
   var atoms = AtomBuilder.build()
+  var nodeAtoms = [AtomNode]()
 
   //----------------------------------------------------------------------------
   // MARK: - Initialization
@@ -35,8 +36,9 @@ class GameViewController: UIViewController {
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    let nodes = createNodes(forAtoms: atoms, on: scene.rootNode)
-    createLinks(between: nodes.extractAtomPairs(), on: scene.rootNode)
+
+    nodeAtoms = createNodes(forAtoms: atoms, on: scene.rootNode)
+    createLinks(between: nodeAtoms.extractAtomPairs(), on: scene.rootNode)
   }
 
   private func setup() {
@@ -44,8 +46,7 @@ class GameViewController: UIViewController {
     setupScene()
     setupLight(on: scene)
     setupCamera(on: scene)
-
-    constraintCamera(cameraNode, toLookAt: scene.rootNode)
+    setupGesture()
   }
 
   private func setupSceneView() {
@@ -66,6 +67,7 @@ class GameViewController: UIViewController {
     cameraNode.position = SCNVector3(x: 0.0, y: 0.0, z: 5.0)
 
     scene.rootNode.addChildNode(cameraNode)
+    cameraNode.constraintToLookAt(scene.rootNode)
   }
 
   private func setupLight(on scene: SCNScene) {
@@ -79,18 +81,51 @@ class GameViewController: UIViewController {
     scene.rootNode.addChildNode(lightNode)
   }
 
+  private func setupGesture() {
+    let selector = #selector(self.didTapOnScene)
+    let tap = UITapGestureRecognizer(target: self, action: selector)
+    sceneView.addGestureRecognizer(tap)
+  }
+
+  //----------------------------------------------------------------------------
+  // MARK: - Actions
+  //----------------------------------------------------------------------------
+
+  @objc private func didTapOnScene(tap: UITapGestureRecognizer) {
+    guard tap.state == .ended else { return }
+
+    let location = tap.location(in: sceneView)
+
+    guard let atomIndex = getAtomIndex(at: location) else { return }
+    toggleAtomSelection(atomIndex: atomIndex)
+  }
+
+  /// Return the index on nodeAtoms array of the first node found at location
+  private func getAtomIndex(at location: CGPoint) -> Int? {
+    let hits = sceneView.hitTest(location, options: nil)
+
+    if hits.isEmpty { return nil }
+
+    let tappedNode = hits.first?.node
+    let atomNodeIndex = nodeAtoms.firstIndex(where: { $0.node == tappedNode })
+
+    return atomNodeIndex
+  }
+
+  private func toggleAtomSelection(atomIndex: Int) {
+    let atom = nodeAtoms[atomIndex]
+
+    nodeAtoms[atomIndex].isSelected = !atom.isSelected
+    atom.node.geometry?.add(color: atom.expectedColor)
+  }
+
   //----------------------------------------------------------------------------
   // MARK: - Scene content
   //----------------------------------------------------------------------------
 
-  private func constraintCamera(_ camera: SCNNode, toLookAt node: SCNNode) {
-    let constraint = SCNLookAtConstraint(target: node)
-    constraint.isGimbalLockEnabled = true
-    camera.constraints = [constraint]
-  }
-
   /******************** Links ********************/
 
+  @discardableResult
   private func createLinks(between nodesPairs: [AtomPair],
                            on rootNode: SCNNode) -> [SCNNode] {
     var links = [SCNNode]()
@@ -108,6 +143,7 @@ class GameViewController: UIViewController {
 
   /******************** Spheres ********************/
 
+  @discardableResult
   private func createNodes(forAtoms atoms: [Atom],
                            on rootNode: SCNNode) -> [AtomNode] {
     var nodes = [AtomNode]()
@@ -115,8 +151,13 @@ class GameViewController: UIViewController {
     for atom in atoms {
       if let sphere = rootNode.addSphere(color: atom.color,
                                          at: atom.positionSCN) {
+        sphere.addText(atom.name,
+                       color: .black,
+                       at: SCNVector3(0.0, 0.0, 0.0))
+
         nodes.append(AtomNode(atom: atom, node: sphere))
       }
+
     }
 
     return nodes
