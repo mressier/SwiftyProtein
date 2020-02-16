@@ -50,6 +50,20 @@ extension SCNNode {
 
 extension SCNNode {
 
+  /// Add a light object as a node
+  func addLight(at position: SCNVector3) -> SCNNode? {
+    let light = SCNLight()
+    light.type = SCNLight.LightType.omni
+
+    let lightNode = SCNNode()
+    lightNode.light = light
+    lightNode.position = position
+
+    addChildNode(lightNode)
+
+    return lightNode
+  }
+
   /// Add a text geometry as a node
   func addText(_ string: String,
                color: UIColor? = nil,

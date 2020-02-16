@@ -13,6 +13,7 @@ class GameViewController: UIViewController {
   private var sceneView: SCNView!
   private var scene: SCNScene!
   private var cameraNode: SCNNode!
+  private var viewNode: SCNNode!
 
   /******************** UI Parameters ********************/
 
@@ -37,15 +38,16 @@ class GameViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
 
-    nodeAtoms = createNodes(forAtoms: atoms, on: scene.rootNode)
-    createLinks(between: nodeAtoms.extractAtomPairs(), on: scene.rootNode)
+    nodeAtoms = createNodes(forAtoms: atoms, on: viewNode)
+    createLinks(between: nodeAtoms.extractAtomPairs(), on: viewNode)
   }
 
   private func setup() {
     setupSceneView()
     setupScene()
     setupLight(on: scene)
-    setupCamera(on: scene)
+    setupCamera(on: scene.rootNode)
+    setupViewNode(on: scene.rootNode)
     setupGesture()
   }
 
@@ -59,26 +61,26 @@ class GameViewController: UIViewController {
     sceneView.allowsCameraControl = true
   }
 
-  private func setupCamera(on scene: SCNScene) {
+  private func setupCamera(on rootNode: SCNNode) {
     let camera = SCNCamera()
 
     cameraNode = SCNNode()
     cameraNode.camera = camera
-    cameraNode.position = SCNVector3(x: 0.0, y: 0.0, z: 5.0)
+    cameraNode.position = SCNVector3(x: 0.0, y: -30.0, z: 0.0)
 
-    scene.rootNode.addChildNode(cameraNode)
-    cameraNode.constraintToLookAt(scene.rootNode)
+    rootNode.addChildNode(cameraNode)
+    cameraNode.constraintToLookAt(rootNode)
   }
 
   private func setupLight(on scene: SCNScene) {
-    let light = SCNLight()
-    light.type = SCNLight.LightType.omni
+    scene.rootNode.addLight(at: SCNVector3(x: -30.0, y: 10.0, z: 0.0))
+    scene.rootNode.addLight(at: SCNVector3(x: 30.0, y: 10.0, z: 0.0))
+  }
 
-    let lightNode = SCNNode()
-    lightNode.light = light
-    lightNode.position = SCNVector3(x: -10.0, y: 10.0, z: 0.0)
+  private func setupViewNode(on rootNode: SCNNode) {
+    viewNode = SCNNode()
 
-    scene.rootNode.addChildNode(lightNode)
+    rootNode.addChildNode(viewNode)
   }
 
   private func setupGesture() {
@@ -151,9 +153,9 @@ class GameViewController: UIViewController {
     for atom in atoms {
       if let sphere = rootNode.addSphere(color: atom.color,
                                          at: atom.positionSCN) {
-        sphere.addText(atom.name,
-                       color: .black,
-                       at: SCNVector3(0.0, 0.0, 0.0))
+        let _ = sphere.addText(atom.name,
+                               color: .black,
+                               at: SCNVector3(0.0, 0.0, 0.0))
 
         nodes.append(AtomNode(atom: atom, node: sphere))
       }
