@@ -20,8 +20,23 @@
 		A922804023F846A700BA4F5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A922803D23F846A700BA4F5D /* Assets.xcassets */; };
 		A922804123F846A700BA4F5D /* ligands.txt in Resources */ = {isa = PBXBuildFile; fileRef = A922803E23F846A700BA4F5D /* ligands.txt */; };
 		A922804723F84E2C00BA4F5D /* SCNNode+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A922804623F84E2C00BA4F5D /* SCNNode+extension.swift */; };
-		A9A3A9FD23F9CC5D00A19E17 /* SCNVector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A3A9FC23F9CC5D00A19E17 /* SCNVector3.swift */; };
+		A9934579242FCDEF00C6B043 /* FakeLigands.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9934578242FCDEF00C6B043 /* FakeLigands.swift */; };
+		A9934582242FD19200C6B043 /* SwiftyProteinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9934581242FD19200C6B043 /* SwiftyProteinTests.swift */; };
+		A993458A242FD1B400C6B043 /* AtomNode+ArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9934589242FD1B400C6B043 /* AtomNode+ArrayTests.swift */; };
+		A993458C242FD52D00C6B043 /* SCNNode+Atom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A993458B242FD52D00C6B043 /* SCNNode+Atom.swift */; };
+		A993458E242FF4FF00C6B043 /* SCNView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A993458D242FF4FF00C6B043 /* SCNView+extension.swift */; };
+		A9A3A9FD23F9CC5D00A19E17 /* SCNVector3+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A3A9FC23F9CC5D00A19E17 /* SCNVector3+extension.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A9934584242FD19200C6B043 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A922801B23F83DB100BA4F5D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A922802223F83DB100BA4F5D;
+			remoteInfo = SwiftyProtein;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		A910E40423F85DF0008F9020 /* SCNGeometry+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNGeometry+extension.swift"; sourceTree = "<group>"; };
@@ -39,11 +54,25 @@
 		A922803D23F846A700BA4F5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A922803E23F846A700BA4F5D /* ligands.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ligands.txt; sourceTree = "<group>"; };
 		A922804623F84E2C00BA4F5D /* SCNNode+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNNode+extension.swift"; sourceTree = "<group>"; };
-		A9A3A9FC23F9CC5D00A19E17 /* SCNVector3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCNVector3.swift; sourceTree = "<group>"; };
+		A9934578242FCDEF00C6B043 /* FakeLigands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeLigands.swift; sourceTree = "<group>"; };
+		A993457F242FD19200C6B043 /* SwiftyProteinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyProteinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9934581242FD19200C6B043 /* SwiftyProteinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyProteinTests.swift; sourceTree = "<group>"; };
+		A9934583242FD19200C6B043 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9934589242FD1B400C6B043 /* AtomNode+ArrayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AtomNode+ArrayTests.swift"; sourceTree = "<group>"; };
+		A993458B242FD52D00C6B043 /* SCNNode+Atom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNNode+Atom.swift"; sourceTree = "<group>"; };
+		A993458D242FF4FF00C6B043 /* SCNView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNView+extension.swift"; sourceTree = "<group>"; };
+		A9A3A9FC23F9CC5D00A19E17 /* SCNVector3+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNVector3+extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		A922802023F83DB100BA4F5D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A993457C242FD19200C6B043 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -75,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				A922802523F83DB100BA4F5D /* SwiftyProtein */,
+				A9934580242FD19200C6B043 /* SwiftyProteinTests */,
 				A922802423F83DB100BA4F5D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -83,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				A922802323F83DB100BA4F5D /* SwiftyProtein.app */,
+				A993457F242FD19200C6B043 /* SwiftyProteinTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -106,6 +137,7 @@
 				A922803B23F846A700BA4F5D /* Generated */,
 				A922803D23F846A700BA4F5D /* Assets.xcassets */,
 				A922803E23F846A700BA4F5D /* ligands.txt */,
+				A9934578242FCDEF00C6B043 /* FakeLigands.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -149,10 +181,22 @@
 			isa = PBXGroup;
 			children = (
 				A922804623F84E2C00BA4F5D /* SCNNode+extension.swift */,
+				A993458B242FD52D00C6B043 /* SCNNode+Atom.swift */,
 				A910E40423F85DF0008F9020 /* SCNGeometry+extension.swift */,
-				A9A3A9FC23F9CC5D00A19E17 /* SCNVector3.swift */,
+				A9A3A9FC23F9CC5D00A19E17 /* SCNVector3+extension.swift */,
+				A993458D242FF4FF00C6B043 /* SCNView+extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A9934580242FD19200C6B043 /* SwiftyProteinTests */ = {
+			isa = PBXGroup;
+			children = (
+				A9934581242FD19200C6B043 /* SwiftyProteinTests.swift */,
+				A9934583242FD19200C6B043 /* Info.plist */,
+				A9934589242FD1B400C6B043 /* AtomNode+ArrayTests.swift */,
+			);
+			path = SwiftyProteinTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,6 +219,24 @@
 			productReference = A922802323F83DB100BA4F5D /* SwiftyProtein.app */;
 			productType = "com.apple.product-type.application";
 		};
+		A993457E242FD19200C6B043 /* SwiftyProteinTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9934586242FD19200C6B043 /* Build configuration list for PBXNativeTarget "SwiftyProteinTests" */;
+			buildPhases = (
+				A993457B242FD19200C6B043 /* Sources */,
+				A993457C242FD19200C6B043 /* Frameworks */,
+				A993457D242FD19200C6B043 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A9934585242FD19200C6B043 /* PBXTargetDependency */,
+			);
+			name = SwiftyProteinTests;
+			productName = SwiftyProteinTests;
+			productReference = A993457F242FD19200C6B043 /* SwiftyProteinTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -187,6 +249,10 @@
 				TargetAttributes = {
 					A922802223F83DB100BA4F5D = {
 						CreatedOnToolsVersion = 11.3.1;
+					};
+					A993457E242FD19200C6B043 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = A922802223F83DB100BA4F5D;
 					};
 				};
 			};
@@ -204,6 +270,7 @@
 			projectRoot = "";
 			targets = (
 				A922802223F83DB100BA4F5D /* SwiftyProtein */,
+				A993457E242FD19200C6B043 /* SwiftyProteinTests */,
 			);
 		};
 /* End PBXProject section */
@@ -220,6 +287,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A993457D242FD19200C6B043 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -228,11 +302,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A922802B23F83DB100BA4F5D /* GameViewController.swift in Sources */,
-				A9A3A9FD23F9CC5D00A19E17 /* SCNVector3.swift in Sources */,
+				A9934579242FCDEF00C6B043 /* FakeLigands.swift in Sources */,
+				A9A3A9FD23F9CC5D00A19E17 /* SCNVector3+extension.swift in Sources */,
+				A993458C242FD52D00C6B043 /* SCNNode+Atom.swift in Sources */,
 				A922804723F84E2C00BA4F5D /* SCNNode+extension.swift in Sources */,
 				A922802723F83DB100BA4F5D /* AppDelegate.swift in Sources */,
 				A922803F23F846A700BA4F5D /* Assets.swift in Sources */,
 				A910E40D23F87ED6008F9020 /* AtomBuilder.swift in Sources */,
+				A993458E242FF4FF00C6B043 /* SCNView+extension.swift in Sources */,
 				A910E40523F85DF0008F9020 /* SCNGeometry+extension.swift in Sources */,
 				A910E40A23F87E78008F9020 /* Atom.swift in Sources */,
 				A910E40823F87B83008F9020 /* PathBounds.swift in Sources */,
@@ -240,7 +317,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A993457B242FD19200C6B043 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A993458A242FD1B400C6B043 /* AtomNode+ArrayTests.swift in Sources */,
+				A9934582242FD19200C6B043 /* SwiftyProteinTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A9934585242FD19200C6B043 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A922802223F83DB100BA4F5D /* SwiftyProtein */;
+			targetProxy = A9934584242FD19200C6B043 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A922802C23F83DB100BA4F5D /* Main.storyboard */ = {
@@ -412,6 +506,46 @@
 			};
 			name = Release;
 		};
+		A9934587242FD19200C6B043 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 23T8TD424J;
+				INFOPLIST_FILE = SwiftyProteinTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = MathildeRessier.SwiftyProteinTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftyProtein.app/SwiftyProtein";
+			};
+			name = Debug;
+		};
+		A9934588242FD19200C6B043 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 23T8TD424J;
+				INFOPLIST_FILE = SwiftyProteinTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = MathildeRessier.SwiftyProteinTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftyProtein.app/SwiftyProtein";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -429,6 +563,15 @@
 			buildConfigurations = (
 				A922803823F83DB200BA4F5D /* Debug */,
 				A922803923F83DB200BA4F5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A9934586242FD19200C6B043 /* Build configuration list for PBXNativeTarget "SwiftyProteinTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9934587242FD19200C6B043 /* Debug */,
+				A9934588242FD19200C6B043 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
