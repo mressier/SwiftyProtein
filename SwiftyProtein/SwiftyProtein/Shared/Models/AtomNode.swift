@@ -1,6 +1,12 @@
 import Foundation
 import SceneKit
 
+/*******************************************************************************
+ * AtomNode
+ *
+ * Atom representation on a view with a node
+ *
+ ******************************************************************************/
 struct AtomNode {
   let atom: Atom
   let node: SCNNode
@@ -10,9 +16,31 @@ struct AtomNode {
   var expectedColor: UIColor? {
     return isSelected ? atom.color : atom.color?.withAlphaComponent(0.7)
   }
+
+  //----------------------------------------------------------------------------
+  // MARK: - Computed
+  //----------------------------------------------------------------------------
+
+  var index: Int { return atom.index }
+
+  var linkedAtoms: [Int] { return atom.linkedAtoms }
+
+  static func ==(lhs: AtomNode, rhs: AtomNode) -> Bool {
+    return lhs.node == rhs.node && lhs.atom == rhs.atom
+  }
 }
 
+/*******************************************************************************
+ * AtomPair
+ *
+ * Represent two linked atoms
+ *
+ ******************************************************************************/
 typealias AtomPair = PathBounds<AtomNode>
+
+//----------------------------------------------------------------------------
+// MARK: - AtomNode Array actions
+//----------------------------------------------------------------------------
 
 extension Array where Element == AtomNode {
 
@@ -21,12 +49,18 @@ extension Array where Element == AtomNode {
   //----------------------------------------------------------------------------
 
   /// Get all pairs of atom from links between atoms.
+  /// Complexity in time is
   func extractAtomPairs() -> [AtomPair] {
     var atomsPairs = [AtomPair]()
+    let atomByIndex = self.dictionaryByIndex // O(nbOfAtoms)
 
-    for atom in self {
-      let linkedAtoms = getLinkedAtoms(to: atom.atom)
-      let pairs = linkedAtoms.pair(to: atom)
+    for atom in self { // O(nbOfAtoms)
+      let higherLinkedAtomIndexes =
+        atom.linkedAtoms.filter() { $0 > atom.index } // O(nbOfLinks)
+      let linkedAtoms =
+        AtomNodeDictionaryReader.getAtoms(on: atomByIndex,
+                                          at: higherLinkedAtomIndexes) // O(nbOfLinks)
+      let pairs = linkedAtoms.pair(to: atom) // O(nbOfLinks)
       atomsPairs.append(contentsOf: pairs)
     }
 
@@ -39,30 +73,43 @@ extension Array where Element == AtomNode {
   }
 
   //----------------------------------------------------------------------------
-  // MARK: - Linked Atoms
+  // MARK: - AtomNode to dictionary
   //----------------------------------------------------------------------------
 
-  func getLinkedAtoms(to atom: Atom) -> [AtomNode] {
-    var linkedAtoms = [AtomNode]()
-
-    let linkedAtomsIndexes =
-      atom.linkedAtoms.filter() { $0 > atom.index }
-
-    for linkedAtomIndex in linkedAtomsIndexes {
-      guard let linkedAtom =
-        self.getAtom(with: linkedAtomIndex) else { continue }
-      linkedAtoms.append(linkedAtom)
+  var dictionaryByNode: [SCNNode: AtomNode] {
+    var dict = [SCNNode: AtomNode]()
+    for atomNode in self {
+      dict[atomNode.node] = atomNode
     }
-
-    return linkedAtoms
+    return dict
   }
 
-  //----------------------------------------------------------------------------
-  // MARK: - Atom
-  //----------------------------------------------------------------------------
-
-  func getAtom(with index: Int) -> AtomNode? {
-    return first(where: { $0.atom.index == index })
+  var dictionaryByIndex: [Int: AtomNode] {
+    var dict = [Int: AtomNode]()
+    for atomNode in self {
+      dict[atomNode.index] = atomNode
+    }
+    return dict
   }
+}
 
+/*******************************************************************************
+ * AtomNodeDictionary
+ *
+ * Atom Nodes ordered by atom index
+ *
+ ******************************************************************************/
+struct AtomNodeDictionaryReader {
+
+  //----------------------------------------------------------------------------
+  // MARK: - Read on dictionary
+  //----------------------------------------------------------------------------
+
+  static func getAtoms(on atomByIndex: [Int: AtomNode],
+                       at indexes: [Int]) -> [AtomNode] {
+    return indexes.reduce([]) { result, index in
+      guard let atom = atomByIndex[index] else { return result }
+      return result + [atom]
+    }
+  }
 }

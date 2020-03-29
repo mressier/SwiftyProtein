@@ -14,6 +14,7 @@ class GameViewController: UIViewController {
   private var scene: SCNScene!
   private var cameraNode: SCNNode!
   private var viewNode: SCNNode!
+  private var lights = [SCNNode]()
 
   /******************** UI Parameters ********************/
 
@@ -23,8 +24,8 @@ class GameViewController: UIViewController {
   /******************** Parameters ********************/
 
   /// Atoms to show on the scene
-  var atoms = AtomBuilder.build()
-  var nodeAtoms = [AtomNode]()
+  var atoms: [Atom] = AtomBuilder.build()
+  var atomsDictionary = [SCNNode: AtomNode]()
 
   //----------------------------------------------------------------------------
   // MARK: - Initialization
@@ -38,8 +39,10 @@ class GameViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
 
-    nodeAtoms = createNodes(forAtoms: atoms, on: viewNode)
-    createLinks(between: nodeAtoms.extractAtomPairs(), on: viewNode)
+    let atomNodes = viewNode.createAtomNodes(forAtoms: atoms)
+    viewNode.createLinks(between: atomNodes.extractAtomPairs())
+
+    atomsDictionary = atomNodes.dictionaryByNode
   }
 
   private func setup() {
@@ -73,8 +76,16 @@ class GameViewController: UIViewController {
   }
 
   private func setupLight(on scene: SCNScene) {
-    scene.rootNode.addLight(at: SCNVector3(x: -30.0, y: 10.0, z: 0.0))
-    scene.rootNode.addLight(at: SCNVector3(x: 30.0, y: 10.0, z: 0.0))
+    let lightsPositions = [
+      SCNVector3(x: -30.0, y: 10.0, z: 0.0),
+      SCNVector3(x: 30.0, y: 10.0, z: 0.0)
+    ]
+
+    for position in lightsPositions {
+      if let light = scene.rootNode.addLight(at: position) {
+        lights.append(light)
+      }
+    }
   }
 
   private func setupViewNode(on rootNode: SCNNode) {
@@ -98,71 +109,14 @@ class GameViewController: UIViewController {
 
     let location = tap.location(in: sceneView)
 
-    guard let atomIndex = getAtomIndex(at: location) else { return }
-    toggleAtomSelection(atomIndex: atomIndex)
+    guard let atomNode = sceneView.getNode(at: location) else { return }
+    toggleAtomSelection(atomNode)
   }
 
-  /// Return the index on nodeAtoms array of the first node found at location
-  private func getAtomIndex(at location: CGPoint) -> Int? {
-    let hits = sceneView.hitTest(location, options: nil)
+  private func toggleAtomSelection(_ node: SCNNode) {
+    guard let atomNode = atomsDictionary[node] else { return }
 
-    if hits.isEmpty { return nil }
-
-    let tappedNode = hits.first?.node
-    let atomNodeIndex = nodeAtoms.firstIndex(where: { $0.node == tappedNode })
-
-    return atomNodeIndex
+    atomsDictionary[node]?.isSelected = !atomNode.isSelected // TODO
+    atomsDictionary[node]?.node.geometry?.add(color: atomNode.expectedColor)
   }
-
-  private func toggleAtomSelection(atomIndex: Int) {
-    let atom = nodeAtoms[atomIndex]
-
-    nodeAtoms[atomIndex].isSelected = !atom.isSelected
-    atom.node.geometry?.add(color: atom.expectedColor)
-  }
-
-  //----------------------------------------------------------------------------
-  // MARK: - Scene content
-  //----------------------------------------------------------------------------
-
-  /******************** Links ********************/
-
-  @discardableResult
-  private func createLinks(between nodesPairs: [AtomPair],
-                           on rootNode: SCNNode) -> [SCNNode] {
-    var links = [SCNNode]()
-
-    for nodePair in nodesPairs {
-      if let cylinder = rootNode.addCylinderBetween(nodePair.start.node,
-                                                    and: nodePair.end.node,
-                                                    color: .cyan) {
-        links.append(cylinder)
-      }
-    }
-
-    return links
-  }
-
-  /******************** Spheres ********************/
-
-  @discardableResult
-  private func createNodes(forAtoms atoms: [Atom],
-                           on rootNode: SCNNode) -> [AtomNode] {
-    var nodes = [AtomNode]()
-
-    for atom in atoms {
-      if let sphere = rootNode.addSphere(color: atom.color,
-                                         at: atom.positionSCN) {
-        let _ = sphere.addText(atom.name,
-                               color: .black,
-                               at: SCNVector3(0.0, 0.0, 0.0))
-
-        nodes.append(AtomNode(atom: atom, node: sphere))
-      }
-
-    }
-
-    return nodes
-  }
-
 }

@@ -7,13 +7,17 @@ import SceneKit
  * Position in 3d of an atom
  *
  ******************************************************************************/
-struct AtomPosition {
+struct AtomPosition: Hashable {
   let x: CGFloat
   let y: CGFloat
   let z: CGFloat
 
   var toSCNVector3: SCNVector3 {
     return SCNVector3(x, y, z)
+  }
+
+  static func == (lhs: AtomPosition, rhs: AtomPosition) -> Bool {
+    return rhs.x == lhs.x && rhs.y == lhs.y && rhs.z == lhs.z
   }
 }
 
@@ -23,7 +27,7 @@ struct AtomPosition {
  * Informations about an atom
  *
  ******************************************************************************/
-struct Atom {
+struct Atom: Hashable {
   let index: Int
   let name: String
   let position: AtomPosition
@@ -34,5 +38,11 @@ struct Atom {
 
   var positionSCN: SCNVector3 {
     return position.toSCNVector3
+  }
+
+  /******************** Overr ********************/
+
+  static func == (lhs: Atom, rhs: Atom) -> Bool {
+    return lhs.index == rhs.index && lhs.name == rhs.name
   }
 }
