@@ -3,17 +3,34 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProteinSceneViewController" customModule="SwiftyProtein" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProteinSceneViewController" customModule="SwiftyProtein" customModuleProvider="target">
+            <connections>
+                <outlet property="sceneView" destination="hfL-0e-4e7" id="Hul-Vl-mab"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <viewController id="qd6-s9-JHN">
-            <sceneKitView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="PvY-fR-iYW">
-                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            </sceneKitView>
-            <point key="canvasLocation" x="193" y="137"/>
-        </viewController>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hfL-0e-4e7">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                </sceneKitView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="hfL-0e-4e7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="PAj-8J-4gP"/>
+                <constraint firstItem="hfL-0e-4e7" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="hEI-DZ-R0c"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hfL-0e-4e7" secondAttribute="trailing" id="kfq-je-wJF"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="hfL-0e-4e7" secondAttribute="bottom" id="kqP-hj-cUz"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="141" y="147"/>
+        </view>
     </objects>
 </document>

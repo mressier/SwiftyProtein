@@ -15,22 +15,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OHZ-mE-Xy3">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4dC-7U-59V">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </view>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OHZ-mE-Xy3">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="797.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="255" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fj9-w1-o4Y">
+                                        <rect key="frame" x="0.0" y="797.5" width="414" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="OHZ-mE-Xy3" firstAttribute="top" secondItem="cjl-7Y-EXB" secondAttribute="top" id="1F1-7W-0eK"/>
-                            <constraint firstItem="cjl-7Y-EXB" firstAttribute="bottom" secondItem="OHZ-mE-Xy3" secondAttribute="bottom" id="dr7-rZ-Igy"/>
-                            <constraint firstItem="OHZ-mE-Xy3" firstAttribute="leading" secondItem="cjl-7Y-EXB" secondAttribute="leading" id="oN3-S4-xZj"/>
-                            <constraint firstItem="cjl-7Y-EXB" firstAttribute="trailing" secondItem="OHZ-mE-Xy3" secondAttribute="trailing" id="xtG-9E-JIi"/>
+                            <constraint firstItem="4dC-7U-59V" firstAttribute="leading" secondItem="cjl-7Y-EXB" secondAttribute="leading" id="EYK-O6-iPY"/>
+                            <constraint firstItem="cjl-7Y-EXB" firstAttribute="bottom" secondItem="4dC-7U-59V" secondAttribute="bottom" id="J4f-Fy-Pks"/>
+                            <constraint firstItem="4dC-7U-59V" firstAttribute="top" secondItem="cjl-7Y-EXB" secondAttribute="top" id="nIH-Ve-Fh1"/>
+                            <constraint firstItem="4dC-7U-59V" firstAttribute="trailing" secondItem="cjl-7Y-EXB" secondAttribute="trailing" id="nwA-fk-j43"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cjl-7Y-EXB"/>
                     </view>
                     <connections>
                         <outlet property="proteinSceneContainerView" destination="OHZ-mE-Xy3" id="S18-5S-nIP"/>
+                        <outlet property="selectedAtomNameLabel" destination="fj9-w1-o4Y" id="TZ4-jT-WU3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EBt-TN-X2F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

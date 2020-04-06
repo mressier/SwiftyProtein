@@ -10,7 +10,8 @@ class ProteinSceneViewController: UIViewController {
 
   /******************** Outlet ********************/
 
-  private var sceneView: SCNView!
+  @IBOutlet weak private var sceneView: SCNView!
+
   private var scene: SCNScene!
   private var cameraNode: SCNNode!
   private var viewNode: SCNNode!
@@ -18,14 +19,19 @@ class ProteinSceneViewController: UIViewController {
 
   /******************** UI Parameters ********************/
 
-  override var shouldAutorotate: Bool { return true }
   override var prefersStatusBarHidden: Bool { return true }
 
-  /******************** Parameters ********************/
+  /******************** Protein Parameters ********************/
 
   /// Atoms to show on the scene
-  var atoms: [Atom] = AtomBuilder.build()
-  var atomsDictionary = [SCNNode: AtomNode]()
+  var atoms = [Atom]()
+
+  private var atomsDictionary = [SCNNode: AtomNode]()
+
+  /********************  Callbacks  ********************/
+
+  var didSelectAtom: ((Atom) -> Void)?
+  var didUnselectAtom: (() -> Void)?
 
   //----------------------------------------------------------------------------
   // MARK: - Initialization
@@ -46,16 +52,11 @@ class ProteinSceneViewController: UIViewController {
   }
 
   private func setup() {
-    setupSceneView()
     setupScene()
-    setupLight(on: scene)
+    setupLights(on: scene)
     setupCamera(on: scene.rootNode)
     setupViewNode(on: scene.rootNode)
     setupGesture()
-  }
-
-  private func setupSceneView() {
-    sceneView = self.view as? SCNView
   }
 
   private func setupScene() {
@@ -75,7 +76,7 @@ class ProteinSceneViewController: UIViewController {
     cameraNode.constraintToLookAt(rootNode)
   }
 
-  private func setupLight(on scene: SCNScene) {
+  private func setupLights(on scene: SCNScene) {
     let lightsPositions = [
       SCNVector3(x: -30.0, y: 10.0, z: 0.0),
       SCNVector3(x: 30.0, y: 10.0, z: 0.0)
@@ -115,8 +116,11 @@ class ProteinSceneViewController: UIViewController {
 
   private func toggleAtomSelection(_ node: SCNNode) {
     guard let atomNode = atomsDictionary[node] else { return }
+    let isSelected = !atomNode.isSelected
 
-    atomsDictionary[node]?.isSelected = !atomNode.isSelected
+    atomsDictionary[node]?.isSelected = isSelected
     atomsDictionary[node]?.node.geometry?.add(color: atomNode.expectedColor)
+
+    isSelected ? didSelectAtom?(atomNode.atom) : didUnselectAtom?()
   }
 }
