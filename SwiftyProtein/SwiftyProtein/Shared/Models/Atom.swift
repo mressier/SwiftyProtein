@@ -34,6 +34,26 @@ struct Atom: Hashable {
   let linkedAtoms: [Int]
   let color: UIColor?
 
+  //----------------------------------------------------------------------------
+  // MARK: - Initialization
+  //----------------------------------------------------------------------------
+
+  init(index: Int,
+       name: String? = nil,
+       position: AtomPosition,
+       linkedAtoms: [Int],
+       color: UIColor?) {
+    self.index = index
+    self.name = name ?? "\(index)"
+    self.position = position
+    self.linkedAtoms = linkedAtoms
+    self.color = color
+  }
+
+  //----------------------------------------------------------------------------
+  // MARK: - Tools
+  //----------------------------------------------------------------------------
+
   /******************** Conversion ********************/
 
   var positionSCN: SCNVector3 {
