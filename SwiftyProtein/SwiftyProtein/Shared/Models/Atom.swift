@@ -16,6 +16,23 @@ struct AtomPosition: Hashable {
     return SCNVector3(x, y, z)
   }
 
+  //----------------------------------------------------------------------------
+  // MARK: - Initialization
+  //----------------------------------------------------------------------------
+
+  init(x: CGFloat,
+       y: CGFloat,
+       z: CGFloat,
+       mult: CGFloat = 1.0) {
+    self.x = x * mult
+    self.y = y * mult
+    self.z = z * mult
+  }
+
+  //----------------------------------------------------------------------------
+  // MARK: - Tools
+  //----------------------------------------------------------------------------
+
   static func == (lhs: AtomPosition, rhs: AtomPosition) -> Bool {
     return rhs.x == lhs.x && rhs.y == lhs.y && rhs.z == lhs.z
   }

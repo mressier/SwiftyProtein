@@ -13,6 +13,11 @@ extension SCNNode {
     constraints = [constraint]
   }
 
+  func constraintToLookAtPointOfView() {
+    let constraint = SCNBillboardConstraint()
+    constraints = [constraint]
+  }
+
   //----------------------------------------------------------------------------
   // MARK: - Maths
   //----------------------------------------------------------------------------
@@ -74,9 +79,10 @@ extension SCNNode {
   /// Add a text geometry as a node
   func addText(_ string: String,
                color: UIColor? = nil,
+               size: CGFloat = 0.3,
                at position: SCNVector3? = nil) -> SCNNode? {
     let text = SCNText(string: string, extrusionDepth: 0.1)
-    text.font = text.font.withSize(0.4)
+    text.font = text.font.withSize(size)
     text.add(color: color)
     let node = SCNNode(geometry: text)
 
@@ -146,7 +152,7 @@ extension SCNNode {
     source.addChildNode(sourceChild)
 
     sourceChild.addChildNode(pathAlignedNode)
-    sourceChild.constraints = [SCNLookAtConstraint(target: destination)]
+    sourceChild.constraintToLookAt(destination)
 
     return nodeCylinder
   }

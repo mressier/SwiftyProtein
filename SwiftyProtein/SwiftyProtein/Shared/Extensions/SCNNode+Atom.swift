@@ -18,13 +18,13 @@ extension SCNNode {
 
     for atom in atoms {
       if let sphere = self.addSphere(color: atom.color, at: atom.positionSCN) {
-        let _ = sphere.addText(atom.name,
-                               color: .black,
-                               at: SCNVector3(0.0, 0.0, 0.0))
+        sphere.constraintToLookAtPointOfView()
+        _ = sphere.addText(atom.name, color: .black, at: .zero)
 
         nodes.append(AtomNode(atom: atom, node: sphere))
       }
     }
+
     return nodes
   }
 
