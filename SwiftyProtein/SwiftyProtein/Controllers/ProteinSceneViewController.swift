@@ -2,7 +2,7 @@ import UIKit
 import QuartzCore
 import SceneKit
 
-class GameViewController: UIViewController {
+class ProteinSceneViewController: UIViewController {
 
   //----------------------------------------------------------------------------
   // MARK: - Properties
@@ -116,7 +116,7 @@ class GameViewController: UIViewController {
   private func toggleAtomSelection(_ node: SCNNode) {
     guard let atomNode = atomsDictionary[node] else { return }
 
-    atomsDictionary[node]?.isSelected = !atomNode.isSelected // TODO
+    atomsDictionary[node]?.isSelected = !atomNode.isSelected
     atomsDictionary[node]?.node.geometry?.add(color: atomNode.expectedColor)
   }
 }

@@ -12,8 +12,10 @@
 		A910E40A23F87E78008F9020 /* Atom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A910E40923F87E78008F9020 /* Atom.swift */; };
 		A910E40D23F87ED6008F9020 /* AtomBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A910E40C23F87ED6008F9020 /* AtomBuilder.swift */; };
 		A910E40F23F8838D008F9020 /* AtomNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A910E40E23F8838D008F9020 /* AtomNode.swift */; };
+		A91A550E243B9547003DF261 /* ProteinSceneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A91A550D243B9547003DF261 /* ProteinSceneViewController.xib */; };
+		A91A5510243B9601003DF261 /* ProteinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91A550F243B9601003DF261 /* ProteinViewController.swift */; };
 		A922802723F83DB100BA4F5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A922802623F83DB100BA4F5D /* AppDelegate.swift */; };
-		A922802B23F83DB100BA4F5D /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A922802A23F83DB100BA4F5D /* GameViewController.swift */; };
+		A922802B23F83DB100BA4F5D /* ProteinSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A922802A23F83DB100BA4F5D /* ProteinSceneViewController.swift */; };
 		A922802E23F83DB100BA4F5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A922802C23F83DB100BA4F5D /* Main.storyboard */; };
 		A922803323F83DB200BA4F5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A922803123F83DB200BA4F5D /* LaunchScreen.storyboard */; };
 		A922803F23F846A700BA4F5D /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A922803C23F846A700BA4F5D /* Assets.swift */; };
@@ -44,9 +46,11 @@
 		A910E40923F87E78008F9020 /* Atom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Atom.swift; sourceTree = "<group>"; };
 		A910E40C23F87ED6008F9020 /* AtomBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomBuilder.swift; sourceTree = "<group>"; };
 		A910E40E23F8838D008F9020 /* AtomNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomNode.swift; sourceTree = "<group>"; };
+		A91A550D243B9547003DF261 /* ProteinSceneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProteinSceneViewController.xib; sourceTree = "<group>"; };
+		A91A550F243B9601003DF261 /* ProteinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProteinViewController.swift; sourceTree = "<group>"; };
 		A922802323F83DB100BA4F5D /* SwiftyProtein.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyProtein.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A922802623F83DB100BA4F5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A922802A23F83DB100BA4F5D /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		A922802A23F83DB100BA4F5D /* ProteinSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProteinSceneViewController.swift; sourceTree = "<group>"; };
 		A922802D23F83DB100BA4F5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A922803223F83DB200BA4F5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A922803423F83DB200BA4F5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -153,7 +157,9 @@
 		A922804223F84DF700BA4F5D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A922802A23F83DB100BA4F5D /* GameViewController.swift */,
+				A922802A23F83DB100BA4F5D /* ProteinSceneViewController.swift */,
+				A91A550D243B9547003DF261 /* ProteinSceneViewController.xib */,
+				A91A550F243B9601003DF261 /* ProteinViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -283,6 +289,7 @@
 				A922803323F83DB200BA4F5D /* LaunchScreen.storyboard in Resources */,
 				A922804023F846A700BA4F5D /* Assets.xcassets in Resources */,
 				A922802E23F83DB100BA4F5D /* Main.storyboard in Resources */,
+				A91A550E243B9547003DF261 /* ProteinSceneViewController.xib in Resources */,
 				A922804123F846A700BA4F5D /* ligands.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,10 +308,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A922802B23F83DB100BA4F5D /* GameViewController.swift in Sources */,
+				A922802B23F83DB100BA4F5D /* ProteinSceneViewController.swift in Sources */,
 				A9934579242FCDEF00C6B043 /* FakeLigands.swift in Sources */,
 				A9A3A9FD23F9CC5D00A19E17 /* SCNVector3+extension.swift in Sources */,
 				A993458C242FD52D00C6B043 /* SCNNode+Atom.swift in Sources */,
+				A91A5510243B9601003DF261 /* ProteinViewController.swift in Sources */,
 				A922804723F84E2C00BA4F5D /* SCNNode+extension.swift in Sources */,
 				A922802723F83DB100BA4F5D /* AppDelegate.swift in Sources */,
 				A922803F23F846A700BA4F5D /* Assets.swift in Sources */,

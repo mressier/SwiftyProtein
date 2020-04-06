@@ -1,24 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lUM-Sp-M6v">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Game View Controller-->
-        <scene sceneID="tXr-a1-R10">
+        <!--Protein View Controller-->
+        <scene sceneID="XNG-XW-vxg">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="SwiftyProtein" customModuleProvider="target" sceneMemberID="viewController">
-                    <sceneKitView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx">
+                <viewController id="lUM-Sp-M6v" customClass="ProteinViewController" customModule="SwiftyProtein" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vkF-1D-m0f">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OHZ-mE-Xy3">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    </sceneKitView>
+                        <constraints>
+                            <constraint firstItem="OHZ-mE-Xy3" firstAttribute="top" secondItem="cjl-7Y-EXB" secondAttribute="top" id="1F1-7W-0eK"/>
+                            <constraint firstItem="cjl-7Y-EXB" firstAttribute="bottom" secondItem="OHZ-mE-Xy3" secondAttribute="bottom" id="dr7-rZ-Igy"/>
+                            <constraint firstItem="OHZ-mE-Xy3" firstAttribute="leading" secondItem="cjl-7Y-EXB" secondAttribute="leading" id="oN3-S4-xZj"/>
+                            <constraint firstItem="cjl-7Y-EXB" firstAttribute="trailing" secondItem="OHZ-mE-Xy3" secondAttribute="trailing" id="xtG-9E-JIi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cjl-7Y-EXB"/>
+                    </view>
+                    <connections>
+                        <outlet property="proteinSceneContainerView" destination="OHZ-mE-Xy3" id="S18-5S-nIP"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EBt-TN-X2F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="104"/>
+            <point key="canvasLocation" x="-33" y="117"/>
         </scene>
     </scenes>
 </document>
