@@ -34,13 +34,12 @@ extension SCNNode {
     var links = [SCNNode]()
 
     for nodePair in nodesPairs {
-      if let cylinder = self.addCylinderBetween(nodePair.start.node,
-                                                and: nodePair.end.node,
-                                                color: .cyan)
+      if let cylinder =
+        self.addCylinderBetween(nodePair.start.node,
+                                and: nodePair.end.node,
+                                color: .cyan)
       { links.append(cylinder) }
     }
-
-    print(nodesPairs.map() { return "\($0.start.index) -> \($0.end.index)" })
     return links
   }
 

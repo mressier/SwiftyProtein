@@ -18,19 +18,26 @@ extension SCNNode {
   //----------------------------------------------------------------------------
 
   func distance(to receiver: SCNNode) -> CGFloat {
+    let diff = difference(to: receiver)
+
+    let distance = Float(sqrt(
+      diff.x * diff.x
+        + diff.y * diff.y
+        + diff.z * diff.z
+    ))
+
+    return distance < 0 ? CGFloat(distance * -1) : CGFloat(distance)
+  }
+
+  func difference(to receiver: SCNNode) -> SCNVector3 {
     let source = position
     let destination = receiver.position
+
     let xDifference = destination.x - source.x
     let yDifference = destination.y - source.y
     let zDifference = destination.z - source.z
 
-    let distance = Float(sqrt(
-      xDifference * xDifference
-        + yDifference * yDifference
-        + zDifference * zDifference
-    ))
-
-    return distance < 0 ? CGFloat(distance * -1) : CGFloat(distance)
+    return SCNVector3(xDifference, yDifference, zDifference)
   }
 
   private func translateToCenter(of node: SCNNode) {
@@ -121,6 +128,10 @@ extension SCNNode {
   func addCylinderBetween(_ source: SCNNode,
                           and destination: SCNNode,
                           color: UIColor? = nil) -> SCNNode? {
+    if source.difference(to: destination).z > 0 {
+      return addCylinderBetween(destination, and: source, color: color)
+    }
+
     let radius = Float(0.5)
     let height = source.distance(to: destination) - CGFloat(radius * 2)
 
@@ -131,8 +142,11 @@ extension SCNNode {
                                                    color: color)
     nodeCylinder?.position.y = Float(-height / 2) - radius
 
-    source.addChildNode(pathAlignedNode)
-    source.constraints = [SCNLookAtConstraint(target: destination)]
+    let sourceChild = SCNNode()
+    source.addChildNode(sourceChild)
+
+    sourceChild.addChildNode(pathAlignedNode)
+    sourceChild.constraints = [SCNLookAtConstraint(target: destination)]
 
     return nodeCylinder
   }
