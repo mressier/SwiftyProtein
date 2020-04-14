@@ -22,8 +22,6 @@
 		A922804123F846A700BA4F5D /* ligands.txt in Resources */ = {isa = PBXBuildFile; fileRef = A922803E23F846A700BA4F5D /* ligands.txt */; };
 		A922804723F84E2C00BA4F5D /* SCNNode+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A922804623F84E2C00BA4F5D /* SCNNode+extension.swift */; };
 		A9718EE4243B9A32005DA378 /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9718EE3243B9A32005DA378 /* UIViewController+extension.swift */; };
-		A9718EE8243B9A4E005DA378 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9718EE6243B9A4E005DA378 /* Reusable.swift */; };
-		A9718EE9243B9A4E005DA378 /* NibLoable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9718EE7243B9A4E005DA378 /* NibLoable.swift */; };
 		A9718EF2243B9AF5005DA378 /* UIView+gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9718EED243B9AF5005DA378 /* UIView+gradient.swift */; };
 		A9718EF3243B9AF5005DA378 /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9718EEE243B9AF5005DA378 /* UIView+extension.swift */; };
 		A9718EF4243B9AF5005DA378 /* UIView+appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9718EEF243B9AF5005DA378 /* UIView+appearance.swift */; };
@@ -36,6 +34,15 @@
 		A993458C242FD52D00C6B043 /* SCNNode+Atom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A993458B242FD52D00C6B043 /* SCNNode+Atom.swift */; };
 		A993458E242FF4FF00C6B043 /* SCNView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A993458D242FF4FF00C6B043 /* SCNView+extension.swift */; };
 		A9A3A9FD23F9CC5D00A19E17 /* SCNVector3+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A3A9FC23F9CC5D00A19E17 /* SCNVector3+extension.swift */; };
+		A9F3E7D224421A68000D62A1 /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F3E7D124421A68000D62A1 /* UIColor+extension.swift */; };
+		A9F3E7D4244221CD000D62A1 /* AtomInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F3E7D3244221CD000D62A1 /* AtomInfo.swift */; };
+		A9F3E7D624422C1A000D62A1 /* ProteinSceneConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F3E7D524422C1A000D62A1 /* ProteinSceneConfiguration.swift */; };
+		A9F3E7D824422C47000D62A1 /* ProteinSceneConfiguration+ColorMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F3E7D724422C47000D62A1 /* ProteinSceneConfiguration+ColorMode.swift */; };
+		A9F3E7E3244235BF000D62A1 /* TextStepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F3E7E2244235BF000D62A1 /* TextStepperView.swift */; };
+		A9F3E7E624423731000D62A1 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F3E7E424423731000D62A1 /* Reusable.swift */; };
+		A9F3E7E724423731000D62A1 /* NibInstanciable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F3E7E524423731000D62A1 /* NibInstanciable.swift */; };
+		A9F3E7E924423749000D62A1 /* TextStepperView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9F3E7E824423749000D62A1 /* TextStepperView.xib */; };
+		A9F3E7EC244247F7000D62A1 /* ClampedPropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F3E7EB244247F7000D62A1 /* ClampedPropertyWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,8 +73,6 @@
 		A922803E23F846A700BA4F5D /* ligands.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ligands.txt; sourceTree = "<group>"; };
 		A922804623F84E2C00BA4F5D /* SCNNode+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNNode+extension.swift"; sourceTree = "<group>"; };
 		A9718EE3243B9A32005DA378 /* UIViewController+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+extension.swift"; path = "SwiftyProtein/Shared/Library/Extensions/UIKit/UIViewController+extension.swift"; sourceTree = SOURCE_ROOT; };
-		A9718EE6243B9A4E005DA378 /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
-		A9718EE7243B9A4E005DA378 /* NibLoable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoable.swift; sourceTree = "<group>"; };
 		A9718EED243B9AF5005DA378 /* UIView+gradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+gradient.swift"; sourceTree = "<group>"; };
 		A9718EEE243B9AF5005DA378 /* UIView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
 		A9718EEF243B9AF5005DA378 /* UIView+appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+appearance.swift"; sourceTree = "<group>"; };
@@ -82,6 +87,15 @@
 		A993458B242FD52D00C6B043 /* SCNNode+Atom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNNode+Atom.swift"; sourceTree = "<group>"; };
 		A993458D242FF4FF00C6B043 /* SCNView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNView+extension.swift"; sourceTree = "<group>"; };
 		A9A3A9FC23F9CC5D00A19E17 /* SCNVector3+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNVector3+extension.swift"; sourceTree = "<group>"; };
+		A9F3E7D124421A68000D62A1 /* UIColor+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; };
+		A9F3E7D3244221CD000D62A1 /* AtomInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomInfo.swift; sourceTree = "<group>"; };
+		A9F3E7D524422C1A000D62A1 /* ProteinSceneConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProteinSceneConfiguration.swift; sourceTree = "<group>"; };
+		A9F3E7D724422C47000D62A1 /* ProteinSceneConfiguration+ColorMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProteinSceneConfiguration+ColorMode.swift"; sourceTree = "<group>"; };
+		A9F3E7E2244235BF000D62A1 /* TextStepperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStepperView.swift; sourceTree = "<group>"; };
+		A9F3E7E424423731000D62A1 /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		A9F3E7E524423731000D62A1 /* NibInstanciable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibInstanciable.swift; sourceTree = "<group>"; };
+		A9F3E7E824423749000D62A1 /* TextStepperView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextStepperView.xib; sourceTree = "<group>"; };
+		A9F3E7EB244247F7000D62A1 /* ClampedPropertyWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClampedPropertyWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +123,9 @@
 				A910E40723F87B83008F9020 /* PathBounds.swift */,
 				A910E40923F87E78008F9020 /* Atom.swift */,
 				A910E40E23F8838D008F9020 /* AtomNode.swift */,
+				A9F3E7D3244221CD000D62A1 /* AtomInfo.swift */,
+				A9F3E7D524422C1A000D62A1 /* ProteinSceneConfiguration.swift */,
+				A9F3E7D724422C47000D62A1 /* ProteinSceneConfiguration+ColorMode.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -174,9 +191,7 @@
 		A922804223F84DF700BA4F5D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A922802A23F83DB100BA4F5D /* ProteinSceneViewController.swift */,
-				A9718EFB243B9C4B005DA378 /* ProteinSceneViewController.xib */,
-				A91A550F243B9601003DF261 /* ProteinViewController.swift */,
+				A9F3E7D92442316F000D62A1 /* Protein */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -184,6 +199,8 @@
 		A922804323F84DFD00BA4F5D /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				A9F3E7EA244247F7000D62A1 /* PropertyWrapper */,
+				A9F3E7E1244235A8000D62A1 /* Views */,
 				A9718EEA243B9A51005DA378 /* Protocols */,
 				A910E40B23F87EB4008F9020 /* Builder */,
 				A910E40623F87B70008F9020 /* Models */,
@@ -204,9 +221,10 @@
 		A922804523F84E1900BA4F5D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				A9F3E7D124421A68000D62A1 /* UIColor+extension.swift */,
 				A9718EF8243B9BBA005DA378 /* NSLayoutConstraint+extension.swift */,
-				A9718EEB243B9AF5005DA378 /* UIView */,
 				A9718EE3243B9A32005DA378 /* UIViewController+extension.swift */,
+				A9718EEB243B9AF5005DA378 /* UIView */,
 				A9718EE2243B99E9005DA378 /* SceneKit */,
 			);
 			path = Extensions;
@@ -227,8 +245,8 @@
 		A9718EE5243B9A4E005DA378 /* Xib */ = {
 			isa = PBXGroup;
 			children = (
-				A9718EE6243B9A4E005DA378 /* Reusable.swift */,
-				A9718EE7243B9A4E005DA378 /* NibLoable.swift */,
+				A9F3E7E524423731000D62A1 /* NibInstanciable.swift */,
+				A9F3E7E424423731000D62A1 /* Reusable.swift */,
 			);
 			path = Xib;
 			sourceTree = "<group>";
@@ -259,6 +277,33 @@
 				A9934589242FD1B400C6B043 /* AtomNode+ArrayTests.swift */,
 			);
 			path = SwiftyProteinTests;
+			sourceTree = "<group>";
+		};
+		A9F3E7D92442316F000D62A1 /* Protein */ = {
+			isa = PBXGroup;
+			children = (
+				A922802A23F83DB100BA4F5D /* ProteinSceneViewController.swift */,
+				A9718EFB243B9C4B005DA378 /* ProteinSceneViewController.xib */,
+				A91A550F243B9601003DF261 /* ProteinViewController.swift */,
+			);
+			path = Protein;
+			sourceTree = "<group>";
+		};
+		A9F3E7E1244235A8000D62A1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A9F3E7E2244235BF000D62A1 /* TextStepperView.swift */,
+				A9F3E7E824423749000D62A1 /* TextStepperView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A9F3E7EA244247F7000D62A1 /* PropertyWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				A9F3E7EB244247F7000D62A1 /* ClampedPropertyWrapper.swift */,
+			);
+			path = PropertyWrapper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -347,6 +392,7 @@
 				A922804023F846A700BA4F5D /* Assets.xcassets in Resources */,
 				A922802E23F83DB100BA4F5D /* Main.storyboard in Resources */,
 				A922804123F846A700BA4F5D /* ligands.txt in Resources */,
+				A9F3E7E924423749000D62A1 /* TextStepperView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,20 +416,26 @@
 				A9A3A9FD23F9CC5D00A19E17 /* SCNVector3+extension.swift in Sources */,
 				A993458C242FD52D00C6B043 /* SCNNode+Atom.swift in Sources */,
 				A9718EF2243B9AF5005DA378 /* UIView+gradient.swift in Sources */,
+				A9F3E7D4244221CD000D62A1 /* AtomInfo.swift in Sources */,
 				A91A5510243B9601003DF261 /* ProteinViewController.swift in Sources */,
+				A9F3E7D224421A68000D62A1 /* UIColor+extension.swift in Sources */,
+				A9F3E7E3244235BF000D62A1 /* TextStepperView.swift in Sources */,
 				A922804723F84E2C00BA4F5D /* SCNNode+extension.swift in Sources */,
 				A9718EF7243B9B78005DA378 /* ConstraintType.swift in Sources */,
 				A922802723F83DB100BA4F5D /* AppDelegate.swift in Sources */,
 				A922803F23F846A700BA4F5D /* Assets.swift in Sources */,
 				A9718EF3243B9AF5005DA378 /* UIView+extension.swift in Sources */,
 				A910E40D23F87ED6008F9020 /* AtomBuilder.swift in Sources */,
+				A9F3E7D624422C1A000D62A1 /* ProteinSceneConfiguration.swift in Sources */,
+				A9F3E7E724423731000D62A1 /* NibInstanciable.swift in Sources */,
 				A993458E242FF4FF00C6B043 /* SCNView+extension.swift in Sources */,
+				A9F3E7E624423731000D62A1 /* Reusable.swift in Sources */,
 				A910E40523F85DF0008F9020 /* SCNGeometry+extension.swift in Sources */,
+				A9F3E7D824422C47000D62A1 /* ProteinSceneConfiguration+ColorMode.swift in Sources */,
 				A9718EF9243B9BBA005DA378 /* NSLayoutConstraint+extension.swift in Sources */,
-				A9718EE8243B9A4E005DA378 /* Reusable.swift in Sources */,
-				A9718EE9243B9A4E005DA378 /* NibLoable.swift in Sources */,
 				A910E40A23F87E78008F9020 /* Atom.swift in Sources */,
 				A910E40823F87B83008F9020 /* PathBounds.swift in Sources */,
+				A9F3E7EC244247F7000D62A1 /* ClampedPropertyWrapper.swift in Sources */,
 				A9718EF4243B9AF5005DA378 /* UIView+appearance.swift in Sources */,
 				A910E40F23F8838D008F9020 /* AtomNode.swift in Sources */,
 			);

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lUM-Sp-M6v">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aD9-Ed-ost">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -7,7 +7,23 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Protein View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="Lit-Eg-XIR">
+            <objects>
+                <navigationController id="aD9-Ed-ost" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SO1-Vc-fnO">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="lUM-Sp-M6v" kind="relationship" relationship="rootViewController" id="Z8e-qg-lhJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Dm-QS-0kz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1000" y="117"/>
+        </scene>
+        <!--Protein View-->
         <scene sceneID="XNG-XW-vxg">
             <objects>
                 <viewController id="lUM-Sp-M6v" customClass="ProteinViewController" customModule="SwiftyProtein" customModuleProvider="target" sceneMemberID="viewController">
@@ -15,16 +31,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4dC-7U-59V">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="4dC-7U-59V">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OHZ-mE-Xy3">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="797.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="745"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="255" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fj9-w1-o4Y">
-                                        <rect key="frame" x="0.0" y="797.5" width="414" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="750" width="414" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -40,6 +56,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cjl-7Y-EXB"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Protein View" id="cW4-y3-wk8"/>
                     <connections>
                         <outlet property="proteinSceneContainerView" destination="OHZ-mE-Xy3" id="S18-5S-nIP"/>
                         <outlet property="selectedAtomNameLabel" destination="fj9-w1-o4Y" id="TZ4-jT-WU3"/>

@@ -13,13 +13,16 @@ extension SCNNode {
 
   /// Create nodes for atoms with their positions, color and text in the current node
   @discardableResult
-  func createAtomNodes(forAtoms atoms: [Atom]) -> [AtomNode] {
+  func createAtomNodes(forAtoms atoms: [Atom],
+                       config: ProteinSceneConfiguration) -> [AtomNode] {
     var nodes = [AtomNode]()
 
     for atom in atoms {
-      if let sphere = self.addSphere(color: atom.color, at: atom.positionSCN) {
+      let color = config.getColor(for: atom)
+
+      if let sphere = self.addSphere(color: color, at: atom.positionSCN) {
         sphere.constraintToLookAtPointOfView()
-        _ = sphere.addText(atom.name, color: .black, at: .zero)
+        _ = sphere.addText(atom.symbol, color: .black, at: .zero)
 
         nodes.append(AtomNode(atom: atom, node: sphere))
       }
@@ -27,6 +30,11 @@ extension SCNNode {
 
     return nodes
   }
+
+//  private func testMaterial(addOn node: SCNNode) {
+//    let material = SCNMaterial()
+//    material.
+//  }
 
   /// Create links as cylinder between atom pairs
   @discardableResult
@@ -37,7 +45,7 @@ extension SCNNode {
       if let cylinder =
         self.addCylinderBetween(nodePair.start.node,
                                 and: nodePair.end.node,
-                                color: .cyan)
+                                color: .darkGray)
       { links.append(cylinder) }
     }
     return links

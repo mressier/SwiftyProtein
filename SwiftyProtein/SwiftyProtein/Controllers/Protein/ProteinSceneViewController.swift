@@ -15,11 +15,12 @@ class ProteinSceneViewController: UIViewController {
   private var scene: SCNScene!
   private var cameraNode: SCNNode!
   private var viewNode: SCNNode!
-  private var lights = [SCNNode]()
 
   /******************** UI Parameters ********************/
 
   override var prefersStatusBarHidden: Bool { return true }
+
+  var configuration = ProteinSceneConfiguration(colorMode: .cpk)
 
   /******************** Protein Parameters ********************/
 
@@ -45,7 +46,8 @@ class ProteinSceneViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
 
-    let atomNodes = viewNode.createAtomNodes(forAtoms: atoms)
+    let atomNodes = viewNode.createAtomNodes(forAtoms: atoms,
+                                             config: configuration)
     viewNode.createLinks(between: atomNodes.extractAtomPairs())
 
     atomsDictionary = atomNodes.dictionaryByNode
@@ -77,16 +79,7 @@ class ProteinSceneViewController: UIViewController {
   }
 
   private func setupLights(on scene: SCNScene) {
-    let lightsPositions = [
-      SCNVector3(x: -30.0, y: 10.0, z: 0.0),
-      SCNVector3(x: 30.0, y: 10.0, z: 0.0)
-    ]
-
-    for position in lightsPositions {
-      if let light = scene.rootNode.addLight(at: position) {
-        lights.append(light)
-      }
-    }
+    sceneView.autoenablesDefaultLighting = true
   }
 
   private func setupViewNode(on rootNode: SCNNode) {
@@ -111,6 +104,7 @@ class ProteinSceneViewController: UIViewController {
     let location = tap.location(in: sceneView)
 
     guard let atomNode = sceneView.getNode(at: location) else { return }
+
     toggleAtomSelection(atomNode)
   }
 
@@ -119,7 +113,8 @@ class ProteinSceneViewController: UIViewController {
     let isSelected = !atomNode.isSelected
 
     atomsDictionary[node]?.isSelected = isSelected
-    atomsDictionary[node]?.node.geometry?.add(color: atomNode.expectedColor)
+    let color = configuration.getColor(for: atomNode.atom)
+    atomsDictionary[node]?.node.geometry?.add(color: isSelected ? color.withAlphaComponent(0.7) : color)
 
     isSelected ? didSelectAtom?(atomNode.atom) : didUnselectAtom?()
   }

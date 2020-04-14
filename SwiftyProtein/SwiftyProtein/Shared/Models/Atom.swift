@@ -46,25 +46,22 @@ struct AtomPosition: Hashable {
  ******************************************************************************/
 struct Atom: Hashable {
   let index: Int
-  let name: String
+  let symbol: String
   let position: AtomPosition
   let linkedAtoms: [Int]
-  let color: UIColor?
 
   //----------------------------------------------------------------------------
   // MARK: - Initialization
   //----------------------------------------------------------------------------
 
   init(index: Int,
-       name: String? = nil,
+       symbol: String? = nil,
        position: AtomPosition,
-       linkedAtoms: [Int],
-       color: UIColor?) {
+       linkedAtoms: [Int]) {
     self.index = index
-    self.name = name ?? "\(index)"
+    self.symbol = symbol ?? "\(index)"
     self.position = position
     self.linkedAtoms = linkedAtoms
-    self.color = color
   }
 
   //----------------------------------------------------------------------------
@@ -80,6 +77,6 @@ struct Atom: Hashable {
   /******************** Overr ********************/
 
   static func == (lhs: Atom, rhs: Atom) -> Bool {
-    return lhs.index == rhs.index && lhs.name == rhs.name
+    return lhs.index == rhs.index && lhs.symbol == rhs.symbol
   }
 }

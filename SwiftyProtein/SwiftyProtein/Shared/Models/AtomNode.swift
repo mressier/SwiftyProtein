@@ -13,10 +13,6 @@ struct AtomNode {
 
   var isSelected: Bool = false
 
-  var expectedColor: UIColor? {
-    return isSelected ? atom.color : atom.color?.withAlphaComponent(0.7)
-  }
-
   //----------------------------------------------------------------------------
   // MARK: - Computed
   //----------------------------------------------------------------------------

@@ -15,6 +15,16 @@ class ProteinViewController: UIViewController {
     didSet { updateSelectedAtom(to: selectedAtom) }
   }
 
+  /******************** Configuration ********************/
+
+  var configuration = ProteinSceneConfiguration(colorMode: .cpk)
+
+  /******************** View controllers ********************/
+
+  private lazy var proteinSceneVC: ProteinSceneViewController = {
+    return ProteinSceneViewController(bundle: .main)
+  }()
+
   //----------------------------------------------------------------------------
   // MARK: - View Life Cycle
   //----------------------------------------------------------------------------
@@ -31,8 +41,6 @@ class ProteinViewController: UIViewController {
   }
 
   private func setupProteinSceneVC() {
-    let proteinSceneVC = ProteinSceneViewController(bundle: .main)
-
     proteinSceneVC.didSelectAtom = { [weak self] atom in
       self?.selectedAtom = atom
     }
@@ -47,14 +55,32 @@ class ProteinViewController: UIViewController {
   }
 
   private func setupAtomLabel() {
-    selectedAtomNameLabel.text = ""
+    selectedAtomNameLabel.text = " "
   }
 
   //----------------------------------------------------------------------------
   // MARK: - Update
   //----------------------------------------------------------------------------
   private func updateSelectedAtom(to atom: Atom?) {
-    selectedAtomNameLabel.text = atom?.name ?? ""
-    selectedAtomNameLabel.textColor = atom?.color
+    print(atom?.symbol)
+    updateSelectedAtomNameLabel(with: atom)
+  }
+
+  private func updateSelectedAtomNameLabel(with atom: Atom?) {
+    guard let atom = atom else {
+      selectedAtomNameLabel.text = " "
+      return
+    }
+
+    let strokeTextAttributes: [NSAttributedString.Key : Any] = [
+      NSAttributedString.Key.strokeColor : UIColor.darkGray,
+      NSAttributedString.Key.strokeWidth: -4,
+      NSAttributedString.Key.foregroundColor: configuration.getColor(for: atom)
+    ]
+
+    selectedAtomNameLabel.textColor = configuration.getColor(for: atom)
+    selectedAtomNameLabel.attributedText =
+      NSMutableAttributedString(string: atom.symbol,
+                                attributes: strokeTextAttributes)
   }
 }

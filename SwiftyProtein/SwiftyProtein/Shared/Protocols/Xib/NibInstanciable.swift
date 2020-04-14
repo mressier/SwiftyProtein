@@ -9,17 +9,19 @@
 import UIKit
 
 /*******************************************************************************
- * NibLoadable
+ * NibInstanciable
  *
  * Convenient protocol to loadNib in UIView classes.
  *
  ******************************************************************************/
 
-public protocol NibLoadable: class {
+public protocol NibInstanciable: class {
   func loadNib()
 }
 
-public extension NibLoadable where Self: UIView {
+public extension NibInstanciable where Self: UIView {
+
+  static var nibName: String { return String(describing: Self.self) }
 
   func loadNib() {
     let bundle = Bundle(for: type(of: self))
