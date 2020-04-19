@@ -9,6 +9,7 @@
   - [Ligand expo guide](http://ligand-expo.rcsb.org/ld-download.html)
 - [Code couleur CPK](https://fr.wikipedia.org/wiki/Code_de_couleurs_CPK)
   - [Jmol color table](http://jmol.sourceforge.net/jscolors/)
+  - PDB format decode [here](https://cupnet.net/pdb-format/)
   
 Autres
 - [ligand contained in molecules](http://ligand-expo.rcsb.org/dictionaries/cc-to-pdb.tdd)
@@ -52,3 +53,6 @@ Source [Wikipedia](https://fr.wikipedia.org/wiki/Protein_Data_Bank#Le_format_PDB
 
 - Tuto start with Scene Kit [create a cube](https://code.tutsplus.com/tutorials/an-introduction-to-scenekit-fundamentals--cms-23847)
 - SceneKit features [Resources](https://www.invasivecode.com/weblog/scenekit-tutorial-part-1/)
+
+# Resources & Credits
+- The ellipsis spinner is provided by [loading.io](www.loading.io)
