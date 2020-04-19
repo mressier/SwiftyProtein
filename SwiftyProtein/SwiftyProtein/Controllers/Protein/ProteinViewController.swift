@@ -11,7 +11,7 @@ class ProteinViewController: UIViewController {
 
   /******************** Computed properties ********************/
 
-  var selectedAtom: PDBAtom? {
+  var selectedAtom: PDBAtomLight? {
     didSet { updateSelectedAtom(to: selectedAtom) }
   }
 
@@ -61,11 +61,11 @@ class ProteinViewController: UIViewController {
   //----------------------------------------------------------------------------
   // MARK: - Update
   //----------------------------------------------------------------------------
-  private func updateSelectedAtom(to atom: PDBAtom?) {
+  private func updateSelectedAtom(to atom: PDBAtomLight?) {
     updateSelectedAtomNameLabel(with: atom)
   }
 
-  private func updateSelectedAtomNameLabel(with atom: PDBAtom?) {
+  private func updateSelectedAtomNameLabel(with atom: PDBAtomLight?) {
     guard let atom = atom else {
       selectedAtomNameLabel.text = " "
       return

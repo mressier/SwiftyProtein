@@ -13,7 +13,7 @@ enum ColorMode {
 
   /******************** Tools ********************/
 
-  func color(for atom: PDBAtom)  -> UIColor {
+  func color(for atom: PDBAtomLight)  -> UIColor {
     guard let atomInfo = AtomsList.atomsBySymbol[atom.symbol] else {
       return defaultColor
     }
