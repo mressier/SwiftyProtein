@@ -1,14 +1,8 @@
-import UIKit
+import Foundation
 
-struct AtomInfo {
-  let name: String
-  let symbol: String
-  let cpkColor: UIColor
-}
+struct AtomsList {
 
-extension AtomInfo {
-
-  static let knownAtoms = [
+  static let atoms = [
     AtomInfo(name: "hydrogen", symbol: "H",  cpkColor: .white),
     AtomInfo(name: "carbon", symbol: "C",  cpkColor: .black),
     AtomInfo(name: "nitrogen", symbol: "N",  cpkColor: .blue),
@@ -41,11 +35,9 @@ extension AtomInfo {
     AtomInfo(name: "radium", symbol: "Ra", cpkColor: .darkGreen),
   ]
 
-  static let defaultCPKColor: UIColor = .systemPink
-
-  static var knownAtomsBySymbol: [String: AtomInfo] = {
+  static var atomsBySymbol: [String: AtomInfo] = {
     var bySymbol = [String: AtomInfo]()
-    for atom in AtomInfo.knownAtoms {
+    for atom in AtomsList.atoms {
       bySymbol[atom.symbol] = atom
     }
     return bySymbol

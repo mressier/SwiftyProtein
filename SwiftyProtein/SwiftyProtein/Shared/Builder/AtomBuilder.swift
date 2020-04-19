@@ -1,7 +1,7 @@
 import UIKit
 
 class AtomBuilder {
-  static func build() -> [Atom] {
+  static func build() -> [PDBAtom] {
     return FakeLigands.atp
   }
 }

@@ -7,7 +7,7 @@ struct ProteinSceneConfiguration {
   // MARK: - Tools
   //----------------------------------------------------------------------------
 
-  func getColor(for atom: Atom) -> UIColor {
+  func getColor(for atom: PDBAtom) -> UIColor {
     return colorMode.color(for: atom)
   }
 }

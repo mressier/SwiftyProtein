@@ -8,7 +8,7 @@ import SceneKit
  *
  ******************************************************************************/
 struct AtomNode {
-  let atom: Atom
+  let atom: PDBAtom
   let node: SCNNode
 
   var isSelected: Bool = false

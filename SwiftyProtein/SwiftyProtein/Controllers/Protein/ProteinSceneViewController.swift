@@ -25,13 +25,13 @@ class ProteinSceneViewController: UIViewController {
   /******************** Protein Parameters ********************/
 
   /// Atoms to show on the scene
-  var atoms = [Atom]()
+  var atoms = [PDBAtom]()
 
   private var atomsDictionary = [SCNNode: AtomNode]()
 
   /********************  Callbacks  ********************/
 
-  var didSelectAtom: ((Atom) -> Void)?
+  var didSelectAtom: ((PDBAtom) -> Void)?
   var didUnselectAtom: (() -> Void)?
 
   //----------------------------------------------------------------------------
