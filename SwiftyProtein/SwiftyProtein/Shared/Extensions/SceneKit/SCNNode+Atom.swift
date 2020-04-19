@@ -13,8 +13,10 @@ extension SCNNode {
 
   /// Create nodes for atoms with their positions, color and text in the current node
   @discardableResult
-  func createAtomNodes(forAtoms atoms: [PDBAtomLight],
-                       config: ProteinSceneConfiguration) -> [AtomNode] {
+  func createAtomNodes(
+    forAtoms atoms: [PDBAtomLight],
+    config: ProteinSceneConfiguration = .default
+  ) -> [AtomNode] {
     var nodes = [AtomNode]()
 
     for atom in atoms {

@@ -18,10 +18,12 @@ extension PDBLigandConverter {
     func checkInputType(_ string: String) -> Bool {
       switch self {
       case .atomList:
-        return PDBLigandConverter.isAtomInput(string: string)
+        let isAtom = PDBLigandConverter.isAtomInput(string: string)
+        let isHetatm = PDBLigandConverter.isHetatmInput(string: string)
+        return isAtom || isHetatm
       case .connectionList:
-        return PDBLigandConverter.isConnectionInput(string: string)
-      case .end: return false
+        return PDBLigandConverter.isConectInput(string: string)
+      case .end: return PDBLigandConverter.isEndInput(string: string)
       }
     }
   }

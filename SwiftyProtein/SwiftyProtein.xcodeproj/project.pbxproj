@@ -19,7 +19,7 @@
 		A91CF357244C7BC100294568 /* PDBLigandConverter+Atom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91CF356244C7BC100294568 /* PDBLigandConverter+Atom.swift */; };
 		A91CF359244C7BEE00294568 /* PDBLigandConverter+Connect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91CF358244C7BEE00294568 /* PDBLigandConverter+Connect.swift */; };
 		A91CF35B244C7DE800294568 /* PDBAtom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91CF35A244C7DE800294568 /* PDBAtom.swift */; };
-		A91CF35D244C860A00294568 /* PDBLigandConverter+FileProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91CF35C244C860A00294568 /* PDBLigandConverter+FileProgress.swift */; };
+		A91CF35D244C860A00294568 /* PDBLigandConverter+ReadState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91CF35C244C860A00294568 /* PDBLigandConverter+ReadState.swift */; };
 		A922802723F83DB100BA4F5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A922802623F83DB100BA4F5D /* AppDelegate.swift */; };
 		A922802B23F83DB100BA4F5D /* ProteinSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A922802A23F83DB100BA4F5D /* ProteinSceneViewController.swift */; };
 		A922802E23F83DB100BA4F5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A922802C23F83DB100BA4F5D /* Main.storyboard */; };
@@ -28,6 +28,14 @@
 		A922804023F846A700BA4F5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A922803D23F846A700BA4F5D /* Assets.xcassets */; };
 		A922804123F846A700BA4F5D /* ligands.txt in Resources */ = {isa = PBXBuildFile; fileRef = A922803E23F846A700BA4F5D /* ligands.txt */; };
 		A922804723F84E2C00BA4F5D /* SCNNode+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A922804623F84E2C00BA4F5D /* SCNNode+extension.swift */; };
+		A94DD736244C92740034C6AF /* PDBLigandConverter+AtomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94DD735244C92740034C6AF /* PDBLigandConverter+AtomTests.swift */; };
+		A94DD738244C957B0034C6AF /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94DD737244C957B0034C6AF /* String+Extension.swift */; };
+		A94DD73B244CA9D60034C6AF /* String+TrimmedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94DD73A244CA9D60034C6AF /* String+TrimmedTests.swift */; };
+		A94DD73D244CAE410034C6AF /* PDBLigandConverter+InputTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94DD73C244CAE410034C6AF /* PDBLigandConverter+InputTypeTests.swift */; };
+		A94DD73F244CB3080034C6AF /* PDBLigandConverter+ConectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94DD73E244CB3080034C6AF /* PDBLigandConverter+ConectTests.swift */; };
+		A94DD750244CB9480034C6AF /* PDBLigandConverter+End.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94DD74F244CB9480034C6AF /* PDBLigandConverter+End.swift */; };
+		A94DD752244CB9E40034C6AF /* PDBConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94DD751244CB9E40034C6AF /* PDBConnection.swift */; };
+		A9597A76244CC29C004E732E /* PDBLigandConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9597A75244CC29C004E732E /* PDBLigandConverterTests.swift */; };
 		A9718EE4243B9A32005DA378 /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9718EE3243B9A32005DA378 /* UIViewController+extension.swift */; };
 		A9718EF2243B9AF5005DA378 /* UIView+gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9718EED243B9AF5005DA378 /* UIView+gradient.swift */; };
 		A9718EF3243B9AF5005DA378 /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9718EEE243B9AF5005DA378 /* UIView+extension.swift */; };
@@ -75,7 +83,7 @@
 		A91CF356244C7BC100294568 /* PDBLigandConverter+Atom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDBLigandConverter+Atom.swift"; sourceTree = "<group>"; };
 		A91CF358244C7BEE00294568 /* PDBLigandConverter+Connect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDBLigandConverter+Connect.swift"; sourceTree = "<group>"; };
 		A91CF35A244C7DE800294568 /* PDBAtom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDBAtom.swift; sourceTree = "<group>"; };
-		A91CF35C244C860A00294568 /* PDBLigandConverter+FileProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDBLigandConverter+FileProgress.swift"; sourceTree = "<group>"; };
+		A91CF35C244C860A00294568 /* PDBLigandConverter+ReadState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDBLigandConverter+ReadState.swift"; sourceTree = "<group>"; };
 		A922802323F83DB100BA4F5D /* SwiftyProtein.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyProtein.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A922802623F83DB100BA4F5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A922802A23F83DB100BA4F5D /* ProteinSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProteinSceneViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +94,14 @@
 		A922803D23F846A700BA4F5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A922803E23F846A700BA4F5D /* ligands.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ligands.txt; sourceTree = "<group>"; };
 		A922804623F84E2C00BA4F5D /* SCNNode+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNNode+extension.swift"; sourceTree = "<group>"; };
+		A94DD735244C92740034C6AF /* PDBLigandConverter+AtomTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDBLigandConverter+AtomTests.swift"; sourceTree = "<group>"; };
+		A94DD737244C957B0034C6AF /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		A94DD73A244CA9D60034C6AF /* String+TrimmedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+TrimmedTests.swift"; sourceTree = "<group>"; };
+		A94DD73C244CAE410034C6AF /* PDBLigandConverter+InputTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDBLigandConverter+InputTypeTests.swift"; sourceTree = "<group>"; };
+		A94DD73E244CB3080034C6AF /* PDBLigandConverter+ConectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDBLigandConverter+ConectTests.swift"; sourceTree = "<group>"; };
+		A94DD74F244CB9480034C6AF /* PDBLigandConverter+End.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDBLigandConverter+End.swift"; sourceTree = "<group>"; };
+		A94DD751244CB9E40034C6AF /* PDBConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDBConnection.swift; sourceTree = "<group>"; };
+		A9597A75244CC29C004E732E /* PDBLigandConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDBLigandConverterTests.swift; sourceTree = "<group>"; };
 		A9718EE3243B9A32005DA378 /* UIViewController+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+extension.swift"; path = "SwiftyProtein/Shared/Library/Extensions/UIKit/UIViewController+extension.swift"; sourceTree = SOURCE_ROOT; };
 		A9718EED243B9AF5005DA378 /* UIView+gradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+gradient.swift"; sourceTree = "<group>"; };
 		A9718EEE243B9AF5005DA378 /* UIView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
@@ -174,10 +190,12 @@
 				A91CF35A244C7DE800294568 /* PDBAtom.swift */,
 				A910E40923F87E78008F9020 /* PDBAtomLight.swift */,
 				A91CF351244C656B00294568 /* PDBAtomPosition.swift */,
+				A94DD751244CB9E40034C6AF /* PDBConnection.swift */,
 				A91CF354244C7B9900294568 /* PDBLigandConverter.swift */,
 				A91CF356244C7BC100294568 /* PDBLigandConverter+Atom.swift */,
 				A91CF358244C7BEE00294568 /* PDBLigandConverter+Connect.swift */,
-				A91CF35C244C860A00294568 /* PDBLigandConverter+FileProgress.swift */,
+				A91CF35C244C860A00294568 /* PDBLigandConverter+ReadState.swift */,
+				A94DD74F244CB9480034C6AF /* PDBLigandConverter+End.swift */,
 			);
 			path = PDB;
 			sourceTree = "<group>";
@@ -266,11 +284,31 @@
 		A922804523F84E1900BA4F5D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				A94DD737244C957B0034C6AF /* String+Extension.swift */,
 				A9F3E7D124421A68000D62A1 /* UIColor+extension.swift */,
 				A9718EF8243B9BBA005DA378 /* NSLayoutConstraint+extension.swift */,
 				A9718EE3243B9A32005DA378 /* UIViewController+extension.swift */,
 				A9718EEB243B9AF5005DA378 /* UIView */,
 				A9718EE2243B99E9005DA378 /* SceneKit */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A94DD734244C92580034C6AF /* PDBLigandConverter */ = {
+			isa = PBXGroup;
+			children = (
+				A94DD735244C92740034C6AF /* PDBLigandConverter+AtomTests.swift */,
+				A94DD73C244CAE410034C6AF /* PDBLigandConverter+InputTypeTests.swift */,
+				A94DD73E244CB3080034C6AF /* PDBLigandConverter+ConectTests.swift */,
+				A9597A75244CC29C004E732E /* PDBLigandConverterTests.swift */,
+			);
+			path = PDBLigandConverter;
+			sourceTree = "<group>";
+		};
+		A94DD739244CA9C20034C6AF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A94DD73A244CA9D60034C6AF /* String+TrimmedTests.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -317,6 +355,8 @@
 		A9934580242FD19200C6B043 /* SwiftyProteinTests */ = {
 			isa = PBXGroup;
 			children = (
+				A94DD739244CA9C20034C6AF /* Extensions */,
+				A94DD734244C92580034C6AF /* PDBLigandConverter */,
 				A9934581242FD19200C6B043 /* SwiftyProteinTests.swift */,
 				A9934583242FD19200C6B043 /* Info.plist */,
 				A9934589242FD1B400C6B043 /* AtomNode+ArrayTests.swift */,
@@ -491,6 +531,7 @@
 				A91CF350244C651400294568 /* AtomsList.swift in Sources */,
 				A993458C242FD52D00C6B043 /* SCNNode+Atom.swift in Sources */,
 				A9718EF2243B9AF5005DA378 /* UIView+gradient.swift in Sources */,
+				A94DD750244CB9480034C6AF /* PDBLigandConverter+End.swift in Sources */,
 				A9F3E7D4244221CD000D62A1 /* AtomInfo.swift in Sources */,
 				A91A5510243B9601003DF261 /* ProteinViewController.swift in Sources */,
 				A9F3E7D224421A68000D62A1 /* UIColor+extension.swift in Sources */,
@@ -506,11 +547,13 @@
 				A91CF357244C7BC100294568 /* PDBLigandConverter+Atom.swift in Sources */,
 				A9F3E7E724423731000D62A1 /* NibInstanciable.swift in Sources */,
 				A993458E242FF4FF00C6B043 /* SCNView+extension.swift in Sources */,
-				A91CF35D244C860A00294568 /* PDBLigandConverter+FileProgress.swift in Sources */,
+				A91CF35D244C860A00294568 /* PDBLigandConverter+ReadState.swift in Sources */,
 				A9F3E7E624423731000D62A1 /* Reusable.swift in Sources */,
 				A910E40523F85DF0008F9020 /* SCNGeometry+extension.swift in Sources */,
+				A94DD738244C957B0034C6AF /* String+Extension.swift in Sources */,
 				A9F3E7D824422C47000D62A1 /* ProteinSceneConfiguration+ColorMode.swift in Sources */,
 				A9718EF9243B9BBA005DA378 /* NSLayoutConstraint+extension.swift in Sources */,
+				A94DD752244CB9E40034C6AF /* PDBConnection.swift in Sources */,
 				A910E40A23F87E78008F9020 /* PDBAtomLight.swift in Sources */,
 				A910E40823F87B83008F9020 /* PathBounds.swift in Sources */,
 				A9F3E7EC244247F7000D62A1 /* ClampedPropertyWrapper.swift in Sources */,
@@ -523,8 +566,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A94DD736244C92740034C6AF /* PDBLigandConverter+AtomTests.swift in Sources */,
+				A94DD73D244CAE410034C6AF /* PDBLigandConverter+InputTypeTests.swift in Sources */,
 				A993458A242FD1B400C6B043 /* AtomNode+ArrayTests.swift in Sources */,
 				A9934582242FD19200C6B043 /* SwiftyProteinTests.swift in Sources */,
+				A94DD73F244CB3080034C6AF /* PDBLigandConverter+ConectTests.swift in Sources */,
+				A94DD73B244CA9D60034C6AF /* String+TrimmedTests.swift in Sources */,
+				A9597A76244CC29C004E732E /* PDBLigandConverterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

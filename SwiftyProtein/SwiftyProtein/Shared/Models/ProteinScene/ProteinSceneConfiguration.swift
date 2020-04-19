@@ -3,6 +3,8 @@ import UIKit
 struct ProteinSceneConfiguration {
   var colorMode: ColorMode
 
+  static var `default` = ProteinSceneConfiguration(colorMode: .cpk)
+
   //----------------------------------------------------------------------------
   // MARK: - Tools
   //----------------------------------------------------------------------------
