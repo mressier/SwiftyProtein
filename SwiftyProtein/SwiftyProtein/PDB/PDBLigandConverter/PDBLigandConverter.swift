@@ -6,7 +6,7 @@ struct PDBLigandConverter {
   // MARK: - Create atoms from lines instructions
   //----------------------------------------------------------------------------
 
-  static func atoms(from lines: [String]) throws -> [PDBAtom] {
+  static func ligand(from lines: [String]) throws -> PDBLigand {
     var state: ReadState = .atomList
     var atoms = [PDBAtom]()
     var atomsConnections = [PDBConnection]()
@@ -37,7 +37,7 @@ struct PDBLigandConverter {
 
     atoms.applyConnections(atomsConnections)
 
-    return atoms
+    return PDBLigand(atoms: atoms)
   }
 }
 
