@@ -33,6 +33,7 @@ class ProteinViewController: UIViewController {
     super.viewDidLoad()
 
     setup()
+    loadLigand()
   }
 
   private func setup() {
@@ -49,13 +50,22 @@ class ProteinViewController: UIViewController {
       self?.selectedAtom = nil
     }
 
-    proteinSceneVC.atoms = AtomBuilder.build()
-
     add(asChildViewController: proteinSceneVC, on: proteinSceneContainerView)
   }
 
   private func setupAtomLabel() {
     selectedAtomNameLabel.text = " "
+  }
+
+  private func loadLigand() {
+    AtomBuilder.build(ligand: "AU") { [weak self] result in
+      switch result {
+      case .success(let atoms):
+        self?.proteinSceneVC.atoms = atoms
+        self?.proteinSceneVC.reload()
+      default: print("hoho")
+      }
+    }
   }
 
   //----------------------------------------------------------------------------

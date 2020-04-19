@@ -43,16 +43,6 @@ class ProteinSceneViewController: UIViewController {
     setup()
   }
 
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-
-    let atomNodes = viewNode.createAtomNodes(forAtoms: atoms,
-                                             config: configuration)
-    viewNode.createLinks(between: atomNodes.extractAtomPairs())
-
-    atomsDictionary = atomNodes.dictionaryByNode
-  }
-
   private func setup() {
     setupScene()
     setupLights(on: scene)
@@ -92,6 +82,22 @@ class ProteinSceneViewController: UIViewController {
     let selector = #selector(self.didTapOnScene)
     let tap = UITapGestureRecognizer(target: self, action: selector)
     sceneView.addGestureRecognizer(tap)
+  }
+
+  //----------------------------------------------------------------------------
+  // MARK: - Reload
+  //----------------------------------------------------------------------------
+
+  func reload() {
+    for atomNode in atomsDictionary.values {
+      atomNode.node.removeFromParentNode()
+    }
+
+    let atomNodes = viewNode.createAtomNodes(forAtoms: atoms,
+                                             config: configuration)
+    viewNode.createLinks(between: atomNodes.extractAtomPairs())
+
+    atomsDictionary = atomNodes.dictionaryByNode
   }
 
   //----------------------------------------------------------------------------
