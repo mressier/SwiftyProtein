@@ -7,7 +7,7 @@ import SceneKit
  * Informations about an atom
  *
  ******************************************************************************/
-struct PDBAtom: Hashable {
+struct PDBAtomLight: Hashable {
   let index: Int
   let symbol: String
   let position: PDBAtomPosition
@@ -39,7 +39,7 @@ struct PDBAtom: Hashable {
 
   /******************** Overr ********************/
 
-  static func == (lhs: PDBAtom, rhs: PDBAtom) -> Bool {
+  static func == (lhs: PDBAtomLight, rhs: PDBAtomLight) -> Bool {
     return lhs.index == rhs.index && lhs.symbol == rhs.symbol
   }
 }

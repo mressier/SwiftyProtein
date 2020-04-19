@@ -28,6 +28,12 @@ struct PDBAtomPosition: Hashable {
     self.z = z * mult
   }
 
+  init(x: Float,
+       y: Float,
+       z: Float) {
+    self.init(x: CGFloat(x), y: CGFloat(y), z: CGFloat(z))
+  }
+
   //----------------------------------------------------------------------------
   // MARK: - Tools
   //----------------------------------------------------------------------------
