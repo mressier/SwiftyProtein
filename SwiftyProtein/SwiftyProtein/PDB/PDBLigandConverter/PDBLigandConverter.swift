@@ -3,18 +3,6 @@ import Foundation
 struct PDBLigandConverter {
 
   //----------------------------------------------------------------------------
-  // MARK: - Converter Errors
-  //----------------------------------------------------------------------------
-
-  enum ContentError: Error {
-    case invalidAtomLineFormat(_ description: String)
-    case invalidAtomValue(_ value: String)
-    case invalidConectLineFormat(_ description: String)
-    case invalidConectIndex(_ string: String)
-    case invalidFormat(_ description: String)
-  }
-
-  //----------------------------------------------------------------------------
   // MARK: - Create atoms from lines instructions
   //----------------------------------------------------------------------------
 
@@ -53,9 +41,13 @@ struct PDBLigandConverter {
   }
 }
 
+//------------------------------------------------------------------------------
+// MARK: - Array
+//------------------------------------------------------------------------------
+
 extension Array where Element == PDBAtom {
 
-  mutating func applyConnections(_ connections: [PDBConnection]) {
+  fileprivate mutating func applyConnections(_ connections: [PDBConnection]) {
     for (index, atom) in self.enumerated() {
       let connectionsForAtom = connections.filter() { $0.source == atom.index }
       let linkedsAtomIndexes = connectionsForAtom.map() { $0.linkedTo }.joined()
