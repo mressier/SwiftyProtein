@@ -55,6 +55,10 @@
 		A993458C242FD52D00C6B043 /* SCNNode+Atom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A993458B242FD52D00C6B043 /* SCNNode+Atom.swift */; };
 		A993458E242FF4FF00C6B043 /* SCNView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A993458D242FF4FF00C6B043 /* SCNView+extension.swift */; };
 		A9A3A9FD23F9CC5D00A19E17 /* SCNVector3+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A3A9FC23F9CC5D00A19E17 /* SCNVector3+extension.swift */; };
+		A9C794582450D69E00B5FFA2 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C794572450D69E00B5FFA2 /* NetworkRequest.swift */; };
+		A9C7945A2450D73300B5FFA2 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C794592450D73300B5FFA2 /* RequestError.swift */; };
+		A9C7945C2450D77B00B5FFA2 /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7945B2450D77B00B5FFA2 /* URLBuilder.swift */; };
+		A9C7945E2450D89D00B5FFA2 /* PDBRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7945D2450D89D00B5FFA2 /* PDBRequest.swift */; };
 		A9F3E7D224421A68000D62A1 /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F3E7D124421A68000D62A1 /* UIColor+extension.swift */; };
 		A9F3E7D4244221CD000D62A1 /* AtomInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F3E7D3244221CD000D62A1 /* AtomInfo.swift */; };
 		A9F3E7D624422C1A000D62A1 /* ProteinSceneConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F3E7D524422C1A000D62A1 /* ProteinSceneConfiguration.swift */; };
@@ -128,6 +132,10 @@
 		A993458B242FD52D00C6B043 /* SCNNode+Atom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNNode+Atom.swift"; sourceTree = "<group>"; };
 		A993458D242FF4FF00C6B043 /* SCNView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNView+extension.swift"; sourceTree = "<group>"; };
 		A9A3A9FC23F9CC5D00A19E17 /* SCNVector3+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNVector3+extension.swift"; sourceTree = "<group>"; };
+		A9C794572450D69E00B5FFA2 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		A9C794592450D73300B5FFA2 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
+		A9C7945B2450D77B00B5FFA2 /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
+		A9C7945D2450D89D00B5FFA2 /* PDBRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDBRequest.swift; sourceTree = "<group>"; };
 		A9F3E7D124421A68000D62A1 /* UIColor+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; };
 		A9F3E7D3244221CD000D62A1 /* AtomInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomInfo.swift; sourceTree = "<group>"; };
 		A9F3E7D524422C1A000D62A1 /* ProteinSceneConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProteinSceneConfiguration.swift; sourceTree = "<group>"; };
@@ -199,7 +207,7 @@
 		A91CF353244C7B8800294568 /* PDB */ = {
 			isa = PBXGroup;
 			children = (
-				A9597A7B244CC6CE004E732E /* PDBLigandProvider */,
+				A9597A7B244CC6CE004E732E /* PDB API */,
 				A9597A78244CC5BF004E732E /* PDBLigandConverter */,
 				A9597A77244CC59C004E732E /* Model */,
 			);
@@ -268,6 +276,7 @@
 		A922804323F84DFD00BA4F5D /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				A9C794562450D68D00B5FFA2 /* Network */,
 				A9F3E7EA244247F7000D62A1 /* PropertyWrapper */,
 				A9F3E7E1244235A8000D62A1 /* Views */,
 				A9718EEA243B9A51005DA378 /* Protocols */,
@@ -344,12 +353,13 @@
 			path = PDBLigandConverter;
 			sourceTree = "<group>";
 		};
-		A9597A7B244CC6CE004E732E /* PDBLigandProvider */ = {
+		A9597A7B244CC6CE004E732E /* PDB API */ = {
 			isa = PBXGroup;
 			children = (
+				A9C7945D2450D89D00B5FFA2 /* PDBRequest.swift */,
 				A9597A7C244CC6E2004E732E /* PDBLigandProvider.swift */,
 			);
-			path = PDBLigandProvider;
+			path = "PDB API";
 			sourceTree = "<group>";
 		};
 		A9597A83244CCDA5004E732E /* PDBLigandProvider */ = {
@@ -411,6 +421,16 @@
 				A9934589242FD1B400C6B043 /* AtomNode+ArrayTests.swift */,
 			);
 			path = SwiftyProteinTests;
+			sourceTree = "<group>";
+		};
+		A9C794562450D68D00B5FFA2 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A9C794572450D69E00B5FFA2 /* NetworkRequest.swift */,
+				A9C794592450D73300B5FFA2 /* RequestError.swift */,
+				A9C7945B2450D77B00B5FFA2 /* URLBuilder.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		A9F3E7D92442316F000D62A1 /* Protein */ = {
@@ -584,6 +604,7 @@
 				A9718EF2243B9AF5005DA378 /* UIView+gradient.swift in Sources */,
 				A94DD750244CB9480034C6AF /* PDBLigandConverter+End.swift in Sources */,
 				A9F3E7D4244221CD000D62A1 /* AtomInfo.swift in Sources */,
+				A9C7945E2450D89D00B5FFA2 /* PDBRequest.swift in Sources */,
 				A91A5510243B9601003DF261 /* ProteinViewController.swift in Sources */,
 				A9F3E7D224421A68000D62A1 /* UIColor+extension.swift in Sources */,
 				A9F3E7E3244235BF000D62A1 /* TextStepperView.swift in Sources */,
@@ -591,6 +612,7 @@
 				A9718EF7243B9B78005DA378 /* ConstraintType.swift in Sources */,
 				A922802723F83DB100BA4F5D /* AppDelegate.swift in Sources */,
 				A9597A7D244CC6E2004E732E /* PDBLigandProvider.swift in Sources */,
+				A9C7945C2450D77B00B5FFA2 /* URLBuilder.swift in Sources */,
 				A922803F23F846A700BA4F5D /* Assets.swift in Sources */,
 				A9718EF3243B9AF5005DA378 /* UIView+extension.swift in Sources */,
 				A91CF35B244C7DE800294568 /* PDBAtom.swift in Sources */,
@@ -607,9 +629,11 @@
 				A94DD738244C957B0034C6AF /* String+Extension.swift in Sources */,
 				A9F3E7D824422C47000D62A1 /* ProteinSceneConfiguration+ColorMode.swift in Sources */,
 				A9718EF9243B9BBA005DA378 /* NSLayoutConstraint+extension.swift in Sources */,
+				A9C7945A2450D73300B5FFA2 /* RequestError.swift in Sources */,
 				A94DD752244CB9E40034C6AF /* PDBConnection.swift in Sources */,
 				A910E40A23F87E78008F9020 /* PDBAtomLight.swift in Sources */,
 				A910E40823F87B83008F9020 /* PathBounds.swift in Sources */,
+				A9C794582450D69E00B5FFA2 /* NetworkRequest.swift in Sources */,
 				A9F3E7EC244247F7000D62A1 /* ClampedPropertyWrapper.swift in Sources */,
 				A9718EF4243B9AF5005DA378 /* UIView+appearance.swift in Sources */,
 				A910E40F23F8838D008F9020 /* AtomNode.swift in Sources */,

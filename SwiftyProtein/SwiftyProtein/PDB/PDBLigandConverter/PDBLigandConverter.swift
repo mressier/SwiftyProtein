@@ -6,6 +6,11 @@ struct PDBLigandConverter {
   // MARK: - Create atoms from lines instructions
   //----------------------------------------------------------------------------
 
+  static func ligand(from fileContent: String) throws -> PDBLigand {
+    let lines = fileContent.split(separator: "\n").map() { String($0) }
+    return try ligand(from: lines)
+  }
+
   static func ligand(from lines: [String]) throws -> PDBLigand {
     var state: ReadState = .atomList
     var atoms = [PDBAtom]()
