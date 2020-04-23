@@ -7,14 +7,13 @@ class AtomBuilder {
 
   static func build(
     ligand: String,
-    completion: @escaping ((Result<[PDBAtomLight], Error>) -> Void)
+    completion: @escaping ((Result<PDBLigandLight, Error>) -> Void)
   ) {
     PDBLigandProvider.getLigand(ligand) { result in
       switch result {
       case .failure(let error): completion(.failure(error))
       case .success(let ligand):
-        let lightLigand = ligand.atoms.map() { $0.lightAtom }
-        completion(.success(lightLigand))
+        completion(.success(PDBLigandLight(ligand: ligand)))
       }
     }
   }

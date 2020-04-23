@@ -58,10 +58,14 @@ class ProteinViewController: UIViewController {
   }
 
   private func loadLigand() {
-    AtomBuilder.build(ligand: "10R") { [weak self] result in
+    let ligandName = "10R"
+
+    self.title = ligandName
+
+    AtomBuilder.build(ligand: ligandName) { [weak self] result in
       switch result {
-      case .success(let atoms):
-        self?.proteinSceneVC.atoms = atoms
+      case .success(let ligand):
+        self?.proteinSceneVC.atoms = ligand.atoms
         self?.proteinSceneVC.reload()
       default: print("hoho")
       }
