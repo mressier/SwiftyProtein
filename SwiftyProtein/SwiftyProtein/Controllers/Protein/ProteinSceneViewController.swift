@@ -25,13 +25,13 @@ class ProteinSceneViewController: UIViewController {
   /******************** Protein Parameters ********************/
 
   /// Atoms to show on the scene
-  var atoms = [PDBAtom]()
+  var atoms = [PDBAtomLight]()
 
   private var atomsDictionary = [SCNNode: AtomNode]()
 
   /********************  Callbacks  ********************/
 
-  var didSelectAtom: ((PDBAtom) -> Void)?
+  var didSelectAtom: ((PDBAtomLight) -> Void)?
   var didUnselectAtom: (() -> Void)?
 
   //----------------------------------------------------------------------------
@@ -41,16 +41,6 @@ class ProteinSceneViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setup()
-  }
-
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-
-    let atomNodes = viewNode.createAtomNodes(forAtoms: atoms,
-                                             config: configuration)
-    viewNode.createLinks(between: atomNodes.extractAtomPairs())
-
-    atomsDictionary = atomNodes.dictionaryByNode
   }
 
   private func setup() {
@@ -92,6 +82,22 @@ class ProteinSceneViewController: UIViewController {
     let selector = #selector(self.didTapOnScene)
     let tap = UITapGestureRecognizer(target: self, action: selector)
     sceneView.addGestureRecognizer(tap)
+  }
+
+  //----------------------------------------------------------------------------
+  // MARK: - Reload
+  //----------------------------------------------------------------------------
+
+  func reload() {
+    for atomNode in atomsDictionary.values {
+      atomNode.node.removeFromParentNode()
+    }
+
+    let atomNodes = viewNode.createAtomNodes(forAtoms: atoms,
+                                             config: configuration)
+    viewNode.createLinks(between: atomNodes.extractAtomPairs())
+
+    atomsDictionary = atomNodes.dictionaryByNode
   }
 
   //----------------------------------------------------------------------------

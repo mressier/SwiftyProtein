@@ -11,7 +11,7 @@ class ProteinViewController: UIViewController {
 
   /******************** Computed properties ********************/
 
-  var selectedAtom: PDBAtom? {
+  var selectedAtom: PDBAtomLight? {
     didSet { updateSelectedAtom(to: selectedAtom) }
   }
 
@@ -33,6 +33,7 @@ class ProteinViewController: UIViewController {
     super.viewDidLoad()
 
     setup()
+    loadLigand()
   }
 
   private func setup() {
@@ -49,8 +50,6 @@ class ProteinViewController: UIViewController {
       self?.selectedAtom = nil
     }
 
-    proteinSceneVC.atoms = AtomBuilder.build()
-
     add(asChildViewController: proteinSceneVC, on: proteinSceneContainerView)
   }
 
@@ -58,14 +57,25 @@ class ProteinViewController: UIViewController {
     selectedAtomNameLabel.text = " "
   }
 
+  private func loadLigand() {
+    AtomBuilder.build(ligand: "10R") { [weak self] result in
+      switch result {
+      case .success(let atoms):
+        self?.proteinSceneVC.atoms = atoms
+        self?.proteinSceneVC.reload()
+      default: print("hoho")
+      }
+    }
+  }
+
   //----------------------------------------------------------------------------
   // MARK: - Update
   //----------------------------------------------------------------------------
-  private func updateSelectedAtom(to atom: PDBAtom?) {
+  private func updateSelectedAtom(to atom: PDBAtomLight?) {
     updateSelectedAtomNameLabel(with: atom)
   }
 
-  private func updateSelectedAtomNameLabel(with atom: PDBAtom?) {
+  private func updateSelectedAtomNameLabel(with atom: PDBAtomLight?) {
     guard let atom = atom else {
       selectedAtomNameLabel.text = " "
       return
