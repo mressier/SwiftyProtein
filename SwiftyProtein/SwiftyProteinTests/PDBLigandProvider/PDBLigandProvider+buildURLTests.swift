@@ -4,17 +4,20 @@ import XCTest
 class PDBLigandProvider_buildURLTests: XCTestCase {
 
   func testBuildURL() {
-    let url = PDBLigandProvider.buildURL(forLigand: "ATP")
+    let url = URLBuilder.build(forLigand: "ATP",
+                               urlPrefix: "",
+                               urlSuffix: "")
 
-    XCTAssertEqual(url,
-                   "http://ligand-expo.rcsb.org/reports/A/ATP/ATP_ideal.pdb")
+    XCTAssertEqual(url, "A/ATP/ATP")
   }
 
   func testBuildURL2() {
-    let url = PDBLigandProvider.buildURL(forLigand: "BU")
 
-    XCTAssertEqual(url,
-                   "http://ligand-expo.rcsb.org/reports/B/BU/BU_ideal.pdb")
+    let url = URLBuilder.build(forLigand: "BU",
+                               urlPrefix: "",
+                               urlSuffix: "")
+
+    XCTAssertEqual(url, "B/BU/BU")
   }
 
 }

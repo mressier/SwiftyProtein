@@ -58,7 +58,7 @@ class ProteinViewController: UIViewController {
   }
 
   private func loadLigand() {
-    AtomBuilder.build(ligand: "AU") { [weak self] result in
+    AtomBuilder.build(ligand: "10R") { [weak self] result in
       switch result {
       case .success(let atoms):
         self?.proteinSceneVC.atoms = atoms

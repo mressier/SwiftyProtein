@@ -15,7 +15,6 @@ class AtomBuilder {
       case .success(let ligand):
         let lightLigand = ligand.atoms.map() { $0.lightAtom }
         completion(.success(lightLigand))
-      default: return
       }
     }
   }
