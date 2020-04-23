@@ -51,8 +51,11 @@ extension Array where Element == AtomNode {
     let atomByIndex = self.dictionaryByIndex // O(nbOfAtoms)
 
     for atom in self { // O(nbOfAtoms)
-      let higherLinkedAtomIndexes =
-        atom.linkedAtoms.filter() { $0 > atom.index } // O(nbOfLinks)
+      let isHydrogen = atom.atom.symbol == AtomsList.hydrogen.symbol
+
+      let higherLinkedAtomIndexes = isHydrogen ?
+        atom.linkedAtoms : atom.linkedAtoms.filter() { $0 > atom.index }
+
       let linkedAtoms =
         AtomNodeDictionaryReader.getAtoms(on: atomByIndex,
                                           at: higherLinkedAtomIndexes) // O(nbOfLinks)

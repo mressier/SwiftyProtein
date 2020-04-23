@@ -12,10 +12,11 @@ class PDBLigandConverterTests: XCTestCase {
     let splittedString = AUString.split(separator: "\n").map() { String($0) }
 
     // When
-    let ligand = try? PDBLigandConverter.ligand(from: splittedString)
+    let ligand = try? PDBLigandConverter.ligand(name: "AU",
+                                                from: splittedString)
 
     // Then
-    XCTAssertEqual(PDBLigand(atoms: [
+    XCTAssertEqual(PDBLigand(name: "AU", atoms: [
       PDBAtom(index: 1,
               atomName: "AU",
               alternateLocationIndicator: "",

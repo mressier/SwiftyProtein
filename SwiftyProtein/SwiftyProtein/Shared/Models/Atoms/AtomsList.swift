@@ -2,8 +2,11 @@ import Foundation
 
 struct AtomsList {
 
+  static var hydrogen =
+    AtomInfo(name: "hydrogen", symbol: "H",  cpkColor: .white)
+
   static let atoms = [
-    AtomInfo(name: "hydrogen", symbol: "H",  cpkColor: .white),
+    AtomsList.hydrogen,
     AtomInfo(name: "carbon", symbol: "C",  cpkColor: .black),
     AtomInfo(name: "nitrogen", symbol: "N",  cpkColor: .blue),
     AtomInfo(name: "oxygen", symbol: "O",  cpkColor: .red),

@@ -2,7 +2,7 @@ import UIKit
 
 struct ProteinSceneConfiguration {
   var colorMode: ColorMode
-  var distanceMultiplier = CGFloat(3.0)
+  var distanceMultiplier = CGFloat(1.5)
 
   static var `default` = ProteinSceneConfiguration(colorMode: .cpk)
 
