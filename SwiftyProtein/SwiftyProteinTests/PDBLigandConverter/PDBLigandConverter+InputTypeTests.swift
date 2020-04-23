@@ -23,13 +23,13 @@ class PDBLigandConverter_InputTypeTest: XCTestCase {
     XCTAssertFalse(PDBLigandConverter.isHetatmInput(string: "HETAATM"))
   }
 
-  func testConectInput() {
-    XCTAssertTrue(PDBLigandConverter.isConectInput(string: "CONECT"))
-    XCTAssertTrue(PDBLigandConverter.isConectInput(string: "CONECT123"))
-    XCTAssertTrue(PDBLigandConverter.isConectInput(string: "CONECTT"))
+  func testConnectInput() {
+    XCTAssertTrue(PDBLigandConverter.isConnectInput(string: "CONECT"))
+    XCTAssertTrue(PDBLigandConverter.isConnectInput(string: "CONECT123"))
+    XCTAssertTrue(PDBLigandConverter.isConnectInput(string: "CONECTT"))
 
-    XCTAssertFalse(PDBLigandConverter.isConectInput(string: " CONECT"))
-    XCTAssertFalse(PDBLigandConverter.isConectInput(string: "CONECQT"))
+    XCTAssertFalse(PDBLigandConverter.isConnectInput(string: " CONECT"))
+    XCTAssertFalse(PDBLigandConverter.isConnectInput(string: "CONECQT"))
   }
 
 }

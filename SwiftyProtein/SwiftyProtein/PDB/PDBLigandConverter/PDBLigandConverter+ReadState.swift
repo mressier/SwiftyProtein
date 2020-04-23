@@ -22,7 +22,7 @@ extension PDBLigandConverter {
         let isHetatm = PDBLigandConverter.isHetatmInput(string: string)
         return isAtom || isHetatm
       case .connectionList:
-        return PDBLigandConverter.isConectInput(string: string)
+        return PDBLigandConverter.isConnectInput(string: string)
       case .end: return PDBLigandConverter.isEndInput(string: string)
       }
     }

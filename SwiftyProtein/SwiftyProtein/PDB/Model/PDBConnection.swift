@@ -15,9 +15,8 @@ struct PDBConnection: Equatable {
   //----------------------------------------------------------------------------
 
   init(_ linksList: [Int]) throws {
-
     guard linksList.count > 1 else {
-      throw PDBLigandConverter.ContentError.invalidConectIndex("\(linksList)")
+      throw PDBLigandConverter.ContentError.invalidConnectIndex("\(linksList)")
     }
     
     source = linksList[0]
