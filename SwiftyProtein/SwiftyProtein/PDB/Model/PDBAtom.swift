@@ -1,5 +1,11 @@
 import Foundation
 
+/*******************************************************************************
+ * PDBAtom
+ *
+ * Represent atom informations given by a PDB file
+ *
+ ******************************************************************************/
 struct PDBAtom: Equatable {
   var index: Int
   var atomName: String

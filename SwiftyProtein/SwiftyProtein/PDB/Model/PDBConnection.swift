@@ -1,13 +1,11 @@
-//
-//  PDBConnection.swift
-//  SwiftyProtein
-//
-//  Created by Mathilde Ressier on 19/04/2020.
-//  Copyright © 2020 Mathilde Ressier. All rights reserved.
-//
-
 import Foundation
 
+/*******************************************************************************
+ * PDBConnection
+ *
+ * Represent a connection between an atom with a given index and other atoms index
+ *
+ ******************************************************************************/
 struct PDBConnection: Equatable {
   let source: Int
   let linkedTo: [Int]

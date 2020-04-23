@@ -2,9 +2,9 @@ import UIKit
 import SceneKit
 
 /*******************************************************************************
- * Atom
+ * PDBAtomLight
  *
- * Informations about an atom
+ * Represent a light version of an atom with only informations required to display it.
  *
  ******************************************************************************/
 struct PDBAtomLight: Hashable {
@@ -37,7 +37,7 @@ struct PDBAtomLight: Hashable {
     return position.toSCNVector3
   }
 
-  /******************** Overr ********************/
+  /******************** Equatable ********************/
 
   static func == (lhs: PDBAtomLight, rhs: PDBAtomLight) -> Bool {
     return lhs.index == rhs.index && lhs.symbol == rhs.symbol
