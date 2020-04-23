@@ -12,7 +12,8 @@ struct PDBLigandProvider {
       case .failure(let error): completion(.failure(error))
       case .success(let fileContent):
         do {
-          let ligand = try PDBLigandConverter.ligand(from: fileContent)
+          let ligand =
+            try PDBLigandConverter.ligand(name: name, from: fileContent)
           completion(.success(ligand))
         } catch {
           completion(.failure(error))
