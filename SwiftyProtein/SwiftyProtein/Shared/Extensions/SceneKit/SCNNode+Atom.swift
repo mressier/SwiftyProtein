@@ -21,8 +21,9 @@ extension SCNNode {
 
     for atom in atoms {
       let color = config.getColor(for: atom)
+      let position = atom.position.multiplied(by: config.distanceMultiplier)
 
-      if let sphere = self.addSphere(color: color, at: atom.positionSCN) {
+      if let sphere = self.addSphere(color: color, at: position.toSCNVector3) {
         sphere.constraintToLookAtPointOfView()
         _ = sphere.addText(atom.symbol, color: .black, at: .zero)
 
