@@ -7,6 +7,9 @@ class AtomNodeArrayTests: XCTestCase {
   let sampleAtomNodes =
     SCNNode().createAtomNodes(forAtoms: FakeLigands.sample)
 
+  let sampleHydrogenNodes =
+    SCNNode().createAtomNodes(forAtoms: FakeLigands.hydrogenSample)
+
   func testAtomNodeArray_ExtractAtomPairsSample() {
     let atomNodes = sampleAtomNodes
     let expectedPairs = [
@@ -33,6 +36,25 @@ class AtomNodeArrayTests: XCTestCase {
         return $0.start == pair.start && $0.end == pair.end
       })
     }
+  }
 
+  func testExtractAtomPair_withHydrogen() {
+      let atomNodes = sampleHydrogenNodes
+      let expectedPairs = [
+        PathBounds(start: atomNodes[0], end: atomNodes[1]),
+        PathBounds(start: atomNodes[2], end: atomNodes[0])
+    ]
+
+      // When
+      let pairs = atomNodes.extractAtomPairs()
+
+      // Then
+      XCTAssertEqual(expectedPairs.count, pairs.count)
+
+      for pair in expectedPairs {
+        XCTAssertTrue(pairs.contains() {
+          return $0.start == pair.start && $0.end == pair.end
+        })
+      }
   }
 }
