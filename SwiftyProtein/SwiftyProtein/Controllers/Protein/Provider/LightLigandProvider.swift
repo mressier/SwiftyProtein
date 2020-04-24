@@ -1,19 +1,16 @@
 import UIKit
 
 class LightLigandProvider {
-  static func build() -> [PDBAtomLight] {
-    return FakeLigands.atp
-  }
 
-  static func build(
+  static func get(
     ligand: String,
-    completion: @escaping ((Result<PDBLigandLight, Error>) -> Void)
+    completion: @escaping ((Result<PDBLightLigand, Error>) -> Void)
   ) {
     PDBLigandProvider.getLigand(ligand) { result in
       switch result {
       case .failure(let error): completion(.failure(error))
       case .success(let ligand):
-        completion(.success(PDBLigandLight(ligand: ligand)))
+        completion(.success(PDBLightLigand(ligand: ligand)))
       }
     }
   }

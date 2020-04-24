@@ -20,12 +20,12 @@ struct PDBLigand: Equatable {
 }
 
 /*******************************************************************************
- * PDBLigandLight
+ * PDBLightLigand
  *
  * A light-weigth version of ligand informations from a PDB file
  *
  ******************************************************************************/
-struct PDBLigandLight: Equatable {
+struct PDBLightLigand: Equatable {
   let name: String
   let atoms: [PDBAtomLight]
 
@@ -42,7 +42,7 @@ struct PDBLigandLight: Equatable {
   // MARK: - Equatable
   //----------------------------------------------------------------------------
 
-  static func ==(_ lhs: PDBLigandLight, _ rhs: PDBLigandLight) -> Bool {
+  static func ==(_ lhs: PDBLightLigand, _ rhs: PDBLightLigand) -> Bool {
     return lhs.name == rhs.name && lhs.atoms == rhs.atoms
   }
 }
