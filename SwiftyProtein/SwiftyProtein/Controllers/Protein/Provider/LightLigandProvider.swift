@@ -1,6 +1,6 @@
 import UIKit
 
-class AtomBuilder {
+class LightLigandProvider {
   static func build() -> [PDBAtomLight] {
     return FakeLigands.atp
   }
