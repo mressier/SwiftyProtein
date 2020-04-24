@@ -62,7 +62,7 @@ class ProteinViewController: UIViewController {
 
     self.title = ligandName
 
-    AtomBuilder.build(ligand: ligandName) { [weak self] result in
+    LightLigandProvider.get(ligand: ligandName) { [weak self] result in
       switch result {
       case .success(let ligand):
         self?.proteinSceneVC.atoms = ligand.atoms
