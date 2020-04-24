@@ -56,9 +56,15 @@ struct FakeLigands {
     PDBAtomLight(index: 47, symbol: "H", position: APos(x: 0.166, y: -2.014, z:  8.490, mult: mult), linkedAtoms: [4,  1, 33]),
   ]
 
+  static let hydrogenSample = [
+    PDBAtomLight(index: 0, position: APos(x: 1.200, y: -0.226, z: -6.850), linkedAtoms: [1]),
+    PDBAtomLight(index: 1, position: APos(x: 1.740, y: 1.140, z: -6.672), linkedAtoms: [0]),
+    PDBAtomLight(index: 2, symbol: "H", position: APos(x: -0.302, y: -0.139, z: -7.421), linkedAtoms: [0]),
+  ]
+
   static let sample = [
-    PDBAtomLight(index: 0, position: APos(x: 1.200, y: -0.226, z: -6.850), linkedAtoms: [2, 4]),
-    PDBAtomLight(index: 1, position: APos(x: 1.740, y: 1.140, z: -6.672), linkedAtoms: [0, 4, 5]),
+    PDBAtomLight(index: 0, position: APos(x: 1.200, y: -0.226, z: -6.850), linkedAtoms: [1, 2, 4]),
+    PDBAtomLight(index: 1, position: APos(x: 1.740, y: 1.140, z: -6.672), linkedAtoms: [4, 5]),
     PDBAtomLight(index: 2, position: APos(x: -0.302, y: -0.139, z: -7.421), linkedAtoms: [0, 3]),
     PDBAtomLight(index: 3, position: APos(x:  0.255, y: -0.130, z: -4.446), linkedAtoms: [2, 4]),
     PDBAtomLight(index: 4, position: APos(x:  0.810, y: 1.234, z: -4.304), linkedAtoms: [0, 1, 3, 5, 6]),
