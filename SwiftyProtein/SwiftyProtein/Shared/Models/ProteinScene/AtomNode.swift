@@ -26,6 +26,12 @@ struct AtomNode {
   }
 }
 
+extension AtomNode: CustomStringConvertible {
+  var description: String {
+    return "\(index)"
+  }
+}
+
 /*******************************************************************************
  * AtomPair
  *
@@ -54,7 +60,7 @@ extension Array where Element == AtomNode {
       let isHydrogen = atom.atom.symbol == AtomsList.hydrogen.symbol
 
       let higherLinkedAtomIndexes = isHydrogen ?
-        atom.linkedAtoms : atom.linkedAtoms.filter() { $0 > atom.index }
+        atom.linkedAtoms : atom.linkedAtoms.filter() { $0 > atom.index } // O(nbOfLinks)
 
       let linkedAtoms =
         AtomNodeDictionaryReader.getAtoms(on: atomByIndex,
