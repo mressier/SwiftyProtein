@@ -10,7 +10,7 @@
 		A910E40523F85DF0008F9020 /* SCNGeometry+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A910E40423F85DF0008F9020 /* SCNGeometry+extension.swift */; };
 		A910E40823F87B83008F9020 /* PathBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = A910E40723F87B83008F9020 /* PathBounds.swift */; };
 		A910E40A23F87E78008F9020 /* PDBAtomLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A910E40923F87E78008F9020 /* PDBAtomLight.swift */; };
-		A910E40D23F87ED6008F9020 /* AtomBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A910E40C23F87ED6008F9020 /* AtomBuilder.swift */; };
+		A910E40D23F87ED6008F9020 /* LightLigandProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A910E40C23F87ED6008F9020 /* LightLigandProvider.swift */; };
 		A910E40F23F8838D008F9020 /* AtomNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A910E40E23F8838D008F9020 /* AtomNode.swift */; };
 		A91A5510243B9601003DF261 /* ProteinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91A550F243B9601003DF261 /* ProteinViewController.swift */; };
 		A91CF350244C651400294568 /* AtomsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91CF34F244C651400294568 /* AtomsList.swift */; };
@@ -30,6 +30,9 @@
 		A922804723F84E2C00BA4F5D /* SCNNode+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A922804623F84E2C00BA4F5D /* SCNNode+extension.swift */; };
 		A92A9C0B245352F2004CA5D3 /* Array+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92A9C0A245352F2004CA5D3 /* Array+extension.swift */; };
 		A92A9C0D245353EB004CA5D3 /* PDBLigandConverter+MergeConnectionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92A9C0C245353EB004CA5D3 /* PDBLigandConverter+MergeConnectionsTests.swift */; };
+		A92A9C1024536A1D004CA5D3 /* ProteinListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92A9C0F24536A1D004CA5D3 /* ProteinListViewController.swift */; };
+		A92A9C1324536EF4004CA5D3 /* ProteinCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92A9C1124536EF4004CA5D3 /* ProteinCollectionViewController.swift */; };
+		A92A9C1424536EF4004CA5D3 /* ProteinCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A92A9C1224536EF4004CA5D3 /* ProteinCollectionViewController.xib */; };
 		A94DD736244C92740034C6AF /* PDBLigandConverter+AtomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94DD735244C92740034C6AF /* PDBLigandConverter+AtomTests.swift */; };
 		A94DD738244C957B0034C6AF /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94DD737244C957B0034C6AF /* String+Extension.swift */; };
 		A94DD73B244CA9D60034C6AF /* String+TrimmedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94DD73A244CA9D60034C6AF /* String+TrimmedTests.swift */; };
@@ -86,7 +89,7 @@
 		A910E40423F85DF0008F9020 /* SCNGeometry+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNGeometry+extension.swift"; sourceTree = "<group>"; };
 		A910E40723F87B83008F9020 /* PathBounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathBounds.swift; sourceTree = "<group>"; };
 		A910E40923F87E78008F9020 /* PDBAtomLight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDBAtomLight.swift; sourceTree = "<group>"; };
-		A910E40C23F87ED6008F9020 /* AtomBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomBuilder.swift; sourceTree = "<group>"; };
+		A910E40C23F87ED6008F9020 /* LightLigandProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightLigandProvider.swift; sourceTree = "<group>"; };
 		A910E40E23F8838D008F9020 /* AtomNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomNode.swift; sourceTree = "<group>"; };
 		A91A550F243B9601003DF261 /* ProteinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProteinViewController.swift; sourceTree = "<group>"; };
 		A91CF34F244C651400294568 /* AtomsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomsList.swift; sourceTree = "<group>"; };
@@ -108,6 +111,9 @@
 		A922804623F84E2C00BA4F5D /* SCNNode+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNNode+extension.swift"; sourceTree = "<group>"; };
 		A92A9C0A245352F2004CA5D3 /* Array+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+extension.swift"; sourceTree = "<group>"; };
 		A92A9C0C245353EB004CA5D3 /* PDBLigandConverter+MergeConnectionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDBLigandConverter+MergeConnectionsTests.swift"; sourceTree = "<group>"; };
+		A92A9C0F24536A1D004CA5D3 /* ProteinListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProteinListViewController.swift; sourceTree = "<group>"; };
+		A92A9C1124536EF4004CA5D3 /* ProteinCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProteinCollectionViewController.swift; sourceTree = "<group>"; };
+		A92A9C1224536EF4004CA5D3 /* ProteinCollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProteinCollectionViewController.xib; sourceTree = "<group>"; };
 		A94DD735244C92740034C6AF /* PDBLigandConverter+AtomTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDBLigandConverter+AtomTests.swift"; sourceTree = "<group>"; };
 		A94DD737244C957B0034C6AF /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		A94DD73A244CA9D60034C6AF /* String+TrimmedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+TrimmedTests.swift"; sourceTree = "<group>"; };
@@ -181,12 +187,12 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		A910E40B23F87EB4008F9020 /* Builder */ = {
+		A910E40B23F87EB4008F9020 /* Provider */ = {
 			isa = PBXGroup;
 			children = (
-				A910E40C23F87ED6008F9020 /* AtomBuilder.swift */,
+				A910E40C23F87ED6008F9020 /* LightLigandProvider.swift */,
 			);
-			path = Builder;
+			path = Provider;
 			sourceTree = "<group>";
 		};
 		A91CF34D244C647B00294568 /* ProteinScene */ = {
@@ -239,7 +245,6 @@
 		A922802523F83DB100BA4F5D /* SwiftyProtein */ = {
 			isa = PBXGroup;
 			children = (
-				A91CF353244C7B8800294568 /* PDB */,
 				A922804423F84E0800BA4F5D /* Views */,
 				A922804323F84DFD00BA4F5D /* Shared */,
 				A922804223F84DF700BA4F5D /* Controllers */,
@@ -272,6 +277,7 @@
 		A922804223F84DF700BA4F5D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A92A9C0E24536A06004CA5D3 /* ProteinList */,
 				A9F3E7D92442316F000D62A1 /* Protein */,
 			);
 			path = Controllers;
@@ -280,11 +286,11 @@
 		A922804323F84DFD00BA4F5D /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				A91CF353244C7B8800294568 /* PDB */,
 				A9C794562450D68D00B5FFA2 /* Network */,
 				A9F3E7EA244247F7000D62A1 /* PropertyWrapper */,
 				A9F3E7E1244235A8000D62A1 /* Views */,
 				A9718EEA243B9A51005DA378 /* Protocols */,
-				A910E40B23F87EB4008F9020 /* Builder */,
 				A910E40623F87B70008F9020 /* Models */,
 				A922804523F84E1900BA4F5D /* Extensions */,
 			);
@@ -312,6 +318,16 @@
 				A9718EE2243B99E9005DA378 /* SceneKit */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A92A9C0E24536A06004CA5D3 /* ProteinList */ = {
+			isa = PBXGroup;
+			children = (
+				A92A9C0F24536A1D004CA5D3 /* ProteinListViewController.swift */,
+				A92A9C1124536EF4004CA5D3 /* ProteinCollectionViewController.swift */,
+				A92A9C1224536EF4004CA5D3 /* ProteinCollectionViewController.xib */,
+			);
+			path = ProteinList;
 			sourceTree = "<group>";
 		};
 		A94DD734244C92580034C6AF /* PDBLigandConverter */ = {
@@ -442,6 +458,7 @@
 		A9F3E7D92442316F000D62A1 /* Protein */ = {
 			isa = PBXGroup;
 			children = (
+				A910E40B23F87EB4008F9020 /* Provider */,
 				A922802A23F83DB100BA4F5D /* ProteinSceneViewController.swift */,
 				A9718EFB243B9C4B005DA378 /* ProteinSceneViewController.xib */,
 				A91A550F243B9601003DF261 /* ProteinViewController.swift */,
@@ -559,6 +576,7 @@
 				A922804023F846A700BA4F5D /* Assets.xcassets in Resources */,
 				A922802E23F83DB100BA4F5D /* Main.storyboard in Resources */,
 				A922804123F846A700BA4F5D /* ligands.txt in Resources */,
+				A92A9C1424536EF4004CA5D3 /* ProteinCollectionViewController.xib in Resources */,
 				A9F3E7E924423749000D62A1 /* TextStepperView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -608,6 +626,7 @@
 				A91CF350244C651400294568 /* AtomsList.swift in Sources */,
 				A993458C242FD52D00C6B043 /* SCNNode+Atom.swift in Sources */,
 				A9718EF2243B9AF5005DA378 /* UIView+gradient.swift in Sources */,
+				A92A9C1024536A1D004CA5D3 /* ProteinListViewController.swift in Sources */,
 				A94DD750244CB9480034C6AF /* PDBLigandConverter+End.swift in Sources */,
 				A9F3E7D4244221CD000D62A1 /* AtomInfo.swift in Sources */,
 				A9C7945E2450D89D00B5FFA2 /* PDBRequest.swift in Sources */,
@@ -624,7 +643,8 @@
 				A9718EF3243B9AF5005DA378 /* UIView+extension.swift in Sources */,
 				A91CF35B244C7DE800294568 /* PDBAtom.swift in Sources */,
 				A9597A7F244CC719004E732E /* PDBLigand.swift in Sources */,
-				A910E40D23F87ED6008F9020 /* AtomBuilder.swift in Sources */,
+				A910E40D23F87ED6008F9020 /* LightLigandProvider.swift in Sources */,
+				A92A9C1324536EF4004CA5D3 /* ProteinCollectionViewController.swift in Sources */,
 				A9F3E7D624422C1A000D62A1 /* ProteinSceneConfiguration.swift in Sources */,
 				A91CF357244C7BC100294568 /* PDBLigandConverter+Atom.swift in Sources */,
 				A9F3E7E724423731000D62A1 /* NibInstanciable.swift in Sources */,
