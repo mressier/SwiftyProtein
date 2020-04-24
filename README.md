@@ -56,3 +56,4 @@ Source [Wikipedia](https://fr.wikipedia.org/wiki/Protein_Data_Bank#Le_format_PDB
 
 # Resources & Credits
 - The ellipsis spinner is provided by [loading.io](www.loading.io)
+- Heart icon is made by [Freepik](https://www.flaticon.com/authors/freepik) from [Flaticon](https://www.flaticon.com/)
