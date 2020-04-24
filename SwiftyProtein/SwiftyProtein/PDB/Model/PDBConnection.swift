@@ -8,7 +8,7 @@ import Foundation
  ******************************************************************************/
 struct PDBConnection: Equatable {
   let source: Int
-  let linkedTo: [Int]
+  var linkedTo: [Int]
 
   //----------------------------------------------------------------------------
   // MARK: - Initialization

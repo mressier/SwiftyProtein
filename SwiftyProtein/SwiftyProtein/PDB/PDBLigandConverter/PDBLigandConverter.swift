@@ -54,13 +54,45 @@ struct PDBLigandConverter {
 
 extension Array where Element == PDBAtom {
 
+  /// Apply given connections to atoms.
+  /// Expect connections to be incremental, starting with the lowest atom index source value.
   fileprivate mutating func applyConnections(_ connections: [PDBConnection]) {
-    for (index, atom) in self.enumerated() {
-      let connectionsForAtom = connections.filter() { $0.source == atom.index }
-      let linkedsAtomIndexes = connectionsForAtom.map() { $0.linkedTo }.joined()
+    let mergedConnections = connections.mergeSameSourceIndex()
+    var connectionIndex = mergedConnections.startIndex
 
-      self[index].linkedAtomIndex.append(contentsOf: linkedsAtomIndexes)
+    for (index, atom) in self.enumerated() {
+      connectionIndex = mergedConnections.nextIndex(after: connectionIndex, where: {
+        $0.source >= atom.index
+      }) ?? mergedConnections.endIndex
+
+      guard connectionIndex < mergedConnections.count else { return }
+
+      guard mergedConnections[connectionIndex].source == atom.index else { continue }
+
+      let linkedAtomIndexes = mergedConnections[connectionIndex].linkedTo
+      self[index].linkedAtomIndex.append(contentsOf: linkedAtomIndexes)
     }
   }
 
+}
+
+extension Array where Element == PDBConnection {
+
+  /// Merge connections with the same source index
+  func mergeSameSourceIndex() -> [PDBConnection] {
+    var connections = [PDBConnection]()
+    var lastIndex: Int? = nil
+
+    for connection in self {
+      if let index = lastIndex,
+        connections[index].source == connection.source {
+        connections[index].linkedTo.append(contentsOf: connection.linkedTo)
+      } else {
+        connections.append(connection)
+        lastIndex = (lastIndex ?? -1) + 1
+      }
+    }
+
+    return connections
+  }
 }
