@@ -33,6 +33,10 @@
 		A92A9C1024536A1D004CA5D3 /* ProteinListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92A9C0F24536A1D004CA5D3 /* ProteinListViewController.swift */; };
 		A92A9C1324536EF4004CA5D3 /* ProteinCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92A9C1124536EF4004CA5D3 /* ProteinCollectionViewController.swift */; };
 		A92A9C1424536EF4004CA5D3 /* ProteinCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A92A9C1224536EF4004CA5D3 /* ProteinCollectionViewController.xib */; };
+		A92A9C1B24537BC3004CA5D3 /* TableView2DArraySource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92A9C1824537BC3004CA5D3 /* TableView2DArraySource.swift */; };
+		A92A9C1C24537BC3004CA5D3 /* TableViewSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92A9C1924537BC3004CA5D3 /* TableViewSource.swift */; };
+		A92A9C1F24560512004CA5D3 /* ProteinCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92A9C1D24560512004CA5D3 /* ProteinCollectionViewCell.swift */; };
+		A92A9C2024560512004CA5D3 /* ProteinCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A92A9C1E24560512004CA5D3 /* ProteinCollectionViewCell.xib */; };
 		A94DD736244C92740034C6AF /* PDBLigandConverter+AtomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94DD735244C92740034C6AF /* PDBLigandConverter+AtomTests.swift */; };
 		A94DD738244C957B0034C6AF /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94DD737244C957B0034C6AF /* String+Extension.swift */; };
 		A94DD73B244CA9D60034C6AF /* String+TrimmedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94DD73A244CA9D60034C6AF /* String+TrimmedTests.swift */; };
@@ -114,6 +118,10 @@
 		A92A9C0F24536A1D004CA5D3 /* ProteinListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProteinListViewController.swift; sourceTree = "<group>"; };
 		A92A9C1124536EF4004CA5D3 /* ProteinCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProteinCollectionViewController.swift; sourceTree = "<group>"; };
 		A92A9C1224536EF4004CA5D3 /* ProteinCollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProteinCollectionViewController.xib; sourceTree = "<group>"; };
+		A92A9C1824537BC3004CA5D3 /* TableView2DArraySource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableView2DArraySource.swift; sourceTree = "<group>"; };
+		A92A9C1924537BC3004CA5D3 /* TableViewSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewSource.swift; sourceTree = "<group>"; };
+		A92A9C1D24560512004CA5D3 /* ProteinCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProteinCollectionViewCell.swift; sourceTree = "<group>"; };
+		A92A9C1E24560512004CA5D3 /* ProteinCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProteinCollectionViewCell.xib; sourceTree = "<group>"; };
 		A94DD735244C92740034C6AF /* PDBLigandConverter+AtomTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDBLigandConverter+AtomTests.swift"; sourceTree = "<group>"; };
 		A94DD737244C957B0034C6AF /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		A94DD73A244CA9D60034C6AF /* String+TrimmedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+TrimmedTests.swift"; sourceTree = "<group>"; };
@@ -286,6 +294,7 @@
 		A922804323F84DFD00BA4F5D /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				A92A9C1524537BC3004CA5D3 /* Tools */,
 				A91CF353244C7B8800294568 /* PDB */,
 				A9C794562450D68D00B5FFA2 /* Network */,
 				A9F3E7EA244247F7000D62A1 /* PropertyWrapper */,
@@ -326,8 +335,27 @@
 				A92A9C0F24536A1D004CA5D3 /* ProteinListViewController.swift */,
 				A92A9C1124536EF4004CA5D3 /* ProteinCollectionViewController.swift */,
 				A92A9C1224536EF4004CA5D3 /* ProteinCollectionViewController.xib */,
+				A92A9C1D24560512004CA5D3 /* ProteinCollectionViewCell.swift */,
+				A92A9C1E24560512004CA5D3 /* ProteinCollectionViewCell.xib */,
 			);
 			path = ProteinList;
+			sourceTree = "<group>";
+		};
+		A92A9C1524537BC3004CA5D3 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				A92A9C1624537BC3004CA5D3 /* TableViewUtils */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		A92A9C1624537BC3004CA5D3 /* TableViewUtils */ = {
+			isa = PBXGroup;
+			children = (
+				A92A9C1824537BC3004CA5D3 /* TableView2DArraySource.swift */,
+				A92A9C1924537BC3004CA5D3 /* TableViewSource.swift */,
+			);
+			path = TableViewUtils;
 			sourceTree = "<group>";
 		};
 		A94DD734244C92580034C6AF /* PDBLigandConverter */ = {
@@ -577,6 +605,7 @@
 				A922802E23F83DB100BA4F5D /* Main.storyboard in Resources */,
 				A922804123F846A700BA4F5D /* ligands.txt in Resources */,
 				A92A9C1424536EF4004CA5D3 /* ProteinCollectionViewController.xib in Resources */,
+				A92A9C2024560512004CA5D3 /* ProteinCollectionViewCell.xib in Resources */,
 				A9F3E7E924423749000D62A1 /* TextStepperView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -633,6 +662,7 @@
 				A91A5510243B9601003DF261 /* ProteinViewController.swift in Sources */,
 				A9F3E7D224421A68000D62A1 /* UIColor+extension.swift in Sources */,
 				A9F3E7E3244235BF000D62A1 /* TextStepperView.swift in Sources */,
+				A92A9C1F24560512004CA5D3 /* ProteinCollectionViewCell.swift in Sources */,
 				A922804723F84E2C00BA4F5D /* SCNNode+extension.swift in Sources */,
 				A92A9C0B245352F2004CA5D3 /* Array+extension.swift in Sources */,
 				A9718EF7243B9B78005DA378 /* ConstraintType.swift in Sources */,
@@ -655,6 +685,7 @@
 				A910E40523F85DF0008F9020 /* SCNGeometry+extension.swift in Sources */,
 				A94DD738244C957B0034C6AF /* String+Extension.swift in Sources */,
 				A9F3E7D824422C47000D62A1 /* ProteinSceneConfiguration+ColorMode.swift in Sources */,
+				A92A9C1B24537BC3004CA5D3 /* TableView2DArraySource.swift in Sources */,
 				A9718EF9243B9BBA005DA378 /* NSLayoutConstraint+extension.swift in Sources */,
 				A9C7945A2450D73300B5FFA2 /* RequestError.swift in Sources */,
 				A94DD752244CB9E40034C6AF /* PDBConnection.swift in Sources */,
@@ -664,6 +695,7 @@
 				A9F3E7EC244247F7000D62A1 /* ClampedPropertyWrapper.swift in Sources */,
 				A9718EF4243B9AF5005DA378 /* UIView+appearance.swift in Sources */,
 				A910E40F23F8838D008F9020 /* AtomNode.swift in Sources */,
+				A92A9C1C24537BC3004CA5D3 /* TableViewSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

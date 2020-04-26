@@ -1,30 +1,68 @@
-//
-//  ProteinListViewController.swift
-//  SwiftyProtein
-//
-//  Created by Mathilde Ressier on 24/04/2020.
-//  Copyright © 2020 Mathilde Ressier. All rights reserved.
-//
-
 import UIKit
 
 class ProteinListViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+  //----------------------------------------------------------------------------
+  // MARK: - Properties
+  //----------------------------------------------------------------------------
 
-        // Do any additional setup after loading the view.
+  /******************** Outlet ********************/
+
+  /******************** Callbacks ********************/
+
+  /******************** Parameters ********************/
+
+  var ligands = ["A", "B", "C"] {
+    didSet {
+      // reload data
     }
-    
+  }
 
-    /*
-    // MARK: - Navigation
+  /******************** View Controllers ********************/
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+  let searchController = UISearchController(searchResultsController: nil)
 
+  //----------------------------------------------------------------------------
+  // MARK: - View Life Cycle
+  //----------------------------------------------------------------------------
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    setup()
+  }
+
+  private func setup() {
+    setupView()
+    setupNavigationBar()
+    setupSearchBar()
+    setupLigandCollectionVC()
+  }
+
+  private func setupView() {
+    definesPresentationContext = true
+  }
+
+  private func setupNavigationBar() {
+    navigationItem.searchController = searchController
+  }
+
+  private func setupSearchBar() {
+    searchController.searchResultsUpdater = self
+    searchController.obscuresBackgroundDuringPresentation = false
+    searchController.searchBar.placeholder = "Search a ligand"
+  }
+
+  private func setupLigandCollectionVC() {
+    let ligandCollectionVC = ProteinCollectionViewController(bundle: .main)
+
+    ligandCollectionVC.ligands = ligands
+
+    add(asChildViewController: ligandCollectionVC, on: view)
+  }
+}
+
+extension ProteinListViewController: UISearchResultsUpdating {
+  func updateSearchResults(for searchController: UISearchController) {
+    // TODO
+  }
 }
