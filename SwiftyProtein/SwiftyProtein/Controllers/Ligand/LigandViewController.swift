@@ -1,12 +1,12 @@
 import UIKit
 
-class ProteinViewController: UIViewController {
+class LigandViewController: UIViewController {
 
   //----------------------------------------------------------------------------
   // MARK: - Properties
   //----------------------------------------------------------------------------
 
-  @IBOutlet weak var proteinSceneContainerView: UIView!
+  @IBOutlet weak var ligandSceneContainerView: UIView!
   @IBOutlet weak var selectedAtomNameLabel: UILabel!
 
   /******************** Computed properties ********************/
@@ -17,12 +17,12 @@ class ProteinViewController: UIViewController {
 
   /******************** Configuration ********************/
 
-  var configuration = ProteinSceneConfiguration(colorMode: .cpk)
+  var configuration = LigandSceneConfiguration(colorMode: .cpk)
 
   /******************** View controllers ********************/
 
-  private lazy var proteinSceneVC: ProteinSceneViewController = {
-    return ProteinSceneViewController(bundle: .main)
+  private lazy var ligandSceneVC: LigandSceneViewController = {
+    return LigandSceneViewController(bundle: .main)
   }()
 
   //----------------------------------------------------------------------------
@@ -37,20 +37,20 @@ class ProteinViewController: UIViewController {
   }
 
   private func setup() {
-    setupProteinSceneVC()
+    setupLigandSceneVC()
     setupAtomLabel()
   }
 
-  private func setupProteinSceneVC() {
-    proteinSceneVC.didSelectAtom = { [weak self] atom in
+  private func setupLigandSceneVC() {
+    ligandSceneVC.didSelectAtom = { [weak self] atom in
       self?.selectedAtom = atom
     }
 
-    proteinSceneVC.didUnselectAtom = { [weak self] in
+    ligandSceneVC.didUnselectAtom = { [weak self] in
       self?.selectedAtom = nil
     }
 
-    add(asChildViewController: proteinSceneVC, on: proteinSceneContainerView)
+    add(asChildViewController: ligandSceneVC, on: ligandSceneContainerView)
   }
 
   private func setupAtomLabel() {
@@ -58,15 +58,15 @@ class ProteinViewController: UIViewController {
   }
 
   private func loadLigand() {
-    let ligandName = "10R"
+    let ligandName = "0EA"
 
     self.title = ligandName
 
     LightLigandProvider.get(ligand: ligandName) { [weak self] result in
       switch result {
       case .success(let ligand):
-        self?.proteinSceneVC.atoms = ligand.atoms
-        self?.proteinSceneVC.reload()
+        self?.ligandSceneVC.atoms = ligand.atoms
+        self?.ligandSceneVC.reload()
       default: print("hoho")
       }
     }

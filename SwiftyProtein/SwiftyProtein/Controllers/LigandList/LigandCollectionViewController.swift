@@ -1,8 +1,8 @@
 import UIKit
 
-private let cellIdentifier = "proteinCell"
+private let cellIdentifier = "ligandCell"
 
-class ProteinCollectionViewController: UICollectionViewController {
+class LigandCollectionViewController: UICollectionViewController {
 
   //----------------------------------------------------------------------------
   // MARK: - Properties
@@ -30,7 +30,7 @@ class ProteinCollectionViewController: UICollectionViewController {
   }
 
   private func setupCollectionView() {
-    let nibName = UINib(nibName: ProteinCollectionViewCell.reuseIdentifier,
+    let nibName = UINib(nibName: LigandCollectionViewCell.reuseIdentifier,
                         bundle: .main)
     collectionView.register(nibName,
                             forCellWithReuseIdentifier: cellIdentifier)
@@ -47,7 +47,7 @@ class ProteinCollectionViewController: UICollectionViewController {
 // MARK: - UICollection Data Soure
 //==============================================================================
 
-extension ProteinCollectionViewController {
+extension LigandCollectionViewController {
 
   override func numberOfSections(in collectionView: UICollectionView) -> Int {
     return source.elements.count
@@ -65,9 +65,9 @@ extension ProteinCollectionViewController {
   ) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier,
                                                   for: indexPath)
-    if let cell = cell as? ProteinCollectionViewCell {
+    if let cell = cell as? LigandCollectionViewCell {
       let ligand = source.element(at: indexPath)
-      cell.proteinName = ligand
+      cell.ligandName = ligand
     }
     // Configure the cell
     

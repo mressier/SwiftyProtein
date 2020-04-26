@@ -1,10 +1,10 @@
 import UIKit
 
-struct ProteinSceneConfiguration {
+struct LigandSceneConfiguration {
   var colorMode: ColorMode
   var distanceMultiplier = CGFloat(1.5)
 
-  static var `default` = ProteinSceneConfiguration(colorMode: .cpk)
+  static var `default` = LigandSceneConfiguration(colorMode: .cpk)
 
   //----------------------------------------------------------------------------
   // MARK: - Tools

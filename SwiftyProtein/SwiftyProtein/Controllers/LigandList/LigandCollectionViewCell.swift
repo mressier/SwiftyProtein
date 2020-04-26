@@ -1,6 +1,6 @@
 import UIKit
 
-class ProteinCollectionViewCell: UICollectionViewCell, Reusable {
+class LigandCollectionViewCell: UICollectionViewCell, Reusable {
 
   //----------------------------------------------------------------------------
   // MARK: - Properties
@@ -9,8 +9,8 @@ class ProteinCollectionViewCell: UICollectionViewCell, Reusable {
   @IBOutlet weak var containerView: UIView!
   @IBOutlet weak var titleLabel: UILabel!
 
-  var proteinName: String? {
-    didSet { titleLabel?.text = proteinName }
+  var ligandName: String? {
+    didSet { titleLabel?.text = ligandName }
   }
 
   //----------------------------------------------------------------------------
@@ -36,6 +36,6 @@ class ProteinCollectionViewCell: UICollectionViewCell, Reusable {
 
   private func setupLabel() {
     titleLabel.textColor = .white
-    titleLabel?.text = proteinName
+    titleLabel?.text = ligandName
   }
 }

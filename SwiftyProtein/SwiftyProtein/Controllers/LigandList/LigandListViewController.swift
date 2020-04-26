@@ -1,6 +1,6 @@
 import UIKit
 
-class ProteinListViewController: UIViewController {
+class LigandListViewController: UIViewController {
 
   //----------------------------------------------------------------------------
   // MARK: - Properties
@@ -53,7 +53,7 @@ class ProteinListViewController: UIViewController {
   }
 
   private func setupLigandCollectionVC() {
-    let ligandCollectionVC = ProteinCollectionViewController(bundle: .main)
+    let ligandCollectionVC = LigandCollectionViewController(bundle: .main)
 
     ligandCollectionVC.ligands = ligands
 
@@ -61,7 +61,7 @@ class ProteinListViewController: UIViewController {
   }
 }
 
-extension ProteinListViewController: UISearchResultsUpdating {
+extension LigandListViewController: UISearchResultsUpdating {
   func updateSearchResults(for searchController: UISearchController) {
     // TODO
   }

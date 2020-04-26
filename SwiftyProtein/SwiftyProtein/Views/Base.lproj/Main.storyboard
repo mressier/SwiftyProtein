@@ -23,10 +23,10 @@
             </objects>
             <point key="canvasLocation" x="-1000" y="117"/>
         </scene>
-        <!--Protein List View Controller-->
+        <!--Ligand List View Controller-->
         <scene sceneID="Eyt-ZI-NbW">
             <objects>
-                <viewController id="nnP-5G-zlG" customClass="ProteinListViewController" customModule="SwiftyProtein" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="nnP-5G-zlG" customClass="LigandListViewController" customModule="SwiftyProtein" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="yhL-Lh-InA"/>
                     <connections>
                         <segue destination="lUM-Sp-M6v" kind="show" id="tbf-gG-6bI"/>
@@ -36,10 +36,10 @@
             </objects>
             <point key="canvasLocation" x="-174" y="117"/>
         </scene>
-        <!--Protein View-->
+        <!--Ligand View-->
         <scene sceneID="XNG-XW-vxg">
             <objects>
-                <viewController id="lUM-Sp-M6v" customClass="ProteinViewController" customModule="SwiftyProtein" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lUM-Sp-M6v" customClass="LigandViewController" customModule="SwiftyProtein" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vkF-1D-m0f">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -69,9 +69,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cjl-7Y-EXB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Protein View" id="cW4-y3-wk8"/>
+                    <navigationItem key="navigationItem" title="Ligand View" id="cW4-y3-wk8"/>
                     <connections>
-                        <outlet property="proteinSceneContainerView" destination="OHZ-mE-Xy3" id="S18-5S-nIP"/>
+                        <outlet property="ligandSceneContainerView" destination="OHZ-mE-Xy3" id="S18-5S-nIP"/>
                         <outlet property="selectedAtomNameLabel" destination="fj9-w1-o4Y" id="TZ4-jT-WU3"/>
                     </connections>
                 </viewController>

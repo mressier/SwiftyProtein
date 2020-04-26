@@ -1,6 +1,6 @@
 //
 //  SCNNode+Atom.swift
-//  SwiftyProtein
+//  SwiftyLigand
 //
 //  Created by Mathilde Ressier on 28/03/2020.
 //  Copyright © 2020 Mathilde Ressier. All rights reserved.
@@ -15,7 +15,7 @@ extension SCNNode {
   @discardableResult
   func createAtomNodes(
     forAtoms atoms: [PDBAtomLight],
-    config: ProteinSceneConfiguration = .default
+    config: LigandSceneConfiguration = .default
   ) -> [AtomNode] {
     var nodes = [AtomNode]()
 

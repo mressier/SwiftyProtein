@@ -2,7 +2,7 @@ import UIKit
 import QuartzCore
 import SceneKit
 
-class ProteinSceneViewController: UIViewController {
+class LigandSceneViewController: UIViewController {
 
   //----------------------------------------------------------------------------
   // MARK: - Properties
@@ -20,9 +20,9 @@ class ProteinSceneViewController: UIViewController {
 
   override var prefersStatusBarHidden: Bool { return true }
 
-  var configuration = ProteinSceneConfiguration(colorMode: .cpk)
+  var configuration = LigandSceneConfiguration(colorMode: .cpk)
 
-  /******************** Protein Parameters ********************/
+  /******************** Ligand Parameters ********************/
 
   /// Atoms to show on the scene
   var atoms = [PDBAtomLight]()
