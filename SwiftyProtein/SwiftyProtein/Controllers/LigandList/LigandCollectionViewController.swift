@@ -1,6 +1,7 @@
 import UIKit
 
 private let cellIdentifier = "ligandCell"
+private let headerIdentifier = "ligandHeaderView"
 
 class LigandCollectionViewController: UICollectionViewController {
 
@@ -13,7 +14,7 @@ class LigandCollectionViewController: UICollectionViewController {
   var ligands = [String]()
   var favorites = [String]()
 
-  private var source = ArraySource<String>()
+  private var source = DictionnarySource<String>()
 
   //----------------------------------------------------------------------------
   // MARK: - View Life Cycle
@@ -34,10 +35,16 @@ class LigandCollectionViewController: UICollectionViewController {
                         bundle: .main)
     collectionView.register(nibName,
                             forCellWithReuseIdentifier: cellIdentifier)
+
+    let nibHeader = UINib(nibName: LigandHeaderCollectionView.reuseIdentifier,
+                          bundle: .main)
+    collectionView.register(nibHeader,
+                            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                            withReuseIdentifier: headerIdentifier)
   }
 
   private func setupSource() {
-    source.elements = [ligands]
+    source.elements = ["favoris": ["A"], "ligands": ligands]
     collectionView.reloadData()
   }
 
@@ -53,10 +60,22 @@ extension LigandCollectionViewController {
     return source.elements.count
   }
 
-
   override func collectionView(_ collectionView: UICollectionView,
                                numberOfItemsInSection section: Int) -> Int {
     return source.elements(inSection: section).count
+  }
+
+  override func collectionView(
+    _ collectionView: UICollectionView,
+    viewForSupplementaryElementOfKind kind: String,
+    at indexPath: IndexPath
+  ) -> UICollectionReusableView {
+    let headerView = collectionView.dequeueReusableSupplementaryView(
+      ofKind: kind,
+      withReuseIdentifier: headerIdentifier,
+      for: indexPath
+    )
+    return headerView
   }
 
   override func collectionView(
