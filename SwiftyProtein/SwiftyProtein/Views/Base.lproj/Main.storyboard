@@ -23,11 +23,17 @@
             </objects>
             <point key="canvasLocation" x="-1000" y="117"/>
         </scene>
-        <!--Ligand List View Controller-->
+        <!--Swifty Protein-->
         <scene sceneID="Eyt-ZI-NbW">
             <objects>
                 <viewController id="nnP-5G-zlG" customClass="LigandListViewController" customModule="SwiftyProtein" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="yhL-Lh-InA"/>
+                    <view key="view" contentMode="scaleToFill" id="M1t-oe-Kjq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="RCH-3E-bW1"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Swifty Protein" id="yhL-Lh-InA"/>
                     <connections>
                         <segue destination="lUM-Sp-M6v" kind="show" id="tbf-gG-6bI"/>
                     </connections>

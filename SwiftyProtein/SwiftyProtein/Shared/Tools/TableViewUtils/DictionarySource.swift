@@ -20,7 +20,7 @@ class DictionnarySource<Element: Equatable>: CollectionSource {
   var elements: [String: [Element]] = [:]
 
   /// Method used to sort sections
-  var sortSection: ((String, String) -> Bool) = { s1, s2 in s1 > s2 }
+  var sortSection: ((String, String) -> Bool) = { s1, s2 in s1 < s2 }
 
   /******************** Section content ********************/
 
@@ -28,8 +28,12 @@ class DictionnarySource<Element: Equatable>: CollectionSource {
     return elements.keys.sorted(by: sortSection)
   }
 
-  private func sectionKey(at index: Int) -> String {
+  func sectionKey(at index: Int) -> String {
     return orderedSectionsKeys[index]
+  }
+
+  func sectionKey(at indexPath: IndexPath) -> String {
+    return sectionKey(at: indexPath.section)
   }
 
   //----------------------------------------------------------------------------
