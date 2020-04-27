@@ -10,7 +10,7 @@ class SectionSource<Section, Element: Equatable>: CollectionSource {
 
   typealias ElementType = Element
 
-  typealias SectionSourceContent = (section: Section, content: [Element])
+  typealias Sections = [(section: Section, content: [Element])]
 
   //----------------------------------------------------------------------------
   // MARK: - Properties
@@ -18,7 +18,7 @@ class SectionSource<Section, Element: Equatable>: CollectionSource {
 
   /******************** Content ********************/
 
-  var elements = [SectionSourceContent]()
+  var elements = Sections()
 
   //----------------------------------------------------------------------------
   // MARK: - Data source
