@@ -56,6 +56,7 @@
 		A9597A85244CCDBD004E732E /* PDBLigandProvider+buildURLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9597A84244CCDBD004E732E /* PDBLigandProvider+buildURLTests.swift */; };
 		A9597A87244CCE6E004E732E /* PDBLigandProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9597A86244CCE6E004E732E /* PDBLigandProviderTests.swift */; };
 		A96D48E52456DC06003FE291 /* SectionSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96D48E42456DC06003FE291 /* SectionSource.swift */; };
+		A96D48E72456E422003FE291 /* LigandsCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96D48E62456E422003FE291 /* LigandsCollection.swift */; };
 		A9718EE4243B9A32005DA378 /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9718EE3243B9A32005DA378 /* UIViewController+extension.swift */; };
 		A9718EF2243B9AF5005DA378 /* UIView+gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9718EED243B9AF5005DA378 /* UIView+gradient.swift */; };
 		A9718EF3243B9AF5005DA378 /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9718EEE243B9AF5005DA378 /* UIView+extension.swift */; };
@@ -145,6 +146,7 @@
 		A9597A84244CCDBD004E732E /* PDBLigandProvider+buildURLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDBLigandProvider+buildURLTests.swift"; sourceTree = "<group>"; };
 		A9597A86244CCE6E004E732E /* PDBLigandProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDBLigandProviderTests.swift; sourceTree = "<group>"; };
 		A96D48E42456DC06003FE291 /* SectionSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionSource.swift; sourceTree = "<group>"; };
+		A96D48E62456E422003FE291 /* LigandsCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigandsCollection.swift; sourceTree = "<group>"; };
 		A9718EE3243B9A32005DA378 /* UIViewController+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+extension.swift"; path = "SwiftyProtein/Shared/Library/Extensions/UIKit/UIViewController+extension.swift"; sourceTree = SOURCE_ROOT; };
 		A9718EED243B9AF5005DA378 /* UIView+gradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+gradient.swift"; sourceTree = "<group>"; };
 		A9718EEE243B9AF5005DA378 /* UIView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				A90CA9B32456CE5B000BBE60 /* LigandsAppList.swift */,
+				A96D48E62456E422003FE291 /* LigandsCollection.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -709,6 +712,7 @@
 				A91CF35B244C7DE800294568 /* PDBAtom.swift in Sources */,
 				A9597A7F244CC719004E732E /* PDBLigand.swift in Sources */,
 				A910E40D23F87ED6008F9020 /* LightLigandProvider.swift in Sources */,
+				A96D48E72456E422003FE291 /* LigandsCollection.swift in Sources */,
 				A92A9C1324536EF4004CA5D3 /* LigandCollectionViewController.swift in Sources */,
 				A9F3E7D624422C1A000D62A1 /* ProteinSceneConfiguration.swift in Sources */,
 				A91CF357244C7BC100294568 /* PDBLigandConverter+Atom.swift in Sources */,
