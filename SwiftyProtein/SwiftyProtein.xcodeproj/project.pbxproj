@@ -42,7 +42,7 @@
 		A92A9C2724561F15004CA5D3 /* LigandHeaderCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92A9C2524561F15004CA5D3 /* LigandHeaderCollectionView.swift */; };
 		A92A9C2824561F15004CA5D3 /* LigandHeaderCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A92A9C2624561F15004CA5D3 /* LigandHeaderCollectionView.xib */; };
 		A94DD736244C92740034C6AF /* PDBLigandConverter+AtomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94DD735244C92740034C6AF /* PDBLigandConverter+AtomTests.swift */; };
-		A94DD738244C957B0034C6AF /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94DD737244C957B0034C6AF /* String+Extension.swift */; };
+		A94DD738244C957B0034C6AF /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94DD737244C957B0034C6AF /* String+extension.swift */; };
 		A94DD73B244CA9D60034C6AF /* String+TrimmedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94DD73A244CA9D60034C6AF /* String+TrimmedTests.swift */; };
 		A94DD73D244CAE410034C6AF /* PDBLigandConverter+InputTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94DD73C244CAE410034C6AF /* PDBLigandConverter+InputTypeTests.swift */; };
 		A94DD73F244CB3080034C6AF /* PDBLigandConverter+ConectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94DD73E244CB3080034C6AF /* PDBLigandConverter+ConectTests.swift */; };
@@ -64,9 +64,13 @@
 		A9718EF7243B9B78005DA378 /* ConstraintType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9718EF6243B9B78005DA378 /* ConstraintType.swift */; };
 		A9718EF9243B9BBA005DA378 /* NSLayoutConstraint+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9718EF8243B9BBA005DA378 /* NSLayoutConstraint+extension.swift */; };
 		A9718EFD243B9C4B005DA378 /* LigandSceneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9718EFB243B9C4B005DA378 /* LigandSceneViewController.xib */; };
+		A987F9C0245754AA00086D5C /* LigandsCollectionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987F9BF245754AA00086D5C /* LigandsCollectionBuilder.swift */; };
+		A987F9C2245758EF00086D5C /* Array+string.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987F9C1245758EF00086D5C /* Array+string.swift */; };
+		A987F9C42457592F00086D5C /* Array+StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987F9C32457592F00086D5C /* Array+StringTests.swift */; };
+		A987F9C7245760CE00086D5C /* LigandsCollectionBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987F9C6245760CE00086D5C /* LigandsCollectionBuilderTests.swift */; };
 		A9934579242FCDEF00C6B043 /* FakeLigands.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9934578242FCDEF00C6B043 /* FakeLigands.swift */; };
 		A9934582242FD19200C6B043 /* SwiftyProteinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9934581242FD19200C6B043 /* SwiftyProteinTests.swift */; };
-		A993458A242FD1B400C6B043 /* AtomNode+ArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9934589242FD1B400C6B043 /* AtomNode+ArrayTests.swift */; };
+		A993458A242FD1B400C6B043 /* Array+AtomNodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9934589242FD1B400C6B043 /* Array+AtomNodeTests.swift */; };
 		A993458C242FD52D00C6B043 /* SCNNode+Atom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A993458B242FD52D00C6B043 /* SCNNode+Atom.swift */; };
 		A993458E242FF4FF00C6B043 /* SCNView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A993458D242FF4FF00C6B043 /* SCNView+extension.swift */; };
 		A9A3A9FD23F9CC5D00A19E17 /* SCNVector3+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A3A9FC23F9CC5D00A19E17 /* SCNVector3+extension.swift */; };
@@ -133,7 +137,7 @@
 		A92A9C2524561F15004CA5D3 /* LigandHeaderCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigandHeaderCollectionView.swift; sourceTree = "<group>"; };
 		A92A9C2624561F15004CA5D3 /* LigandHeaderCollectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LigandHeaderCollectionView.xib; sourceTree = "<group>"; };
 		A94DD735244C92740034C6AF /* PDBLigandConverter+AtomTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDBLigandConverter+AtomTests.swift"; sourceTree = "<group>"; };
-		A94DD737244C957B0034C6AF /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		A94DD737244C957B0034C6AF /* String+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
 		A94DD73A244CA9D60034C6AF /* String+TrimmedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+TrimmedTests.swift"; sourceTree = "<group>"; };
 		A94DD73C244CAE410034C6AF /* PDBLigandConverter+InputTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDBLigandConverter+InputTypeTests.swift"; sourceTree = "<group>"; };
 		A94DD73E244CB3080034C6AF /* PDBLigandConverter+ConectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDBLigandConverter+ConectTests.swift"; sourceTree = "<group>"; };
@@ -154,11 +158,15 @@
 		A9718EF6243B9B78005DA378 /* ConstraintType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintType.swift; sourceTree = "<group>"; };
 		A9718EF8243B9BBA005DA378 /* NSLayoutConstraint+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+extension.swift"; sourceTree = "<group>"; };
 		A9718EFB243B9C4B005DA378 /* LigandSceneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LigandSceneViewController.xib; sourceTree = "<group>"; };
+		A987F9BF245754AA00086D5C /* LigandsCollectionBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigandsCollectionBuilder.swift; sourceTree = "<group>"; };
+		A987F9C1245758EF00086D5C /* Array+string.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+string.swift"; sourceTree = "<group>"; };
+		A987F9C32457592F00086D5C /* Array+StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+StringTests.swift"; sourceTree = "<group>"; };
+		A987F9C6245760CE00086D5C /* LigandsCollectionBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigandsCollectionBuilderTests.swift; sourceTree = "<group>"; };
 		A9934578242FCDEF00C6B043 /* FakeLigands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeLigands.swift; sourceTree = "<group>"; };
 		A993457F242FD19200C6B043 /* SwiftyProteinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyProteinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9934581242FD19200C6B043 /* SwiftyProteinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyProteinTests.swift; sourceTree = "<group>"; };
 		A9934583242FD19200C6B043 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A9934589242FD1B400C6B043 /* AtomNode+ArrayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AtomNode+ArrayTests.swift"; sourceTree = "<group>"; };
+		A9934589242FD1B400C6B043 /* Array+AtomNodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+AtomNodeTests.swift"; sourceTree = "<group>"; };
 		A993458B242FD52D00C6B043 /* SCNNode+Atom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNNode+Atom.swift"; sourceTree = "<group>"; };
 		A993458D242FF4FF00C6B043 /* SCNView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNView+extension.swift"; sourceTree = "<group>"; };
 		A9A3A9FC23F9CC5D00A19E17 /* SCNVector3+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNVector3+extension.swift"; sourceTree = "<group>"; };
@@ -214,6 +222,7 @@
 			children = (
 				A90CA9B32456CE5B000BBE60 /* LigandsAppList.swift */,
 				A96D48E62456E422003FE291 /* LigandsCollection.swift */,
+				A987F9BF245754AA00086D5C /* LigandsCollectionBuilder.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -353,7 +362,8 @@
 			isa = PBXGroup;
 			children = (
 				A92A9C0A245352F2004CA5D3 /* Array+extension.swift */,
-				A94DD737244C957B0034C6AF /* String+Extension.swift */,
+				A987F9C1245758EF00086D5C /* Array+string.swift */,
+				A94DD737244C957B0034C6AF /* String+extension.swift */,
 				A9F3E7D124421A68000D62A1 /* UIColor+extension.swift */,
 				A9718EF8243B9BBA005DA378 /* NSLayoutConstraint+extension.swift */,
 				A9718EE3243B9A32005DA378 /* UIViewController+extension.swift */,
@@ -407,7 +417,9 @@
 		A94DD739244CA9C20034C6AF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				A9934589242FD1B400C6B043 /* Array+AtomNodeTests.swift */,
 				A94DD73A244CA9D60034C6AF /* String+TrimmedTests.swift */,
+				A987F9C32457592F00086D5C /* Array+StringTests.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -494,15 +506,23 @@
 			path = UIView;
 			sourceTree = "<group>";
 		};
-		A9934580242FD19200C6B043 /* SwiftyProteinTests */ = {
+		A987F9C5245760A600086D5C /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				A9597A83244CCDA5004E732E /* PDBLigandProvider */,
 				A94DD739244CA9C20034C6AF /* Extensions */,
 				A94DD734244C92580034C6AF /* PDBLigandConverter */,
+				A987F9C6245760CE00086D5C /* LigandsCollectionBuilderTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		A9934580242FD19200C6B043 /* SwiftyProteinTests */ = {
+			isa = PBXGroup;
+			children = (
+				A987F9C5245760A600086D5C /* Tests */,
 				A9934581242FD19200C6B043 /* SwiftyProteinTests.swift */,
 				A9934583242FD19200C6B043 /* Info.plist */,
-				A9934589242FD1B400C6B043 /* AtomNode+ArrayTests.swift */,
 			);
 			path = SwiftyProteinTests;
 			sourceTree = "<group>";
@@ -712,6 +732,7 @@
 				A91CF35B244C7DE800294568 /* PDBAtom.swift in Sources */,
 				A9597A7F244CC719004E732E /* PDBLigand.swift in Sources */,
 				A910E40D23F87ED6008F9020 /* LightLigandProvider.swift in Sources */,
+				A987F9C2245758EF00086D5C /* Array+string.swift in Sources */,
 				A96D48E72456E422003FE291 /* LigandsCollection.swift in Sources */,
 				A92A9C1324536EF4004CA5D3 /* LigandCollectionViewController.swift in Sources */,
 				A9F3E7D624422C1A000D62A1 /* ProteinSceneConfiguration.swift in Sources */,
@@ -722,13 +743,14 @@
 				A9F3E7E624423731000D62A1 /* Reusable.swift in Sources */,
 				A9597A7A244CC5F4004E732E /* PDBLigandConverter+ContentError.swift in Sources */,
 				A910E40523F85DF0008F9020 /* SCNGeometry+extension.swift in Sources */,
-				A94DD738244C957B0034C6AF /* String+Extension.swift in Sources */,
+				A94DD738244C957B0034C6AF /* String+extension.swift in Sources */,
 				A9F3E7D824422C47000D62A1 /* ProteinSceneConfiguration+ColorMode.swift in Sources */,
 				A9718EF9243B9BBA005DA378 /* NSLayoutConstraint+extension.swift in Sources */,
 				A9C7945A2450D73300B5FFA2 /* RequestError.swift in Sources */,
 				A94DD752244CB9E40034C6AF /* PDBConnection.swift in Sources */,
 				A910E40A23F87E78008F9020 /* PDBAtomLight.swift in Sources */,
 				A910E40823F87B83008F9020 /* PathBounds.swift in Sources */,
+				A987F9C0245754AA00086D5C /* LigandsCollectionBuilder.swift in Sources */,
 				A9C794582450D69E00B5FFA2 /* NetworkRequest.swift in Sources */,
 				A9F3E7EC244247F7000D62A1 /* ClampedPropertyWrapper.swift in Sources */,
 				A9718EF4243B9AF5005DA378 /* UIView+appearance.swift in Sources */,
@@ -744,10 +766,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A94DD736244C92740034C6AF /* PDBLigandConverter+AtomTests.swift in Sources */,
+				A987F9C42457592F00086D5C /* Array+StringTests.swift in Sources */,
 				A94DD73D244CAE410034C6AF /* PDBLigandConverter+InputTypeTests.swift in Sources */,
 				A9597A85244CCDBD004E732E /* PDBLigandProvider+buildURLTests.swift in Sources */,
-				A993458A242FD1B400C6B043 /* AtomNode+ArrayTests.swift in Sources */,
+				A993458A242FD1B400C6B043 /* Array+AtomNodeTests.swift in Sources */,
 				A9597A87244CCE6E004E732E /* PDBLigandProviderTests.swift in Sources */,
+				A987F9C7245760CE00086D5C /* LigandsCollectionBuilderTests.swift in Sources */,
 				A92A9C0D245353EB004CA5D3 /* PDBLigandConverter+MergeConnectionsTests.swift in Sources */,
 				A9934582242FD19200C6B043 /* SwiftyProteinTests.swift in Sources */,
 				A94DD73F244CB3080034C6AF /* PDBLigandConverter+ConectTests.swift in Sources */,
