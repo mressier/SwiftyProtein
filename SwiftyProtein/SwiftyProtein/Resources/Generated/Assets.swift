@@ -20,7 +20,11 @@
 internal enum SPAssets {
   internal static let dotLoader = DataAsset(name: "dotLoader")
   internal static let launchScreen = ImageAsset(name: "LaunchScreen")
+  internal static let ligands = DataAsset(name: "Ligands")
   internal static let title = ImageAsset(name: "Title")
+  internal static let fingerprint = ImageAsset(name: "fingerprint")
+  internal static let heartEmpty = ImageAsset(name: "heart-empty")
+  internal static let heartFilled = ImageAsset(name: "heart-filled")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 

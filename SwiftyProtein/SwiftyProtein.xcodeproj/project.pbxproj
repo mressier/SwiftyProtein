@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A90CA9B42456CE5B000BBE60 /* LigandsAppList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90CA9B32456CE5B000BBE60 /* LigandsAppList.swift */; };
 		A910E40523F85DF0008F9020 /* SCNGeometry+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A910E40423F85DF0008F9020 /* SCNGeometry+extension.swift */; };
 		A910E40823F87B83008F9020 /* PathBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = A910E40723F87B83008F9020 /* PathBounds.swift */; };
 		A910E40A23F87E78008F9020 /* PDBAtomLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A910E40923F87E78008F9020 /* PDBAtomLight.swift */; };
@@ -54,6 +55,7 @@
 		A9597A82244CC8B0004E732E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A9597A81244CC8B0004E732E /* Alamofire */; };
 		A9597A85244CCDBD004E732E /* PDBLigandProvider+buildURLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9597A84244CCDBD004E732E /* PDBLigandProvider+buildURLTests.swift */; };
 		A9597A87244CCE6E004E732E /* PDBLigandProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9597A86244CCE6E004E732E /* PDBLigandProviderTests.swift */; };
+		A96D48E52456DC06003FE291 /* SectionSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96D48E42456DC06003FE291 /* SectionSource.swift */; };
 		A9718EE4243B9A32005DA378 /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9718EE3243B9A32005DA378 /* UIViewController+extension.swift */; };
 		A9718EF2243B9AF5005DA378 /* UIView+gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9718EED243B9AF5005DA378 /* UIView+gradient.swift */; };
 		A9718EF3243B9AF5005DA378 /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9718EEE243B9AF5005DA378 /* UIView+extension.swift */; };
@@ -93,6 +95,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A90CA9B32456CE5B000BBE60 /* LigandsAppList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigandsAppList.swift; sourceTree = "<group>"; };
 		A910E40423F85DF0008F9020 /* SCNGeometry+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNGeometry+extension.swift"; sourceTree = "<group>"; };
 		A910E40723F87B83008F9020 /* PathBounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathBounds.swift; sourceTree = "<group>"; };
 		A910E40923F87E78008F9020 /* PDBAtomLight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDBAtomLight.swift; sourceTree = "<group>"; };
@@ -141,6 +144,7 @@
 		A9597A7E244CC719004E732E /* PDBLigand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDBLigand.swift; sourceTree = "<group>"; };
 		A9597A84244CCDBD004E732E /* PDBLigandProvider+buildURLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDBLigandProvider+buildURLTests.swift"; sourceTree = "<group>"; };
 		A9597A86244CCE6E004E732E /* PDBLigandProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDBLigandProviderTests.swift; sourceTree = "<group>"; };
+		A96D48E42456DC06003FE291 /* SectionSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionSource.swift; sourceTree = "<group>"; };
 		A9718EE3243B9A32005DA378 /* UIViewController+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+extension.swift"; path = "SwiftyProtein/Shared/Library/Extensions/UIKit/UIViewController+extension.swift"; sourceTree = SOURCE_ROOT; };
 		A9718EED243B9AF5005DA378 /* UIView+gradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+gradient.swift"; sourceTree = "<group>"; };
 		A9718EEE243B9AF5005DA378 /* UIView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
@@ -190,6 +194,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A90CA9B12456CE26000BBE60 /* LigandCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				A92A9C1124536EF4004CA5D3 /* LigandCollectionViewController.swift */,
+				A92A9C1224536EF4004CA5D3 /* LigandCollectionViewController.xib */,
+				A92A9C1D24560512004CA5D3 /* LigandCollectionViewCell.swift */,
+				A92A9C1E24560512004CA5D3 /* LigandCollectionViewCell.xib */,
+				A92A9C2524561F15004CA5D3 /* LigandHeaderCollectionView.swift */,
+				A92A9C2624561F15004CA5D3 /* LigandHeaderCollectionView.xib */,
+			);
+			path = LigandCollectionView;
+			sourceTree = "<group>";
+		};
+		A90CA9B22456CE3A000BBE60 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A90CA9B32456CE5B000BBE60 /* LigandsAppList.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		A910E40623F87B70008F9020 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -338,13 +363,9 @@
 		A92A9C0E24536A06004CA5D3 /* LigandList */ = {
 			isa = PBXGroup;
 			children = (
+				A90CA9B22456CE3A000BBE60 /* Model */,
+				A90CA9B12456CE26000BBE60 /* LigandCollectionView */,
 				A92A9C0F24536A1D004CA5D3 /* LigandListViewController.swift */,
-				A92A9C1124536EF4004CA5D3 /* LigandCollectionViewController.swift */,
-				A92A9C1224536EF4004CA5D3 /* LigandCollectionViewController.xib */,
-				A92A9C1D24560512004CA5D3 /* LigandCollectionViewCell.swift */,
-				A92A9C1E24560512004CA5D3 /* LigandCollectionViewCell.xib */,
-				A92A9C2524561F15004CA5D3 /* LigandHeaderCollectionView.swift */,
-				A92A9C2624561F15004CA5D3 /* LigandHeaderCollectionView.xib */,
 			);
 			path = LigandList;
 			sourceTree = "<group>";
@@ -363,6 +384,7 @@
 				A92A9C2124560862004CA5D3 /* ArraySource.swift */,
 				A92A9C1924537BC3004CA5D3 /* TableViewSource.swift */,
 				A92A9C2324560874004CA5D3 /* DictionarySource.swift */,
+				A96D48E42456DC06003FE291 /* SectionSource.swift */,
 			);
 			path = TableViewUtils;
 			sourceTree = "<group>";
@@ -681,6 +703,7 @@
 				A9597A7D244CC6E2004E732E /* PDBLigandProvider.swift in Sources */,
 				A92A9C2424560874004CA5D3 /* DictionarySource.swift in Sources */,
 				A9C7945C2450D77B00B5FFA2 /* URLBuilder.swift in Sources */,
+				A90CA9B42456CE5B000BBE60 /* LigandsAppList.swift in Sources */,
 				A922803F23F846A700BA4F5D /* Assets.swift in Sources */,
 				A9718EF3243B9AF5005DA378 /* UIView+extension.swift in Sources */,
 				A91CF35B244C7DE800294568 /* PDBAtom.swift in Sources */,
@@ -707,6 +730,7 @@
 				A9718EF4243B9AF5005DA378 /* UIView+appearance.swift in Sources */,
 				A92A9C2724561F15004CA5D3 /* LigandHeaderCollectionView.swift in Sources */,
 				A910E40F23F8838D008F9020 /* AtomNode.swift in Sources */,
+				A96D48E52456DC06003FE291 /* SectionSource.swift in Sources */,
 				A92A9C1C24537BC3004CA5D3 /* TableViewSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

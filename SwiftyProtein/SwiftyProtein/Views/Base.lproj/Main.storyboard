@@ -30,11 +30,29 @@
                     <view key="view" contentMode="scaleToFill" id="M1t-oe-Kjq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wTM-Md-trm">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Joc-mW-7x1">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="wTM-Md-trm" firstAttribute="top" secondItem="RCH-3E-bW1" secondAttribute="top" id="4as-qS-2CI"/>
+                            <constraint firstItem="wTM-Md-trm" firstAttribute="leading" secondItem="RCH-3E-bW1" secondAttribute="leading" id="SBC-ds-e1T"/>
+                            <constraint firstItem="RCH-3E-bW1" firstAttribute="bottom" secondItem="wTM-Md-trm" secondAttribute="bottom" id="aCB-sU-y0A"/>
+                            <constraint firstItem="RCH-3E-bW1" firstAttribute="trailing" secondItem="wTM-Md-trm" secondAttribute="trailing" id="uyj-e9-VL7"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="RCH-3E-bW1"/>
                     </view>
                     <navigationItem key="navigationItem" title="Swifty Protein" id="yhL-Lh-InA"/>
                     <connections>
+                        <outlet property="ligandListContainerView" destination="Joc-mW-7x1" id="Vbm-6A-RjJ"/>
                         <segue destination="lUM-Sp-M6v" kind="show" id="tbf-gG-6bI"/>
                     </connections>
                 </viewController>
