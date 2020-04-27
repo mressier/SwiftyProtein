@@ -1,9 +1,15 @@
-//
-//  Array+String.swift
-//  SwiftyProtein
-//
-//  Created by Mathilde Ressier on 27/04/2020.
-//  Copyright © 2020 Mathilde Ressier. All rights reserved.
-//
-
 import Foundation
+
+extension Array where Element == String {
+
+  func filter(startingWith string: String,
+              ignoringCase: Bool) -> [String] {
+    let compare = ignoringCase ? string.uppercased() : string
+
+    return filter() { element in
+      let elementToCompare = ignoringCase ? element.uppercased() : element
+      return elementToCompare.starts(with: compare)
+    }
+  }
+
+}
