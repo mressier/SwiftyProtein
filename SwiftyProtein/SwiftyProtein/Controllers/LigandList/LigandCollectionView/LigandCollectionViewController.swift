@@ -3,6 +3,9 @@ import UIKit
 private let cellIdentifier = "ligandCell"
 private let headerIdentifier = "ligandHeaderView"
 
+typealias LigandSectionSource =
+  SectionSource<LigandCollection.Header, LigandCollection.Ligand>
+
 class LigandCollectionViewController: UICollectionViewController {
 
   //----------------------------------------------------------------------------
@@ -11,13 +14,10 @@ class LigandCollectionViewController: UICollectionViewController {
 
   /******************** Parameters ********************/
 
-  typealias LigandSectionSource =
-    SectionSource<LigandCollection.Header, LigandCollection.Ligand>
-
   private var source = LigandSectionSource()
 
   /// List of ligands splitted in sections to display
-  var ligandsList = [LigandSectionSource.SectionSourceContent]()
+  var ligandsList = LigandSectionSource.Sections()
 
   //----------------------------------------------------------------------------
   // MARK: - View Life Cycle

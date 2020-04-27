@@ -54,7 +54,8 @@ class LigandListViewController: UIViewController {
   private func setupLigandCollectionVC() {
     let ligandCollectionVC = LigandCollectionViewController(bundle: .main)
 
-    ligandCollectionVC.ligandsList = ligandsList.toLigandCollection
+    ligandCollectionVC.ligandsList =
+      LigandsCollectionBuilder.build(from: ligandsList)
 
     add(asChildViewController: ligandCollectionVC,
         on: ligandListContainerView)
