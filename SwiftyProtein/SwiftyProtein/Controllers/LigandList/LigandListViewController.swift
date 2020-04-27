@@ -12,7 +12,7 @@ class LigandListViewController: UIViewController {
 
   /******************** Parameters ********************/
 
-  var ligands = ["A", "B", "C"] {
+  var ligands = ["A", "B", "C", "D", "E", "F"] {
     didSet {
       // reload data
     }

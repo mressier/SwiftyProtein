@@ -75,6 +75,11 @@ extension LigandCollectionViewController {
       withReuseIdentifier: headerIdentifier,
       for: indexPath
     )
+
+    if let headerView = headerView as? LigandHeaderCollectionView {
+      let section = source.sectionKey(at: indexPath)
+      headerView.sectionName = section
+    }
     return headerView
   }
 

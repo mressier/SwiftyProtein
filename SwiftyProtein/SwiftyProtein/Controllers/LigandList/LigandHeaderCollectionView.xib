@@ -14,14 +14,14 @@
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASl-1Y-Uxc">
-                    <rect key="frame" x="0.0" y="14.5" width="42" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <rect key="frame" x="10" y="14.5" width="43.5" height="21"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" systemColor="secondarySystemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="ASl-1Y-Uxc" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="EG1-7C-tUl"/>
+                <constraint firstItem="ASl-1Y-Uxc" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="10" id="EG1-7C-tUl"/>
                 <constraint firstItem="ASl-1Y-Uxc" firstAttribute="centerY" secondItem="U6b-Vx-4bR" secondAttribute="centerY" id="JOg-4W-hRO"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>

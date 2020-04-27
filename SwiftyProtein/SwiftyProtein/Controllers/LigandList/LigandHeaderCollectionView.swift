@@ -12,14 +12,25 @@ class LigandHeaderCollectionView: UICollectionReusableView, Reusable {
 
   /******************** Parameters ********************/
 
-  var titleText: String?
+  var sectionName: String? {
+    didSet { titleLabel.text = sectionName }
+  }
+
   //----------------------------------------------------------------------------
   // MARK: - View Life Cycle
   //----------------------------------------------------------------------------
 
   override func awakeFromNib() {
     super.awakeFromNib()
-    // Initialization code
+    setup()
+  }
+
+  private func setup() {
+    setupLabel()
+  }
+
+  private func setupLabel() {
+    titleLabel.text = sectionName
   }
 
 }
