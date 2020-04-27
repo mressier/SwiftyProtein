@@ -8,12 +8,17 @@ class LigandHeaderCollectionView: UICollectionReusableView, Reusable {
 
   /******************** Outlet ********************/
 
-  @IBOutlet weak var titleLabel: UILabel!
+  @IBOutlet weak var sectionTitleLabel: UILabel!
+  @IBOutlet weak var sectionImageView: UIImageView!
 
   /******************** Parameters ********************/
 
   var sectionName: String? {
-    didSet { titleLabel.text = sectionName }
+    didSet { setupLabel() }
+  }
+
+  var sectionImage: UIImage? {
+    didSet { setupImage() }
   }
 
   //----------------------------------------------------------------------------
@@ -27,10 +32,21 @@ class LigandHeaderCollectionView: UICollectionReusableView, Reusable {
 
   private func setup() {
     setupLabel()
+    setupImage()
+  }
+
+  private func setupImage() {
+    if let image = sectionImage {
+      sectionImageView.tintColor = .label
+      sectionImageView.image = image
+      sectionImageView.isHidden = false
+    } else {
+      sectionImageView.isHidden = true
+    }
   }
 
   private func setupLabel() {
-    titleLabel.text = sectionName
+    sectionTitleLabel.text = sectionName
   }
 
 }

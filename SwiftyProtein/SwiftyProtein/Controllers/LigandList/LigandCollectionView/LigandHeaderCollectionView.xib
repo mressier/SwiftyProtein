@@ -13,22 +13,37 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASl-1Y-Uxc">
-                    <rect key="frame" x="10" y="14.5" width="43.5" height="21"/>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="o86-Ie-HxV">
+                    <rect key="frame" x="10" y="0.0" width="310" height="50"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="253" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="QPc-t3-hBN">
+                            <rect key="frame" x="0.0" y="0.0" width="22" height="50"/>
+                            <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASl-1Y-Uxc">
+                            <rect key="frame" x="32" y="0.0" width="278" height="50"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
             </subviews>
             <color key="backgroundColor" systemColor="secondarySystemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="ASl-1Y-Uxc" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="10" id="EG1-7C-tUl"/>
-                <constraint firstItem="ASl-1Y-Uxc" firstAttribute="centerY" secondItem="U6b-Vx-4bR" secondAttribute="centerY" id="JOg-4W-hRO"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="o86-Ie-HxV" secondAttribute="trailing" id="5rf-oT-pnY"/>
+                <constraint firstItem="o86-Ie-HxV" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" constant="10" id="IEY-R3-rQB"/>
+                <constraint firstAttribute="bottom" secondItem="o86-Ie-HxV" secondAttribute="bottom" id="jdh-lV-eIa"/>
+                <constraint firstItem="o86-Ie-HxV" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="wwa-Ut-nn3"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
             <connections>
-                <outlet property="titleLabel" destination="ASl-1Y-Uxc" id="ZLQ-cV-GPr"/>
+                <outlet property="sectionImageView" destination="QPc-t3-hBN" id="QRm-X8-prS"/>
+                <outlet property="sectionTitleLabel" destination="ASl-1Y-Uxc" id="ZLQ-cV-GPr"/>
             </connections>
             <point key="canvasLocation" x="139" y="98"/>
         </collectionReusableView>
     </objects>
+    <resources>
+        <image name="star.fill" catalog="system" width="64" height="58"/>
+    </resources>
 </document>

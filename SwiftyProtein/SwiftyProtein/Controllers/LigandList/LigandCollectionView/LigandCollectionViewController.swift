@@ -11,10 +11,13 @@ class LigandCollectionViewController: UICollectionViewController {
 
   /******************** Parameters ********************/
 
-  var ligands = [String]()
-  var favorites = [String]()
+  typealias LigandSectionSource =
+    SectionSource<LigandCollection.Header, LigandCollection.Ligand>
 
-  private var source = DictionnarySource<String>()
+  private var source = LigandSectionSource()
+
+  /// List of ligands splitted in sections to display
+  var ligandsList = [LigandSectionSource.SectionSourceContent]()
 
   //----------------------------------------------------------------------------
   // MARK: - View Life Cycle
@@ -44,7 +47,8 @@ class LigandCollectionViewController: UICollectionViewController {
   }
 
   private func setupSource() {
-    source.elements = ["favoris": ["A"], "ligands": ligands]
+    source.elements = ligandsList
+
     collectionView.reloadData()
   }
 
@@ -70,6 +74,7 @@ extension LigandCollectionViewController {
     viewForSupplementaryElementOfKind kind: String,
     at indexPath: IndexPath
   ) -> UICollectionReusableView {
+
     let headerView = collectionView.dequeueReusableSupplementaryView(
       ofKind: kind,
       withReuseIdentifier: headerIdentifier,
@@ -78,8 +83,11 @@ extension LigandCollectionViewController {
 
     if let headerView = headerView as? LigandHeaderCollectionView {
       let section = source.sectionKey(at: indexPath)
-      headerView.sectionName = section
+
+      headerView.sectionName = section.title
+      headerView.sectionImage = section.image
     }
+
     return headerView
   }
 
@@ -91,9 +99,8 @@ extension LigandCollectionViewController {
                                                   for: indexPath)
     if let cell = cell as? LigandCollectionViewCell {
       let ligand = source.element(at: indexPath)
-      cell.ligandName = ligand
+      cell.ligandName = ligand.name
     }
-    // Configure the cell
     
     return cell
   }

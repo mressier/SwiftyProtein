@@ -8,15 +8,14 @@ class LigandListViewController: UIViewController {
 
   /******************** Outlet ********************/
 
+  @IBOutlet weak var ligandListContainerView: UIView!
+
   /******************** Callbacks ********************/
 
   /******************** Parameters ********************/
 
-  var ligands = ["A", "B", "C", "D", "E", "F"] {
-    didSet {
-      // reload data
-    }
-  }
+  var ligandsList = LigandsAppList(ligands: ["A", "AB", "B", "B1", "C", "1C", "D", "D3E", "E", "F"],
+                                   favorites: ["A", "B1"])
 
   /******************** View Controllers ********************/
 
@@ -55,9 +54,10 @@ class LigandListViewController: UIViewController {
   private func setupLigandCollectionVC() {
     let ligandCollectionVC = LigandCollectionViewController(bundle: .main)
 
-    ligandCollectionVC.ligands = ligands
+    ligandCollectionVC.ligandsList = ligandsList.toLigandCollection
 
-    add(asChildViewController: ligandCollectionVC, on: view)
+    add(asChildViewController: ligandCollectionVC,
+        on: ligandListContainerView)
   }
 }
 
