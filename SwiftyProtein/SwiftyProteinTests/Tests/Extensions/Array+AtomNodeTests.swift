@@ -2,7 +2,7 @@ import XCTest
 import SceneKit
 @testable import SwiftyProtein
 
-class AtomNodeArrayTests: XCTestCase {
+class Array_AtomNodeTests: XCTestCase {
 
   let sampleAtomNodes =
     SCNNode().createAtomNodes(forAtoms: FakeLigands.sample)
