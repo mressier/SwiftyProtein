@@ -17,7 +17,8 @@ struct LigandsCollectionBuilder {
     from ligandsList: LigandsAppList
   ) -> LigandSectionSource.Sections {
     let alphabeticals = build(from: ligandsList.ligands,
-                              alphabeticSections: LigandsAppList.alphabetical)
+                              alphabeticSections: LigandsAppList.alphabetical,
+                              favoriteList: ligandsList.favorites)
     let favorites = buildFavorites(from: ligandsList.favorites)
     return favorites + alphabeticals
   }
@@ -27,7 +28,8 @@ struct LigandsCollectionBuilder {
   /// Section content is find by getting all element fron ligandsList that starts with the section name
   static func build(
     from ligandsList: [String],
-    alphabeticSections: [String]
+    alphabeticSections: [String],
+    favoriteList: [String] = []
   ) -> LigandSectionSource.Sections {
 
     return alphabeticSections.map() { character in
@@ -35,8 +37,11 @@ struct LigandsCollectionBuilder {
       let ligandsInSection =
         ligandsList.filter(startingWith: character, ignoringCase: true)
 
-      let ligandsForCollection =
-        ligandsInSection.map() { LigandCollection.Ligand(name: $0) }
+      let ligandsForCollection = ligandsInSection.map() {
+        ligand -> LigandCollection.Ligand in
+        let isFavorite = favoriteList.contains(ligand)
+        return LigandCollection.Ligand(name: ligand, isFavorite: isFavorite)
+      }
 
       return (section: LigandCollection.Header(title: character, image: nil),
               content: ligandsForCollection)
@@ -49,7 +54,9 @@ struct LigandsCollectionBuilder {
     from ligandsList: [String]
   ) -> LigandSectionSource.Sections {
     let favoriteCollection =
-      ligandsList.map() { LigandCollection.Ligand(name: $0) }
+      ligandsList.map() { LigandCollection.Ligand(name: $0, isFavorite: true) }
+
+    guard favoriteCollection.count > 0 else { return [] }
 
     return [(section: LigandCollection.Header(title: "", image: favoriteImage),
              content: favoriteCollection)]
