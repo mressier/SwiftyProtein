@@ -6,9 +6,13 @@ class LigandCollectionViewCell: UICollectionViewCell, Reusable {
   // MARK: - Properties
   //----------------------------------------------------------------------------
 
+  /******************** Outlet ********************/
+
   @IBOutlet weak var containerView: UIView!
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var accessoryImageView: UIImageView!
+
+  /******************** Parameters ********************/
 
   var ligandName: String? {
     didSet { titleLabel?.text = ligandName }
@@ -16,6 +20,10 @@ class LigandCollectionViewCell: UICollectionViewCell, Reusable {
 
   var accessoryImage: UIImage? {
     didSet { accessoryImageView.image = accessoryImage }
+  }
+
+  override var isSelected: Bool {
+    didSet { setSelected(isSelected) }
   }
   
   //----------------------------------------------------------------------------
@@ -27,6 +35,19 @@ class LigandCollectionViewCell: UICollectionViewCell, Reusable {
     setup()
   }
 
+  func setSelected(_ isSelected: Bool) {
+    UIView.animate(withDuration: 0.2) {
+      self.containerView.backgroundColor =
+        isSelected ? .swiftyDarkBlue : .swiftyBlue
+
+      self.containerView.cornerRadius = isSelected ? 25.0 : 21.0
+    }
+  }
+
+  //----------------------------------------------------------------------------
+  // MARK: - Initialization
+  //----------------------------------------------------------------------------
+
   private func setup() {
     setupBackground()
     setupLabel()
@@ -35,8 +56,8 @@ class LigandCollectionViewCell: UICollectionViewCell, Reusable {
   private func setupBackground() {
     containerView.cornerRadius = 21.0
     containerView.borderWidth = 3.0
-    containerView.backgroundColor = .systemBlue // TEMP
-    containerView.borderColor = .blue // TEMP
+    containerView.backgroundColor = .swiftyBlue
+    containerView.borderColor = .swiftyDarkBlue
   }
 
   private func setupLabel() {
@@ -46,5 +67,6 @@ class LigandCollectionViewCell: UICollectionViewCell, Reusable {
 
   private func setupAccessoryImageView() {
     accessoryImageView.image = accessoryImage
+    accessoryImageView.tintColor = .swiftyDarkBlue
   }
 }

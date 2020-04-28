@@ -15,6 +15,7 @@
 		A910E40F23F8838D008F9020 /* AtomNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A910E40E23F8838D008F9020 /* AtomNode.swift */; };
 		A9156287245815A000960140 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9156286245815A000960140 /* UIImage+Extension.swift */; };
 		A9156289245830A000960140 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9156288245830A000960140 /* LeftAlignedCollectionViewFlowLayout.swift */; };
+		A9156291245883D100960140 /* UIColor+SwiftyProtein.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9156290245883D100960140 /* UIColor+SwiftyProtein.swift */; };
 		A91A5510243B9601003DF261 /* LigandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91A550F243B9601003DF261 /* LigandViewController.swift */; };
 		A91CF350244C651400294568 /* AtomsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91CF34F244C651400294568 /* AtomsList.swift */; };
 		A91CF352244C656B00294568 /* PDBAtomPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91CF351244C656B00294568 /* PDBAtomPosition.swift */; };
@@ -110,6 +111,7 @@
 		A910E40E23F8838D008F9020 /* AtomNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomNode.swift; sourceTree = "<group>"; };
 		A9156286245815A000960140 /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		A9156288245830A000960140 /* LeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		A9156290245883D100960140 /* UIColor+SwiftyProtein.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+SwiftyProtein.swift"; sourceTree = "<group>"; };
 		A91A550F243B9601003DF261 /* LigandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigandViewController.swift; sourceTree = "<group>"; };
 		A91CF34F244C651400294568 /* AtomsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomsList.swift; sourceTree = "<group>"; };
 		A91CF351244C656B00294568 /* PDBAtomPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDBAtomPosition.swift; sourceTree = "<group>"; };
@@ -378,6 +380,7 @@
 				A987F9C1245758EF00086D5C /* Array+string.swift */,
 				A94DD737244C957B0034C6AF /* String+extension.swift */,
 				A9F3E7D124421A68000D62A1 /* UIColor+extension.swift */,
+				A9156290245883D100960140 /* UIColor+SwiftyProtein.swift */,
 				A9718EF8243B9BBA005DA378 /* NSLayoutConstraint+extension.swift */,
 				A9718EE3243B9A32005DA378 /* UIViewController+extension.swift */,
 				A9718EEB243B9AF5005DA378 /* UIView */,
@@ -728,6 +731,7 @@
 				A9718EF2243B9AF5005DA378 /* UIView+gradient.swift in Sources */,
 				A92A9C1024536A1D004CA5D3 /* LigandListViewController.swift in Sources */,
 				A94DD750244CB9480034C6AF /* PDBLigandConverter+End.swift in Sources */,
+				A9156291245883D100960140 /* UIColor+SwiftyProtein.swift in Sources */,
 				A9F3E7D4244221CD000D62A1 /* AtomInfo.swift in Sources */,
 				A9C7945E2450D89D00B5FFA2 /* PDBRequest.swift in Sources */,
 				A91A5510243B9601003DF261 /* LigandViewController.swift in Sources */,

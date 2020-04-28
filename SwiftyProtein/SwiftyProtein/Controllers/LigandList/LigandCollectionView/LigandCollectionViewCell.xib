@@ -26,15 +26,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart-filled" translatesAutoresizingMaskIntoConstraints="NO" id="Zmt-FZ-Si7">
-                                <rect key="frame" x="91" y="106" width="21" height="21"/>
-                                <color key="tintColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="89" y="104" width="21" height="21"/>
+                                <color key="tintColor" red="0.1516450047492981" green="0.12541240453720093" blue="0.3843352198600769" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="Zmt-FZ-Si7" secondAttribute="bottom" constant="10" id="ExD-Ed-Gzv"/>
+                            <constraint firstAttribute="bottom" secondItem="Zmt-FZ-Si7" secondAttribute="bottom" constant="12" id="ExD-Ed-Gzv"/>
                             <constraint firstItem="vJ5-hN-SKe" firstAttribute="centerY" secondItem="i4a-jW-Rpd" secondAttribute="centerY" id="TPa-j1-O7M"/>
-                            <constraint firstAttribute="trailing" secondItem="Zmt-FZ-Si7" secondAttribute="trailing" constant="10" id="fkv-uy-XIv"/>
+                            <constraint firstAttribute="trailing" secondItem="Zmt-FZ-Si7" secondAttribute="trailing" constant="12" id="fkv-uy-XIv"/>
                             <constraint firstItem="vJ5-hN-SKe" firstAttribute="centerX" secondItem="i4a-jW-Rpd" secondAttribute="centerX" id="mqZ-LG-Rr6"/>
                         </constraints>
                     </view>

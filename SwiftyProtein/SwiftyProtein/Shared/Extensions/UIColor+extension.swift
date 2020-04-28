@@ -62,12 +62,3 @@ extension UIColor {
     self.init(cgColor: UIColor.black.cgColor)
   }
 }
-
-extension UIColor {
-  static var darkRed = UIColor(hex: "#992200")
-  static var darkViolet = UIColor(hex: "#6600bb")
-  static var salmon = UIColor(hex: "#ffaa77")
-  static var darkGreen = UIColor(hex: "#007700")
-  static var darkOrange = UIColor(hex: "#dd7700")
-}
-
