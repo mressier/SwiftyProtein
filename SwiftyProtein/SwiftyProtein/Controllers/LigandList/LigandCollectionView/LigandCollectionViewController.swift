@@ -34,16 +34,25 @@ class LigandCollectionViewController: UICollectionViewController {
   }
 
   private func setupCollectionView() {
+    setupCollectionViewCells()
+    setupCollectionViewReusableView()
+  }
+
+  private func setupCollectionViewCells() {
     let nibName = UINib(nibName: LigandCollectionViewCell.reuseIdentifier,
                         bundle: .main)
     collectionView.register(nibName,
                             forCellWithReuseIdentifier: cellIdentifier)
+  }
 
+  private func setupCollectionViewReusableView() {
     let nibHeader = UINib(nibName: LigandHeaderCollectionView.reuseIdentifier,
                           bundle: .main)
-    collectionView.register(nibHeader,
-                            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-                            withReuseIdentifier: headerIdentifier)
+    collectionView.register(
+      nibHeader,
+      forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+      withReuseIdentifier: headerIdentifier
+    )
   }
 
   private func setupSource() {
@@ -100,6 +109,8 @@ extension LigandCollectionViewController {
     if let cell = cell as? LigandCollectionViewCell {
       let ligand = source.element(at: indexPath)
       cell.ligandName = ligand.name
+      cell.accessoryImage = ligand.isFavorite ?
+        SPAssets.heartFilled.image.alwaysTemplate : nil
     }
     
     return cell

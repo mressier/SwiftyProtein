@@ -8,11 +8,16 @@ class LigandCollectionViewCell: UICollectionViewCell, Reusable {
 
   @IBOutlet weak var containerView: UIView!
   @IBOutlet weak var titleLabel: UILabel!
+  @IBOutlet weak var accessoryImageView: UIImageView!
 
   var ligandName: String? {
     didSet { titleLabel?.text = ligandName }
   }
 
+  var accessoryImage: UIImage? {
+    didSet { accessoryImageView.image = accessoryImage }
+  }
+  
   //----------------------------------------------------------------------------
   // MARK: - View Life Cycle
   //----------------------------------------------------------------------------
@@ -28,7 +33,7 @@ class LigandCollectionViewCell: UICollectionViewCell, Reusable {
   }
 
   private func setupBackground() {
-    containerView.cornerRadius = 5.0
+    containerView.cornerRadius = 21.0
     containerView.borderWidth = 3.0
     containerView.backgroundColor = .systemBlue // TEMP
     containerView.borderColor = .blue // TEMP
@@ -37,5 +42,9 @@ class LigandCollectionViewCell: UICollectionViewCell, Reusable {
   private func setupLabel() {
     titleLabel.textColor = .white
     titleLabel?.text = ligandName
+  }
+
+  private func setupAccessoryImageView() {
+    accessoryImageView.image = accessoryImage
   }
 }

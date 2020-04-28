@@ -15,7 +15,7 @@ struct LigandCollection {
    *
    ******************************************************************************/
   struct Header {
-    let title: String?
+    let title: String
     let image: UIImage?
   }
 
@@ -26,7 +26,8 @@ struct LigandCollection {
    *
    ******************************************************************************/
   struct Ligand: Equatable  {
-    let name: String?
+    let name: String
+    var isFavorite: Bool
 
     static func == (_ rhs: LigandCollection.Ligand,
                     _ lhs: LigandCollection.Ligand) -> Bool {
