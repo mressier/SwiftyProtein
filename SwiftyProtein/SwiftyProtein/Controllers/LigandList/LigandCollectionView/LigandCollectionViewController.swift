@@ -34,6 +34,7 @@ class LigandCollectionViewController: UICollectionViewController {
   }
 
   private func setupCollectionView() {
+    setupCollectionViewLayout()
     setupCollectionViewCells()
     setupCollectionViewReusableView()
   }
@@ -53,6 +54,19 @@ class LigandCollectionViewController: UICollectionViewController {
       forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
       withReuseIdentifier: headerIdentifier
     )
+  }
+
+  private func setupCollectionViewLayout() {
+    let layout = LeftAlignedCollectionViewFlowLayout()
+    layout.sectionInset = UIEdgeInsets(top: 18, left: 18, bottom: 18, right: 30)
+    layout.sectionHeadersPinToVisibleBounds = true
+    layout.scrollDirection = .vertical
+    layout.minimumInteritemSpacing = 18.0
+    layout.minimumLineSpacing = 18.0
+
+    layout.headerReferenceSize = CGSize(width: 1000, height: 28)
+    layout.itemSize = CGSize(width: 100, height: 100)
+    collectionView.collectionViewLayout = layout
   }
 
   private func setupSource() {
