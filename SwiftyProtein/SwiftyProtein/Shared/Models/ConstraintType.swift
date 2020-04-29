@@ -14,6 +14,10 @@ enum ConstraintType {
 
   /// Center a view and resize its width and height if one.
   case center(size: CGSize? = nil)
+
+  case leading
+
+  case trailing
 }
 
 //==============================================================================
@@ -34,7 +38,10 @@ extension ConstraintType {
     switch self {
     case .edge:
       return edgeConstraints(subview: subview, superview: superview)
-
+    case .leading:
+      return leadingConstraints(subview: subview, superview: superview)
+    case .trailing:
+      return trailingConstraints(subview: subview, superview: superview)
     case .center(let size):
       return
         centerConstraints(subview: subview, superview: superview, size: size)
@@ -84,4 +91,21 @@ extension ConstraintType {
     return constraints
   }
 
+  private func trailingConstraints(subview: UIView,
+                                   superview: UIView) -> [NSLayoutConstraint] {
+    return [
+      subview.topAnchor.constraint(equalTo: superview.topAnchor),
+      subview.bottomAnchor.constraint(equalTo: superview.bottomAnchor),
+      subview.trailingAnchor.constraint(equalTo: superview.trailingAnchor)
+    ]
+  }
+
+  private func leadingConstraints(subview: UIView,
+                                  superview: UIView) -> [NSLayoutConstraint] {
+    return [
+      subview.topAnchor.constraint(equalTo: superview.topAnchor),
+      subview.bottomAnchor.constraint(equalTo: superview.bottomAnchor),
+      subview.leadingAnchor.constraint(equalTo: superview.leadingAnchor),
+    ]
+  }
 }
