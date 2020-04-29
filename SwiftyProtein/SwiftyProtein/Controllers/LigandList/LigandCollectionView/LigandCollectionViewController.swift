@@ -19,6 +19,19 @@ class LigandCollectionViewController: UICollectionViewController {
   /// List of ligands splitted in sections to display
   var ligandsList = LigandSectionSource.Sections()
 
+  /******************** Collection View ********************/
+
+  let cellSize = CGSize(width: 100, height: 100)
+  let headerSize = CGSize(width: 100, height: 28)
+  let padding = CGFloat(18.0)
+
+  /******************** Views ********************/
+
+
+  private lazy var scrollBar: ScrollBarView = {
+    return ScrollBarView()
+  }()
+
   //----------------------------------------------------------------------------
   // MARK: - View Life Cycle
   //----------------------------------------------------------------------------
@@ -30,6 +43,7 @@ class LigandCollectionViewController: UICollectionViewController {
 
   private func setup() {
     setupCollectionView()
+    setupScrollBar()
     setupSource()
   }
 
@@ -58,14 +72,17 @@ class LigandCollectionViewController: UICollectionViewController {
 
   private func setupCollectionViewLayout() {
     let layout = LeftAlignedCollectionViewFlowLayout()
-    layout.sectionInset = UIEdgeInsets(top: 18, left: 18, bottom: 18, right: 30)
+    layout.sectionInset = UIEdgeInsets(top: padding,
+                                       left: padding,
+                                       bottom: padding,
+                                       right: 30)
     layout.sectionHeadersPinToVisibleBounds = true
     layout.scrollDirection = .vertical
-    layout.minimumInteritemSpacing = 18.0
-    layout.minimumLineSpacing = 18.0
+    layout.minimumInteritemSpacing = padding
+    layout.minimumLineSpacing = padding
 
-    layout.headerReferenceSize = CGSize(width: 1000, height: 28)
-    layout.itemSize = CGSize(width: 100, height: 100)
+    layout.headerReferenceSize = headerSize
+    layout.itemSize = cellSize
     collectionView.collectionViewLayout = layout
   }
 
@@ -73,6 +90,31 @@ class LigandCollectionViewController: UICollectionViewController {
     source.elements = ligandsList
 
     collectionView.reloadData()
+  }
+
+  private func setupScrollBar() {
+    collectionView.superview?.add(subview: scrollBar, with: .trailing)
+
+    scrollBar.didScrollTo = { [weak self] percent in
+      guard let self = self else { return }
+      let scrollViewHeight = self.collectionView.visibleSize.height
+      let collectionViewUsableHeight =
+        self.collectionView.contentSize.height - scrollViewHeight
+      let newOffset = collectionViewUsableHeight * percent
+
+      self.collectionView.contentOffset.y =
+        newOffset.clamped(min: 0, max: collectionViewUsableHeight)
+    }
+
+    scrollBar.didBeginScroll = { [weak self] in
+      self?.scrollBar.showScrollBar()
+    }
+
+    scrollBar.didEndScroll = { [weak self] in
+      self?.scrollBar.hideScrollBar()
+    }
+
+    scrollBar.hideScrollBar()
   }
 
 }
@@ -118,8 +160,9 @@ extension LigandCollectionViewController {
     _ collectionView: UICollectionView,
     cellForItemAt indexPath: IndexPath
   ) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier,
-                                                  for: indexPath)
+    let cell =
+      collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier,
+                                         for: indexPath)
     if let cell = cell as? LigandCollectionViewCell {
       let ligand = source.element(at: indexPath)
       cell.ligandName = ligand.name
@@ -128,6 +171,19 @@ extension LigandCollectionViewController {
     }
     
     return cell
+  }
+
+  override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    if scrollBar.isScrolling { return }
+    scrollBar.scroll(to: scrollView.contentOffsetPercent.height)
+  }
+
+  override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+     scrollBar.hideScrollBar()
+  }
+
+  override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+    scrollBar.showScrollBar()
   }
 
 }
