@@ -13,9 +13,13 @@
 		A910E40A23F87E78008F9020 /* PDBAtomLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A910E40923F87E78008F9020 /* PDBAtomLight.swift */; };
 		A910E40D23F87ED6008F9020 /* LightLigandProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A910E40C23F87ED6008F9020 /* LightLigandProvider.swift */; };
 		A910E40F23F8838D008F9020 /* AtomNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A910E40E23F8838D008F9020 /* AtomNode.swift */; };
-		A9156287245815A000960140 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9156286245815A000960140 /* UIImage+Extension.swift */; };
 		A9156289245830A000960140 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9156288245830A000960140 /* LeftAlignedCollectionViewFlowLayout.swift */; };
-		A9156291245883D100960140 /* UIColor+SwiftyProtein.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9156290245883D100960140 /* UIColor+SwiftyProtein.swift */; };
+		A915629324588E2400960140 /* ScrollBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A915629224588E2400960140 /* ScrollBarView.xib */; };
+		A915629524588E3100960140 /* ScrollBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A915629424588E3100960140 /* ScrollBarView.swift */; };
+		A915629B24588F1100960140 /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A915629724588F1100960140 /* UIColor+extension.swift */; };
+		A915629C24588F1100960140 /* UIColor+swifty.swift in Sources */ = {isa = PBXBuildFile; fileRef = A915629824588F1100960140 /* UIColor+swifty.swift */; };
+		A915629D24588F1100960140 /* UIImage+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A915629924588F1100960140 /* UIImage+extension.swift */; };
+		A915629E24588F1100960140 /* UIStackView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A915629A24588F1100960140 /* UIStackView+extension.swift */; };
 		A91A5510243B9601003DF261 /* LigandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91A550F243B9601003DF261 /* LigandViewController.swift */; };
 		A91CF350244C651400294568 /* AtomsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91CF34F244C651400294568 /* AtomsList.swift */; };
 		A91CF352244C656B00294568 /* PDBAtomPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91CF351244C656B00294568 /* PDBAtomPosition.swift */; };
@@ -51,6 +55,8 @@
 		A94DD73F244CB3080034C6AF /* PDBLigandConverter+ConectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94DD73E244CB3080034C6AF /* PDBLigandConverter+ConectTests.swift */; };
 		A94DD750244CB9480034C6AF /* PDBLigandConverter+End.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94DD74F244CB9480034C6AF /* PDBLigandConverter+End.swift */; };
 		A94DD752244CB9E40034C6AF /* PDBConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94DD751244CB9E40034C6AF /* PDBConnection.swift */; };
+		A95560512458B48A00181C91 /* Comparable+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95560502458B48A00181C91 /* Comparable+extension.swift */; };
+		A95560532458B55400181C91 /* UIScrollView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95560522458B55400181C91 /* UIScrollView+extension.swift */; };
 		A9597A76244CC29C004E732E /* PDBLigandConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9597A75244CC29C004E732E /* PDBLigandConverterTests.swift */; };
 		A9597A7A244CC5F4004E732E /* PDBLigandConverter+ContentError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9597A79244CC5F4004E732E /* PDBLigandConverter+ContentError.swift */; };
 		A9597A7D244CC6E2004E732E /* PDBLigandProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9597A7C244CC6E2004E732E /* PDBLigandProvider.swift */; };
@@ -81,7 +87,6 @@
 		A9C7945A2450D73300B5FFA2 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C794592450D73300B5FFA2 /* RequestError.swift */; };
 		A9C7945C2450D77B00B5FFA2 /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7945B2450D77B00B5FFA2 /* URLBuilder.swift */; };
 		A9C7945E2450D89D00B5FFA2 /* PDBRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7945D2450D89D00B5FFA2 /* PDBRequest.swift */; };
-		A9F3E7D224421A68000D62A1 /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F3E7D124421A68000D62A1 /* UIColor+extension.swift */; };
 		A9F3E7D4244221CD000D62A1 /* AtomInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F3E7D3244221CD000D62A1 /* AtomInfo.swift */; };
 		A9F3E7D624422C1A000D62A1 /* ProteinSceneConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F3E7D524422C1A000D62A1 /* ProteinSceneConfiguration.swift */; };
 		A9F3E7D824422C47000D62A1 /* ProteinSceneConfiguration+ColorMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F3E7D724422C47000D62A1 /* ProteinSceneConfiguration+ColorMode.swift */; };
@@ -109,9 +114,13 @@
 		A910E40923F87E78008F9020 /* PDBAtomLight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDBAtomLight.swift; sourceTree = "<group>"; };
 		A910E40C23F87ED6008F9020 /* LightLigandProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightLigandProvider.swift; sourceTree = "<group>"; };
 		A910E40E23F8838D008F9020 /* AtomNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomNode.swift; sourceTree = "<group>"; };
-		A9156286245815A000960140 /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		A9156288245830A000960140 /* LeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
-		A9156290245883D100960140 /* UIColor+SwiftyProtein.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+SwiftyProtein.swift"; sourceTree = "<group>"; };
+		A915629224588E2400960140 /* ScrollBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollBarView.xib; sourceTree = "<group>"; };
+		A915629424588E3100960140 /* ScrollBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollBarView.swift; sourceTree = "<group>"; };
+		A915629724588F1100960140 /* UIColor+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; };
+		A915629824588F1100960140 /* UIColor+swifty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+swifty.swift"; sourceTree = "<group>"; };
+		A915629924588F1100960140 /* UIImage+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+extension.swift"; sourceTree = "<group>"; };
+		A915629A24588F1100960140 /* UIStackView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackView+extension.swift"; sourceTree = "<group>"; };
 		A91A550F243B9601003DF261 /* LigandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigandViewController.swift; sourceTree = "<group>"; };
 		A91CF34F244C651400294568 /* AtomsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomsList.swift; sourceTree = "<group>"; };
 		A91CF351244C656B00294568 /* PDBAtomPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDBAtomPosition.swift; sourceTree = "<group>"; };
@@ -149,6 +158,8 @@
 		A94DD73E244CB3080034C6AF /* PDBLigandConverter+ConectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDBLigandConverter+ConectTests.swift"; sourceTree = "<group>"; };
 		A94DD74F244CB9480034C6AF /* PDBLigandConverter+End.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDBLigandConverter+End.swift"; sourceTree = "<group>"; };
 		A94DD751244CB9E40034C6AF /* PDBConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDBConnection.swift; sourceTree = "<group>"; };
+		A95560502458B48A00181C91 /* Comparable+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Comparable+extension.swift"; sourceTree = "<group>"; };
+		A95560522458B55400181C91 /* UIScrollView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+extension.swift"; sourceTree = "<group>"; };
 		A9597A75244CC29C004E732E /* PDBLigandConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDBLigandConverterTests.swift; sourceTree = "<group>"; };
 		A9597A79244CC5F4004E732E /* PDBLigandConverter+ContentError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDBLigandConverter+ContentError.swift"; sourceTree = "<group>"; };
 		A9597A7C244CC6E2004E732E /* PDBLigandProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDBLigandProvider.swift; sourceTree = "<group>"; };
@@ -180,7 +191,6 @@
 		A9C794592450D73300B5FFA2 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		A9C7945B2450D77B00B5FFA2 /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
 		A9C7945D2450D89D00B5FFA2 /* PDBRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDBRequest.swift; sourceTree = "<group>"; };
-		A9F3E7D124421A68000D62A1 /* UIColor+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; };
 		A9F3E7D3244221CD000D62A1 /* AtomInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomInfo.swift; sourceTree = "<group>"; };
 		A9F3E7D524422C1A000D62A1 /* ProteinSceneConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProteinSceneConfiguration.swift; sourceTree = "<group>"; };
 		A9F3E7D724422C47000D62A1 /* ProteinSceneConfiguration+ColorMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProteinSceneConfiguration+ColorMode.swift"; sourceTree = "<group>"; };
@@ -219,6 +229,8 @@
 				A92A9C1E24560512004CA5D3 /* LigandCollectionViewCell.xib */,
 				A92A9C2524561F15004CA5D3 /* LigandHeaderCollectionView.swift */,
 				A92A9C2624561F15004CA5D3 /* LigandHeaderCollectionView.xib */,
+				A915629424588E3100960140 /* ScrollBarView.swift */,
+				A915629224588E2400960140 /* ScrollBarView.xib */,
 			);
 			path = LigandCollectionView;
 			sourceTree = "<group>";
@@ -258,6 +270,18 @@
 				A9156288245830A000960140 /* LeftAlignedCollectionViewFlowLayout.swift */,
 			);
 			path = CollectionViewLayout;
+			sourceTree = "<group>";
+		};
+		A915629624588F1100960140 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				A915629724588F1100960140 /* UIColor+extension.swift */,
+				A915629824588F1100960140 /* UIColor+swifty.swift */,
+				A915629924588F1100960140 /* UIImage+extension.swift */,
+				A915629A24588F1100960140 /* UIStackView+extension.swift */,
+				A95560522458B55400181C91 /* UIScrollView+extension.swift */,
+			);
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 		A91CF34D244C647B00294568 /* ProteinScene */ = {
@@ -375,12 +399,11 @@
 		A922804523F84E1900BA4F5D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				A9156286245815A000960140 /* UIImage+Extension.swift */,
+				A95560502458B48A00181C91 /* Comparable+extension.swift */,
+				A915629624588F1100960140 /* UIKit */,
 				A92A9C0A245352F2004CA5D3 /* Array+extension.swift */,
 				A987F9C1245758EF00086D5C /* Array+string.swift */,
 				A94DD737244C957B0034C6AF /* String+extension.swift */,
-				A9F3E7D124421A68000D62A1 /* UIColor+extension.swift */,
-				A9156290245883D100960140 /* UIColor+SwiftyProtein.swift */,
 				A9718EF8243B9BBA005DA378 /* NSLayoutConstraint+extension.swift */,
 				A9718EE3243B9A32005DA378 /* UIViewController+extension.swift */,
 				A9718EEB243B9AF5005DA378 /* UIView */,
@@ -676,6 +699,7 @@
 				A922802E23F83DB100BA4F5D /* Main.storyboard in Resources */,
 				A922804123F846A700BA4F5D /* ligands.txt in Resources */,
 				A92A9C2824561F15004CA5D3 /* LigandHeaderCollectionView.xib in Resources */,
+				A915629324588E2400960140 /* ScrollBarView.xib in Resources */,
 				A92A9C1424536EF4004CA5D3 /* LigandCollectionViewController.xib in Resources */,
 				A92A9C2024560512004CA5D3 /* LigandCollectionViewCell.xib in Resources */,
 				A9F3E7E924423749000D62A1 /* TextStepperView.xib in Resources */,
@@ -720,6 +744,7 @@
 				A922802B23F83DB100BA4F5D /* LigandSceneViewController.swift in Sources */,
 				A9934579242FCDEF00C6B043 /* FakeLigands.swift in Sources */,
 				A91CF352244C656B00294568 /* PDBAtomPosition.swift in Sources */,
+				A915629B24588F1100960140 /* UIColor+extension.swift in Sources */,
 				A9718EE4243B9A32005DA378 /* UIViewController+extension.swift in Sources */,
 				A92A9C2224560862004CA5D3 /* ArraySource.swift in Sources */,
 				A91CF355244C7B9900294568 /* PDBLigandConverter.swift in Sources */,
@@ -731,11 +756,10 @@
 				A9718EF2243B9AF5005DA378 /* UIView+gradient.swift in Sources */,
 				A92A9C1024536A1D004CA5D3 /* LigandListViewController.swift in Sources */,
 				A94DD750244CB9480034C6AF /* PDBLigandConverter+End.swift in Sources */,
-				A9156291245883D100960140 /* UIColor+SwiftyProtein.swift in Sources */,
 				A9F3E7D4244221CD000D62A1 /* AtomInfo.swift in Sources */,
 				A9C7945E2450D89D00B5FFA2 /* PDBRequest.swift in Sources */,
 				A91A5510243B9601003DF261 /* LigandViewController.swift in Sources */,
-				A9F3E7D224421A68000D62A1 /* UIColor+extension.swift in Sources */,
+				A915629524588E3100960140 /* ScrollBarView.swift in Sources */,
 				A9F3E7E3244235BF000D62A1 /* TextStepperView.swift in Sources */,
 				A92A9C1F24560512004CA5D3 /* LigandCollectionViewCell.swift in Sources */,
 				A922804723F84E2C00BA4F5D /* SCNNode+extension.swift in Sources */,
@@ -744,6 +768,7 @@
 				A922802723F83DB100BA4F5D /* AppDelegate.swift in Sources */,
 				A9597A7D244CC6E2004E732E /* PDBLigandProvider.swift in Sources */,
 				A92A9C2424560874004CA5D3 /* DictionarySource.swift in Sources */,
+				A915629C24588F1100960140 /* UIColor+swifty.swift in Sources */,
 				A9C7945C2450D77B00B5FFA2 /* URLBuilder.swift in Sources */,
 				A90CA9B42456CE5B000BBE60 /* LigandsAppList.swift in Sources */,
 				A922803F23F846A700BA4F5D /* Assets.swift in Sources */,
@@ -759,14 +784,16 @@
 				A9F3E7E724423731000D62A1 /* NibInstanciable.swift in Sources */,
 				A993458E242FF4FF00C6B043 /* SCNView+extension.swift in Sources */,
 				A91CF35D244C860A00294568 /* PDBLigandConverter+ReadState.swift in Sources */,
+				A915629E24588F1100960140 /* UIStackView+extension.swift in Sources */,
+				A915629D24588F1100960140 /* UIImage+extension.swift in Sources */,
 				A9F3E7E624423731000D62A1 /* Reusable.swift in Sources */,
 				A9597A7A244CC5F4004E732E /* PDBLigandConverter+ContentError.swift in Sources */,
 				A910E40523F85DF0008F9020 /* SCNGeometry+extension.swift in Sources */,
 				A94DD738244C957B0034C6AF /* String+extension.swift in Sources */,
 				A9F3E7D824422C47000D62A1 /* ProteinSceneConfiguration+ColorMode.swift in Sources */,
 				A9718EF9243B9BBA005DA378 /* NSLayoutConstraint+extension.swift in Sources */,
+				A95560512458B48A00181C91 /* Comparable+extension.swift in Sources */,
 				A9C7945A2450D73300B5FFA2 /* RequestError.swift in Sources */,
-				A9156287245815A000960140 /* UIImage+Extension.swift in Sources */,
 				A94DD752244CB9E40034C6AF /* PDBConnection.swift in Sources */,
 				A910E40A23F87E78008F9020 /* PDBAtomLight.swift in Sources */,
 				A910E40823F87B83008F9020 /* PathBounds.swift in Sources */,
@@ -774,6 +801,7 @@
 				A9C794582450D69E00B5FFA2 /* NetworkRequest.swift in Sources */,
 				A9F3E7EC244247F7000D62A1 /* ClampedPropertyWrapper.swift in Sources */,
 				A9718EF4243B9AF5005DA378 /* UIView+appearance.swift in Sources */,
+				A95560532458B55400181C91 /* UIScrollView+extension.swift in Sources */,
 				A92A9C2724561F15004CA5D3 /* LigandHeaderCollectionView.swift in Sources */,
 				A910E40F23F8838D008F9020 /* AtomNode.swift in Sources */,
 				A96D48E52456DC06003FE291 /* SectionSource.swift in Sources */,
