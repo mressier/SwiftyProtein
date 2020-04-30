@@ -57,6 +57,9 @@
 		A94DD752244CB9E40034C6AF /* PDBConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94DD751244CB9E40034C6AF /* PDBConnection.swift */; };
 		A95560512458B48A00181C91 /* Comparable+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95560502458B48A00181C91 /* Comparable+extension.swift */; };
 		A95560532458B55400181C91 /* UIScrollView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95560522458B55400181C91 /* UIScrollView+extension.swift */; };
+		A955605C2459E7AD00181C91 /* ScrollBarLabelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A955605B2459E7AD00181C91 /* ScrollBarLabelView.xib */; };
+		A955605E2459E7BD00181C91 /* ScrollBarLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A955605D2459E7BD00181C91 /* ScrollBarLabelView.swift */; };
+		A9556060245AD6F200181C91 /* LigandCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A955605F245AD6F200181C91 /* LigandCollectionViewFlowLayout.swift */; };
 		A9597A76244CC29C004E732E /* PDBLigandConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9597A75244CC29C004E732E /* PDBLigandConverterTests.swift */; };
 		A9597A7A244CC5F4004E732E /* PDBLigandConverter+ContentError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9597A79244CC5F4004E732E /* PDBLigandConverter+ContentError.swift */; };
 		A9597A7D244CC6E2004E732E /* PDBLigandProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9597A7C244CC6E2004E732E /* PDBLigandProvider.swift */; };
@@ -160,6 +163,9 @@
 		A94DD751244CB9E40034C6AF /* PDBConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDBConnection.swift; sourceTree = "<group>"; };
 		A95560502458B48A00181C91 /* Comparable+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Comparable+extension.swift"; sourceTree = "<group>"; };
 		A95560522458B55400181C91 /* UIScrollView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+extension.swift"; sourceTree = "<group>"; };
+		A955605B2459E7AD00181C91 /* ScrollBarLabelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollBarLabelView.xib; sourceTree = "<group>"; };
+		A955605D2459E7BD00181C91 /* ScrollBarLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollBarLabelView.swift; sourceTree = "<group>"; };
+		A955605F245AD6F200181C91 /* LigandCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigandCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		A9597A75244CC29C004E732E /* PDBLigandConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDBLigandConverterTests.swift; sourceTree = "<group>"; };
 		A9597A79244CC5F4004E732E /* PDBLigandConverter+ContentError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDBLigandConverter+ContentError.swift"; sourceTree = "<group>"; };
 		A9597A7C244CC6E2004E732E /* PDBLigandProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDBLigandProvider.swift; sourceTree = "<group>"; };
@@ -229,8 +235,7 @@
 				A92A9C1E24560512004CA5D3 /* LigandCollectionViewCell.xib */,
 				A92A9C2524561F15004CA5D3 /* LigandHeaderCollectionView.swift */,
 				A92A9C2624561F15004CA5D3 /* LigandHeaderCollectionView.xib */,
-				A915629424588E3100960140 /* ScrollBarView.swift */,
-				A915629224588E2400960140 /* ScrollBarView.xib */,
+				A955605F245AD6F200181C91 /* LigandCollectionViewFlowLayout.swift */,
 			);
 			path = LigandCollectionView;
 			sourceTree = "<group>";
@@ -415,6 +420,7 @@
 		A92A9C0E24536A06004CA5D3 /* LigandList */ = {
 			isa = PBXGroup;
 			children = (
+				A955605A2459E79200181C91 /* ScrollBar */,
 				A90CA9B22456CE3A000BBE60 /* Model */,
 				A90CA9B12456CE26000BBE60 /* LigandCollectionView */,
 				A92A9C0F24536A1D004CA5D3 /* LigandListViewController.swift */,
@@ -461,6 +467,17 @@
 				A987F9C32457592F00086D5C /* Array+StringTests.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A955605A2459E79200181C91 /* ScrollBar */ = {
+			isa = PBXGroup;
+			children = (
+				A915629424588E3100960140 /* ScrollBarView.swift */,
+				A915629224588E2400960140 /* ScrollBarView.xib */,
+				A955605D2459E7BD00181C91 /* ScrollBarLabelView.swift */,
+				A955605B2459E7AD00181C91 /* ScrollBarLabelView.xib */,
+			);
+			path = ScrollBar;
 			sourceTree = "<group>";
 		};
 		A9597A77244CC59C004E732E /* Model */ = {
@@ -697,6 +714,7 @@
 				A922803323F83DB200BA4F5D /* LaunchScreen.storyboard in Resources */,
 				A922804023F846A700BA4F5D /* Assets.xcassets in Resources */,
 				A922802E23F83DB100BA4F5D /* Main.storyboard in Resources */,
+				A955605C2459E7AD00181C91 /* ScrollBarLabelView.xib in Resources */,
 				A922804123F846A700BA4F5D /* ligands.txt in Resources */,
 				A92A9C2824561F15004CA5D3 /* LigandHeaderCollectionView.xib in Resources */,
 				A915629324588E2400960140 /* ScrollBarView.xib in Resources */,
@@ -765,6 +783,7 @@
 				A922804723F84E2C00BA4F5D /* SCNNode+extension.swift in Sources */,
 				A92A9C0B245352F2004CA5D3 /* Array+extension.swift in Sources */,
 				A9718EF7243B9B78005DA378 /* ConstraintType.swift in Sources */,
+				A9556060245AD6F200181C91 /* LigandCollectionViewFlowLayout.swift in Sources */,
 				A922802723F83DB100BA4F5D /* AppDelegate.swift in Sources */,
 				A9597A7D244CC6E2004E732E /* PDBLigandProvider.swift in Sources */,
 				A92A9C2424560874004CA5D3 /* DictionarySource.swift in Sources */,
@@ -773,6 +792,7 @@
 				A90CA9B42456CE5B000BBE60 /* LigandsAppList.swift in Sources */,
 				A922803F23F846A700BA4F5D /* Assets.swift in Sources */,
 				A9718EF3243B9AF5005DA378 /* UIView+extension.swift in Sources */,
+				A955605E2459E7BD00181C91 /* ScrollBarLabelView.swift in Sources */,
 				A91CF35B244C7DE800294568 /* PDBAtom.swift in Sources */,
 				A9597A7F244CC719004E732E /* PDBLigand.swift in Sources */,
 				A910E40D23F87ED6008F9020 /* LightLigandProvider.swift in Sources */,

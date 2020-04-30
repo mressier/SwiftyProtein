@@ -19,12 +19,6 @@ class LigandCollectionViewController: UICollectionViewController {
   /// List of ligands splitted in sections to display
   var ligandsList = LigandSectionSource.Sections()
 
-  /******************** Collection View ********************/
-
-  let cellSize = CGSize(width: 100, height: 100)
-  let headerSize = CGSize(width: 100, height: 28)
-  let padding = CGFloat(18.0)
-
   /******************** Views ********************/
 
 
@@ -71,39 +65,24 @@ class LigandCollectionViewController: UICollectionViewController {
   }
 
   private func setupCollectionViewLayout() {
-    let layout = LeftAlignedCollectionViewFlowLayout()
-    layout.sectionInset = UIEdgeInsets(top: padding,
-                                       left: padding,
-                                       bottom: padding,
-                                       right: 30)
-    layout.sectionHeadersPinToVisibleBounds = true
-    layout.scrollDirection = .vertical
-    layout.minimumInteritemSpacing = padding
-    layout.minimumLineSpacing = padding
-
-    layout.headerReferenceSize = headerSize
-    layout.itemSize = cellSize
+    let layout = LigandCollectionViewFlowLayout()
     collectionView.collectionViewLayout = layout
   }
 
   private func setupSource() {
     source.elements = ligandsList
-
     collectionView.reloadData()
   }
+
+  //----------------------------------------------------------------------------
+  // MARK: - Scroll Bar
+  //----------------------------------------------------------------------------
 
   private func setupScrollBar() {
     collectionView.superview?.add(subview: scrollBar, with: .trailing)
 
     scrollBar.didScrollTo = { [weak self] percent in
-      guard let self = self else { return }
-      let scrollViewHeight = self.collectionView.visibleSize.height
-      let collectionViewUsableHeight =
-        self.collectionView.contentSize.height - scrollViewHeight
-      let newOffset = collectionViewUsableHeight * percent
-
-      self.collectionView.contentOffset.y =
-        newOffset.clamped(min: 0, max: collectionViewUsableHeight)
+      self?.scrollTo(percentOfViewHeight: percent)
     }
 
     scrollBar.didBeginScroll = { [weak self] in
@@ -117,6 +96,14 @@ class LigandCollectionViewController: UICollectionViewController {
     scrollBar.hideScrollBar()
   }
 
+  private func scrollTo(percentOfViewHeight percent: CGFloat) {
+    let visibleHeight = collectionView.visibleSize.height
+    let usableHeight = collectionView.contentSize.height - visibleHeight
+    let yOffset = usableHeight * percent
+
+    self.collectionView.contentOffset.y =
+      yOffset.clamped(min: 0, max: usableHeight)
+  }
 }
 
 //==============================================================================
@@ -173,8 +160,19 @@ extension LigandCollectionViewController {
     return cell
   }
 
+  override func collectionView(
+    _ collectionView: UICollectionView,
+    willDisplaySupplementaryView view: UICollectionReusableView,
+    forElementKind elementKind: String,
+    at indexPath: IndexPath
+  ) {
+    let name = source.sectionKey(at: indexPath).title
+    scrollBar.scrollLabel.text = name
+  }
+
   override func scrollViewDidScroll(_ scrollView: UIScrollView) {
     if scrollBar.isScrolling { return }
+
     scrollBar.scroll(to: scrollView.contentOffsetPercent.height)
   }
 

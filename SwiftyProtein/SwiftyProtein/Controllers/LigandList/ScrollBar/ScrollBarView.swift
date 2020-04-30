@@ -8,9 +8,12 @@ class ScrollBarView: UIView, NibInstanciable {
 
   /******************** Outlet ********************/
 
-  @IBOutlet var contentView: UIView!
+  @IBOutlet private var contentView: UIView!
+  @IBOutlet private weak var scrollContentView: UIView!
+
   @IBOutlet weak var scrollImage: UIImageView!
   @IBOutlet weak var scrollLine: UIView!
+  @IBOutlet weak var scrollLabel: ScrollBarLabelView!
 
   /******************** Callback ********************/
 
@@ -23,7 +26,7 @@ class ScrollBarView: UIView, NibInstanciable {
   /******************** View tools ********************/
 
   var usableHeight: CGFloat {
-    return contentView.bounds.height - imageHeight
+    return scrollContentView.bounds.height - imageHeight
   }
 
   var imageHeight: CGFloat { return scrollImage.frame.height }
@@ -48,13 +51,14 @@ class ScrollBarView: UIView, NibInstanciable {
 
   func scroll(to percentOfView: CGFloat) {
     let yOffset = usableHeight * percentOfView
-    scrollImage.frame.origin.y = yOffset.clamped(min: 0, max: usableHeight)
+    scrollSliderTo(yOffset: yOffset)
   }
 
   func showScrollBar() {
     UIView.animate(withDuration: 0.3) {
       self.scrollImage.alpha = 1.0
       self.scrollLine.alpha = 1.0
+      self.scrollLabel.alpha = 1.0
     }
   }
 
@@ -62,6 +66,7 @@ class ScrollBarView: UIView, NibInstanciable {
     UIView.animate(withDuration: 0.3) {
       self.scrollImage.alpha = 0.0
       self.scrollLine.alpha = 0.0
+      self.scrollLabel.alpha = 0.0
     }
   }
 
@@ -96,10 +101,15 @@ class ScrollBarView: UIView, NibInstanciable {
     guard let imageView = scrollImage else { return }
 
     let yTranslation = imageView.frame.origin.y + translation.y
-    scrollImage.frame.origin.y = yTranslation.clamped(min: 0, max: usableHeight)
+    scrollSliderTo(yOffset: yTranslation)
 
     sender.setTranslation(.zero, in: contentView)
+  }
 
+  private func scrollSliderTo(yOffset: CGFloat) {
+    let y = yOffset.clamped(min: 0, max: usableHeight)
+    scrollImage.frame.origin.y = y
+    scrollLabel.center.y = scrollImage.center.y
   }
 
   //----------------------------------------------------------------------------
@@ -117,15 +127,24 @@ class ScrollBarView: UIView, NibInstanciable {
   private func setupView() {
     setupScrollLine()
     setupScrollImage()
+    setupScrollLabel()
     setupPanGesture()
   }
 
   private func setupScrollImage() {
+    scrollImage.image = SPAssets.scrollArrow.image.alwaysTemplate
     scrollImage.tintColor = .swiftyBlue
+    scrollImage.alpha = 0.0
   }
 
   private func setupScrollLine() {
     scrollLine.backgroundColor = UIColor.systemGray.withAlphaComponent(0.5)
+    scrollLine.alpha = 0.0
+  }
+
+  private func setupScrollLabel() {
+    scrollLabel.alpha = 0.0
+    scrollLabel.text = nil
   }
 
   private func setupPanGesture() {
