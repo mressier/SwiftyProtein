@@ -42,7 +42,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fEe-xd-6NO">
                                             <rect key="frame" x="0.0" y="0.0" width="114" height="21"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="Fqg-ab-FY9"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="15" id="Fqg-ab-FY9"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>

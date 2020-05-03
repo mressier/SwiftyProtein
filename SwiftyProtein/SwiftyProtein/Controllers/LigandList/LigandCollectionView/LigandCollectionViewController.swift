@@ -31,7 +31,9 @@ class LigandCollectionViewController: UICollectionViewController {
 
   /******************** Layout ********************/
 
-  private let layout = LigandCollectionViewFlowLayout()
+  private lazy var layout: LigandCollectionViewFlowLayout = {
+    return LigandCollectionViewFlowLayout()
+  }()
 
   //----------------------------------------------------------------------------
   // MARK: - View Life Cycle

@@ -5,26 +5,35 @@ class LeftAlignedCollectionViewFlowLayout: UICollectionViewFlowLayout {
   override func layoutAttributesForElements(
     in rect: CGRect
   ) -> [UICollectionViewLayoutAttributes]? {
-    let attributes = super.layoutAttributesForElements(in: rect)
+    guard let attributes = super.layoutAttributesForElements(in: rect) else {
+      return nil
+    }
 
+    var newLayoutAttributes = [UICollectionViewLayoutAttributes]()
     var leftMargin = sectionInset.left
     var maxY: CGFloat = -1.0
 
-    attributes?.forEach { layoutAttribute in
+    attributes.forEach { layoutAttribute in
+      guard let attribute =
+        layoutAttribute.copy() as? UICollectionViewLayoutAttributes else {
+          return
+      }
 
-      guard layoutAttribute.representedElementIsCell else { return }
+      newLayoutAttributes.append(attribute)
 
-      if layoutAttribute.frame.origin.y >= maxY {
+      guard attribute.representedElementIsCell else { return }
+
+      if attribute.frame.origin.y >= maxY {
         leftMargin = sectionInset.left
       }
 
-      layoutAttribute.frame.origin.x = leftMargin
+      attribute.frame.origin.x = leftMargin
 
-      leftMargin += layoutAttribute.frame.width + minimumInteritemSpacing
-      maxY = max(layoutAttribute.frame.maxY , maxY)
+      leftMargin += attribute.frame.width + minimumInteritemSpacing
+      maxY = max(attribute.frame.maxY , maxY)
     }
 
-    return attributes
+    return newLayoutAttributes
   }
 }
 

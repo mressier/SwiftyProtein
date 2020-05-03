@@ -1,9 +1,6 @@
 import UIKit
 
-class LigandCollectionViewFlowLayout:
-  LeftAlignedCollectionViewFlowLayout,
-  UICollectionViewDelegateFlowLayout
-{
+class LigandCollectionViewFlowLayout: LeftAlignedCollectionViewFlowLayout {
 
   //----------------------------------------------------------------------------
   // MARK: - Properties
@@ -25,11 +22,11 @@ class LigandCollectionViewFlowLayout:
                                 left: sectionPadding,
                                 bottom: sectionPadding,
                                 right: sectionPadding)
-    sectionHeadersPinToVisibleBounds = true
     scrollDirection = .vertical
     minimumInteritemSpacing = cellPadding
     minimumLineSpacing = cellPadding
     headerReferenceSize = headerSize
+    sectionHeadersPinToVisibleBounds = true
   }
 
   required init?(coder: NSCoder) {
@@ -64,7 +61,9 @@ class LigandCollectionViewFlowLayout:
     estimatedItemSize = widthRelatedCellSize(with: collectionView)
   }
 
-  private func widthRelatedCellSize(with collectionView: UICollectionView) -> CGSize {
+  private func widthRelatedCellSize(
+    with collectionView: UICollectionView
+  ) -> CGSize {
     let contentInset = collectionView.contentInset
     let padding = sectionPadding * 2 + contentInset.left + contentInset.right
     let width = collectionView.bounds.size.width - padding
