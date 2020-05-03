@@ -24,6 +24,7 @@ class MessageView: UIView, NibInstanciable {
   var messageImage: UIImage? {
     didSet { messageImageView.image = messageImage }
   }
+
   //----------------------------------------------------------------------------
   // MARK: - Initialization
   //----------------------------------------------------------------------------
@@ -37,7 +38,6 @@ class MessageView: UIView, NibInstanciable {
     super.init(coder: aDecoder)
     setup()
   }
-
 
   private func setup() {
     loadNib()
