@@ -21,10 +21,13 @@ class LigandCollectionViewController: UICollectionViewController {
 
   /******************** Views ********************/
 
-
   private lazy var scrollBar: ScrollBarView = {
     return ScrollBarView()
   }()
+
+  /******************** Layout ********************/
+
+  let layout = LigandCollectionViewFlowLayout()
 
   //----------------------------------------------------------------------------
   // MARK: - View Life Cycle
@@ -65,7 +68,6 @@ class LigandCollectionViewController: UICollectionViewController {
   }
 
   private func setupCollectionViewLayout() {
-    let layout = LigandCollectionViewFlowLayout()
     collectionView.collectionViewLayout = layout
   }
 
@@ -161,6 +163,7 @@ extension LigandCollectionViewController {
     let cell =
       collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier,
                                          for: indexPath)
+
     if let cell = cell as? LigandCollectionViewCell {
       let ligand = source.element(at: indexPath)
       cell.ligandName = ligand.name
@@ -194,5 +197,4 @@ extension LigandCollectionViewController {
   override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
     scrollBar.showScrollBar()
   }
-
 }
