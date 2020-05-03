@@ -88,13 +88,25 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Qh-lW-5RR" customClass="MessageView" customModule="SwiftyProtein" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="messageText" value="Sorry, cannot found the ligand !"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="messageImage" value="sad-smiley"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="5Qh-lW-5RR" firstAttribute="leading" secondItem="cjl-7Y-EXB" secondAttribute="leading" id="3J4-Rk-Zf8"/>
                             <constraint firstItem="cjl-7Y-EXB" firstAttribute="bottom" secondItem="qnl-iU-vkN" secondAttribute="bottom" id="CHn-fI-2qd"/>
                             <constraint firstItem="4dC-7U-59V" firstAttribute="leading" secondItem="cjl-7Y-EXB" secondAttribute="leading" id="EYK-O6-iPY"/>
                             <constraint firstItem="cjl-7Y-EXB" firstAttribute="bottom" secondItem="4dC-7U-59V" secondAttribute="bottom" id="J4f-Fy-Pks"/>
+                            <constraint firstItem="cjl-7Y-EXB" firstAttribute="bottom" secondItem="5Qh-lW-5RR" secondAttribute="bottom" id="PKB-yi-YPN"/>
                             <constraint firstItem="qnl-iU-vkN" firstAttribute="top" secondItem="cjl-7Y-EXB" secondAttribute="top" id="Vbb-8Z-JBq"/>
+                            <constraint firstItem="cjl-7Y-EXB" firstAttribute="trailing" secondItem="5Qh-lW-5RR" secondAttribute="trailing" id="ZFT-Pf-kY7"/>
+                            <constraint firstItem="5Qh-lW-5RR" firstAttribute="top" secondItem="cjl-7Y-EXB" secondAttribute="top" id="baB-8h-xJM"/>
                             <constraint firstItem="cjl-7Y-EXB" firstAttribute="trailing" secondItem="qnl-iU-vkN" secondAttribute="trailing" id="fkL-Z8-D6d"/>
                             <constraint firstItem="4dC-7U-59V" firstAttribute="top" secondItem="cjl-7Y-EXB" secondAttribute="top" id="nIH-Ve-Fh1"/>
                             <constraint firstItem="4dC-7U-59V" firstAttribute="trailing" secondItem="cjl-7Y-EXB" secondAttribute="trailing" id="nwA-fk-j43"/>
@@ -112,6 +124,7 @@
                     <connections>
                         <outlet property="ligandSceneContainerView" destination="OHZ-mE-Xy3" id="S18-5S-nIP"/>
                         <outlet property="loadingView" destination="qnl-iU-vkN" id="Gd2-eG-GHQ"/>
+                        <outlet property="messageView" destination="5Qh-lW-5RR" id="HXs-S1-4Ry"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EBt-TN-X2F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -122,5 +135,6 @@
     </scenes>
     <resources>
         <image name="chevron.left" catalog="system" width="48" height="64"/>
+        <image name="sad-smiley" width="21" height="21"/>
     </resources>
 </document>

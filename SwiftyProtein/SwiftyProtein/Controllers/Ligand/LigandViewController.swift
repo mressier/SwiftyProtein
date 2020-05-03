@@ -8,6 +8,7 @@ class LigandViewController: UIViewController {
 
   @IBOutlet weak var ligandSceneContainerView: UIView!
   @IBOutlet weak var loadingView: LoadingView!
+  @IBOutlet weak var messageView: MessageView!
 
   /******************** Computed properties ********************/
 
@@ -59,17 +60,24 @@ class LigandViewController: UIViewController {
         self?.ligandSceneVC.atoms = ligand.atoms
         self?.ligandSceneVC.reload() { [weak self] in self?.setLoading(false) }
       default:
-        print("hoho")
+        // change message depending on error
+        self?.setHasMessage(true)
         self?.setLoading(false)
       }
     }
   }
 
-  private func setLoading(_ isLoading: Bool) {
+  private func setLoading(_ isLoading: Bool, animated: Bool = true) {
     self.isLoading = isLoading
 
-    UIView.animate(withDuration: 0.5) {
+    UIView.animate(withDuration: animated ? 0.5 : 0.0) {
       self.loadingView?.alpha = isLoading ? 1.0 : 0.0
+    }
+  }
+
+  private func setHasMessage(_ hasMessage: Bool, animated: Bool = true) {
+    UIView.animate(withDuration: animated ? 0.5 : 0.0) {
+      self.messageView?.alpha = hasMessage ? 1.0 : 0.0
     }
   }
 
@@ -92,6 +100,8 @@ class LigandViewController: UIViewController {
   private func setup() {
     setupLigandSceneVC()
     setupAtomLabel()
+    setupLoadingView()
+    setupMessageView()
   }
 
   private func setupLigandSceneVC() {
@@ -111,6 +121,11 @@ class LigandViewController: UIViewController {
 
   private func setupLoadingView() {
     loadingView.isUserInteractionEnabled = false
+  }
+
+  private func setupMessageView() {
+    messageView.isUserInteractionEnabled = false
+    setHasMessage(false, animated: false)
   }
 
 }

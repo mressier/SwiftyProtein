@@ -25,6 +25,7 @@ internal enum SPAssets {
   internal static let fingerprint = ImageAsset(name: "fingerprint")
   internal static let heartEmpty = ImageAsset(name: "heart-empty")
   internal static let heartFilled = ImageAsset(name: "heart-filled")
+  internal static let sadSmiley = ImageAsset(name: "sad-smiley")
   internal static let scrollArrow = ImageAsset(name: "scroll-arrow")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
