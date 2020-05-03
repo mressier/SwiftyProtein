@@ -135,6 +135,6 @@
     </scenes>
     <resources>
         <image name="chevron.left" catalog="system" width="48" height="64"/>
-        <image name="sad-smiley" width="21" height="21"/>
+        <image name="sad-smiley" width="170" height="170"/>
     </resources>
 </document>
