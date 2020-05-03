@@ -19,6 +19,10 @@ class LigandCollectionViewController: UICollectionViewController {
   /// List of ligands splitted in sections to display
   var ligandsList = LigandSectionSource.Sections()
 
+  /********************  Callback ********************/
+
+  var didSelectLigand: ((LigandCollection.Ligand) -> Void)?
+
   /******************** Views ********************/
 
   private lazy var scrollBar: ScrollBarView = {
@@ -27,7 +31,7 @@ class LigandCollectionViewController: UICollectionViewController {
 
   /******************** Layout ********************/
 
-  let layout = LigandCollectionViewFlowLayout()
+  private let layout = LigandCollectionViewFlowLayout()
 
   //----------------------------------------------------------------------------
   // MARK: - View Life Cycle
@@ -125,14 +129,20 @@ class LigandCollectionViewController: UICollectionViewController {
 
 extension LigandCollectionViewController {
 
+  /******************** Number of sections ********************/
+
   override func numberOfSections(in collectionView: UICollectionView) -> Int {
     return source.elements.count
   }
+
+  /******************** Number of items in section ********************/
 
   override func collectionView(_ collectionView: UICollectionView,
                                numberOfItemsInSection section: Int) -> Int {
     return source.elements(inSection: section).count
   }
+
+  /******************** View for supplementary element of kind ********************/
 
   override func collectionView(
     _ collectionView: UICollectionView,
@@ -156,6 +166,8 @@ extension LigandCollectionViewController {
     return headerView
   }
 
+  /******************** Cell for item at ********************/
+
   override func collectionView(
     _ collectionView: UICollectionView,
     cellForItemAt indexPath: IndexPath
@@ -173,6 +185,15 @@ extension LigandCollectionViewController {
     
     return cell
   }
+
+  /******************** Did select item at ********************/
+
+  override func collectionView(_ collectionView: UICollectionView,
+                               didSelectItemAt indexPath: IndexPath) {
+    let item = source.element(at: indexPath)
+    didSelectLigand?(item)
+  }
+
 }
 
 //==============================================================================

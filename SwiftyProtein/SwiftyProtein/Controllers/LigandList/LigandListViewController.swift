@@ -16,6 +16,7 @@ class LigandListViewController: UIViewController {
 
   var ligandsList = LigandsAppList(ligands: [], favorites: []) {
     didSet {
+      searchController.ligandsList = ligandsList
       ligandCollection = LigandsCollectionBuilder.build(from: ligandsList)
     }
   }
@@ -59,6 +60,7 @@ class LigandListViewController: UIViewController {
     searchController.obscuresBackgroundDuringPresentation = false
     searchController.searchBar.placeholder = "Search a ligand"
     searchController.searchBar.tintColor = .appTintColor
+    searchController.ligandsList = ligandsList
   }
 
   private func setupLigandCollectionVC() {
@@ -67,8 +69,26 @@ class LigandListViewController: UIViewController {
 
     ligandCollectionVC.ligandsList = ligandCollection
 
+    ligandCollectionVC.didSelectLigand = { [weak self] ligand in
+      self?.performSegue(withIdentifier: "segueToLigandView", sender: ligand)
+    }
+
     add(asChildViewController: ligandCollectionVC,
         on: ligandListContainerView)
+  }
+
+  //----------------------------------------------------------------------------
+  // MARK: - Navigation
+  //----------------------------------------------------------------------------
+
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    guard let destination = segue.destination as? LigandViewController,
+      let ligand = sender as? LigandCollection.Ligand else { return }
+    destination.ligand = ligand.name
+  }
+
+  @IBAction func unwindToListViewController(_ unwindSegue: UIStoryboardSegue) {
+//    let sourceViewController = unwindSegue.source
   }
 }
 
@@ -79,6 +99,7 @@ extension LigandListViewController: UISearchResultsUpdating {
       searchController as? LigandSearchController else { return }
 
     let searchText = searchController.searchBar.text?.uppercased() ?? ""
+
     let ligandsList =
       searchController.getLigandsList(withSearchText: searchText)
     let collection =

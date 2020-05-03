@@ -60,7 +60,7 @@
                     <navigationItem key="navigationItem" title="Swifty Protein" id="yhL-Lh-InA"/>
                     <connections>
                         <outlet property="ligandListContainerView" destination="Joc-mW-7x1" id="Vbm-6A-RjJ"/>
-                        <segue destination="lUM-Sp-M6v" kind="show" id="tbf-gG-6bI"/>
+                        <segue destination="lUM-Sp-M6v" kind="show" identifier="segueToLigandView" id="tbf-gG-6bI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NjH-qI-NF9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -101,7 +101,11 @@
                         <viewLayoutGuide key="safeArea" id="cjl-7Y-EXB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Ligand View" id="cW4-y3-wk8">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.left" catalog="system" id="t2M-3C-eq3"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.left" catalog="system" id="t2M-3C-eq3">
+                            <connections>
+                                <segue destination="99P-C2-AP1" kind="unwind" unwindAction="unwindToListViewController:" id="tgV-5E-yMW"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="ligandSceneContainerView" destination="OHZ-mE-Xy3" id="S18-5S-nIP"/>
@@ -109,6 +113,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EBt-TN-X2F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="99P-C2-AP1" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="772" y="117"/>
         </scene>

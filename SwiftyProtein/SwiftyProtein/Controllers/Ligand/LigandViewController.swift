@@ -15,6 +15,13 @@ class LigandViewController: UIViewController {
     didSet { updateSelectedAtom(to: selectedAtom) }
   }
 
+  var ligand: String? {
+    didSet {
+      guard let ligand = ligand else { return }
+      loadLigand(name: ligand)
+    }
+  }
+
   /******************** Configuration ********************/
 
   var configuration = LigandSceneConfiguration(colorMode: .cpk)
@@ -31,10 +38,55 @@ class LigandViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-
     setup()
-    loadLigand()
   }
+
+  //----------------------------------------------------------------------------
+  // MARK: - Load
+  //----------------------------------------------------------------------------
+
+  private func loadLigand(name: String) {
+    self.title = name
+
+    LightLigandProvider.get(ligand: name) { [weak self] result in
+      switch result {
+      case .success(let ligand):
+        self?.ligandSceneVC.atoms = ligand.atoms
+        self?.ligandSceneVC.reload()
+      default: print("hoho")
+      }
+    }
+  }
+
+  //----------------------------------------------------------------------------
+  // MARK: - Update
+  //----------------------------------------------------------------------------
+
+  private func updateSelectedAtom(to atom: PDBAtomLight?) {
+    updateSelectedAtomNameLabel(with: atom)
+  }
+
+  private func updateSelectedAtomNameLabel(with atom: PDBAtomLight?) {
+    guard let atom = atom else {
+      selectedAtomNameLabel.text = " "
+      return
+    }
+
+    let strokeTextAttributes: [NSAttributedString.Key : Any] = [
+      NSAttributedString.Key.strokeColor : UIColor.darkGray,
+      NSAttributedString.Key.strokeWidth: -4,
+      NSAttributedString.Key.foregroundColor: configuration.getColor(for: atom)
+    ]
+
+    selectedAtomNameLabel.textColor = configuration.getColor(for: atom)
+    selectedAtomNameLabel.attributedText =
+      NSMutableAttributedString(string: atom.symbol,
+                                attributes: strokeTextAttributes)
+  }
+
+  //----------------------------------------------------------------------------
+  // MARK: - Setup
+  //----------------------------------------------------------------------------
 
   private func setup() {
     setupLigandSceneVC()
@@ -57,43 +109,4 @@ class LigandViewController: UIViewController {
     selectedAtomNameLabel.text = " "
   }
 
-  private func loadLigand() {
-    let ligandName = "0EA"
-
-    self.title = ligandName
-
-    LightLigandProvider.get(ligand: ligandName) { [weak self] result in
-      switch result {
-      case .success(let ligand):
-        self?.ligandSceneVC.atoms = ligand.atoms
-        self?.ligandSceneVC.reload()
-      default: print("hoho")
-      }
-    }
-  }
-
-  //----------------------------------------------------------------------------
-  // MARK: - Update
-  //----------------------------------------------------------------------------
-  private func updateSelectedAtom(to atom: PDBAtomLight?) {
-    updateSelectedAtomNameLabel(with: atom)
-  }
-
-  private func updateSelectedAtomNameLabel(with atom: PDBAtomLight?) {
-    guard let atom = atom else {
-      selectedAtomNameLabel.text = " "
-      return
-    }
-
-    let strokeTextAttributes: [NSAttributedString.Key : Any] = [
-      NSAttributedString.Key.strokeColor : UIColor.darkGray,
-      NSAttributedString.Key.strokeWidth: -4,
-      NSAttributedString.Key.foregroundColor: configuration.getColor(for: atom)
-    ]
-
-    selectedAtomNameLabel.textColor = configuration.getColor(for: atom)
-    selectedAtomNameLabel.attributedText =
-      NSMutableAttributedString(string: atom.symbol,
-                                attributes: strokeTextAttributes)
-  }
 }
