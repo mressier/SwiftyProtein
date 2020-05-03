@@ -101,8 +101,15 @@ class LigandCollectionViewController: UICollectionViewController {
     let usableHeight = collectionView.contentSize.height - visibleHeight
     let yOffset = usableHeight * percent
 
-    self.collectionView.contentOffset.y =
-      yOffset.clamped(min: 0, max: usableHeight)
+    collectionView.contentOffset.y = yOffset.clamped(min: 0, max: usableHeight)
+    setScrollSectionLabel()
+  }
+
+  private func setScrollSectionLabel() {
+    let section = collectionView.topVisibleSection
+    let sectionName = source.sectionKey(at: section).title
+
+    scrollBar.scrollLabel.text = sectionName
   }
 }
 
@@ -159,24 +166,24 @@ extension LigandCollectionViewController {
     
     return cell
   }
+}
 
-  override func collectionView(
-    _ collectionView: UICollectionView,
-    willDisplaySupplementaryView view: UICollectionReusableView,
-    forElementKind elementKind: String,
-    at indexPath: IndexPath
-  ) {
-    let name = source.sectionKey(at: indexPath).title
-    scrollBar.scrollLabel.text = name
-  }
+//==============================================================================
+// MARK: - Scroll View Delegate
+//==============================================================================
+
+extension LigandCollectionViewController {
 
   override func scrollViewDidScroll(_ scrollView: UIScrollView) {
     if scrollBar.isScrolling { return }
 
     scrollBar.scroll(to: scrollView.contentOffsetPercent.height)
+    setScrollSectionLabel()
   }
 
   override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    if scrollBar.isScrolling { return }
+
      scrollBar.hideScrollBar()
   }
 

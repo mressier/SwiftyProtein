@@ -57,9 +57,9 @@
 		A94DD752244CB9E40034C6AF /* PDBConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94DD751244CB9E40034C6AF /* PDBConnection.swift */; };
 		A95560512458B48A00181C91 /* Comparable+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95560502458B48A00181C91 /* Comparable+extension.swift */; };
 		A95560532458B55400181C91 /* UIScrollView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95560522458B55400181C91 /* UIScrollView+extension.swift */; };
-		A955605C2459E7AD00181C91 /* ScrollBarLabelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A955605B2459E7AD00181C91 /* ScrollBarLabelView.xib */; };
-		A955605E2459E7BD00181C91 /* ScrollBarLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A955605D2459E7BD00181C91 /* ScrollBarLabelView.swift */; };
 		A9556060245AD6F200181C91 /* LigandCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A955605F245AD6F200181C91 /* LigandCollectionViewFlowLayout.swift */; };
+		A9556062245C47EC00181C91 /* UICollectionView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9556061245C47EC00181C91 /* UICollectionView+extension.swift */; };
+		A9556064245C487600181C91 /* Array+comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9556063245C487600181C91 /* Array+comparable.swift */; };
 		A9597A76244CC29C004E732E /* PDBLigandConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9597A75244CC29C004E732E /* PDBLigandConverterTests.swift */; };
 		A9597A7A244CC5F4004E732E /* PDBLigandConverter+ContentError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9597A79244CC5F4004E732E /* PDBLigandConverter+ContentError.swift */; };
 		A9597A7D244CC6E2004E732E /* PDBLigandProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9597A7C244CC6E2004E732E /* PDBLigandProvider.swift */; };
@@ -163,9 +163,9 @@
 		A94DD751244CB9E40034C6AF /* PDBConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDBConnection.swift; sourceTree = "<group>"; };
 		A95560502458B48A00181C91 /* Comparable+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Comparable+extension.swift"; sourceTree = "<group>"; };
 		A95560522458B55400181C91 /* UIScrollView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+extension.swift"; sourceTree = "<group>"; };
-		A955605B2459E7AD00181C91 /* ScrollBarLabelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollBarLabelView.xib; sourceTree = "<group>"; };
-		A955605D2459E7BD00181C91 /* ScrollBarLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollBarLabelView.swift; sourceTree = "<group>"; };
 		A955605F245AD6F200181C91 /* LigandCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigandCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		A9556061245C47EC00181C91 /* UICollectionView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+extension.swift"; sourceTree = "<group>"; };
+		A9556063245C487600181C91 /* Array+comparable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+comparable.swift"; sourceTree = "<group>"; };
 		A9597A75244CC29C004E732E /* PDBLigandConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDBLigandConverterTests.swift; sourceTree = "<group>"; };
 		A9597A79244CC5F4004E732E /* PDBLigandConverter+ContentError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDBLigandConverter+ContentError.swift"; sourceTree = "<group>"; };
 		A9597A7C244CC6E2004E732E /* PDBLigandProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDBLigandProvider.swift; sourceTree = "<group>"; };
@@ -285,6 +285,7 @@
 				A915629924588F1100960140 /* UIImage+extension.swift */,
 				A915629A24588F1100960140 /* UIStackView+extension.swift */,
 				A95560522458B55400181C91 /* UIScrollView+extension.swift */,
+				A9556061245C47EC00181C91 /* UICollectionView+extension.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -413,6 +414,7 @@
 				A9718EE3243B9A32005DA378 /* UIViewController+extension.swift */,
 				A9718EEB243B9AF5005DA378 /* UIView */,
 				A9718EE2243B99E9005DA378 /* SceneKit */,
+				A9556063245C487600181C91 /* Array+comparable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -474,8 +476,6 @@
 			children = (
 				A915629424588E3100960140 /* ScrollBarView.swift */,
 				A915629224588E2400960140 /* ScrollBarView.xib */,
-				A955605D2459E7BD00181C91 /* ScrollBarLabelView.swift */,
-				A955605B2459E7AD00181C91 /* ScrollBarLabelView.xib */,
 			);
 			path = ScrollBar;
 			sourceTree = "<group>";
@@ -714,7 +714,6 @@
 				A922803323F83DB200BA4F5D /* LaunchScreen.storyboard in Resources */,
 				A922804023F846A700BA4F5D /* Assets.xcassets in Resources */,
 				A922802E23F83DB100BA4F5D /* Main.storyboard in Resources */,
-				A955605C2459E7AD00181C91 /* ScrollBarLabelView.xib in Resources */,
 				A922804123F846A700BA4F5D /* ligands.txt in Resources */,
 				A92A9C2824561F15004CA5D3 /* LigandHeaderCollectionView.xib in Resources */,
 				A915629324588E2400960140 /* ScrollBarView.xib in Resources */,
@@ -786,13 +785,13 @@
 				A9556060245AD6F200181C91 /* LigandCollectionViewFlowLayout.swift in Sources */,
 				A922802723F83DB100BA4F5D /* AppDelegate.swift in Sources */,
 				A9597A7D244CC6E2004E732E /* PDBLigandProvider.swift in Sources */,
+				A9556064245C487600181C91 /* Array+comparable.swift in Sources */,
 				A92A9C2424560874004CA5D3 /* DictionarySource.swift in Sources */,
 				A915629C24588F1100960140 /* UIColor+swifty.swift in Sources */,
 				A9C7945C2450D77B00B5FFA2 /* URLBuilder.swift in Sources */,
 				A90CA9B42456CE5B000BBE60 /* LigandsAppList.swift in Sources */,
 				A922803F23F846A700BA4F5D /* Assets.swift in Sources */,
 				A9718EF3243B9AF5005DA378 /* UIView+extension.swift in Sources */,
-				A955605E2459E7BD00181C91 /* ScrollBarLabelView.swift in Sources */,
 				A91CF35B244C7DE800294568 /* PDBAtom.swift in Sources */,
 				A9597A7F244CC719004E732E /* PDBLigand.swift in Sources */,
 				A910E40D23F87ED6008F9020 /* LightLigandProvider.swift in Sources */,
@@ -819,6 +818,7 @@
 				A910E40823F87B83008F9020 /* PathBounds.swift in Sources */,
 				A987F9C0245754AA00086D5C /* LigandsCollectionBuilder.swift in Sources */,
 				A9C794582450D69E00B5FFA2 /* NetworkRequest.swift in Sources */,
+				A9556062245C47EC00181C91 /* UICollectionView+extension.swift in Sources */,
 				A9F3E7EC244247F7000D62A1 /* ClampedPropertyWrapper.swift in Sources */,
 				A9718EF4243B9AF5005DA378 /* UIView+appearance.swift in Sources */,
 				A95560532458B55400181C91 /* UIScrollView+extension.swift in Sources */,

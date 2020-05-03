@@ -9,9 +9,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScrollBarView" customModule="SwiftyProtein" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="AC4-ag-ubm"/>
-                <outlet property="scrollContentView" destination="E8q-4k-a3J" id="y3T-kh-Bqm"/>
+                <outlet property="scrollContent" destination="HA2-ir-gur" id="I6m-Cp-GAK"/>
                 <outlet property="scrollImage" destination="dEY-v6-hU0" id="Nm4-dY-kVb"/>
-                <outlet property="scrollLabel" destination="iaq-wG-IFX" id="sJI-Q7-oU9"/>
+                <outlet property="scrollLabel" destination="fEe-xd-6NO" id="uf9-R1-bPG"/>
                 <outlet property="scrollLine" destination="gPc-A0-UsT" id="6kF-RV-qE4"/>
             </connections>
         </placeholder>
@@ -23,45 +23,34 @@
                 <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0uO-nE-Mk8">
                     <rect key="frame" x="0.0" y="10" width="140" height="290"/>
                     <subviews>
-                        <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bDf-pN-ZVU">
-                            <rect key="frame" x="65" y="0.0" width="75" height="290"/>
+                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gPc-A0-UsT">
+                            <rect key="frame" x="129" y="0.0" width="1" height="290"/>
+                            <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <accessibility key="accessibilityConfiguration">
+                                <accessibilityTraits key="traits" notEnabled="YES"/>
+                            </accessibility>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="1" id="3oz-bo-Q8f"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HA2-ir-gur">
+                            <rect key="frame" x="0.0" y="0.0" width="140" height="21"/>
                             <subviews>
-                                <view contentMode="scaleToFill" horizontalHuggingPriority="253" verticalHuggingPriority="253" translatesAutoresizingMaskIntoConstraints="NO" id="osf-c6-QX1" userLabel="Label">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="290"/>
+                                <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="97L-wZ-wo2">
+                                    <rect key="frame" x="0.0" y="0.0" width="140" height="21"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iaq-wG-IFX" customClass="ScrollBarLabelView" customModule="SwiftyProtein" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="81" width="50" height="128"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <accessibility key="accessibilityConfiguration">
-                                                <accessibilityTraits key="traits" notEnabled="YES"/>
-                                            </accessibility>
-                                        </view>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <accessibility key="accessibilityConfiguration">
-                                        <accessibilityTraits key="traits" notEnabled="YES"/>
-                                    </accessibility>
-                                    <constraints>
-                                        <constraint firstItem="iaq-wG-IFX" firstAttribute="centerX" secondItem="osf-c6-QX1" secondAttribute="centerX" id="esa-sK-5lx"/>
-                                        <constraint firstItem="iaq-wG-IFX" firstAttribute="leading" secondItem="osf-c6-QX1" secondAttribute="leading" id="r7M-q7-acT"/>
-                                        <constraint firstAttribute="trailing" secondItem="iaq-wG-IFX" secondAttribute="trailing" id="x0h-In-92C"/>
-                                    </constraints>
-                                </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E8q-4k-a3J" userLabel="Scroll view">
-                                    <rect key="frame" x="50" y="0.0" width="25" height="290"/>
-                                    <subviews>
-                                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gPc-A0-UsT">
-                                            <rect key="frame" x="12" y="0.0" width="1" height="290"/>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                            <accessibility key="accessibilityConfiguration">
-                                                <accessibilityTraits key="traits" notEnabled="YES"/>
-                                            </accessibility>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fEe-xd-6NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="114" height="21"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="1" id="3oz-bo-Q8f"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="Fqg-ab-FY9"/>
                                             </constraints>
-                                        </view>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="scroll-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="dEY-v6-hU0">
-                                            <rect key="frame" x="0.0" y="0.0" width="25" height="28"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="dEY-v6-hU0">
+                                            <rect key="frame" x="119" y="0.5" width="21" height="20"/>
+                                            <color key="tintColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <accessibility key="accessibilityConfiguration">
                                                 <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
                                             </accessibility>
@@ -70,31 +59,30 @@
                                             </constraints>
                                         </imageView>
                                     </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="dEY-v6-hU0" secondAttribute="trailing" id="But-ml-FWH"/>
-                                        <constraint firstItem="gPc-A0-UsT" firstAttribute="top" secondItem="E8q-4k-a3J" secondAttribute="top" id="CL9-71-xl9"/>
-                                        <constraint firstAttribute="bottom" secondItem="gPc-A0-UsT" secondAttribute="bottom" id="JXq-cT-eXI"/>
-                                        <constraint firstItem="dEY-v6-hU0" firstAttribute="centerX" secondItem="gPc-A0-UsT" secondAttribute="centerX" id="Nte-Qn-a8n"/>
-                                        <constraint firstAttribute="width" constant="25" id="VWN-rR-s5E"/>
-                                        <constraint firstItem="gPc-A0-UsT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="E8q-4k-a3J" secondAttribute="leading" id="dvP-Qy-A2V"/>
-                                        <constraint firstItem="dEY-v6-hU0" firstAttribute="leading" secondItem="E8q-4k-a3J" secondAttribute="leading" id="l22-QS-w18"/>
-                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gPc-A0-UsT" secondAttribute="trailing" id="l9l-K1-8Dz"/>
-                                        <constraint firstItem="gPc-A0-UsT" firstAttribute="centerX" secondItem="E8q-4k-a3J" secondAttribute="centerX" id="wOd-EP-EhH"/>
-                                    </constraints>
-                                </view>
+                                </stackView>
                             </subviews>
-                        </stackView>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="97L-wZ-wo2" secondAttribute="trailing" id="J8V-ic-dfn"/>
+                                <constraint firstAttribute="bottom" secondItem="97L-wZ-wo2" secondAttribute="bottom" id="Q1B-s2-VQ0"/>
+                                <constraint firstItem="97L-wZ-wo2" firstAttribute="leading" secondItem="HA2-ir-gur" secondAttribute="leading" id="rBR-m9-iPk"/>
+                                <constraint firstItem="97L-wZ-wo2" firstAttribute="top" secondItem="HA2-ir-gur" secondAttribute="top" id="vdg-bC-zYg"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <accessibility key="accessibilityConfiguration">
                         <accessibilityTraits key="traits" notEnabled="YES"/>
                     </accessibility>
                     <constraints>
-                        <constraint firstItem="bDf-pN-ZVU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0uO-nE-Mk8" secondAttribute="leading" id="4W4-wS-0IE"/>
-                        <constraint firstItem="bDf-pN-ZVU" firstAttribute="top" secondItem="0uO-nE-Mk8" secondAttribute="top" id="Gcv-CV-J50"/>
-                        <constraint firstAttribute="bottom" secondItem="bDf-pN-ZVU" secondAttribute="bottom" id="dRO-ZS-Di6"/>
-                        <constraint firstAttribute="trailing" secondItem="bDf-pN-ZVU" secondAttribute="trailing" id="eQi-HV-xWD"/>
+                        <constraint firstItem="gPc-A0-UsT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0uO-nE-Mk8" secondAttribute="leading" id="90T-14-ziU"/>
+                        <constraint firstItem="HA2-ir-gur" firstAttribute="top" secondItem="0uO-nE-Mk8" secondAttribute="top" id="GVF-f5-ioD"/>
+                        <constraint firstItem="HA2-ir-gur" firstAttribute="leading" secondItem="0uO-nE-Mk8" secondAttribute="leading" id="MPy-1I-9zj"/>
+                        <constraint firstItem="dEY-v6-hU0" firstAttribute="centerX" secondItem="gPc-A0-UsT" secondAttribute="centerX" id="ORg-3I-hyS"/>
+                        <constraint firstAttribute="trailing" secondItem="HA2-ir-gur" secondAttribute="trailing" id="hQu-QB-adb"/>
+                        <constraint firstItem="gPc-A0-UsT" firstAttribute="top" secondItem="0uO-nE-Mk8" secondAttribute="top" id="mbw-YW-dpA"/>
+                        <constraint firstAttribute="trailing" secondItem="gPc-A0-UsT" secondAttribute="trailing" constant="10" id="pKb-ds-iuj"/>
+                        <constraint firstAttribute="bottom" secondItem="gPc-A0-UsT" secondAttribute="bottom" id="xO3-uJ-4Dl"/>
                     </constraints>
                 </view>
             </subviews>
@@ -111,6 +99,6 @@
         </view>
     </objects>
     <resources>
-        <image name="scroll-arrow" width="170" height="170"/>
+        <image name="circle.fill" catalog="system" width="64" height="60"/>
     </resources>
 </document>

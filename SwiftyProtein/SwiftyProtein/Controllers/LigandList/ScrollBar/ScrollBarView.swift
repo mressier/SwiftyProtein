@@ -9,11 +9,11 @@ class ScrollBarView: UIView, NibInstanciable {
   /******************** Outlet ********************/
 
   @IBOutlet private var contentView: UIView!
-  @IBOutlet private weak var scrollContentView: UIView!
+  @IBOutlet private weak var scrollContent: UIView!
 
   @IBOutlet weak var scrollImage: UIImageView!
   @IBOutlet weak var scrollLine: UIView!
-  @IBOutlet weak var scrollLabel: ScrollBarLabelView!
+  @IBOutlet weak var scrollLabel: UILabel!
 
   /******************** Callback ********************/
 
@@ -26,10 +26,10 @@ class ScrollBarView: UIView, NibInstanciable {
   /******************** View tools ********************/
 
   var usableHeight: CGFloat {
-    return scrollContentView.bounds.height - imageHeight
+    return scrollLine.bounds.height - scrollContentHeight
   }
 
-  var imageHeight: CGFloat { return scrollImage.frame.height }
+  var scrollContentHeight: CGFloat { return scrollContent.frame.height }
 
   //----------------------------------------------------------------------------
   // MARK: - Initialization
@@ -56,17 +56,15 @@ class ScrollBarView: UIView, NibInstanciable {
 
   func showScrollBar() {
     UIView.animate(withDuration: 0.3) {
-      self.scrollImage.alpha = 1.0
+      self.scrollContent.alpha = 1.0
       self.scrollLine.alpha = 1.0
-      self.scrollLabel.alpha = 1.0
     }
   }
 
   func hideScrollBar() {
     UIView.animate(withDuration: 0.3) {
-      self.scrollImage.alpha = 0.0
       self.scrollLine.alpha = 0.0
-      self.scrollLabel.alpha = 0.0
+      self.scrollContent.alpha = 0.0
     }
   }
 
@@ -79,7 +77,7 @@ class ScrollBarView: UIView, NibInstanciable {
     handleTranslation(sender)
 
     /// Calcul percent of progression in the view
-    let percent = scrollImage.frame.origin.y / usableHeight
+    let percent = scrollContent.frame.origin.y / usableHeight
     didScrollTo?(percent)
   }
 
@@ -97,19 +95,17 @@ class ScrollBarView: UIView, NibInstanciable {
 
   private func handleTranslation(_ sender: UIPanGestureRecognizer) {
     let translation = sender.translation(in: contentView)
-
-    guard let imageView = scrollImage else { return }
-
-    let yTranslation = imageView.frame.origin.y + translation.y
-    scrollSliderTo(yOffset: yTranslation)
-
     sender.setTranslation(.zero, in: contentView)
+
+    guard let scrollContent = scrollContent else { return }
+
+    let yTranslation = scrollContent.frame.origin.y + translation.y
+    scrollSliderTo(yOffset: yTranslation)
   }
 
   private func scrollSliderTo(yOffset: CGFloat) {
     let y = yOffset.clamped(min: 0, max: usableHeight)
-    scrollImage.frame.origin.y = y
-    scrollLabel.center.y = scrollImage.center.y
+    scrollContent.frame.origin.y = y
   }
 
   //----------------------------------------------------------------------------
@@ -128,23 +124,30 @@ class ScrollBarView: UIView, NibInstanciable {
     setupScrollLine()
     setupScrollImage()
     setupScrollLabel()
+    setupScrollContent()
     setupPanGesture()
   }
 
   private func setupScrollImage() {
-    scrollImage.image = SPAssets.scrollArrow.image.alwaysTemplate
-    scrollImage.tintColor = .swiftyBlue
-    scrollImage.alpha = 0.0
+    scrollImage.tintColor = .secondarySystemBackground
+    scrollImage.borderColor = .systemGray3
+    scrollImage.borderWidth = 1.0
+    scrollImage.setAsCircle()
   }
 
   private func setupScrollLine() {
-    scrollLine.backgroundColor = UIColor.systemGray.withAlphaComponent(0.5)
+    scrollLine.backgroundColor = .systemGray3
     scrollLine.alpha = 0.0
   }
 
   private func setupScrollLabel() {
-    scrollLabel.alpha = 0.0
     scrollLabel.text = nil
+    scrollLabel.textColor = .systemGray3
+    scrollLabel.font = UIFont.systemFont(ofSize: 12.0)
+  }
+
+  private func setupScrollContent() {
+    scrollContent.alpha = 0.0
   }
 
   private func setupPanGesture() {
