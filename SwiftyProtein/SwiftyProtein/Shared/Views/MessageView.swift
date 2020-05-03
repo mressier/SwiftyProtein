@@ -1,8 +1,7 @@
 import UIKit
-import SwiftyGif
 
 @IBDesignable
-class LoadingView: UIView, NibInstanciable {
+class MessageView: UIView, NibInstanciable {
 
   //----------------------------------------------------------------------------
   // MARK: - Properties
@@ -11,11 +10,20 @@ class LoadingView: UIView, NibInstanciable {
   /******************** Outlet ********************/
 
   @IBOutlet var contentView: UIView!
-  @IBOutlet weak var imageContainerView: UIView!
-  @IBOutlet weak var loadingLabel: UILabel!
+  @IBOutlet weak var messageImageView: UIImageView!
+  @IBOutlet weak var messageLabel: UILabel!
 
   /******************** Parameters ********************/
 
+  @IBInspectable
+  var messageText: String? {
+    didSet { messageLabel.text = messageText }
+  }
+
+  @IBInspectable
+  var messageImage: UIImage? {
+    didSet { messageImageView.image = messageImage }
+  }
   //----------------------------------------------------------------------------
   // MARK: - Initialization
   //----------------------------------------------------------------------------
@@ -40,20 +48,18 @@ class LoadingView: UIView, NibInstanciable {
   }
 
   private func setupView() {
-    setupGifView()
-    setupLabel()
+    setupMessageLabel()
+    setupMessageImageView()
   }
 
-  private func setupLabel() {
-    loadingLabel.textColor = .secondaryLabel
+  private func setupMessageLabel() {
+    messageLabel.textColor = .secondaryLabel
+    messageLabel.text = messageText
   }
 
-  private func setupGifView() {
-    guard let gif =
-      try? UIImage(gifData: SPAssets.loadingGif.data.data) else { return }
-
-    let imageView = UIImageView(gifImage: gif, loopCount: -1)
-    imageContainerView.add(subview: imageView, with: .edge)
+  private func setupMessageImageView() {
+    messageImageView.tintColor = .secondaryLabel
   }
+
 }
 
