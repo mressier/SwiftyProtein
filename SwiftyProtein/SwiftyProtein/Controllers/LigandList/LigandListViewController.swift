@@ -62,7 +62,7 @@ class LigandListViewController: UIViewController {
   }
 
   private func setupLigandCollectionVC() {
-    ligandsList = LigandsAppList(ligands: ["A", "AB", "B", "B1", "C", "1C", "D", "D3E", "E", "F"],
+    ligandsList = LigandsAppList(ligands: FileReader.readLigandFile(),
                                   favorites: ["A", "B1"])
 
     ligandCollectionVC.ligandsList = ligandCollection
@@ -102,11 +102,11 @@ extension LigandListViewController: UISearchResultsUpdating {
 
   /// Reorder collection to set sections with matching name in the top of the research
   private func getReorderedCollection(
-    from ligandList: LigandsAppList,
+    from list: LigandsAppList,
     withSearchText text: String
   ) -> LigandSectionSource.Sections {
 
-    var collection = LigandsCollectionBuilder.build(from: ligandsList)
+    var collection = LigandsCollectionBuilder.build(from: list)
 
     let sectionStartingWithText =
       collection.firstIndex() { $0.section.title.starts(with: text) }
