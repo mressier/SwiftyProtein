@@ -31,22 +31,24 @@ class LigandHeaderCollectionView: UICollectionReusableView, Reusable {
   }
 
   private func setup() {
+    setupView()
     setupLabel()
     setupImage()
   }
 
+  private func setupView() {
+    backgroundColor = .secondarySystemBackground
+  }
+
   private func setupImage() {
-    if let image = sectionImage {
-      sectionImageView.tintColor = .label
-      sectionImageView.image = image
-      sectionImageView.isHidden = false
-    } else {
-      sectionImageView.isHidden = true
-    }
+    sectionImageView.tintColor = .secondaryLabel
+    sectionImageView.image = sectionImage
+    sectionImageView.isHidden = sectionImage == nil ? true : false
   }
 
   private func setupLabel() {
     sectionTitleLabel.text = sectionName
+    sectionTitleLabel.textColor = .secondaryLabel
   }
 
 }

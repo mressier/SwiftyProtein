@@ -8,7 +8,8 @@ class LigandCollectionViewFlowLayout: LeftAlignedCollectionViewFlowLayout {
 
   let cellSize = CGSize(width: 100, height: 100)
   let headerSize = CGSize(width: 100, height: 28)
-  let padding = CGFloat(18.0)
+  let sectionPadding = CGFloat(18.0)
+  let cellPadding = CGFloat(0)
 
   //----------------------------------------------------------------------------
   // MARK: - Initialization
@@ -17,12 +18,15 @@ class LigandCollectionViewFlowLayout: LeftAlignedCollectionViewFlowLayout {
   override init() {
     super.init()
     sectionInset =
-      UIEdgeInsets(top: padding, left: padding, bottom: padding, right: 30)
+      UIEdgeInsets(top: sectionPadding,
+                   left: sectionPadding,
+                   bottom: sectionPadding,
+                   right: 30)
     sectionHeadersPinToVisibleBounds = true
     sectionHeadersPinToVisibleBounds = true
     scrollDirection = .vertical
-    minimumInteritemSpacing = padding
-    minimumLineSpacing = padding
+    minimumInteritemSpacing = cellPadding
+    minimumLineSpacing = cellPadding
     headerReferenceSize = headerSize
     itemSize = cellSize
   }

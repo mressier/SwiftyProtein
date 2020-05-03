@@ -13,39 +13,28 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wNh-TO-Pa7">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="o86-Ie-HxV">
+                    <rect key="frame" x="10" y="0.0" width="310" height="50"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="o86-Ie-HxV">
-                            <rect key="frame" x="10" y="0.0" width="310" height="50"/>
-                            <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="253" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="QPc-t3-hBN">
-                                    <rect key="frame" x="0.0" y="0.0" width="22" height="50"/>
-                                    <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASl-1Y-Uxc">
-                                    <rect key="frame" x="32" y="0.0" width="278" height="50"/>
-                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                        </stackView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="253" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="QPc-t3-hBN">
+                            <rect key="frame" x="0.0" y="0.0" width="22" height="50"/>
+                            <color key="tintColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASl-1Y-Uxc">
+                            <rect key="frame" x="32" y="0.0" width="278" height="50"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                            <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
-                    <color key="backgroundColor" systemColor="secondarySystemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstItem="o86-Ie-HxV" firstAttribute="top" secondItem="wNh-TO-Pa7" secondAttribute="top" id="16L-JE-Nve"/>
-                        <constraint firstItem="o86-Ie-HxV" firstAttribute="leading" secondItem="wNh-TO-Pa7" secondAttribute="leading" constant="10" id="IgQ-Na-tlt"/>
-                        <constraint firstAttribute="trailing" secondItem="o86-Ie-HxV" secondAttribute="trailing" id="mbQ-Xg-VG7"/>
-                        <constraint firstAttribute="bottom" secondItem="o86-Ie-HxV" secondAttribute="bottom" id="tzu-gN-mKM"/>
-                    </constraints>
-                </view>
+                </stackView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="wNh-TO-Pa7" secondAttribute="trailing" id="0WW-x1-xT3"/>
-                <constraint firstAttribute="bottom" secondItem="wNh-TO-Pa7" secondAttribute="bottom" id="8kA-yK-jQY"/>
-                <constraint firstItem="wNh-TO-Pa7" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="EmN-qr-2Us"/>
-                <constraint firstItem="wNh-TO-Pa7" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="t7b-5o-Gxc"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="bottom" secondItem="o86-Ie-HxV" secondAttribute="bottom" id="9eH-Gm-96y"/>
+                <constraint firstAttribute="trailing" secondItem="o86-Ie-HxV" secondAttribute="trailing" id="Nuh-ca-5Dj"/>
+                <constraint firstItem="o86-Ie-HxV" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="U6X-um-tAu"/>
+                <constraint firstItem="o86-Ie-HxV" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="10" id="m3a-2u-zZh"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
             <connections>

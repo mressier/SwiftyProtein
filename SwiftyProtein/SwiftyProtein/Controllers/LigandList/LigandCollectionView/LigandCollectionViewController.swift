@@ -144,7 +144,7 @@ extension LigandCollectionViewController {
       let section = source.sectionKey(at: indexPath)
 
       headerView.sectionName = section.title
-      headerView.sectionImage = section.image
+      headerView.sectionImage = section.image?.alwaysTemplate
     }
 
     return headerView

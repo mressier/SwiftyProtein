@@ -49,6 +49,7 @@ class LigandListViewController: UIViewController {
     searchController.searchResultsUpdater = self
     searchController.obscuresBackgroundDuringPresentation = false
     searchController.searchBar.placeholder = "Search a ligand"
+    searchController.searchBar.tintColor = .appTintColor
   }
 
   private func setupLigandCollectionVC() {

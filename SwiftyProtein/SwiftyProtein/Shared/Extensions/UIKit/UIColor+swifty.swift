@@ -9,6 +9,9 @@ extension UIColor {
 
   /******************** Swifty Protein related color ********************/
 
+  static var swiftyBlueGreen = UIColor(hex: "#34C0CC")
   static var swiftyBlue = UIColor(hex: "#2841CC")
   static var swiftyDarkBlue = UIColor(hex: "#262262")
+
+  static var appTintColor: UIColor = .swiftyBlueGreen
 }

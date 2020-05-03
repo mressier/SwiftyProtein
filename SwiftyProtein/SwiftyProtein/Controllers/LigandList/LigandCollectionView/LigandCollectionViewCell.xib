@@ -26,15 +26,18 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart-filled" translatesAutoresizingMaskIntoConstraints="NO" id="Zmt-FZ-Si7">
-                                <rect key="frame" x="89" y="104" width="21" height="21"/>
-                                <color key="tintColor" red="0.1516450047492981" green="0.12541240453720093" blue="0.3843352198600769" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="102" y="5" width="15" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="15" id="1DY-xe-UBj"/>
+                                    <constraint firstAttribute="width" secondItem="Zmt-FZ-Si7" secondAttribute="height" multiplier="1:1" id="OUx-7U-xDU"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="Zmt-FZ-Si7" secondAttribute="bottom" constant="12" id="ExD-Ed-Gzv"/>
+                            <constraint firstItem="Zmt-FZ-Si7" firstAttribute="top" secondItem="i4a-jW-Rpd" secondAttribute="top" constant="5" id="HbM-jZ-WEO"/>
                             <constraint firstItem="vJ5-hN-SKe" firstAttribute="centerY" secondItem="i4a-jW-Rpd" secondAttribute="centerY" id="TPa-j1-O7M"/>
-                            <constraint firstAttribute="trailing" secondItem="Zmt-FZ-Si7" secondAttribute="trailing" constant="12" id="fkv-uy-XIv"/>
+                            <constraint firstAttribute="trailing" secondItem="Zmt-FZ-Si7" secondAttribute="trailing" constant="5" id="gab-WO-Eol"/>
                             <constraint firstItem="vJ5-hN-SKe" firstAttribute="centerX" secondItem="i4a-jW-Rpd" secondAttribute="centerX" id="mqZ-LG-Rr6"/>
                         </constraints>
                     </view>
