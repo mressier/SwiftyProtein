@@ -25,7 +25,7 @@ class LigandListViewController: UIViewController {
   /******************** View Controllers ********************/
 
   private let searchController =
-    UISearchController(searchResultsController: nil)
+    LigandSearchController(searchResultsController: nil)
 
   private let ligandCollectionVC =
     LigandCollectionViewController(bundle: .main)
@@ -75,47 +75,17 @@ class LigandListViewController: UIViewController {
 extension LigandListViewController: UISearchResultsUpdating {
 
   func updateSearchResults(for searchController: UISearchController) {
+    guard let searchController =
+      searchController as? LigandSearchController else { return }
+
     let searchText = searchController.searchBar.text?.uppercased() ?? ""
-    let collection = getCollection(withSearchText: searchText)
+    let ligandsList =
+      searchController.getLigandsList(withSearchText: searchText)
+    let collection =
+      searchController.getReorderedCollection(from: ligandsList,
+                                              withSearchText: searchText)
 
     ligandCollectionVC.ligandsList = collection
     ligandCollectionVC.reloadData()
-  }
-
-  //----------------------------------------------------------------------------
-  // MARK: - Filter search results
-  //----------------------------------------------------------------------------
-
-  /// Return a collection with elements that match the search text
-  private func getCollection(
-    withSearchText text: String
-  ) -> LigandSectionSource.Sections {
-
-    if text.isEmpty { return ligandCollection }
-
-    let filteredLigandsList =
-      ligandsList.filtered(isIncluded: { $0.contains(text) })
-
-    return getReorderedCollection(from: filteredLigandsList,
-                                  withSearchText: text)
-  }
-
-  /// Reorder collection to set sections with matching name in the top of the research
-  private func getReorderedCollection(
-    from list: LigandsAppList,
-    withSearchText text: String
-  ) -> LigandSectionSource.Sections {
-
-    var collection = LigandsCollectionBuilder.build(from: list)
-
-    let sectionStartingWithText =
-      collection.firstIndex() { $0.section.title.starts(with: text) }
-
-    if let index = sectionStartingWithText {
-      let item = collection.remove(at: index)
-      collection.insert(item, at: 0)
-    }
-
-    return collection
   }
 }
