@@ -55,6 +55,9 @@
 		A94DD73F244CB3080034C6AF /* PDBLigandConverter+ConectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94DD73E244CB3080034C6AF /* PDBLigandConverter+ConectTests.swift */; };
 		A94DD750244CB9480034C6AF /* PDBLigandConverter+End.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94DD74F244CB9480034C6AF /* PDBLigandConverter+End.swift */; };
 		A94DD752244CB9E40034C6AF /* PDBConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94DD751244CB9E40034C6AF /* PDBConnection.swift */; };
+		A94FB06C245F2F0F00E4DFA3 /* SwiftyGif in Frameworks */ = {isa = PBXBuildFile; productRef = A94FB06B245F2F0F00E4DFA3 /* SwiftyGif */; };
+		A94FB06E245F2F8400E4DFA3 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A94FB06D245F2F8400E4DFA3 /* LoadingView.xib */; };
+		A94FB070245F2F8D00E4DFA3 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94FB06F245F2F8D00E4DFA3 /* LoadingView.swift */; };
 		A95560512458B48A00181C91 /* Comparable+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95560502458B48A00181C91 /* Comparable+extension.swift */; };
 		A95560532458B55400181C91 /* UIScrollView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95560522458B55400181C91 /* UIScrollView+extension.swift */; };
 		A9556060245AD6F200181C91 /* LigandCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A955605F245AD6F200181C91 /* LigandCollectionViewFlowLayout.swift */; };
@@ -95,10 +98,8 @@
 		A9F3E7D4244221CD000D62A1 /* AtomInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F3E7D3244221CD000D62A1 /* AtomInfo.swift */; };
 		A9F3E7D624422C1A000D62A1 /* ProteinSceneConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F3E7D524422C1A000D62A1 /* ProteinSceneConfiguration.swift */; };
 		A9F3E7D824422C47000D62A1 /* ProteinSceneConfiguration+ColorMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F3E7D724422C47000D62A1 /* ProteinSceneConfiguration+ColorMode.swift */; };
-		A9F3E7E3244235BF000D62A1 /* TextStepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F3E7E2244235BF000D62A1 /* TextStepperView.swift */; };
 		A9F3E7E624423731000D62A1 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F3E7E424423731000D62A1 /* Reusable.swift */; };
 		A9F3E7E724423731000D62A1 /* NibInstanciable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F3E7E524423731000D62A1 /* NibInstanciable.swift */; };
-		A9F3E7E924423749000D62A1 /* TextStepperView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9F3E7E824423749000D62A1 /* TextStepperView.xib */; };
 		A9F3E7EC244247F7000D62A1 /* ClampedPropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F3E7EB244247F7000D62A1 /* ClampedPropertyWrapper.swift */; };
 /* End PBXBuildFile section */
 
@@ -163,6 +164,8 @@
 		A94DD73E244CB3080034C6AF /* PDBLigandConverter+ConectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDBLigandConverter+ConectTests.swift"; sourceTree = "<group>"; };
 		A94DD74F244CB9480034C6AF /* PDBLigandConverter+End.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDBLigandConverter+End.swift"; sourceTree = "<group>"; };
 		A94DD751244CB9E40034C6AF /* PDBConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDBConnection.swift; sourceTree = "<group>"; };
+		A94FB06D245F2F8400E4DFA3 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
+		A94FB06F245F2F8D00E4DFA3 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		A95560502458B48A00181C91 /* Comparable+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Comparable+extension.swift"; sourceTree = "<group>"; };
 		A95560522458B55400181C91 /* UIScrollView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+extension.swift"; sourceTree = "<group>"; };
 		A955605F245AD6F200181C91 /* LigandCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigandCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
@@ -204,10 +207,8 @@
 		A9F3E7D3244221CD000D62A1 /* AtomInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomInfo.swift; sourceTree = "<group>"; };
 		A9F3E7D524422C1A000D62A1 /* ProteinSceneConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProteinSceneConfiguration.swift; sourceTree = "<group>"; };
 		A9F3E7D724422C47000D62A1 /* ProteinSceneConfiguration+ColorMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProteinSceneConfiguration+ColorMode.swift"; sourceTree = "<group>"; };
-		A9F3E7E2244235BF000D62A1 /* TextStepperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStepperView.swift; sourceTree = "<group>"; };
 		A9F3E7E424423731000D62A1 /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		A9F3E7E524423731000D62A1 /* NibInstanciable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibInstanciable.swift; sourceTree = "<group>"; };
-		A9F3E7E824423749000D62A1 /* TextStepperView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextStepperView.xib; sourceTree = "<group>"; };
 		A9F3E7EB244247F7000D62A1 /* ClampedPropertyWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClampedPropertyWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -217,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9597A82244CC8B0004E732E /* Alamofire in Frameworks */,
+				A94FB06C245F2F0F00E4DFA3 /* SwiftyGif in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,9 +615,9 @@
 		A9F3E7E1244235A8000D62A1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A9F3E7E2244235BF000D62A1 /* TextStepperView.swift */,
-				A9F3E7E824423749000D62A1 /* TextStepperView.xib */,
 				A915628A245830B700960140 /* CollectionViewLayout */,
+				A94FB06D245F2F8400E4DFA3 /* LoadingView.xib */,
+				A94FB06F245F2F8D00E4DFA3 /* LoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -647,6 +649,7 @@
 			name = SwiftyProtein;
 			packageProductDependencies = (
 				A9597A81244CC8B0004E732E /* Alamofire */,
+				A94FB06B245F2F0F00E4DFA3 /* SwiftyGif */,
 			);
 			productName = SwiftyProtein;
 			productReference = A922802323F83DB100BA4F5D /* SwiftyProtein.app */;
@@ -700,6 +703,7 @@
 			mainGroup = A922801A23F83DB100BA4F5D;
 			packageReferences = (
 				A9597A80244CC8B0004E732E /* XCRemoteSwiftPackageReference "Alamofire" */,
+				A94FB06A245F2F0F00E4DFA3 /* XCRemoteSwiftPackageReference "SwiftyGif" */,
 			);
 			productRefGroup = A922802423F83DB100BA4F5D /* Products */;
 			projectDirPath = "";
@@ -725,7 +729,7 @@
 				A915629324588E2400960140 /* ScrollBarView.xib in Resources */,
 				A92A9C1424536EF4004CA5D3 /* LigandCollectionViewController.xib in Resources */,
 				A92A9C2024560512004CA5D3 /* LigandCollectionViewCell.xib in Resources */,
-				A9F3E7E924423749000D62A1 /* TextStepperView.xib in Resources */,
+				A94FB06E245F2F8400E4DFA3 /* LoadingView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -784,7 +788,6 @@
 				A9C7945E2450D89D00B5FFA2 /* PDBRequest.swift in Sources */,
 				A91A5510243B9601003DF261 /* LigandViewController.swift in Sources */,
 				A915629524588E3100960140 /* ScrollBarView.swift in Sources */,
-				A9F3E7E3244235BF000D62A1 /* TextStepperView.swift in Sources */,
 				A92A9C1F24560512004CA5D3 /* LigandCollectionViewCell.swift in Sources */,
 				A922804723F84E2C00BA4F5D /* SCNNode+extension.swift in Sources */,
 				A92A9C0B245352F2004CA5D3 /* Array+extension.swift in Sources */,
@@ -798,6 +801,7 @@
 				A9C7945C2450D77B00B5FFA2 /* URLBuilder.swift in Sources */,
 				A90CA9B42456CE5B000BBE60 /* LigandsAppList.swift in Sources */,
 				A922803F23F846A700BA4F5D /* Assets.swift in Sources */,
+				A94FB070245F2F8D00E4DFA3 /* LoadingView.swift in Sources */,
 				A9718EF3243B9AF5005DA378 /* UIView+extension.swift in Sources */,
 				A91CF35B244C7DE800294568 /* PDBAtom.swift in Sources */,
 				A9597A7F244CC719004E732E /* PDBLigand.swift in Sources */,
@@ -1109,6 +1113,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		A94FB06A245F2F0F00E4DFA3 /* XCRemoteSwiftPackageReference "SwiftyGif" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kirualex/SwiftyGif";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.0;
+			};
+		};
 		A9597A80244CC8B0004E732E /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -1120,6 +1132,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A94FB06B245F2F0F00E4DFA3 /* SwiftyGif */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A94FB06A245F2F0F00E4DFA3 /* XCRemoteSwiftPackageReference "SwiftyGif" */;
+			productName = SwiftyGif;
+		};
 		A9597A81244CC8B0004E732E /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A9597A80244CC8B0004E732E /* XCRemoteSwiftPackageReference "Alamofire" */;

@@ -88,7 +88,8 @@ class LigandSceneViewController: UIViewController {
   // MARK: - Reload
   //----------------------------------------------------------------------------
 
-  func reload() {
+  func reload(completion: (() -> Void)?) {
+
     for atomNode in atomsDictionary.values {
       atomNode.node.removeFromParentNode()
     }
@@ -98,6 +99,7 @@ class LigandSceneViewController: UIViewController {
     viewNode.createLinks(between: atomNodes.extractAtomPairs())
 
     atomsDictionary = atomNodes.dictionaryByNode
+    completion?()
   }
 
   //----------------------------------------------------------------------------

@@ -18,7 +18,7 @@
 
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 internal enum SPAssets {
-  internal static let dotLoader = DataAsset(name: "dotLoader")
+  internal static let loadingGif = DataAsset(name: "loading.gif")
   internal static let launchScreen = ImageAsset(name: "LaunchScreen")
   internal static let ligands = DataAsset(name: "Ligands")
   internal static let title = ImageAsset(name: "Title")

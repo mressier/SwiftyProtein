@@ -7,7 +7,7 @@ class LigandViewController: UIViewController {
   //----------------------------------------------------------------------------
 
   @IBOutlet weak var ligandSceneContainerView: UIView!
-  @IBOutlet weak var selectedAtomNameLabel: UILabel!
+  @IBOutlet weak var loadingView: LoadingView!
 
   /******************** Computed properties ********************/
 
@@ -15,16 +15,13 @@ class LigandViewController: UIViewController {
     didSet { updateSelectedAtom(to: selectedAtom) }
   }
 
-  var ligand: String? {
-    didSet {
-      guard let ligand = ligand else { return }
-      loadLigand(name: ligand)
-    }
-  }
+  var ligand: String?
 
   /******************** Configuration ********************/
 
   var configuration = LigandSceneConfiguration(colorMode: .cpk)
+
+  private var isLoading: Bool = false
 
   /******************** View controllers ********************/
 
@@ -41,6 +38,13 @@ class LigandViewController: UIViewController {
     setup()
   }
 
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+
+    guard let ligand = ligand else { return }
+    loadLigand(name: ligand)
+  }
+
   //----------------------------------------------------------------------------
   // MARK: - Load
   //----------------------------------------------------------------------------
@@ -48,13 +52,24 @@ class LigandViewController: UIViewController {
   private func loadLigand(name: String) {
     self.title = name
 
+    setLoading(true)
     LightLigandProvider.get(ligand: name) { [weak self] result in
       switch result {
       case .success(let ligand):
         self?.ligandSceneVC.atoms = ligand.atoms
-        self?.ligandSceneVC.reload()
-      default: print("hoho")
+        self?.ligandSceneVC.reload() { [weak self] in self?.setLoading(false) }
+      default:
+        print("hoho")
+        self?.setLoading(false)
       }
+    }
+  }
+
+  private func setLoading(_ isLoading: Bool) {
+    self.isLoading = isLoading
+
+    UIView.animate(withDuration: 0.5) {
+      self.loadingView?.alpha = isLoading ? 1.0 : 0.0
     }
   }
 
@@ -67,21 +82,7 @@ class LigandViewController: UIViewController {
   }
 
   private func updateSelectedAtomNameLabel(with atom: PDBAtomLight?) {
-    guard let atom = atom else {
-      selectedAtomNameLabel.text = " "
-      return
-    }
-
-    let strokeTextAttributes: [NSAttributedString.Key : Any] = [
-      NSAttributedString.Key.strokeColor : UIColor.darkGray,
-      NSAttributedString.Key.strokeWidth: -4,
-      NSAttributedString.Key.foregroundColor: configuration.getColor(for: atom)
-    ]
-
-    selectedAtomNameLabel.textColor = configuration.getColor(for: atom)
-    selectedAtomNameLabel.attributedText =
-      NSMutableAttributedString(string: atom.symbol,
-                                attributes: strokeTextAttributes)
+    print(atom?.symbol)
   }
 
   //----------------------------------------------------------------------------
@@ -106,7 +107,10 @@ class LigandViewController: UIViewController {
   }
 
   private func setupAtomLabel() {
-    selectedAtomNameLabel.text = " "
+  }
+
+  private func setupLoadingView() {
+    loadingView.isUserInteractionEnabled = false
   }
 
 }

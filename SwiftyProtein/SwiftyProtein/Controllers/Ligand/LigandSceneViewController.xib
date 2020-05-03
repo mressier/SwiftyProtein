@@ -22,7 +22,7 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                 </sceneKitView>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="hfL-0e-4e7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="PAj-8J-4gP"/>
                 <constraint firstItem="hfL-0e-4e7" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="hEI-DZ-R0c"/>
