@@ -70,6 +70,10 @@ class LigandCollectionViewController: UICollectionViewController {
   }
 
   private func setupSource() {
+    reloadData()
+  }
+
+  func reloadData() {
     source.elements = ligandsList
     collectionView.reloadData()
   }

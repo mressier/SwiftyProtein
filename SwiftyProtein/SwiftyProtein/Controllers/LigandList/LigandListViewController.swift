@@ -14,12 +14,21 @@ class LigandListViewController: UIViewController {
 
   /******************** Parameters ********************/
 
-  var ligandsList = LigandsAppList(ligands: ["A", "AB", "B", "B1", "C", "1C", "D", "D3E", "E", "F"],
-                                   favorites: ["A", "B1"])
+  var ligandsList = LigandsAppList(ligands: [], favorites: []) {
+    didSet {
+      ligandCollection = LigandsCollectionBuilder.build(from: ligandsList)
+    }
+  }
+
+  private var ligandCollection = LigandSectionSource.Sections()
 
   /******************** View Controllers ********************/
 
-  let searchController = UISearchController(searchResultsController: nil)
+  private let searchController =
+    UISearchController(searchResultsController: nil)
+
+  private let ligandCollectionVC =
+    LigandCollectionViewController(bundle: .main)
 
   //----------------------------------------------------------------------------
   // MARK: - View Life Cycle
@@ -53,10 +62,10 @@ class LigandListViewController: UIViewController {
   }
 
   private func setupLigandCollectionVC() {
-    let ligandCollectionVC = LigandCollectionViewController(bundle: .main)
+    ligandsList = LigandsAppList(ligands: ["A", "AB", "B", "B1", "C", "1C", "D", "D3E", "E", "F"],
+                                  favorites: ["A", "B1"])
 
-    ligandCollectionVC.ligandsList =
-      LigandsCollectionBuilder.build(from: ligandsList)
+    ligandCollectionVC.ligandsList = ligandCollection
 
     add(asChildViewController: ligandCollectionVC,
         on: ligandListContainerView)
@@ -64,7 +73,49 @@ class LigandListViewController: UIViewController {
 }
 
 extension LigandListViewController: UISearchResultsUpdating {
+
   func updateSearchResults(for searchController: UISearchController) {
-    // TODO
+    let searchText = searchController.searchBar.text?.uppercased() ?? ""
+    let collection = getCollection(withSearchText: searchText)
+
+    ligandCollectionVC.ligandsList = collection
+    ligandCollectionVC.reloadData()
+  }
+
+  //----------------------------------------------------------------------------
+  // MARK: - Filter search results
+  //----------------------------------------------------------------------------
+
+  /// Return a collection with elements that match the search text
+  private func getCollection(
+    withSearchText text: String
+  ) -> LigandSectionSource.Sections {
+
+    if text.isEmpty { return ligandCollection }
+
+    let filteredLigandsList =
+      ligandsList.filtered(isIncluded: { $0.contains(text) })
+
+    return getReorderedCollection(from: filteredLigandsList,
+                                  withSearchText: text)
+  }
+
+  /// Reorder collection to set sections with matching name in the top of the research
+  private func getReorderedCollection(
+    from ligandList: LigandsAppList,
+    withSearchText text: String
+  ) -> LigandSectionSource.Sections {
+
+    var collection = LigandsCollectionBuilder.build(from: ligandsList)
+
+    let sectionStartingWithText =
+      collection.firstIndex() { $0.section.title.starts(with: text) }
+
+    if let index = sectionStartingWithText {
+      let item = collection.remove(at: index)
+      collection.insert(item, at: 0)
+    }
+
+    return collection
   }
 }
