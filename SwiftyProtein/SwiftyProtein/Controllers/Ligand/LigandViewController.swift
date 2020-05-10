@@ -9,6 +9,7 @@ class LigandViewController: UIViewController {
   @IBOutlet weak var ligandSceneContainerView: UIView!
   @IBOutlet weak var loadingView: LoadingView!
   @IBOutlet weak var messageView: MessageView!
+  @IBOutlet weak var atomDetailContainerView: UIView!
 
   /******************** Computed properties ********************/
 
@@ -28,6 +29,10 @@ class LigandViewController: UIViewController {
 
   private lazy var ligandSceneVC: LigandSceneViewController = {
     return LigandSceneViewController(bundle: .main)
+  }()
+
+  lazy var atomDetailVC: LigandDetailViewController = {
+    return LigandDetailViewController(bundle: .main)
   }()
 
   //----------------------------------------------------------------------------
@@ -86,11 +91,7 @@ class LigandViewController: UIViewController {
   //----------------------------------------------------------------------------
 
   private func updateSelectedAtom(to atom: PDBAtomLight?) {
-    updateSelectedAtomNameLabel(with: atom)
-  }
-
-  private func updateSelectedAtomNameLabel(with atom: PDBAtomLight?) {
-    print(atom?.symbol)
+    atomDetailVC.atom = atom
   }
 
   //----------------------------------------------------------------------------
@@ -99,7 +100,7 @@ class LigandViewController: UIViewController {
 
   private func setup() {
     setupLigandSceneVC()
-    setupAtomLabel()
+    setupAtomDetailVC()
     setupLoadingView()
     setupMessageView()
   }
@@ -116,7 +117,8 @@ class LigandViewController: UIViewController {
     add(asChildViewController: ligandSceneVC, on: ligandSceneContainerView)
   }
 
-  private func setupAtomLabel() {
+  private func setupAtomDetailVC() {
+    add(asChildViewController: atomDetailVC, on: atomDetailContainerView)
   }
 
   private func setupLoadingView() {
