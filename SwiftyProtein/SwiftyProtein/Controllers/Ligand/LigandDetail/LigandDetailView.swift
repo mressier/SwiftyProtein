@@ -12,16 +12,14 @@ class LigandDetailView: UIView, NibInstanciable {
   @IBOutlet var contentView: UIView!
   @IBOutlet weak var symbolLabel: UILabel!
   @IBOutlet weak var atomNameLabel: UILabel!
-  @IBOutlet weak var positionLabel: UILabel!
-  @IBOutlet weak var usefullInformation1Label: UILabel!
-  @IBOutlet weak var usefullInformation2Label: UILabel!
-  @IBOutlet weak var usefullInformation3Label: UILabel!
+  @IBOutlet weak var positionsLabelsStackView: LabelStackView!
+  @IBOutlet weak var usefullInformationLabelsStackView: LabelStackView!
 
   /******************** Parameter ********************/
 
   var atom: PDBAtomLight? {
     didSet {
-      guard let atom = atom else { return setupLabelText() }
+      guard let atom = atom else { return setupView() }
       update(with: atom)
     }
   }
@@ -52,15 +50,29 @@ class LigandDetailView: UIView, NibInstanciable {
 
   private func setupView() {
     setupLabelText()
+    setupPositionsLabels()
+    setupInformationsLabel()
   }
 
   private func setupLabelText() {
     symbolLabel.text = "-"
     atomNameLabel.text = "----"
-    positionLabel.text = "x: --.--, y: --.--, z: --.--"
-    usefullInformation1Label.text = "xx info 1"
-    usefullInformation2Label.text = "xx info 2"
-    usefullInformation3Label.text = "xx info 3"
+  }
+
+  private func setupInformationsLabel() {
+    usefullInformationLabelsStackView.texts = [
+      "xx info 1",
+      "xx info 2",
+      "xx info 3"
+    ]
+    usefullInformationLabelsStackView.textFont = .systemFont(ofSize: 14.0)
+    usefullInformationLabelsStackView.textColor = .secondaryLabel
+  }
+
+  private func setupPositionsLabels() {
+    positionsLabelsStackView.texts = ["x: --.--", "y: --.--", "z: --.--"]
+    positionsLabelsStackView.textFont = .systemFont(ofSize: 14.0)
+    positionsLabelsStackView.textColor = .label
   }
 
   //----------------------------------------------------------------------------
@@ -75,14 +87,14 @@ class LigandDetailView: UIView, NibInstanciable {
     symbolLabel.text = symbol
     atomNameLabel.text = atomName ?? symbol
 
-    let format = String(format: "x: %.2f, y: %.2f, z: %.2f",
-                        position.x,
-                        position.y,
-                        position.z)
-    positionLabel.text = format
+    positionsLabelsStackView.texts = [String(format: "x: %.2f", position.x),
+                                 String(format: "y: %.2f", position.y),
+                                 String(format: "z: %.2f", position.z)]
 
-    usefullInformation1Label.text = "xx info 1"
-    usefullInformation2Label.text = "xx info 2"
-    usefullInformation3Label.text = "xx info 3"
+    usefullInformationLabelsStackView.texts = [
+      "xx info 1",
+      "xx info 2",
+      "xx info 3"
+    ]
   }
 }

@@ -36,6 +36,7 @@
 		A922804023F846A700BA4F5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A922803D23F846A700BA4F5D /* Assets.xcassets */; };
 		A922804123F846A700BA4F5D /* ligands.txt in Resources */ = {isa = PBXBuildFile; fileRef = A922803E23F846A700BA4F5D /* ligands.txt */; };
 		A922804723F84E2C00BA4F5D /* SCNNode+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A922804623F84E2C00BA4F5D /* SCNNode+extension.swift */; };
+		A926C400248EB78D00B01186 /* LabelStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A926C3FF248EB78D00B01186 /* LabelStackView.swift */; };
 		A92A9C0B245352F2004CA5D3 /* Array+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92A9C0A245352F2004CA5D3 /* Array+extension.swift */; };
 		A92A9C0D245353EB004CA5D3 /* PDBLigandConverter+MergeConnectionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92A9C0C245353EB004CA5D3 /* PDBLigandConverter+MergeConnectionsTests.swift */; };
 		A92A9C1024536A1D004CA5D3 /* LigandListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92A9C0F24536A1D004CA5D3 /* LigandListViewController.swift */; };
@@ -149,6 +150,7 @@
 		A922803D23F846A700BA4F5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A922803E23F846A700BA4F5D /* ligands.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ligands.txt; sourceTree = "<group>"; };
 		A922804623F84E2C00BA4F5D /* SCNNode+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNNode+extension.swift"; sourceTree = "<group>"; };
+		A926C3FF248EB78D00B01186 /* LabelStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelStackView.swift; sourceTree = "<group>"; };
 		A92A9C0A245352F2004CA5D3 /* Array+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+extension.swift"; sourceTree = "<group>"; };
 		A92A9C0C245353EB004CA5D3 /* PDBLigandConverter+MergeConnectionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDBLigandConverter+MergeConnectionsTests.swift"; sourceTree = "<group>"; };
 		A92A9C0F24536A1D004CA5D3 /* LigandListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigandListViewController.swift; sourceTree = "<group>"; };
@@ -638,6 +640,7 @@
 				A94FB06F245F2F8D00E4DFA3 /* LoadingView.swift */,
 				A94FB073245F3D6700E4DFA3 /* MessageView.xib */,
 				A94FB071245F3D5C00E4DFA3 /* MessageView.swift */,
+				A926C3FF248EB78D00B01186 /* LabelStackView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -850,6 +853,7 @@
 				A9C7945A2450D73300B5FFA2 /* RequestError.swift in Sources */,
 				A94DD752244CB9E40034C6AF /* PDBConnection.swift in Sources */,
 				A910E40A23F87E78008F9020 /* PDBAtomLight.swift in Sources */,
+				A926C400248EB78D00B01186 /* LabelStackView.swift in Sources */,
 				A910E40823F87B83008F9020 /* PathBounds.swift in Sources */,
 				A987F9C0245754AA00086D5C /* LigandsCollectionBuilder.swift in Sources */,
 				A9C794582450D69E00B5FFA2 /* NetworkRequest.swift in Sources */,

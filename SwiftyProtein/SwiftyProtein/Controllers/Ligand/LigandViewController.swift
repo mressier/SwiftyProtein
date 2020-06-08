@@ -87,7 +87,11 @@ class LigandViewController: UIViewController {
   //----------------------------------------------------------------------------
 
   private func updateSelectedAtom(to atom: PDBAtomLight?) {
-    atomDetailContainerView.atom = atom
+    UIView.animate(withDuration: 0.3) {
+      self.atomDetailContainerView.atom = atom
+      self.atomDetailContainerView.alpha = atom != nil ? 1.0 : 0.0
+      self.atomDetailContainerView.isHidden = atom == nil
+    }
   }
 
   //----------------------------------------------------------------------------
