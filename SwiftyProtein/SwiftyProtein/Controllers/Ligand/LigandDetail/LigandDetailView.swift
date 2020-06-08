@@ -1,12 +1,15 @@
 import UIKit
 
-class LigandDetailViewController: UIViewController {
+@IBDesignable
+class LigandDetailView: UIView, NibInstanciable {
+
   //----------------------------------------------------------------------------
   // MARK: - Properties
   //----------------------------------------------------------------------------
 
   /******************** Outlet ********************/
 
+  @IBOutlet var contentView: UIView!
   @IBOutlet weak var symbolLabel: UILabel!
   @IBOutlet weak var atomNameLabel: UILabel!
   @IBOutlet weak var positionLabel: UILabel!
@@ -27,12 +30,27 @@ class LigandDetailViewController: UIViewController {
   // MARK: - View Life Cycle
   //----------------------------------------------------------------------------
 
-  override func viewDidLoad() {
-    super.viewDidLoad()
+  override init(frame: CGRect) {
+    super.init(frame: frame)
     setup()
   }
 
+  required init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+    setup()
+  }
+
+
   private func setup() {
+    loadNib()
+    setupView()
+
+    contentView.frame = bounds
+    addSubview(contentView)
+  }
+
+
+  private func setupView() {
     setupLabelText()
   }
 
@@ -68,4 +86,3 @@ class LigandDetailViewController: UIViewController {
     usefullInformation3Label.text = "xx info 3"
   }
 }
-

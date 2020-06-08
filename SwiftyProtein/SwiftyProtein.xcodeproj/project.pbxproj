@@ -60,8 +60,8 @@
 		A94FB070245F2F8D00E4DFA3 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94FB06F245F2F8D00E4DFA3 /* LoadingView.swift */; };
 		A94FB072245F3D5C00E4DFA3 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94FB071245F3D5C00E4DFA3 /* MessageView.swift */; };
 		A94FB074245F3D6700E4DFA3 /* MessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A94FB073245F3D6700E4DFA3 /* MessageView.xib */; };
-		A94FB077245F452200E4DFA3 /* LigandDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94FB075245F452200E4DFA3 /* LigandDetailViewController.swift */; };
-		A94FB078245F452200E4DFA3 /* LigandDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A94FB076245F452200E4DFA3 /* LigandDetailViewController.xib */; };
+		A94FB077245F452200E4DFA3 /* LigandDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94FB075245F452200E4DFA3 /* LigandDetailView.swift */; };
+		A94FB078245F452200E4DFA3 /* LigandDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A94FB076245F452200E4DFA3 /* LigandDetailView.xib */; };
 		A95560512458B48A00181C91 /* Comparable+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95560502458B48A00181C91 /* Comparable+extension.swift */; };
 		A95560532458B55400181C91 /* UIScrollView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95560522458B55400181C91 /* UIScrollView+extension.swift */; };
 		A9556060245AD6F200181C91 /* LigandCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A955605F245AD6F200181C91 /* LigandCollectionViewFlowLayout.swift */; };
@@ -172,8 +172,8 @@
 		A94FB06F245F2F8D00E4DFA3 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		A94FB071245F3D5C00E4DFA3 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		A94FB073245F3D6700E4DFA3 /* MessageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageView.xib; sourceTree = "<group>"; };
-		A94FB075245F452200E4DFA3 /* LigandDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigandDetailViewController.swift; sourceTree = "<group>"; };
-		A94FB076245F452200E4DFA3 /* LigandDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LigandDetailViewController.xib; sourceTree = "<group>"; };
+		A94FB075245F452200E4DFA3 /* LigandDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigandDetailView.swift; sourceTree = "<group>"; };
+		A94FB076245F452200E4DFA3 /* LigandDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LigandDetailView.xib; sourceTree = "<group>"; };
 		A95560502458B48A00181C91 /* Comparable+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Comparable+extension.swift"; sourceTree = "<group>"; };
 		A95560522458B55400181C91 /* UIScrollView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+extension.swift"; sourceTree = "<group>"; };
 		A955605F245AD6F200181C91 /* LigandCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigandCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
@@ -490,8 +490,8 @@
 		A94FB079245F458800E4DFA3 /* LigandDetail */ = {
 			isa = PBXGroup;
 			children = (
-				A94FB075245F452200E4DFA3 /* LigandDetailViewController.swift */,
-				A94FB076245F452200E4DFA3 /* LigandDetailViewController.xib */,
+				A94FB075245F452200E4DFA3 /* LigandDetailView.swift */,
+				A94FB076245F452200E4DFA3 /* LigandDetailView.xib */,
 			);
 			path = LigandDetail;
 			sourceTree = "<group>";
@@ -748,7 +748,7 @@
 				A922804123F846A700BA4F5D /* ligands.txt in Resources */,
 				A92A9C2824561F15004CA5D3 /* LigandHeaderCollectionView.xib in Resources */,
 				A915629324588E2400960140 /* ScrollBarView.xib in Resources */,
-				A94FB078245F452200E4DFA3 /* LigandDetailViewController.xib in Resources */,
+				A94FB078245F452200E4DFA3 /* LigandDetailView.xib in Resources */,
 				A92A9C1424536EF4004CA5D3 /* LigandCollectionViewController.xib in Resources */,
 				A92A9C2024560512004CA5D3 /* LigandCollectionViewCell.xib in Resources */,
 				A94FB06E245F2F8400E4DFA3 /* LoadingView.xib in Resources */,
@@ -854,7 +854,7 @@
 				A987F9C0245754AA00086D5C /* LigandsCollectionBuilder.swift in Sources */,
 				A9C794582450D69E00B5FFA2 /* NetworkRequest.swift in Sources */,
 				A9556062245C47EC00181C91 /* UICollectionView+extension.swift in Sources */,
-				A94FB077245F452200E4DFA3 /* LigandDetailViewController.swift in Sources */,
+				A94FB077245F452200E4DFA3 /* LigandDetailView.swift in Sources */,
 				A9F3E7EC244247F7000D62A1 /* ClampedPropertyWrapper.swift in Sources */,
 				A9718EF4243B9AF5005DA378 /* UIView+appearance.swift in Sources */,
 				A95560532458B55400181C91 /* UIScrollView+extension.swift in Sources */,
