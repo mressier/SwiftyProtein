@@ -18,10 +18,7 @@ class LigandDetailView: UIView, NibInstanciable {
   /******************** Parameter ********************/
 
   var atom: PDBAtomLight? {
-    didSet {
-      guard let atom = atom else { return setupView() }
-      update(with: atom)
-    }
+    didSet { update(with: atom) }
   }
 
   //----------------------------------------------------------------------------
@@ -68,15 +65,14 @@ class LigandDetailView: UIView, NibInstanciable {
   // MARK: - Update
   //----------------------------------------------------------------------------
 
-  private func update(with atom: PDBAtomLight) {
-    let symbol = atom.symbol
-    let position = atom.position
+  private func update(with atom: PDBAtomLight?) {
+    let symbol = atom?.symbol ?? "-"
     let atomName = AtomsList.atomsBySymbol[symbol]?.name.capitalized
 
     symbolLabel.text = symbol
     atomNameLabel.text = atomName ?? symbol
 
-    coordinatesView.coordinates = position
+    coordinatesView.coordinates = atom?.position
 
     usefullInformationsView.informations = [
       "xx info 1",
