@@ -12,8 +12,8 @@ class LigandDetailView: UIView, NibInstanciable {
   @IBOutlet var contentView: UIView!
   @IBOutlet weak var symbolLabel: UILabel!
   @IBOutlet weak var atomNameLabel: UILabel!
-  @IBOutlet weak var positionsLabelsStackView: LabelStackView!
-  @IBOutlet weak var usefullInformationLabelsStackView: LabelStackView!
+  @IBOutlet weak var coordinatesView: AtomCoordinatesView!
+  @IBOutlet weak var usefullInformationsView: AtomDetailsInformationsView!
 
   /******************** Parameter ********************/
 
@@ -38,7 +38,6 @@ class LigandDetailView: UIView, NibInstanciable {
     setup()
   }
 
-
   private func setup() {
     loadNib()
     setupView()
@@ -47,10 +46,8 @@ class LigandDetailView: UIView, NibInstanciable {
     addSubview(contentView)
   }
 
-
   private func setupView() {
     setupLabelText()
-    setupPositionsLabels()
     setupInformationsLabel()
   }
 
@@ -60,19 +57,11 @@ class LigandDetailView: UIView, NibInstanciable {
   }
 
   private func setupInformationsLabel() {
-    usefullInformationLabelsStackView.texts = [
+    usefullInformationsView.informations = [
       "xx info 1",
       "xx info 2",
       "xx info 3"
     ]
-    usefullInformationLabelsStackView.textFont = .systemFont(ofSize: 14.0)
-    usefullInformationLabelsStackView.textColor = .secondaryLabel
-  }
-
-  private func setupPositionsLabels() {
-    positionsLabelsStackView.texts = ["x: --.--", "y: --.--", "z: --.--"]
-    positionsLabelsStackView.textFont = .systemFont(ofSize: 14.0)
-    positionsLabelsStackView.textColor = .label
   }
 
   //----------------------------------------------------------------------------
@@ -87,11 +76,9 @@ class LigandDetailView: UIView, NibInstanciable {
     symbolLabel.text = symbol
     atomNameLabel.text = atomName ?? symbol
 
-    positionsLabelsStackView.texts = [String(format: "x: %.2f", position.x),
-                                 String(format: "y: %.2f", position.y),
-                                 String(format: "z: %.2f", position.z)]
+    coordinatesView.coordinates = position
 
-    usefullInformationLabelsStackView.texts = [
+    usefullInformationsView.informations = [
       "xx info 1",
       "xx info 2",
       "xx info 3"

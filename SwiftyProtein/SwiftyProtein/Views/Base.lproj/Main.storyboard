@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aD9-Ed-ost">
-    <device id="retina4_0" orientation="landscape" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,7 +12,7 @@
             <objects>
                 <navigationController id="aD9-Ed-ost" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SO1-Vc-fnO">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="32"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.20199120039999999" green="0.71283471580000002" blue="0.76079541439999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
@@ -35,14 +35,14 @@
             <objects>
                 <viewController id="nnP-5G-zlG" customClass="LigandListViewController" customModule="SwiftyProtein" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M1t-oe-Kjq">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wTM-Md-trm">
-                                <rect key="frame" x="0.0" y="32" width="568" height="288"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Joc-mW-7x1">
-                                        <rect key="frame" x="0.0" y="0.0" width="568" height="288"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
                                 </subviews>
@@ -72,21 +72,25 @@
             <objects>
                 <viewController id="lUM-Sp-M6v" customClass="LigandViewController" customModule="SwiftyProtein" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vkF-1D-m0f">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="4dC-7U-59V">
-                                <rect key="frame" x="0.0" y="32" width="568" height="288"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OHZ-mE-Xy3">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="4dC-7U-59V">
+                                <rect key="frame" x="10" y="98" width="394" height="754"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OHZ-mE-Xy3">
-                                        <rect key="frame" x="0.0" y="0.0" width="467" height="288"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4YH-iE-iTq" userLabel="Clear">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="673"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aUV-TW-FHP" customClass="LigandDetailView" customModule="SwiftyProtein" customModuleProvider="target">
-                                        <rect key="frame" x="468" y="0.0" width="100" height="288"/>
+                                        <rect key="frame" x="0.0" y="674" width="394" height="80"/>
                                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="70" id="vV2-Xg-CXI"/>
+                                            <constraint firstAttribute="height" constant="80" id="vV2-Xg-CXI"/>
                                             <constraint firstAttribute="width" constant="100" id="wjV-po-rK6"/>
                                         </constraints>
                                         <variation key="default">
@@ -112,32 +116,32 @@
                                 <variation key="heightClass=compact-widthClass=regular" axis="horizontal"/>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qnl-iU-vkN" customClass="LoadingView" customModule="SwiftyProtein" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="32" width="568" height="288"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Qh-lW-5RR" customClass="MessageView" customModule="SwiftyProtein" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="32" width="568" height="288"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Qh-lW-5RR" customClass="ErrorMessageView" customModule="SwiftyProtein" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="messageText" value="Sorry, cannot found the ligand !"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="messageImage" value="sad-smiley"/>
-                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="5Qh-lW-5RR" firstAttribute="leading" secondItem="cjl-7Y-EXB" secondAttribute="leading" id="3J4-Rk-Zf8"/>
                             <constraint firstItem="cjl-7Y-EXB" firstAttribute="bottom" secondItem="qnl-iU-vkN" secondAttribute="bottom" id="CHn-fI-2qd"/>
-                            <constraint firstItem="4dC-7U-59V" firstAttribute="leading" secondItem="cjl-7Y-EXB" secondAttribute="leading" id="EYK-O6-iPY"/>
-                            <constraint firstItem="cjl-7Y-EXB" firstAttribute="bottom" secondItem="4dC-7U-59V" secondAttribute="bottom" id="J4f-Fy-Pks"/>
+                            <constraint firstItem="4dC-7U-59V" firstAttribute="leading" secondItem="cjl-7Y-EXB" secondAttribute="leading" constant="10" id="EYK-O6-iPY"/>
+                            <constraint firstItem="cjl-7Y-EXB" firstAttribute="bottom" secondItem="4dC-7U-59V" secondAttribute="bottom" constant="10" id="J4f-Fy-Pks"/>
                             <constraint firstItem="cjl-7Y-EXB" firstAttribute="bottom" secondItem="5Qh-lW-5RR" secondAttribute="bottom" id="PKB-yi-YPN"/>
+                            <constraint firstAttribute="top" secondItem="OHZ-mE-Xy3" secondAttribute="top" id="TnV-8b-akv"/>
                             <constraint firstItem="qnl-iU-vkN" firstAttribute="top" secondItem="cjl-7Y-EXB" secondAttribute="top" id="Vbb-8Z-JBq"/>
                             <constraint firstItem="cjl-7Y-EXB" firstAttribute="trailing" secondItem="5Qh-lW-5RR" secondAttribute="trailing" id="ZFT-Pf-kY7"/>
                             <constraint firstItem="5Qh-lW-5RR" firstAttribute="top" secondItem="cjl-7Y-EXB" secondAttribute="top" id="baB-8h-xJM"/>
+                            <constraint firstAttribute="trailing" secondItem="OHZ-mE-Xy3" secondAttribute="trailing" id="eBH-Ak-0tx"/>
                             <constraint firstItem="cjl-7Y-EXB" firstAttribute="trailing" secondItem="qnl-iU-vkN" secondAttribute="trailing" id="fkL-Z8-D6d"/>
-                            <constraint firstItem="4dC-7U-59V" firstAttribute="top" secondItem="cjl-7Y-EXB" secondAttribute="top" id="nIH-Ve-Fh1"/>
-                            <constraint firstItem="4dC-7U-59V" firstAttribute="trailing" secondItem="cjl-7Y-EXB" secondAttribute="trailing" id="nwA-fk-j43"/>
+                            <constraint firstItem="4dC-7U-59V" firstAttribute="top" secondItem="cjl-7Y-EXB" secondAttribute="top" constant="10" id="nIH-Ve-Fh1"/>
+                            <constraint firstItem="4dC-7U-59V" firstAttribute="trailing" secondItem="cjl-7Y-EXB" secondAttribute="trailing" constant="-10" id="nwA-fk-j43"/>
                             <constraint firstItem="qnl-iU-vkN" firstAttribute="leading" secondItem="cjl-7Y-EXB" secondAttribute="leading" id="rxm-Yu-5lD"/>
+                            <constraint firstItem="OHZ-mE-Xy3" firstAttribute="leading" secondItem="vkF-1D-m0f" secondAttribute="leading" id="u5v-Jh-OJq"/>
+                            <constraint firstAttribute="bottom" secondItem="OHZ-mE-Xy3" secondAttribute="bottom" id="vlL-jw-MDx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cjl-7Y-EXB"/>
                     </view>
@@ -163,6 +167,5 @@
     </scenes>
     <resources>
         <image name="chevron.left" catalog="system" width="48" height="64"/>
-        <image name="sad-smiley" width="170.5" height="170.5"/>
     </resources>
 </document>

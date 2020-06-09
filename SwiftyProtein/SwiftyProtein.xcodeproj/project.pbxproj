@@ -49,6 +49,12 @@
 		A92A9C2424560874004CA5D3 /* DictionarySource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92A9C2324560874004CA5D3 /* DictionarySource.swift */; };
 		A92A9C2724561F15004CA5D3 /* LigandHeaderCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92A9C2524561F15004CA5D3 /* LigandHeaderCollectionView.swift */; };
 		A92A9C2824561F15004CA5D3 /* LigandHeaderCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A92A9C2624561F15004CA5D3 /* LigandHeaderCollectionView.xib */; };
+		A92F4871248F804600294356 /* AtomCoordinatesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A92F4870248F804600294356 /* AtomCoordinatesView.xib */; };
+		A92F4873248F805000294356 /* AtomCoordinatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92F4872248F805000294356 /* AtomCoordinatesView.swift */; };
+		A92F4879248FAF5D00294356 /* ErrorMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92F4878248FAF5D00294356 /* ErrorMessageView.swift */; };
+		A92F487B248FB1A000294356 /* LoadingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92F487A248FB1A000294356 /* LoadingImageView.swift */; };
+		A92F487D248FC11D00294356 /* AtomDetailsInformationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92F487C248FC11D00294356 /* AtomDetailsInformationsView.swift */; };
+		A92F487F248FC13400294356 /* AtomDetailsInformationsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A92F487E248FC13400294356 /* AtomDetailsInformationsView.xib */; };
 		A94DD736244C92740034C6AF /* PDBLigandConverter+AtomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94DD735244C92740034C6AF /* PDBLigandConverter+AtomTests.swift */; };
 		A94DD738244C957B0034C6AF /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94DD737244C957B0034C6AF /* String+extension.swift */; };
 		A94DD73B244CA9D60034C6AF /* String+TrimmedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94DD73A244CA9D60034C6AF /* String+TrimmedTests.swift */; };
@@ -163,6 +169,12 @@
 		A92A9C2324560874004CA5D3 /* DictionarySource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionarySource.swift; sourceTree = "<group>"; };
 		A92A9C2524561F15004CA5D3 /* LigandHeaderCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigandHeaderCollectionView.swift; sourceTree = "<group>"; };
 		A92A9C2624561F15004CA5D3 /* LigandHeaderCollectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LigandHeaderCollectionView.xib; sourceTree = "<group>"; };
+		A92F4870248F804600294356 /* AtomCoordinatesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AtomCoordinatesView.xib; sourceTree = "<group>"; };
+		A92F4872248F805000294356 /* AtomCoordinatesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomCoordinatesView.swift; sourceTree = "<group>"; };
+		A92F4878248FAF5D00294356 /* ErrorMessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorMessageView.swift; sourceTree = "<group>"; };
+		A92F487A248FB1A000294356 /* LoadingImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingImageView.swift; sourceTree = "<group>"; };
+		A92F487C248FC11D00294356 /* AtomDetailsInformationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomDetailsInformationsView.swift; sourceTree = "<group>"; };
+		A92F487E248FC13400294356 /* AtomDetailsInformationsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AtomDetailsInformationsView.xib; sourceTree = "<group>"; };
 		A94DD735244C92740034C6AF /* PDBLigandConverter+AtomTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDBLigandConverter+AtomTests.swift"; sourceTree = "<group>"; };
 		A94DD737244C957B0034C6AF /* String+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
 		A94DD73A244CA9D60034C6AF /* String+TrimmedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+TrimmedTests.swift"; sourceTree = "<group>"; };
@@ -494,6 +506,10 @@
 			children = (
 				A94FB075245F452200E4DFA3 /* LigandDetailView.swift */,
 				A94FB076245F452200E4DFA3 /* LigandDetailView.xib */,
+				A92F4872248F805000294356 /* AtomCoordinatesView.swift */,
+				A92F4870248F804600294356 /* AtomCoordinatesView.xib */,
+				A92F487C248FC11D00294356 /* AtomDetailsInformationsView.swift */,
+				A92F487E248FC13400294356 /* AtomDetailsInformationsView.xib */,
 			);
 			path = LigandDetail;
 			sourceTree = "<group>";
@@ -641,6 +657,8 @@
 				A94FB073245F3D6700E4DFA3 /* MessageView.xib */,
 				A94FB071245F3D5C00E4DFA3 /* MessageView.swift */,
 				A926C3FF248EB78D00B01186 /* LabelStackView.swift */,
+				A92F4878248FAF5D00294356 /* ErrorMessageView.swift */,
+				A92F487A248FB1A000294356 /* LoadingImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -750,8 +768,10 @@
 				A922802E23F83DB100BA4F5D /* Main.storyboard in Resources */,
 				A922804123F846A700BA4F5D /* ligands.txt in Resources */,
 				A92A9C2824561F15004CA5D3 /* LigandHeaderCollectionView.xib in Resources */,
+				A92F487F248FC13400294356 /* AtomDetailsInformationsView.xib in Resources */,
 				A915629324588E2400960140 /* ScrollBarView.xib in Resources */,
 				A94FB078245F452200E4DFA3 /* LigandDetailView.xib in Resources */,
+				A92F4871248F804600294356 /* AtomCoordinatesView.xib in Resources */,
 				A92A9C1424536EF4004CA5D3 /* LigandCollectionViewController.xib in Resources */,
 				A92A9C2024560512004CA5D3 /* LigandCollectionViewCell.xib in Resources */,
 				A94FB06E245F2F8400E4DFA3 /* LoadingView.xib in Resources */,
@@ -798,6 +818,7 @@
 				A91CF352244C656B00294568 /* PDBAtomPosition.swift in Sources */,
 				A915629B24588F1100960140 /* UIColor+extension.swift in Sources */,
 				A9718EE4243B9A32005DA378 /* UIViewController+extension.swift in Sources */,
+				A92F487B248FB1A000294356 /* LoadingImageView.swift in Sources */,
 				A92A9C2224560862004CA5D3 /* ArraySource.swift in Sources */,
 				A91CF355244C7B9900294568 /* PDBLigandConverter.swift in Sources */,
 				A9A3A9FD23F9CC5D00A19E17 /* SCNVector3+extension.swift in Sources */,
@@ -805,6 +826,7 @@
 				A91CF359244C7BEE00294568 /* PDBLigandConverter+Connect.swift in Sources */,
 				A9156289245830A000960140 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				A91CF350244C651400294568 /* AtomsList.swift in Sources */,
+				A92F4873248F805000294356 /* AtomCoordinatesView.swift in Sources */,
 				A993458C242FD52D00C6B043 /* SCNNode+Atom.swift in Sources */,
 				A9718EF2243B9AF5005DA378 /* UIView+gradient.swift in Sources */,
 				A92A9C1024536A1D004CA5D3 /* LigandListViewController.swift in Sources */,
@@ -823,6 +845,7 @@
 				A9556064245C487600181C91 /* Array+comparable.swift in Sources */,
 				A92A9C2424560874004CA5D3 /* DictionarySource.swift in Sources */,
 				A915629C24588F1100960140 /* UIColor+swifty.swift in Sources */,
+				A92F487D248FC11D00294356 /* AtomDetailsInformationsView.swift in Sources */,
 				A9C7945C2450D77B00B5FFA2 /* URLBuilder.swift in Sources */,
 				A90CA9B42456CE5B000BBE60 /* LigandsAppList.swift in Sources */,
 				A922803F23F846A700BA4F5D /* Assets.swift in Sources */,
@@ -859,6 +882,7 @@
 				A9C794582450D69E00B5FFA2 /* NetworkRequest.swift in Sources */,
 				A9556062245C47EC00181C91 /* UICollectionView+extension.swift in Sources */,
 				A94FB077245F452200E4DFA3 /* LigandDetailView.swift in Sources */,
+				A92F4879248FAF5D00294356 /* ErrorMessageView.swift in Sources */,
 				A9F3E7EC244247F7000D62A1 /* ClampedPropertyWrapper.swift in Sources */,
 				A9718EF4243B9AF5005DA378 /* UIView+appearance.swift in Sources */,
 				A95560532458B55400181C91 /* UIScrollView+extension.swift in Sources */,

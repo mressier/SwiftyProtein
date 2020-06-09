@@ -9,9 +9,17 @@ class LabelStackView: UIStackView {
 
   /********************  UI  ********************/
 
-  @IBInspectable var textFont: UIFont?
+  @IBInspectable var textFont: UIFont? {
+    didSet { updateStackView(texts: texts) }
+  }
 
-  @IBInspectable var textColor: UIColor?
+  @IBInspectable var textColor: UIColor? {
+    didSet { updateStackView(texts: texts) }
+  }
+
+  var textAlignment: NSTextAlignment? {
+    didSet { updateStackView(texts: texts) }
+  }
 
   /******************** Content ********************/
 
@@ -52,6 +60,7 @@ class LabelStackView: UIStackView {
     label.text = text
     label.font = textFont
     label.textColor = textColor
+    label.textAlignment = textAlignment ?? .left
     return label
   }
 }

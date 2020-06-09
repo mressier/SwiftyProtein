@@ -54,21 +54,21 @@ class LigandViewController: UIViewController {
   private func loadLigand(name: String) {
     self.title = name
 
-    setLoading(true)
+    toggleLoagingView(isLoading: true)
     LightLigandProvider.get(ligand: name) { [weak self] result in
       switch result {
       case .success(let ligand):
         self?.ligandSceneVC.atoms = ligand.atoms
-        self?.ligandSceneVC.reload() { [weak self] in self?.setLoading(false) }
+        self?.ligandSceneVC.reload() { [weak self] in self?.toggleLoagingView(isLoading: false) }
       default:
         // change message depending on error
-        self?.setHasMessage(true)
-        self?.setLoading(false)
+        self?.toggleMessageView(showMessage: true)
+        self?.toggleLoagingView(isLoading: false)
       }
     }
   }
 
-  private func setLoading(_ isLoading: Bool, animated: Bool = true) {
+  private func toggleLoagingView(isLoading: Bool, animated: Bool = true) {
     self.isLoading = isLoading
 
     UIView.animate(withDuration: animated ? 0.5 : 0.0) {
@@ -76,9 +76,9 @@ class LigandViewController: UIViewController {
     }
   }
 
-  private func setHasMessage(_ hasMessage: Bool, animated: Bool = true) {
+  private func toggleMessageView(showMessage: Bool, animated: Bool = true) {
     UIView.animate(withDuration: animated ? 0.5 : 0.0) {
-      self.messageView?.alpha = hasMessage ? 1.0 : 0.0
+      self.messageView?.alpha = showMessage ? 1.0 : 0.0
     }
   }
 
@@ -126,7 +126,7 @@ class LigandViewController: UIViewController {
 
   private func setupMessageView() {
     messageView.isUserInteractionEnabled = false
-    setHasMessage(false, animated: false)
+    toggleMessageView(showMessage: false, animated: false)
   }
 
 }

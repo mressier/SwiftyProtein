@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="landscape" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AtomCoordinatesView" customModule="SwiftyProtein" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="bbO-0c-Ofu"/>
+                <outlet property="labelsStackView" destination="XKH-1v-GTx" id="j5W-EX-ry7"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="147"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="XKH-1v-GTx" customClass="LabelStackView" customModule="SwiftyProtein" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="147"/>
+                    <variation key="heightClass=compact-widthClass=compact" axis="vertical"/>
+                    <variation key="heightClass=compact-widthClass=regular" axis="vertical"/>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="XKH-1v-GTx" secondAttribute="trailing" id="NuB-mr-NYB"/>
+                <constraint firstAttribute="bottom" secondItem="XKH-1v-GTx" secondAttribute="bottom" id="bOL-3W-NyZ"/>
+                <constraint firstItem="XKH-1v-GTx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="shK-fu-L3Z"/>
+                <constraint firstItem="XKH-1v-GTx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="vin-Xo-PGs"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="137.68115942028987" y="-126.22767857142857"/>
+        </view>
+    </objects>
+</document>

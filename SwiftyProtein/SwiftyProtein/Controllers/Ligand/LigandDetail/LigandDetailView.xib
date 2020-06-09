@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="landscape" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,33 +10,54 @@
             <connections>
                 <outlet property="atomNameLabel" destination="MKE-hb-L1h" id="HnH-Bv-ZUX"/>
                 <outlet property="contentView" destination="i5M-Pr-FkT" id="iGo-Vv-2Sb"/>
-                <outlet property="positionsLabelsStackView" destination="fKi-2Q-V73" id="Qhf-ii-a9Z"/>
+                <outlet property="coordinatesView" destination="hET-bd-RZJ" id="8Gc-4P-uXe"/>
                 <outlet property="symbolLabel" destination="DXf-Av-kL5" id="bWT-ze-IaO"/>
-                <outlet property="usefullInformationLabelsStackView" destination="DuF-Nr-XE0" id="TR3-w1-0F4"/>
+                <outlet property="usefullInformationsView" destination="azb-fL-npk" id="SJe-dX-hY0"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="569" height="254"/>
+            <rect key="frame" x="0.0" y="0.0" width="569" height="431"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Zsq-NT-adH">
-                    <rect key="frame" x="10" y="10" width="549" height="234"/>
+                    <rect key="frame" x="10" y="10" width="549" height="411"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="254" verticalHuggingPriority="254" text="X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DXf-Av-kL5">
-                            <rect key="frame" x="0.0" y="0.0" width="549" height="29"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kZ3-JP-Bsi">
-                            <rect key="frame" x="0.0" y="44" width="549" height="125"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="da1-cD-agP" userLabel="Symbol Stack View">
+                            <rect key="frame" x="0.0" y="0.0" width="95" height="411"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="254" verticalHuggingPriority="254" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="UaN-sD-aED">
-                                    <rect key="frame" x="0.0" y="0.0" width="549" height="82"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="254" verticalHuggingPriority="254" text="X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DXf-Av-kL5">
+                                    <rect key="frame" x="0.0" y="0.0" width="25" height="411"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="QOE-aC-DPZ"/>
+                                        <constraint firstAttribute="width" constant="25" id="ikR-v7-0Ms"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="QOE-aC-DPZ"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="heightClass=compact-widthClass=compact">
+                                        <mask key="constraints">
+                                            <include reference="QOE-aC-DPZ"/>
+                                            <exclude reference="ikR-v7-0Ms"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="heightClass=compact-widthClass=regular">
+                                        <mask key="constraints">
+                                            <include reference="QOE-aC-DPZ"/>
+                                            <exclude reference="ikR-v7-0Ms"/>
+                                        </mask>
+                                    </variation>
+                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="254" verticalHuggingPriority="254" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="UaN-sD-aED">
+                                    <rect key="frame" x="40" y="0.0" width="55" height="411"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKE-hb-L1h">
-                                            <rect key="frame" x="0.0" y="0.0" width="549" height="19.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="254" verticalHuggingPriority="254" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKE-hb-L1h">
+                                            <rect key="frame" x="0.0" y="0.0" width="55" height="27"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -47,42 +68,65 @@
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                             </variation>
                                         </label>
-                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hET-bd-RZJ">
-                                            <rect key="frame" x="0.0" y="19.5" width="549" height="62.5"/>
-                                            <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="fKi-2Q-V73" customClass="LabelStackView" customModule="SwiftyProtein" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="549" height="62.5"/>
-                                                    <variation key="heightClass=compact-widthClass=compact" axis="vertical"/>
-                                                    <variation key="heightClass=compact-widthClass=regular" axis="vertical"/>
-                                                </stackView>
-                                            </subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hET-bd-RZJ" customClass="AtomCoordinatesView" customModule="SwiftyProtein" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="27" width="55" height="384"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="fKi-2Q-V73" secondAttribute="bottom" id="8oA-32-My9"/>
-                                                <constraint firstItem="fKi-2Q-V73" firstAttribute="top" secondItem="hET-bd-RZJ" secondAttribute="top" id="Se4-ZA-Q3y"/>
-                                                <constraint firstItem="fKi-2Q-V73" firstAttribute="leading" secondItem="hET-bd-RZJ" secondAttribute="leading" id="d85-DF-h1H"/>
-                                                <constraint firstAttribute="trailing" secondItem="fKi-2Q-V73" secondAttribute="trailing" id="nw9-e1-owH"/>
-                                            </constraints>
                                         </view>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="200" id="H15-6d-D5U"/>
+                                        <constraint firstAttribute="height" constant="120" id="Woo-Jl-icQ"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="Woo-Jl-icQ"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="heightClass=compact-widthClass=compact">
+                                        <mask key="constraints">
+                                            <exclude reference="H15-6d-D5U"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="heightClass=compact-widthClass=regular">
+                                        <mask key="constraints">
+                                            <exclude reference="H15-6d-D5U"/>
+                                            <include reference="Woo-Jl-icQ"/>
+                                        </mask>
+                                    </variation>
                                 </stackView>
                             </subviews>
+                            <variation key="heightClass=compact-widthClass=compact" axis="vertical"/>
+                            <variation key="heightClass=compact-widthClass=regular" axis="vertical"/>
+                        </stackView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kTq-0M-pCS">
+                            <rect key="frame" x="110" y="0.0" width="354" height="411"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="azb-fL-npk" customClass="AtomDetailsInformationsView" customModule="SwiftyProtein" customModuleProvider="target">
+                            <rect key="frame" x="479" y="0.0" width="70" height="411"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="UaN-sD-aED" secondAttribute="bottom" id="Cu3-04-ndh"/>
-                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="UaN-sD-aED" secondAttribute="trailing" id="Rwa-1k-bHc"/>
-                                <constraint firstItem="UaN-sD-aED" firstAttribute="top" secondItem="kZ3-JP-Bsi" secondAttribute="top" id="V3n-L4-Tw7"/>
-                                <constraint firstItem="UaN-sD-aED" firstAttribute="leading" secondItem="kZ3-JP-Bsi" secondAttribute="leading" id="fYp-Ml-KVp"/>
+                                <constraint firstAttribute="width" priority="999" constant="70" id="9tT-Dq-CYt"/>
+                                <constraint firstAttribute="height" priority="999" constant="70" id="l4Q-y3-N01"/>
                             </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="l4Q-y3-N01"/>
+                                </mask>
+                            </variation>
+                            <variation key="heightClass=compact-widthClass=compact">
+                                <mask key="constraints">
+                                    <exclude reference="9tT-Dq-CYt"/>
+                                    <include reference="l4Q-y3-N01"/>
+                                </mask>
+                            </variation>
+                            <variation key="heightClass=compact-widthClass=regular">
+                                <mask key="constraints">
+                                    <exclude reference="9tT-Dq-CYt"/>
+                                    <include reference="l4Q-y3-N01"/>
+                                </mask>
+                            </variation>
                         </view>
-                        <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="254" verticalHuggingPriority="254" ambiguous="YES" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="DuF-Nr-XE0" customClass="LabelStackView" customModule="SwiftyProtein" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="184" width="549" height="50"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                    <color key="value" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </stackView>
                     </subviews>
                     <variation key="heightClass=compact-widthClass=compact" axis="vertical"/>
                     <variation key="heightClass=compact-widthClass=regular" axis="vertical"/>
@@ -96,7 +140,7 @@
                 <constraint firstItem="Zsq-NT-adH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="z4U-vH-dip"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="225.33482142857142" y="-36.231884057971016"/>
+            <point key="canvasLocation" x="225.33482142857142" y="-36.956521739130437"/>
         </view>
     </objects>
 </document>
