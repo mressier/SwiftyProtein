@@ -11,10 +11,14 @@ class LoadingView: UIView, NibInstanciable {
   /******************** Outlet ********************/
 
   @IBOutlet var contentView: UIView!
-  @IBOutlet weak var imageContainerView: UIView!
   @IBOutlet weak var loadingLabel: UILabel!
 
   /******************** Parameters ********************/
+
+  @IBInspectable var loadingText: String? {
+    get { return loadingLabel.text }
+    set { loadingLabel.text = newValue }
+  }
 
   //----------------------------------------------------------------------------
   // MARK: - Initialization
@@ -39,21 +43,6 @@ class LoadingView: UIView, NibInstanciable {
     addSubview(contentView)
   }
 
-  private func setupView() {
-    setupGifView()
-    setupLabel()
-  }
-
-  private func setupLabel() {
-    loadingLabel.textColor = .secondaryLabel
-  }
-
-  private func setupGifView() {
-    guard let gif =
-      try? UIImage(gifData: SPAssets.loadingGif.data.data) else { return }
-
-    let imageView = UIImageView(gifImage: gif, loopCount: -1)
-    imageContainerView.add(subview: imageView, with: .edge)
-  }
+  private func setupView() {}
 }
 
