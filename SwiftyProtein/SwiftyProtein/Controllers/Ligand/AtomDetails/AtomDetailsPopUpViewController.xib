@@ -9,7 +9,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AtomDetailsPopUpViewController" customModule="SwiftyProtein" customModuleProvider="target">
             <connections>
-                <outlet property="atomDetailsView" destination="Lrf-so-jW5" id="nWn-Vj-EAq"/>
+                <outlet property="atomDetailsView" destination="Tz1-k1-xAJ" id="pde-8y-Qxb"/>
+                <outlet property="effectView" destination="3ze-ab-II4" id="f9V-97-Css"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -25,12 +26,47 @@
                             <rect key="frame" x="0.0" y="0.0" width="300" height="379"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lrf-so-jW5" customClass="AtomDetailsView" customModule="SwiftyProtein" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lrf-so-jW5">
                             <rect key="frame" x="0.0" y="380" width="300" height="80"/>
-                            <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <subviews>
+                                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ze-ab-II4">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="80"/>
+                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="YiY-nE-RCy">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <subviews>
+                                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uQt-7w-cCE">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="0.0"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="2IN-9s-2qI">
+                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="0.0"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </view>
+                                                <vibrancyEffect>
+                                                    <blurEffect style="regular"/>
+                                                </vibrancyEffect>
+                                            </visualEffectView>
+                                        </subviews>
+                                    </view>
+                                    <blurEffect style="regular"/>
+                                </visualEffectView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tz1-k1-xAJ" customClass="AtomDetailsView" customModule="SwiftyProtein" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="80"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" priority="999" constant="80" id="73I-JE-Dq3"/>
                                 <constraint firstAttribute="width" priority="999" constant="100" id="Fo9-mF-F5Q"/>
+                                <constraint firstAttribute="trailing" secondItem="Tz1-k1-xAJ" secondAttribute="trailing" id="NYN-Zg-Pyk"/>
+                                <constraint firstItem="3ze-ab-II4" firstAttribute="top" secondItem="Lrf-so-jW5" secondAttribute="top" id="QIm-Ik-IvD"/>
+                                <constraint firstItem="Tz1-k1-xAJ" firstAttribute="leading" secondItem="Lrf-so-jW5" secondAttribute="leading" id="TWA-US-kZn"/>
+                                <constraint firstItem="Tz1-k1-xAJ" firstAttribute="top" secondItem="Lrf-so-jW5" secondAttribute="top" id="d9O-Vk-X8d"/>
+                                <constraint firstAttribute="trailing" secondItem="3ze-ab-II4" secondAttribute="trailing" id="jm0-GN-vZl"/>
+                                <constraint firstItem="3ze-ab-II4" firstAttribute="leading" secondItem="Lrf-so-jW5" secondAttribute="leading" id="rLY-nu-Wwg"/>
+                                <constraint firstAttribute="bottom" secondItem="Tz1-k1-xAJ" secondAttribute="bottom" id="rtT-gb-wBX"/>
+                                <constraint firstAttribute="bottom" secondItem="3ze-ab-II4" secondAttribute="bottom" id="uET-zI-oQW"/>
                             </constraints>
                             <variation key="default">
                                 <mask key="constraints">

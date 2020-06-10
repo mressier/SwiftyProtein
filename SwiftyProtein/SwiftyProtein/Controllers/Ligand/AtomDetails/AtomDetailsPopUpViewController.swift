@@ -8,7 +8,8 @@ class AtomDetailsPopUpViewController: UIViewController {
 
   /******************** Outlet ********************/
 
-  @IBOutlet weak var atomDetailsView: AtomDetailsView!
+  @IBOutlet private weak var atomDetailsView: AtomDetailsView!
+  @IBOutlet private weak var effectView: UIVisualEffectView!
 
   /******************** Properties ********************/
 
@@ -35,10 +36,23 @@ class AtomDetailsPopUpViewController: UIViewController {
   //----------------------------------------------------------------------------
 
   private func setup() {
+    setupAtomDetailsView()
+    setupEffectViews()
+  }
+
+  private func setupAtomDetailsView() {
     setupAtomDetailsView(atom: atom)
+    atomDetailsView?.cornerRadius = 5.0
+    atomDetailsView?.borderColor = .tertiaryLabel
+    atomDetailsView?.borderWidth = 0.5
   }
 
   private func setupAtomDetailsView(atom: PDBAtomLight?) {
     atomDetailsView?.atom = atom
+  }
+
+  private func setupEffectViews() {
+    effectView.cornerRadius = 5.0
+    effectView.clipsToBounds = true
   }
 }
