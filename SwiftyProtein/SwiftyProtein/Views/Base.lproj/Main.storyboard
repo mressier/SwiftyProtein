@@ -79,42 +79,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
-                            <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="4dC-7U-59V">
-                                <rect key="frame" x="10" y="98" width="394" height="754"/>
-                                <subviews>
-                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4YH-iE-iTq" userLabel="Clear">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="673"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aUV-TW-FHP" customClass="LigandDetailView" customModule="SwiftyProtein" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="674" width="394" height="80"/>
-                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="80" id="vV2-Xg-CXI"/>
-                                            <constraint firstAttribute="width" constant="100" id="wjV-po-rK6"/>
-                                        </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="wjV-po-rK6"/>
-                                            </mask>
-                                        </variation>
-                                        <variation key="heightClass=compact-widthClass=compact">
-                                            <mask key="constraints">
-                                                <exclude reference="vV2-Xg-CXI"/>
-                                                <include reference="wjV-po-rK6"/>
-                                            </mask>
-                                        </variation>
-                                        <variation key="heightClass=compact-widthClass=regular">
-                                            <mask key="constraints">
-                                                <exclude reference="vV2-Xg-CXI"/>
-                                                <include reference="wjV-po-rK6"/>
-                                            </mask>
-                                        </variation>
-                                    </view>
-                                </subviews>
-                                <variation key="heightClass=compact-widthClass=compact" axis="horizontal"/>
-                                <variation key="heightClass=compact-widthClass=regular" axis="horizontal"/>
-                            </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qnl-iU-vkN" customClass="LoadingView" customModule="SwiftyProtein" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -128,8 +92,6 @@
                         <constraints>
                             <constraint firstItem="5Qh-lW-5RR" firstAttribute="leading" secondItem="cjl-7Y-EXB" secondAttribute="leading" id="3J4-Rk-Zf8"/>
                             <constraint firstItem="cjl-7Y-EXB" firstAttribute="bottom" secondItem="qnl-iU-vkN" secondAttribute="bottom" id="CHn-fI-2qd"/>
-                            <constraint firstItem="4dC-7U-59V" firstAttribute="leading" secondItem="cjl-7Y-EXB" secondAttribute="leading" constant="10" id="EYK-O6-iPY"/>
-                            <constraint firstItem="cjl-7Y-EXB" firstAttribute="bottom" secondItem="4dC-7U-59V" secondAttribute="bottom" constant="10" id="J4f-Fy-Pks"/>
                             <constraint firstItem="cjl-7Y-EXB" firstAttribute="bottom" secondItem="5Qh-lW-5RR" secondAttribute="bottom" id="PKB-yi-YPN"/>
                             <constraint firstAttribute="top" secondItem="OHZ-mE-Xy3" secondAttribute="top" id="TnV-8b-akv"/>
                             <constraint firstItem="qnl-iU-vkN" firstAttribute="top" secondItem="cjl-7Y-EXB" secondAttribute="top" id="Vbb-8Z-JBq"/>
@@ -137,8 +99,6 @@
                             <constraint firstItem="5Qh-lW-5RR" firstAttribute="top" secondItem="cjl-7Y-EXB" secondAttribute="top" id="baB-8h-xJM"/>
                             <constraint firstAttribute="trailing" secondItem="OHZ-mE-Xy3" secondAttribute="trailing" id="eBH-Ak-0tx"/>
                             <constraint firstItem="cjl-7Y-EXB" firstAttribute="trailing" secondItem="qnl-iU-vkN" secondAttribute="trailing" id="fkL-Z8-D6d"/>
-                            <constraint firstItem="4dC-7U-59V" firstAttribute="top" secondItem="cjl-7Y-EXB" secondAttribute="top" constant="10" id="nIH-Ve-Fh1"/>
-                            <constraint firstItem="4dC-7U-59V" firstAttribute="trailing" secondItem="cjl-7Y-EXB" secondAttribute="trailing" constant="-10" id="nwA-fk-j43"/>
                             <constraint firstItem="qnl-iU-vkN" firstAttribute="leading" secondItem="cjl-7Y-EXB" secondAttribute="leading" id="rxm-Yu-5lD"/>
                             <constraint firstItem="OHZ-mE-Xy3" firstAttribute="leading" secondItem="vkF-1D-m0f" secondAttribute="leading" id="u5v-Jh-OJq"/>
                             <constraint firstAttribute="bottom" secondItem="OHZ-mE-Xy3" secondAttribute="bottom" id="vlL-jw-MDx"/>
@@ -153,7 +113,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="atomDetailContainerView" destination="aUV-TW-FHP" id="8qX-2S-Rc7"/>
                         <outlet property="ligandSceneContainerView" destination="OHZ-mE-Xy3" id="S18-5S-nIP"/>
                         <outlet property="loadingView" destination="qnl-iU-vkN" id="Gd2-eG-GHQ"/>
                         <outlet property="messageView" destination="5Qh-lW-5RR" id="HXs-S1-4Ry"/>

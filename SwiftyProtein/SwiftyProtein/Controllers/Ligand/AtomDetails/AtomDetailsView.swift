@@ -1,7 +1,7 @@
 import UIKit
 
 @IBDesignable
-class LigandDetailView: UIView, NibInstanciable {
+class AtomDetailsView: UIView, NibInstanciable {
 
   //----------------------------------------------------------------------------
   // MARK: - Properties

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AtomDetailsPopUpViewController" customModule="SwiftyProtein" customModuleProvider="target">
+            <connections>
+                <outlet property="atomDetailsView" destination="Lrf-so-jW5" id="nWn-Vj-EAq"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="PzY-Zm-B94">
+                    <rect key="frame" x="10" y="10" width="300" height="460"/>
+                    <subviews>
+                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gx1-wZ-eu6" userLabel="Clear">
+                            <rect key="frame" x="0.0" y="0.0" width="300" height="379"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lrf-so-jW5" customClass="AtomDetailsView" customModule="SwiftyProtein" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="380" width="300" height="80"/>
+                            <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" priority="999" constant="80" id="73I-JE-Dq3"/>
+                                <constraint firstAttribute="width" priority="999" constant="100" id="Fo9-mF-F5Q"/>
+                            </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="Fo9-mF-F5Q"/>
+                                </mask>
+                            </variation>
+                            <variation key="heightClass=compact-widthClass=compact">
+                                <mask key="constraints">
+                                    <exclude reference="73I-JE-Dq3"/>
+                                    <include reference="Fo9-mF-F5Q"/>
+                                </mask>
+                            </variation>
+                            <variation key="heightClass=compact-widthClass=regular">
+                                <mask key="constraints">
+                                    <exclude reference="73I-JE-Dq3"/>
+                                    <include reference="Fo9-mF-F5Q"/>
+                                </mask>
+                            </variation>
+                        </view>
+                    </subviews>
+                    <variation key="heightClass=compact-widthClass=compact" axis="horizontal"/>
+                    <variation key="heightClass=compact-widthClass=regular" axis="horizontal"/>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="PzY-Zm-B94" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="60" id="4m6-Xg-FbU">
+                    <variation key="heightClass=compact-widthClass=compact" constant="50"/>
+                    <variation key="heightClass=regular-widthClass=compact" constant="10"/>
+                </constraint>
+                <constraint firstItem="PzY-Zm-B94" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="O0Z-Bd-Yul"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="PzY-Zm-B94" secondAttribute="trailing" constant="10" id="ddp-XQ-1NR"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="PzY-Zm-B94" secondAttribute="bottom" constant="10" id="mpK-kv-NuD"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="151"/>
+        </view>
+    </objects>
+</document>

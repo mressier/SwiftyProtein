@@ -9,7 +9,6 @@ class LigandViewController: UIViewController {
   @IBOutlet weak var ligandSceneContainerView: UIView!
   @IBOutlet weak var loadingView: LoadingView!
   @IBOutlet weak var messageView: MessageView!
-  @IBOutlet weak var atomDetailContainerView: LigandDetailView!
 
   /******************** Computed properties ********************/
 
@@ -29,6 +28,10 @@ class LigandViewController: UIViewController {
 
   private lazy var ligandSceneVC: LigandSceneViewController = {
     return LigandSceneViewController(bundle: .main)
+  }()
+
+  private lazy var atomDetailVC: AtomDetailsPopUpViewController = {
+    return AtomDetailsPopUpViewController(bundle: .main)
   }()
 
   //----------------------------------------------------------------------------
@@ -87,10 +90,21 @@ class LigandViewController: UIViewController {
   //----------------------------------------------------------------------------
 
   private func updateSelectedAtom(to atom: PDBAtomLight?) {
-    UIView.animate(withDuration: 0.3) {
-      self.atomDetailContainerView.atom = atom
-      self.atomDetailContainerView.alpha = atom != nil ? 1.0 : 0.0
-//      self.atomDetailContainerView.isHidden = atom == nil
+    let previousAtom = atomDetailVC.atom
+    if atom == nil && previousAtom != nil {
+      atomDetailVC.dismiss(animated: true) {
+        self.atomDetailVC.atom = nil
+      }
+    } else if let atom = atom {
+      atomDetailVC.atom = atom
+
+      if previousAtom == nil {
+        present(atomDetailVC, animated: true) {
+          let superview = self.atomDetailVC.view.superview
+          superview?.isUserInteractionEnabled = false
+        }
+        atomDetailVC.view.isUserInteractionEnabled = false
+      }
     }
   }
 
@@ -118,6 +132,7 @@ class LigandViewController: UIViewController {
   }
 
   private func setupAtomDetailView() {
+    atomDetailVC.modalPresentationStyle = .overCurrentContext
   }
 
   private func setupLoadingView() {

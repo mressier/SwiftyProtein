@@ -21,6 +21,14 @@ class LabelStackView: UIStackView {
     didSet { updateStackView(texts: texts) }
   }
 
+  var lineBreakMode: NSLineBreakMode? {
+    didSet { updateStackView(texts: texts) }
+  }
+
+  var numberOfLines: Int = 1 {
+    didSet { updateStackView(texts: texts) }
+  }
+
   /******************** Content ********************/
 
   @IBInspectable var texts: [String] = [] {
@@ -61,6 +69,8 @@ class LabelStackView: UIStackView {
     label.font = textFont
     label.textColor = textColor
     label.textAlignment = textAlignment ?? .left
+    label.lineBreakMode = lineBreakMode ?? .byTruncatingTail
+    label.numberOfLines = numberOfLines
     return label
   }
 }

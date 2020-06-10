@@ -49,7 +49,9 @@ class AtomCoordinatesView: UIView, NibInstanciable {
   }
 
   private func setupLabels() {
-    labelsStackView.textFont = .systemFont(ofSize: 12.0)
+    labelsStackView.textFont = .systemFont(ofSize: 11.0)
+    labelsStackView.lineBreakMode = .byWordWrapping
+    labelsStackView.numberOfLines = 1
   }
 
   private func setupLabelTexts(position: PDBAtomPosition?) {

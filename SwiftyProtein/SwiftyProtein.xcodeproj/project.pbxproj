@@ -28,6 +28,8 @@
 		A91CF359244C7BEE00294568 /* PDBLigandConverter+Connect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91CF358244C7BEE00294568 /* PDBLigandConverter+Connect.swift */; };
 		A91CF35B244C7DE800294568 /* PDBAtom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91CF35A244C7DE800294568 /* PDBAtom.swift */; };
 		A91CF35D244C860A00294568 /* PDBLigandConverter+ReadState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91CF35C244C860A00294568 /* PDBLigandConverter+ReadState.swift */; };
+		A91DC13A2490E98000E4A440 /* AtomDetailsPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91DC1382490E98000E4A440 /* AtomDetailsPopUpViewController.swift */; };
+		A91DC13B2490E98000E4A440 /* AtomDetailsPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A91DC1392490E98000E4A440 /* AtomDetailsPopUpViewController.xib */; };
 		A922802723F83DB100BA4F5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A922802623F83DB100BA4F5D /* AppDelegate.swift */; };
 		A922802B23F83DB100BA4F5D /* LigandSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A922802A23F83DB100BA4F5D /* LigandSceneViewController.swift */; };
 		A922802E23F83DB100BA4F5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A922802C23F83DB100BA4F5D /* Main.storyboard */; };
@@ -67,8 +69,8 @@
 		A94FB070245F2F8D00E4DFA3 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94FB06F245F2F8D00E4DFA3 /* LoadingView.swift */; };
 		A94FB072245F3D5C00E4DFA3 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94FB071245F3D5C00E4DFA3 /* MessageView.swift */; };
 		A94FB074245F3D6700E4DFA3 /* MessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A94FB073245F3D6700E4DFA3 /* MessageView.xib */; };
-		A94FB077245F452200E4DFA3 /* LigandDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94FB075245F452200E4DFA3 /* LigandDetailView.swift */; };
-		A94FB078245F452200E4DFA3 /* LigandDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A94FB076245F452200E4DFA3 /* LigandDetailView.xib */; };
+		A94FB077245F452200E4DFA3 /* AtomDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94FB075245F452200E4DFA3 /* AtomDetailsView.swift */; };
+		A94FB078245F452200E4DFA3 /* AtomDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A94FB076245F452200E4DFA3 /* AtomDetailsView.xib */; };
 		A95560512458B48A00181C91 /* Comparable+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95560502458B48A00181C91 /* Comparable+extension.swift */; };
 		A95560532458B55400181C91 /* UIScrollView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95560522458B55400181C91 /* UIScrollView+extension.swift */; };
 		A9556060245AD6F200181C91 /* LigandCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A955605F245AD6F200181C91 /* LigandCollectionViewFlowLayout.swift */; };
@@ -146,6 +148,8 @@
 		A91CF358244C7BEE00294568 /* PDBLigandConverter+Connect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDBLigandConverter+Connect.swift"; sourceTree = "<group>"; };
 		A91CF35A244C7DE800294568 /* PDBAtom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDBAtom.swift; sourceTree = "<group>"; };
 		A91CF35C244C860A00294568 /* PDBLigandConverter+ReadState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDBLigandConverter+ReadState.swift"; sourceTree = "<group>"; };
+		A91DC1382490E98000E4A440 /* AtomDetailsPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomDetailsPopUpViewController.swift; sourceTree = "<group>"; };
+		A91DC1392490E98000E4A440 /* AtomDetailsPopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AtomDetailsPopUpViewController.xib; sourceTree = "<group>"; };
 		A922802323F83DB100BA4F5D /* SwiftyProtein.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyProtein.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A922802623F83DB100BA4F5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A922802A23F83DB100BA4F5D /* LigandSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigandSceneViewController.swift; sourceTree = "<group>"; };
@@ -186,8 +190,8 @@
 		A94FB06F245F2F8D00E4DFA3 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		A94FB071245F3D5C00E4DFA3 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		A94FB073245F3D6700E4DFA3 /* MessageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageView.xib; sourceTree = "<group>"; };
-		A94FB075245F452200E4DFA3 /* LigandDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigandDetailView.swift; sourceTree = "<group>"; };
-		A94FB076245F452200E4DFA3 /* LigandDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LigandDetailView.xib; sourceTree = "<group>"; };
+		A94FB075245F452200E4DFA3 /* AtomDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomDetailsView.swift; sourceTree = "<group>"; };
+		A94FB076245F452200E4DFA3 /* AtomDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AtomDetailsView.xib; sourceTree = "<group>"; };
 		A95560502458B48A00181C91 /* Comparable+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Comparable+extension.swift"; sourceTree = "<group>"; };
 		A95560522458B55400181C91 /* UIScrollView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+extension.swift"; sourceTree = "<group>"; };
 		A955605F245AD6F200181C91 /* LigandCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigandCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
@@ -501,17 +505,19 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		A94FB079245F458800E4DFA3 /* LigandDetail */ = {
+		A94FB079245F458800E4DFA3 /* AtomDetails */ = {
 			isa = PBXGroup;
 			children = (
-				A94FB075245F452200E4DFA3 /* LigandDetailView.swift */,
-				A94FB076245F452200E4DFA3 /* LigandDetailView.xib */,
+				A94FB075245F452200E4DFA3 /* AtomDetailsView.swift */,
+				A94FB076245F452200E4DFA3 /* AtomDetailsView.xib */,
 				A92F4872248F805000294356 /* AtomCoordinatesView.swift */,
 				A92F4870248F804600294356 /* AtomCoordinatesView.xib */,
 				A92F487C248FC11D00294356 /* AtomDetailsInformationsView.swift */,
 				A92F487E248FC13400294356 /* AtomDetailsInformationsView.xib */,
+				A91DC1382490E98000E4A440 /* AtomDetailsPopUpViewController.swift */,
+				A91DC1392490E98000E4A440 /* AtomDetailsPopUpViewController.xib */,
 			);
-			path = LigandDetail;
+			path = AtomDetails;
 			sourceTree = "<group>";
 		};
 		A955605A2459E79200181C91 /* ScrollBar */ = {
@@ -639,7 +645,7 @@
 		A9F3E7D92442316F000D62A1 /* Ligand */ = {
 			isa = PBXGroup;
 			children = (
-				A94FB079245F458800E4DFA3 /* LigandDetail */,
+				A94FB079245F458800E4DFA3 /* AtomDetails */,
 				A910E40B23F87EB4008F9020 /* Provider */,
 				A91A550F243B9601003DF261 /* LigandViewController.swift */,
 				A922802A23F83DB100BA4F5D /* LigandSceneViewController.swift */,
@@ -770,11 +776,12 @@
 				A92A9C2824561F15004CA5D3 /* LigandHeaderCollectionView.xib in Resources */,
 				A92F487F248FC13400294356 /* AtomDetailsInformationsView.xib in Resources */,
 				A915629324588E2400960140 /* ScrollBarView.xib in Resources */,
-				A94FB078245F452200E4DFA3 /* LigandDetailView.xib in Resources */,
+				A94FB078245F452200E4DFA3 /* AtomDetailsView.xib in Resources */,
 				A92F4871248F804600294356 /* AtomCoordinatesView.xib in Resources */,
 				A92A9C1424536EF4004CA5D3 /* LigandCollectionViewController.xib in Resources */,
 				A92A9C2024560512004CA5D3 /* LigandCollectionViewCell.xib in Resources */,
 				A94FB06E245F2F8400E4DFA3 /* LoadingView.xib in Resources */,
+				A91DC13B2490E98000E4A440 /* AtomDetailsPopUpViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -881,13 +888,14 @@
 				A987F9C0245754AA00086D5C /* LigandsCollectionBuilder.swift in Sources */,
 				A9C794582450D69E00B5FFA2 /* NetworkRequest.swift in Sources */,
 				A9556062245C47EC00181C91 /* UICollectionView+extension.swift in Sources */,
-				A94FB077245F452200E4DFA3 /* LigandDetailView.swift in Sources */,
+				A94FB077245F452200E4DFA3 /* AtomDetailsView.swift in Sources */,
 				A92F4879248FAF5D00294356 /* ErrorMessageView.swift in Sources */,
 				A9F3E7EC244247F7000D62A1 /* ClampedPropertyWrapper.swift in Sources */,
 				A9718EF4243B9AF5005DA378 /* UIView+appearance.swift in Sources */,
 				A95560532458B55400181C91 /* UIScrollView+extension.swift in Sources */,
 				A92A9C2724561F15004CA5D3 /* LigandHeaderCollectionView.swift in Sources */,
 				A910E40F23F8838D008F9020 /* AtomNode.swift in Sources */,
+				A91DC13A2490E98000E4A440 /* AtomDetailsPopUpViewController.swift in Sources */,
 				A96D48E52456DC06003FE291 /* SectionSource.swift in Sources */,
 				A92A9C1C24537BC3004CA5D3 /* TableViewSource.swift in Sources */,
 			);

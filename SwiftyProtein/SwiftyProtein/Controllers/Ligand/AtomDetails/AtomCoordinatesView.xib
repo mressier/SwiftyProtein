@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="landscape" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,10 +17,11 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="147"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="XKH-1v-GTx" customClass="LabelStackView" customModule="SwiftyProtein" customModuleProvider="target">
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="XKH-1v-GTx" customClass="LabelStackView" customModule="SwiftyProtein" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="147"/>
-                    <variation key="heightClass=compact-widthClass=compact" axis="vertical"/>
-                    <variation key="heightClass=compact-widthClass=regular" axis="vertical"/>
+                    <variation key="heightClass=compact-widthClass=compact" axis="vertical" distribution="fillEqually"/>
+                    <variation key="heightClass=compact-widthClass=regular" axis="vertical" distribution="fillEqually"/>
+                    <variation key="heightClass=regular-widthClass=compact" distribution="equalSpacing"/>
                 </stackView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
