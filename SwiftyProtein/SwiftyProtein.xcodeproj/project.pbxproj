@@ -30,6 +30,10 @@
 		A91CF35D244C860A00294568 /* PDBLigandConverter+ReadState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91CF35C244C860A00294568 /* PDBLigandConverter+ReadState.swift */; };
 		A91DC13A2490E98000E4A440 /* AtomDetailsPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91DC1382490E98000E4A440 /* AtomDetailsPopUpViewController.swift */; };
 		A91DC13B2490E98000E4A440 /* AtomDetailsPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A91DC1392490E98000E4A440 /* AtomDetailsPopUpViewController.xib */; };
+		A91DC13F2491232E00E4A440 /* TipPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91DC13D2491232E00E4A440 /* TipPopUpViewController.swift */; };
+		A91DC1402491232E00E4A440 /* TipPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A91DC13E2491232E00E4A440 /* TipPopUpViewController.xib */; };
+		A91DC1442491236200E4A440 /* TipPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91DC1432491236200E4A440 /* TipPopUpView.swift */; };
+		A91DC1462491237A00E4A440 /* TipPopUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A91DC1452491237A00E4A440 /* TipPopUpView.xib */; };
 		A922802723F83DB100BA4F5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A922802623F83DB100BA4F5D /* AppDelegate.swift */; };
 		A922802B23F83DB100BA4F5D /* LigandSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A922802A23F83DB100BA4F5D /* LigandSceneViewController.swift */; };
 		A922802E23F83DB100BA4F5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A922802C23F83DB100BA4F5D /* Main.storyboard */; };
@@ -150,6 +154,10 @@
 		A91CF35C244C860A00294568 /* PDBLigandConverter+ReadState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDBLigandConverter+ReadState.swift"; sourceTree = "<group>"; };
 		A91DC1382490E98000E4A440 /* AtomDetailsPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomDetailsPopUpViewController.swift; sourceTree = "<group>"; };
 		A91DC1392490E98000E4A440 /* AtomDetailsPopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AtomDetailsPopUpViewController.xib; sourceTree = "<group>"; };
+		A91DC13D2491232E00E4A440 /* TipPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipPopUpViewController.swift; sourceTree = "<group>"; };
+		A91DC13E2491232E00E4A440 /* TipPopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TipPopUpViewController.xib; sourceTree = "<group>"; };
+		A91DC1432491236200E4A440 /* TipPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipPopUpView.swift; sourceTree = "<group>"; };
+		A91DC1452491237A00E4A440 /* TipPopUpView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TipPopUpView.xib; sourceTree = "<group>"; };
 		A922802323F83DB100BA4F5D /* SwiftyProtein.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyProtein.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A922802623F83DB100BA4F5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A922802A23F83DB100BA4F5D /* LigandSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigandSceneViewController.swift; sourceTree = "<group>"; };
@@ -351,6 +359,38 @@
 			path = PDB;
 			sourceTree = "<group>";
 		};
+		A91DC13C2491231000E4A440 /* Tips */ = {
+			isa = PBXGroup;
+			children = (
+				A91DC1422491234E00E4A440 /* Views */,
+				A91DC13D2491232E00E4A440 /* TipPopUpViewController.swift */,
+				A91DC13E2491232E00E4A440 /* TipPopUpViewController.xib */,
+			);
+			path = Tips;
+			sourceTree = "<group>";
+		};
+		A91DC1412491233E00E4A440 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A94FB075245F452200E4DFA3 /* AtomDetailsView.swift */,
+				A94FB076245F452200E4DFA3 /* AtomDetailsView.xib */,
+				A92F4872248F805000294356 /* AtomCoordinatesView.swift */,
+				A92F4870248F804600294356 /* AtomCoordinatesView.xib */,
+				A92F487C248FC11D00294356 /* AtomDetailsInformationsView.swift */,
+				A92F487E248FC13400294356 /* AtomDetailsInformationsView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A91DC1422491234E00E4A440 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A91DC1432491236200E4A440 /* TipPopUpView.swift */,
+				A91DC1452491237A00E4A440 /* TipPopUpView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		A922801A23F83DB100BA4F5D = {
 			isa = PBXGroup;
 			children = (
@@ -404,6 +444,7 @@
 		A922804223F84DF700BA4F5D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A91DC13C2491231000E4A440 /* Tips */,
 				A92A9C0E24536A06004CA5D3 /* LigandList */,
 				A9F3E7D92442316F000D62A1 /* Ligand */,
 			);
@@ -508,12 +549,7 @@
 		A94FB079245F458800E4DFA3 /* AtomDetails */ = {
 			isa = PBXGroup;
 			children = (
-				A94FB075245F452200E4DFA3 /* AtomDetailsView.swift */,
-				A94FB076245F452200E4DFA3 /* AtomDetailsView.xib */,
-				A92F4872248F805000294356 /* AtomCoordinatesView.swift */,
-				A92F4870248F804600294356 /* AtomCoordinatesView.xib */,
-				A92F487C248FC11D00294356 /* AtomDetailsInformationsView.swift */,
-				A92F487E248FC13400294356 /* AtomDetailsInformationsView.xib */,
+				A91DC1412491233E00E4A440 /* Views */,
 				A91DC1382490E98000E4A440 /* AtomDetailsPopUpViewController.swift */,
 				A91DC1392490E98000E4A440 /* AtomDetailsPopUpViewController.xib */,
 			);
@@ -775,9 +811,11 @@
 				A922804123F846A700BA4F5D /* ligands.txt in Resources */,
 				A92A9C2824561F15004CA5D3 /* LigandHeaderCollectionView.xib in Resources */,
 				A92F487F248FC13400294356 /* AtomDetailsInformationsView.xib in Resources */,
+				A91DC1462491237A00E4A440 /* TipPopUpView.xib in Resources */,
 				A915629324588E2400960140 /* ScrollBarView.xib in Resources */,
 				A94FB078245F452200E4DFA3 /* AtomDetailsView.xib in Resources */,
 				A92F4871248F804600294356 /* AtomCoordinatesView.xib in Resources */,
+				A91DC1402491232E00E4A440 /* TipPopUpViewController.xib in Resources */,
 				A92A9C1424536EF4004CA5D3 /* LigandCollectionViewController.xib in Resources */,
 				A92A9C2024560512004CA5D3 /* LigandCollectionViewCell.xib in Resources */,
 				A94FB06E245F2F8400E4DFA3 /* LoadingView.xib in Resources */,
@@ -836,6 +874,7 @@
 				A92F4873248F805000294356 /* AtomCoordinatesView.swift in Sources */,
 				A993458C242FD52D00C6B043 /* SCNNode+Atom.swift in Sources */,
 				A9718EF2243B9AF5005DA378 /* UIView+gradient.swift in Sources */,
+				A91DC13F2491232E00E4A440 /* TipPopUpViewController.swift in Sources */,
 				A92A9C1024536A1D004CA5D3 /* LigandListViewController.swift in Sources */,
 				A94DD750244CB9480034C6AF /* PDBLigandConverter+End.swift in Sources */,
 				A9F3E7D4244221CD000D62A1 /* AtomInfo.swift in Sources */,
@@ -876,6 +915,7 @@
 				A9556066245EDAF500181C91 /* FileReader.swift in Sources */,
 				A9597A7A244CC5F4004E732E /* PDBLigandConverter+ContentError.swift in Sources */,
 				A910E40523F85DF0008F9020 /* SCNGeometry+extension.swift in Sources */,
+				A91DC1442491236200E4A440 /* TipPopUpView.swift in Sources */,
 				A94DD738244C957B0034C6AF /* String+extension.swift in Sources */,
 				A9F3E7D824422C47000D62A1 /* ProteinSceneConfiguration+ColorMode.swift in Sources */,
 				A9718EF9243B9BBA005DA378 /* NSLayoutConstraint+extension.swift in Sources */,
