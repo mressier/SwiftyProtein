@@ -78,7 +78,7 @@ class LigandSceneViewController: UIViewController {
     viewNode = SCNNode()
 
     rootNode.addChildNode(viewNode)
-    startAutoAnimation(on: viewNode)
+//    startAutoAnimation(on: viewNode)
   }
 
   private func setupGesture() {
