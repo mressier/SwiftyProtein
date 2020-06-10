@@ -437,8 +437,8 @@
 		A922804523F84E1900BA4F5D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				A95560502458B48A00181C91 /* Comparable+extension.swift */,
 				A915629624588F1100960140 /* UIKit */,
+				A95560502458B48A00181C91 /* Comparable+extension.swift */,
 				A92A9C0A245352F2004CA5D3 /* Array+extension.swift */,
 				A987F9C1245758EF00086D5C /* Array+string.swift */,
 				A94DD737244C957B0034C6AF /* String+extension.swift */,

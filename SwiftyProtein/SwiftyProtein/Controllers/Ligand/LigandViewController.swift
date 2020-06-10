@@ -91,21 +91,29 @@ class LigandViewController: UIViewController {
 
   private func updateSelectedAtom(to atom: PDBAtomLight?) {
     let previousAtom = atomDetailVC.atom
-    if atom == nil && previousAtom != nil {
-      atomDetailVC.dismiss(animated: true) {
-        self.atomDetailVC.atom = nil
-      }
-    } else if let atom = atom {
-      atomDetailVC.atom = atom
 
-      if previousAtom == nil {
-        present(atomDetailVC, animated: true) {
-          let superview = self.atomDetailVC.view.superview
-          superview?.isUserInteractionEnabled = false
-        }
-        atomDetailVC.view.isUserInteractionEnabled = false
-      }
+    if let atom = atom {
+      presentAtomDetailVC(with: atom, previousAtom: previousAtom)
+    } else {
+      dismissAtomDetailVC(previousAtom: previousAtom)
     }
+
+    atomDetailVC.atom = atom
+  }
+
+  private func presentAtomDetailVC(with atom: PDBAtomLight,
+                                   previousAtom: PDBAtomLight?) {
+    guard previousAtom == nil else { return }
+
+    present(atomDetailVC,
+            presentationStyle: .overCurrentContext,
+            shouldDisableUserInteraction: true)
+  }
+
+  private func dismissAtomDetailVC(previousAtom: PDBAtomLight?) {
+    guard previousAtom != nil else { return }
+
+    atomDetailVC.dismiss(animated: true)
   }
 
   //----------------------------------------------------------------------------

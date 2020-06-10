@@ -128,15 +128,30 @@ extension UIViewController {
   func presentWithLegacyModalStyle(
     _ viewControllerToPresent: UIViewController,
     animated: Bool = true,
-    presentationStyle: UIModalPresentationStyle = .fullScreen,
     completion: (() -> Void)? = nil) {
+    present(viewControllerToPresent,
+            animated: animated,
+            presentationStyle: .fullScreen,
+            completion: completion)
+  }
 
+  func present(_ viewControllerToPresent: UIViewController,
+               animated: Bool = true,
+               presentationStyle: UIModalPresentationStyle,
+               shouldDisableUserInteraction: Bool = false,
+               completion: (() -> Void)? = nil) {
     if #available(iOS 13.0, *) {
       viewControllerToPresent.modalPresentationStyle = presentationStyle
       viewControllerToPresent.isModalInPresentation = true
     }
 
-    present(viewControllerToPresent, animated: animated, completion: completion)
+    present(viewControllerToPresent, animated: animated) {
+      if shouldDisableUserInteraction {
+        let superview = viewControllerToPresent.view.superview
+        superview?.isUserInteractionEnabled = false
+      }
+      completion?()
+    }
   }
 
   /// View controller is the one presented and visible on the screen
