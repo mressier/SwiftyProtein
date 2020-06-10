@@ -121,8 +121,10 @@ class LigandSceneViewController: UIViewController {
     let isSelected = !atomNode.isSelected
 
     atomsDictionary[node]?.isSelected = isSelected
+
     let color = configuration.getColor(for: atomNode.atom)
-    atomsDictionary[node]?.node.geometry?.add(color: isSelected ? color.withAlphaComponent(0.7) : color)
+    let geometryColor = isSelected ? color.withAlphaComponent(0.7) : color
+    atomsDictionary[node]?.node.geometry?.add(color: geometryColor)
 
     isSelected ? didSelectAtom?(atomNode.atom) : didUnselectAtom?()
   }

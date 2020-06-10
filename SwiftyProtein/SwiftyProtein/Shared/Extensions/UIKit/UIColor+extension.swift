@@ -1,11 +1,3 @@
-//
-//  UIColor+Extension.swift
-//  Melomind.iOS-V2
-//
-//  Created by facileit on 22/01/2018.
-//  Copyright © 2018 MyBrainTech. All rights reserved.
-//
-
 import UIKit
 
 extension UIColor {

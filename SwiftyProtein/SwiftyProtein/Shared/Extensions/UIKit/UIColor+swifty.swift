@@ -6,6 +6,7 @@ extension UIColor {
   static var salmon = UIColor(hex: "#ffaa77")
   static var darkGreen = UIColor(hex: "#007700")
   static var darkOrange = UIColor(hex: "#dd7700")
+  static var veryDarkGray = UIColor(hex: "#303030")
 
   /******************** Swifty Protein related color ********************/
 

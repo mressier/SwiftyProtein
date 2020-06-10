@@ -48,7 +48,7 @@ extension SCNNode {
       if let cylinder =
         self.addCylinderBetween(nodePair.start.node,
                                 and: nodePair.end.node,
-                                color: .darkGray)
+                                color: .black)
       { links.append(cylinder) }
     }
     return links

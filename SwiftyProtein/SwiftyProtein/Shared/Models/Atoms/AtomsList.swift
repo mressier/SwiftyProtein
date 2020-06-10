@@ -7,7 +7,7 @@ struct AtomsList {
 
   static let atoms = [
     AtomsList.hydrogen,
-    AtomInfo(name: "carbon", symbol: "C",  cpkColor: .black),
+    AtomInfo(name: "carbon", symbol: "C",  cpkColor: .veryDarkGray),
     AtomInfo(name: "nitrogen", symbol: "N",  cpkColor: .blue),
     AtomInfo(name: "oxygen", symbol: "O",  cpkColor: .red),
     AtomInfo(name: "fluorine", symbol: "F", cpkColor: .green),
