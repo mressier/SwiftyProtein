@@ -34,11 +34,6 @@ extension SCNNode {
     return nodes
   }
 
-//  private func testMaterial(addOn node: SCNNode) {
-//    let material = SCNMaterial()
-//    material.
-//  }
-
   /// Create links as cylinder between atom pairs
   @discardableResult
   func createLinks(between nodesPairs: [AtomPair]) -> [SCNNode] {

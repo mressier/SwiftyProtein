@@ -7,12 +7,20 @@ import SceneKit
  *
  ******************************************************************************/
 struct PDBAtomPosition: Hashable {
-  let x: CGFloat
-  let y: CGFloat
-  let z: CGFloat
+  var x: CGFloat
+  var y: CGFloat
+  var z: CGFloat
+
+  /******************** Conversion ********************/
 
   var toSCNVector3: SCNVector3 {
     return SCNVector3(x, y, z)
+  }
+
+  /******************** Static ********************/
+
+  static var zero: PDBAtomPosition {
+    return PDBAtomPosition(x: 0.0, y: 0.0, z: 0.0)
   }
 
   //----------------------------------------------------------------------------
@@ -27,6 +35,12 @@ struct PDBAtomPosition: Hashable {
 
   init(x: Float, y: Float, z: Float) {
     self.init(x: CGFloat(x), y: CGFloat(y), z: CGFloat(z))
+  }
+
+  init(copy: PDBAtomPosition) {
+    self.x = copy.x
+    self.y = copy.y
+    self.z = copy.z
   }
 
   //----------------------------------------------------------------------------

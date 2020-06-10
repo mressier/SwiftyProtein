@@ -10,6 +10,10 @@ class Array_AtomNodeTests: XCTestCase {
   let sampleHydrogenNodes =
     SCNNode().createAtomNodes(forAtoms: FakeLigands.hydrogenSample)
 
+  //----------------------------------------------------------------------------
+  // MARK: - Extract Atom Pairs
+  //----------------------------------------------------------------------------
+
   func testAtomNodeArray_ExtractAtomPairsSample() {
     let atomNodes = sampleAtomNodes
     let expectedPairs = [
@@ -39,22 +43,45 @@ class Array_AtomNodeTests: XCTestCase {
   }
 
   func testExtractAtomPair_withHydrogen() {
-      let atomNodes = sampleHydrogenNodes
-      let expectedPairs = [
-        PathBounds(start: atomNodes[0], end: atomNodes[1]),
-        PathBounds(start: atomNodes[2], end: atomNodes[0])
+    let atomNodes = sampleHydrogenNodes
+    let expectedPairs = [
+      PathBounds(start: atomNodes[0], end: atomNodes[1]),
+      PathBounds(start: atomNodes[2], end: atomNodes[0])
     ]
 
-      // When
-      let pairs = atomNodes.extractAtomPairs()
+    // When
+    let pairs = atomNodes.extractAtomPairs()
 
-      // Then
-      XCTAssertEqual(expectedPairs.count, pairs.count)
+    // Then
+    XCTAssertEqual(expectedPairs.count, pairs.count)
 
-      for pair in expectedPairs {
-        XCTAssertTrue(pairs.contains() {
-          return $0.start == pair.start && $0.end == pair.end
-        })
-      }
+    for pair in expectedPairs {
+      XCTAssertTrue(pairs.contains() {
+        return $0.start == pair.start && $0.end == pair.end
+      })
+    }
+  }
+
+  //----------------------------------------------------------------------------
+  // MARK: - Get Area Covered
+  //----------------------------------------------------------------------------
+
+  func testAreaCovered_Sample() {
+    let atomNodes = sampleAtomNodes
+    let expectedArea =
+      Area3D(min: PDBAtomPosition(x: -1.231, y: -0.99, z: -7.421),
+             max: PDBAtomPosition(x: 1.740, y: 1.234, z: -4.304))
+
+    // When
+    let area = atomNodes.areaCovered
+
+    // Then
+    XCTAssertEqual(area.min.x, expectedArea.min.x, accuracy: 0.001)
+    XCTAssertEqual(area.min.y, expectedArea.min.y, accuracy: 0.001)
+    XCTAssertEqual(area.min.z, expectedArea.min.z, accuracy: 0.001)
+    XCTAssertEqual(area.max.x, expectedArea.max.x, accuracy: 0.001)
+    XCTAssertEqual(area.max.y, expectedArea.max.y, accuracy: 0.001)
+    XCTAssertEqual(area.max.z, expectedArea.max.z, accuracy: 0.001)
+
   }
 }

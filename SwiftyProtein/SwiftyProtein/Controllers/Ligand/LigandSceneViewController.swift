@@ -22,6 +22,8 @@ class LigandSceneViewController: UIViewController {
 
   var configuration = LigandSceneConfiguration(colorMode: .cpk)
 
+  private var cameraPosition: SCNVector3 = .zero
+
   /******************** Ligand Parameters ********************/
 
   /// Atoms to show on the scene
@@ -62,7 +64,7 @@ class LigandSceneViewController: UIViewController {
 
     cameraNode = SCNNode()
     cameraNode.camera = camera
-    cameraNode.position = SCNVector3(x: 0.0, y: -30.0, z: 0.0)
+    cameraNode.position = cameraPosition
 
     rootNode.addChildNode(cameraNode)
     cameraNode.constraintToLookAt(rootNode)
@@ -76,6 +78,7 @@ class LigandSceneViewController: UIViewController {
     viewNode = SCNNode()
 
     rootNode.addChildNode(viewNode)
+    startAutoAnimation(on: viewNode)
   }
 
   private func setupGesture() {
@@ -84,22 +87,57 @@ class LigandSceneViewController: UIViewController {
     sceneView.addGestureRecognizer(tap)
   }
 
+  private func startAutoAnimation(on node: SCNNode) {
+    let rotationAction = SCNAction.rotateBy(x: 0, y: 0.3, z: 0.3, duration: 1)
+    let repeatRotationAction = SCNAction.repeatForever(rotationAction)
+    node.runAction(repeatRotationAction)
+  }
+
+  private func stopAnimation(on node: SCNNode) {
+    node.removeAllActions()
+  }
+
   //----------------------------------------------------------------------------
   // MARK: - Reload
   //----------------------------------------------------------------------------
 
   func reload(completion: (() -> Void)?) {
+    removeCurrentAtomNodes()
 
+    let atomNodes = createAtomNodes(for: atoms)
+    atomsDictionary = atomNodes.dictionaryByNode
+
+    setCameraPosition(forNodes: atomNodes)
+
+    completion?()
+  }
+
+  private func removeCurrentAtomNodes() {
     for atomNode in atomsDictionary.values {
       atomNode.node.removeFromParentNode()
     }
+  }
 
+  private func createAtomNodes(for atoms: [PDBAtomLight]) -> [AtomNode] {
     let atomNodes = viewNode.createAtomNodes(forAtoms: atoms,
                                              config: configuration)
     viewNode.createLinks(between: atomNodes.extractAtomPairs())
+    return atomNodes
+  }
 
-    atomsDictionary = atomNodes.dictionaryByNode
-    completion?()
+  private func setCameraPosition(forNodes nodes: [AtomNode]) {
+    let area = nodes.areaCovered
+    let distance = PDBAtomPosition(x: area.max.x - area.min.x,
+                                   y: area.max.y - area.min.y,
+                                   z: area.max.z - area.min.z)
+    let highest = [distance.x, distance.y, distance.z].highest ?? -30
+
+    cameraNode.position = SCNVector3(x: 0, y: Float(highest) * -3, z: 0)
+    cameraPosition = cameraNode.position
+  }
+
+  private func resetCameraPosition() {
+    cameraNode.position = cameraPosition
   }
 
   //----------------------------------------------------------------------------
