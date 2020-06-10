@@ -132,7 +132,10 @@ class LigandSceneViewController: UIViewController {
                                    z: area.max.z - area.min.z)
     let highest = [distance.x, distance.y, distance.z].highest ?? -30
 
-    cameraNode.position = SCNVector3(x: 0, y: Float(highest) * -3, z: 0)
+    let y = Float(highest * -3)
+    let clampedY = y.clamped(min: -70, max: 70)
+
+    cameraNode.position = SCNVector3(x: 0, y: clampedY, z: 0)
     cameraPosition = cameraNode.position
   }
 
