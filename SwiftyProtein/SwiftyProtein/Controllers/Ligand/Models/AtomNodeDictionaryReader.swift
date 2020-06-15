@@ -8,12 +8,13 @@ import Foundation
  ******************************************************************************/
 struct AtomNodeDictionaryReader {
 
+  let atomByIndex: [Int: SCNAtomNode]
+
   //----------------------------------------------------------------------------
   // MARK: - Read on dictionary
   //----------------------------------------------------------------------------
 
-  static func getAtoms(on atomByIndex: [Int: AtomNode],
-                       at indexes: [Int]) -> [AtomNode] {
+  func getAtoms(at indexes: [Int]) -> [SCNAtomNode] {
     return indexes.reduce([]) { result, index in
       guard let atom = atomByIndex[index] else { return result }
       return result + [atom]

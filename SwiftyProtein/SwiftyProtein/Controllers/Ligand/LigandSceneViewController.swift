@@ -29,7 +29,7 @@ class LigandSceneViewController: UIViewController {
   /// Atoms to show on the scene
   var atoms = [PDBAtomLight]()
 
-  private var atomsDictionary = [SCNNode: AtomNode]()
+  var ligand: SCNLigandNode?
 
   /********************  Callbacks  ********************/
 
@@ -78,6 +78,10 @@ class LigandSceneViewController: UIViewController {
     viewNode = SCNNode()
 
     rootNode.addChildNode(viewNode)
+
+    let ligand = SCNLigandNode()
+    viewNode.addChildNode(ligand)
+    self.ligand = ligand
 //    startAutoAnimation(on: viewNode)
   }
 
@@ -102,30 +106,16 @@ class LigandSceneViewController: UIViewController {
   //----------------------------------------------------------------------------
 
   func reload(completion: (() -> Void)?) {
-    removeCurrentAtomNodes()
+    ligand?.removeLigand()
+    ligand?.create(ligand: LigandGraphicData(atoms: atoms,
+                                             config: configuration))
 
-    let atomNodes = createAtomNodes(for: atoms)
-    atomsDictionary = atomNodes.dictionaryByNode
-
-    setCameraPosition(forNodes: atomNodes)
+    setCameraPosition(forNodes: ligand?.atomNodes ?? [])
 
     completion?()
   }
 
-  private func removeCurrentAtomNodes() {
-    for atomNode in atomsDictionary.values {
-      atomNode.node.removeFromParentNode()
-    }
-  }
-
-  private func createAtomNodes(for atoms: [PDBAtomLight]) -> [AtomNode] {
-    let atomNodes = viewNode.createAtomNodes(forAtoms: atoms,
-                                             config: configuration)
-    viewNode.createLinks(between: atomNodes.extractAtomPairs())
-    return atomNodes
-  }
-
-  private func setCameraPosition(forNodes nodes: [AtomNode]) {
+  private func setCameraPosition(forNodes nodes: [SCNAtomNode]) {
     let area = nodes.areaCovered
     let distance = PDBAtomPosition(x: area.max.x - area.min.x,
                                    y: area.max.y - area.min.y,
@@ -152,21 +142,12 @@ class LigandSceneViewController: UIViewController {
 
     let location = tap.location(in: sceneView)
 
-    guard let atomNode = sceneView.getNode(at: location) else { return }
+    guard let atomNode = sceneView.getNode(at: location),
+      let atomData = ligand?.toggleSelection(on: atomNode),
+      let atom = atoms.first(where: { $0.index == atomData.atom.index }) else {
+        return
+    }
 
-    toggleAtomSelection(atomNode)
-  }
-
-  private func toggleAtomSelection(_ node: SCNNode) {
-    guard let atomNode = atomsDictionary[node] else { return }
-    let isSelected = !atomNode.isSelected
-
-    atomsDictionary[node]?.isSelected = isSelected
-
-    let color = configuration.getColor(for: atomNode.atom)
-    let geometryColor = isSelected ? color.withAlphaComponent(0.7) : color
-    atomsDictionary[node]?.node.geometry?.add(color: geometryColor)
-
-    isSelected ? didSelectAtom?(atomNode.atom) : didUnselectAtom?()
+    atomData.atom.isSelected ? didSelectAtom?(atom) : didUnselectAtom?()
   }
 }

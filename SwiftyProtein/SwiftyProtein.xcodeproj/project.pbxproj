@@ -12,7 +12,7 @@
 		A910E40823F87B83008F9020 /* PathBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = A910E40723F87B83008F9020 /* PathBounds.swift */; };
 		A910E40A23F87E78008F9020 /* PDBAtomLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A910E40923F87E78008F9020 /* PDBAtomLight.swift */; };
 		A910E40D23F87ED6008F9020 /* LightLigandProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A910E40C23F87ED6008F9020 /* LightLigandProvider.swift */; };
-		A910E40F23F8838D008F9020 /* AtomNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A910E40E23F8838D008F9020 /* AtomNode.swift */; };
+		A910E40F23F8838D008F9020 /* AtomGraphicData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A910E40E23F8838D008F9020 /* AtomGraphicData.swift */; };
 		A9156289245830A000960140 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9156288245830A000960140 /* LeftAlignedCollectionViewFlowLayout.swift */; };
 		A915629324588E2400960140 /* ScrollBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A915629224588E2400960140 /* ScrollBarView.xib */; };
 		A915629524588E3100960140 /* ScrollBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A915629424588E3100960140 /* ScrollBarView.swift */; };
@@ -36,7 +36,6 @@
 		A91DC1462491237A00E4A440 /* TipPopUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A91DC1452491237A00E4A440 /* TipPopUpView.xib */; };
 		A91DC1482491306E00E4A440 /* AtomNodeDictionaryReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91DC1472491306E00E4A440 /* AtomNodeDictionaryReader.swift */; };
 		A91DC14B2491309B00E4A440 /* AtomPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91DC14A2491309B00E4A440 /* AtomPair.swift */; };
-		A91DC14D249130C300E4A440 /* Array+AtomNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91DC14C249130C300E4A440 /* Array+AtomNode.swift */; };
 		A922802723F83DB100BA4F5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A922802623F83DB100BA4F5D /* AppDelegate.swift */; };
 		A922802B23F83DB100BA4F5D /* LigandSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A922802A23F83DB100BA4F5D /* LigandSceneViewController.swift */; };
 		A922802E23F83DB100BA4F5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A922802C23F83DB100BA4F5D /* Main.storyboard */; };
@@ -92,6 +91,9 @@
 		A9597A82244CC8B0004E732E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A9597A81244CC8B0004E732E /* Alamofire */; };
 		A9597A85244CCDBD004E732E /* PDBLigandProvider+buildURLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9597A84244CCDBD004E732E /* PDBLigandProvider+buildURLTests.swift */; };
 		A9597A87244CCE6E004E732E /* PDBLigandProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9597A86244CCE6E004E732E /* PDBLigandProviderTests.swift */; };
+		A9643D4424977C7600744CED /* Array+SCNAtomNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9643D4324977C7600744CED /* Array+SCNAtomNode.swift */; };
+		A96BD66524937833004F1678 /* SCNAtomNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96BD66424937833004F1678 /* SCNAtomNode.swift */; };
+		A96BD66724937880004F1678 /* SCNLigandNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96BD66624937880004F1678 /* SCNLigandNode.swift */; };
 		A96D48E52456DC06003FE291 /* SectionSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96D48E42456DC06003FE291 /* SectionSource.swift */; };
 		A96D48E72456E422003FE291 /* LigandsCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96D48E62456E422003FE291 /* LigandsCollection.swift */; };
 		A9718EE4243B9A32005DA378 /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9718EE3243B9A32005DA378 /* UIViewController+extension.swift */; };
@@ -109,13 +111,13 @@
 		A9934579242FCDEF00C6B043 /* FakeLigands.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9934578242FCDEF00C6B043 /* FakeLigands.swift */; };
 		A9934582242FD19200C6B043 /* SwiftyProteinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9934581242FD19200C6B043 /* SwiftyProteinTests.swift */; };
 		A993458A242FD1B400C6B043 /* Array+AtomNodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9934589242FD1B400C6B043 /* Array+AtomNodeTests.swift */; };
-		A993458C242FD52D00C6B043 /* SCNNode+Atom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A993458B242FD52D00C6B043 /* SCNNode+Atom.swift */; };
 		A993458E242FF4FF00C6B043 /* SCNView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A993458D242FF4FF00C6B043 /* SCNView+extension.swift */; };
 		A9A3A9FD23F9CC5D00A19E17 /* SCNVector3+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A3A9FC23F9CC5D00A19E17 /* SCNVector3+extension.swift */; };
 		A9C794582450D69E00B5FFA2 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C794572450D69E00B5FFA2 /* NetworkRequest.swift */; };
 		A9C7945A2450D73300B5FFA2 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C794592450D73300B5FFA2 /* RequestError.swift */; };
 		A9C7945C2450D77B00B5FFA2 /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7945B2450D77B00B5FFA2 /* URLBuilder.swift */; };
 		A9C7945E2450D89D00B5FFA2 /* PDBRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7945D2450D89D00B5FFA2 /* PDBRequest.swift */; };
+		A9D810AD2497B2D200FDD5E5 /* LigandGraphicData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D810AC2497B2D200FDD5E5 /* LigandGraphicData.swift */; };
 		A9F3E7D4244221CD000D62A1 /* AtomInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F3E7D3244221CD000D62A1 /* AtomInfo.swift */; };
 		A9F3E7D624422C1A000D62A1 /* ProteinSceneConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F3E7D524422C1A000D62A1 /* ProteinSceneConfiguration.swift */; };
 		A9F3E7D824422C47000D62A1 /* ProteinSceneConfiguration+ColorMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F3E7D724422C47000D62A1 /* ProteinSceneConfiguration+ColorMode.swift */; };
@@ -140,7 +142,7 @@
 		A910E40723F87B83008F9020 /* PathBounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathBounds.swift; sourceTree = "<group>"; };
 		A910E40923F87E78008F9020 /* PDBAtomLight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDBAtomLight.swift; sourceTree = "<group>"; };
 		A910E40C23F87ED6008F9020 /* LightLigandProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightLigandProvider.swift; sourceTree = "<group>"; };
-		A910E40E23F8838D008F9020 /* AtomNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomNode.swift; sourceTree = "<group>"; };
+		A910E40E23F8838D008F9020 /* AtomGraphicData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomGraphicData.swift; sourceTree = "<group>"; };
 		A9156288245830A000960140 /* LeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		A915629224588E2400960140 /* ScrollBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollBarView.xib; sourceTree = "<group>"; };
 		A915629424588E3100960140 /* ScrollBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollBarView.swift; sourceTree = "<group>"; };
@@ -164,7 +166,6 @@
 		A91DC1452491237A00E4A440 /* TipPopUpView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TipPopUpView.xib; sourceTree = "<group>"; };
 		A91DC1472491306E00E4A440 /* AtomNodeDictionaryReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomNodeDictionaryReader.swift; sourceTree = "<group>"; };
 		A91DC14A2491309B00E4A440 /* AtomPair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomPair.swift; sourceTree = "<group>"; };
-		A91DC14C249130C300E4A440 /* Array+AtomNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+AtomNode.swift"; sourceTree = "<group>"; };
 		A922802323F83DB100BA4F5D /* SwiftyProtein.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyProtein.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A922802623F83DB100BA4F5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A922802A23F83DB100BA4F5D /* LigandSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigandSceneViewController.swift; sourceTree = "<group>"; };
@@ -220,6 +221,9 @@
 		A9597A7E244CC719004E732E /* PDBLigand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDBLigand.swift; sourceTree = "<group>"; };
 		A9597A84244CCDBD004E732E /* PDBLigandProvider+buildURLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDBLigandProvider+buildURLTests.swift"; sourceTree = "<group>"; };
 		A9597A86244CCE6E004E732E /* PDBLigandProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDBLigandProviderTests.swift; sourceTree = "<group>"; };
+		A9643D4324977C7600744CED /* Array+SCNAtomNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+SCNAtomNode.swift"; sourceTree = "<group>"; };
+		A96BD66424937833004F1678 /* SCNAtomNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCNAtomNode.swift; sourceTree = "<group>"; };
+		A96BD66624937880004F1678 /* SCNLigandNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCNLigandNode.swift; sourceTree = "<group>"; };
 		A96D48E42456DC06003FE291 /* SectionSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionSource.swift; sourceTree = "<group>"; };
 		A96D48E62456E422003FE291 /* LigandsCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigandsCollection.swift; sourceTree = "<group>"; };
 		A9718EE3243B9A32005DA378 /* UIViewController+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+extension.swift"; path = "SwiftyProtein/Shared/Library/Extensions/UIKit/UIViewController+extension.swift"; sourceTree = SOURCE_ROOT; };
@@ -239,13 +243,13 @@
 		A9934581242FD19200C6B043 /* SwiftyProteinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyProteinTests.swift; sourceTree = "<group>"; };
 		A9934583242FD19200C6B043 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9934589242FD1B400C6B043 /* Array+AtomNodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+AtomNodeTests.swift"; sourceTree = "<group>"; };
-		A993458B242FD52D00C6B043 /* SCNNode+Atom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNNode+Atom.swift"; sourceTree = "<group>"; };
 		A993458D242FF4FF00C6B043 /* SCNView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNView+extension.swift"; sourceTree = "<group>"; };
 		A9A3A9FC23F9CC5D00A19E17 /* SCNVector3+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNVector3+extension.swift"; sourceTree = "<group>"; };
 		A9C794572450D69E00B5FFA2 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		A9C794592450D73300B5FFA2 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		A9C7945B2450D77B00B5FFA2 /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
 		A9C7945D2450D89D00B5FFA2 /* PDBRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDBRequest.swift; sourceTree = "<group>"; };
+		A9D810AC2497B2D200FDD5E5 /* LigandGraphicData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigandGraphicData.swift; sourceTree = "<group>"; };
 		A9F3E7D3244221CD000D62A1 /* AtomInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomInfo.swift; sourceTree = "<group>"; };
 		A9F3E7D524422C1A000D62A1 /* ProteinSceneConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProteinSceneConfiguration.swift; sourceTree = "<group>"; };
 		A9F3E7D724422C47000D62A1 /* ProteinSceneConfiguration+ColorMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProteinSceneConfiguration+ColorMode.swift"; sourceTree = "<group>"; };
@@ -479,7 +483,7 @@
 				A95560502458B48A00181C91 /* Comparable+extension.swift */,
 				A92A9C0A245352F2004CA5D3 /* Array+extension.swift */,
 				A987F9C1245758EF00086D5C /* Array+string.swift */,
-				A91DC14C249130C300E4A440 /* Array+AtomNode.swift */,
+				A9643D4324977C7600744CED /* Array+SCNAtomNode.swift */,
 				A94DD737244C957B0034C6AF /* String+extension.swift */,
 				A9718EF8243B9BBA005DA378 /* NSLayoutConstraint+extension.swift */,
 				A9718EE3243B9A32005DA378 /* UIViewController+extension.swift */,
@@ -610,7 +614,6 @@
 			isa = PBXGroup;
 			children = (
 				A922804623F84E2C00BA4F5D /* SCNNode+extension.swift */,
-				A993458B242FD52D00C6B043 /* SCNNode+Atom.swift */,
 				A910E40423F85DF0008F9020 /* SCNGeometry+extension.swift */,
 				A9A3A9FC23F9CC5D00A19E17 /* SCNVector3+extension.swift */,
 				A993458D242FF4FF00C6B043 /* SCNView+extension.swift */,
@@ -659,12 +662,14 @@
 		A98C1CFE24913D3A00ACE393 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A9D810AB2497B2B900FDD5E5 /* Graphic */,
 				A9F3E7D524422C1A000D62A1 /* ProteinSceneConfiguration.swift */,
 				A9F3E7D724422C47000D62A1 /* ProteinSceneConfiguration+ColorMode.swift */,
-				A910E40E23F8838D008F9020 /* AtomNode.swift */,
 				A91DC1472491306E00E4A440 /* AtomNodeDictionaryReader.swift */,
 				A91DC14A2491309B00E4A440 /* AtomPair.swift */,
 				A98C1CFF24913D6500ACE393 /* Area3D.swift */,
+				A96BD66424937833004F1678 /* SCNAtomNode.swift */,
+				A96BD66624937880004F1678 /* SCNLigandNode.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -687,6 +692,15 @@
 				A9C7945B2450D77B00B5FFA2 /* URLBuilder.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		A9D810AB2497B2B900FDD5E5 /* Graphic */ = {
+			isa = PBXGroup;
+			children = (
+				A910E40E23F8838D008F9020 /* AtomGraphicData.swift */,
+				A9D810AC2497B2D200FDD5E5 /* LigandGraphicData.swift */,
+			);
+			path = Graphic;
 			sourceTree = "<group>";
 		};
 		A9F3E7D92442316F000D62A1 /* Ligand */ = {
@@ -871,6 +885,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A922802B23F83DB100BA4F5D /* LigandSceneViewController.swift in Sources */,
+				A9D810AD2497B2D200FDD5E5 /* LigandGraphicData.swift in Sources */,
 				A9934579242FCDEF00C6B043 /* FakeLigands.swift in Sources */,
 				A91CF352244C656B00294568 /* PDBAtomPosition.swift in Sources */,
 				A915629B24588F1100960140 /* UIColor+extension.swift in Sources */,
@@ -882,9 +897,9 @@
 				A9556068245F080F00181C91 /* LigandSearchController.swift in Sources */,
 				A91CF359244C7BEE00294568 /* PDBLigandConverter+Connect.swift in Sources */,
 				A9156289245830A000960140 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
+				A9643D4424977C7600744CED /* Array+SCNAtomNode.swift in Sources */,
 				A91CF350244C651400294568 /* AtomsList.swift in Sources */,
 				A92F4873248F805000294356 /* AtomCoordinatesView.swift in Sources */,
-				A993458C242FD52D00C6B043 /* SCNNode+Atom.swift in Sources */,
 				A91DC1482491306E00E4A440 /* AtomNodeDictionaryReader.swift in Sources */,
 				A9718EF2243B9AF5005DA378 /* UIView+gradient.swift in Sources */,
 				A91DC13F2491232E00E4A440 /* TipPopUpViewController.swift in Sources */,
@@ -897,10 +912,12 @@
 				A92A9C1F24560512004CA5D3 /* LigandCollectionViewCell.swift in Sources */,
 				A922804723F84E2C00BA4F5D /* SCNNode+extension.swift in Sources */,
 				A92A9C0B245352F2004CA5D3 /* Array+extension.swift in Sources */,
+				A96BD66724937880004F1678 /* SCNLigandNode.swift in Sources */,
 				A9718EF7243B9B78005DA378 /* ConstraintType.swift in Sources */,
 				A9556060245AD6F200181C91 /* LigandCollectionViewFlowLayout.swift in Sources */,
 				A922802723F83DB100BA4F5D /* AppDelegate.swift in Sources */,
 				A9597A7D244CC6E2004E732E /* PDBLigandProvider.swift in Sources */,
+				A96BD66524937833004F1678 /* SCNAtomNode.swift in Sources */,
 				A9556064245C487600181C91 /* Array+comparable.swift in Sources */,
 				A92A9C2424560874004CA5D3 /* DictionarySource.swift in Sources */,
 				A915629C24588F1100960140 /* UIColor+swifty.swift in Sources */,
@@ -946,11 +963,10 @@
 				A94FB077245F452200E4DFA3 /* AtomDetailsView.swift in Sources */,
 				A92F4879248FAF5D00294356 /* ErrorMessageView.swift in Sources */,
 				A9F3E7EC244247F7000D62A1 /* ClampedPropertyWrapper.swift in Sources */,
-				A91DC14D249130C300E4A440 /* Array+AtomNode.swift in Sources */,
 				A9718EF4243B9AF5005DA378 /* UIView+appearance.swift in Sources */,
 				A95560532458B55400181C91 /* UIScrollView+extension.swift in Sources */,
 				A92A9C2724561F15004CA5D3 /* LigandHeaderCollectionView.swift in Sources */,
-				A910E40F23F8838D008F9020 /* AtomNode.swift in Sources */,
+				A910E40F23F8838D008F9020 /* AtomGraphicData.swift in Sources */,
 				A91DC13A2490E98000E4A440 /* AtomDetailsPopUpViewController.swift in Sources */,
 				A96D48E52456DC06003FE291 /* SectionSource.swift in Sources */,
 				A92A9C1C24537BC3004CA5D3 /* TableViewSource.swift in Sources */,

@@ -1,4 +1,5 @@
 import Foundation
+import SceneKit
 
 /*******************************************************************************
  * Area3D
@@ -12,29 +13,29 @@ class Area3D {
   // MARK: - Properties
   //----------------------------------------------------------------------------
 
-  var min: PDBAtomPosition
-  var max: PDBAtomPosition
+  var min: SCNVector3
+  var max: SCNVector3
 
   //----------------------------------------------------------------------------
   // MARK: - Initialization
   //----------------------------------------------------------------------------
 
-  init(min: PDBAtomPosition, max: PDBAtomPosition) {
-    self.min = PDBAtomPosition(copy: min)
-    self.max = PDBAtomPosition(copy: max)
+  init(min: SCNVector3, max: SCNVector3) {
+    self.min = SCNVector3(min.x, min.y, min.z)
+    self.max = SCNVector3(max.x, max.y, max.z)
   }
 
   //----------------------------------------------------------------------------
   // MARK: - Methods
   //----------------------------------------------------------------------------
 
-  func update(min compare: PDBAtomPosition) {
+  func update(min compare: SCNVector3) {
     min.x = Swift.min(compare.x, min.x)
     min.y = Swift.min(compare.y, min.y)
     min.z = Swift.min(compare.z, min.z)
   }
 
-  func update(max compare: PDBAtomPosition) {
+  func update(max compare: SCNVector3) {
     max.x = Swift.max(compare.x, max.x)
     max.y = Swift.max(compare.y, max.y)
     max.z = Swift.max(compare.z, max.z)

@@ -6,4 +6,4 @@ import Foundation
  * Represent two linked atoms
  *
  ******************************************************************************/
-typealias AtomPair = PathBounds<AtomNode>
+typealias AtomPair = PathBounds<SCNAtomNode>
