@@ -308,6 +308,7 @@
 				A91CF34E244C650600294568 /* Atoms */,
 				A9718EF6243B9B78005DA378 /* ConstraintType.swift */,
 				A910E40723F87B83008F9020 /* PathBounds.swift */,
+				A98C1CFF24913D6500ACE393 /* Area3D.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -667,7 +668,6 @@
 				A9F3E7D724422C47000D62A1 /* ProteinSceneConfiguration+ColorMode.swift */,
 				A91DC1472491306E00E4A440 /* AtomNodeDictionaryReader.swift */,
 				A91DC14A2491309B00E4A440 /* AtomPair.swift */,
-				A98C1CFF24913D6500ACE393 /* Area3D.swift */,
 				A96BD66424937833004F1678 /* SCNAtomNode.swift */,
 				A96BD66624937880004F1678 /* SCNLigandNode.swift */,
 			);

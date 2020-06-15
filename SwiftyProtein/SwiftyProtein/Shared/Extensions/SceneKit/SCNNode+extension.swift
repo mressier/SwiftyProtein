@@ -23,26 +23,11 @@ extension SCNNode {
   //----------------------------------------------------------------------------
 
   func distance(to receiver: SCNNode) -> CGFloat {
-    let diff = difference(to: receiver)
-
-    let distance = Float(sqrt(
-      diff.x * diff.x
-        + diff.y * diff.y
-        + diff.z * diff.z
-    ))
-
-    return distance < 0 ? CGFloat(distance * -1) : CGFloat(distance)
+    return position.distance(to: receiver.position)
   }
 
   func difference(to receiver: SCNNode) -> SCNVector3 {
-    let source = position
-    let destination = receiver.position
-
-    let xDifference = destination.x - source.x
-    let yDifference = destination.y - source.y
-    let zDifference = destination.z - source.z
-
-    return SCNVector3(xDifference, yDifference, zDifference)
+    return position.difference(to: receiver.position)
   }
 
   private func translateToCenter(of node: SCNNode) {
