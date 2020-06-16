@@ -4,11 +4,15 @@ import SceneKit
 
 class Array_AtomNodeTests: XCTestCase {
 
-  let sampleAtomNodes =
-    SCNNode().createAtomNodes(forAtoms: FakeLigands.sample)
+  let ligandNode = SCNLigandNode()
 
-  let sampleHydrogenNodes =
-    SCNNode().createAtomNodes(forAtoms: FakeLigands.hydrogenSample)
+  private lazy var sampleAtomNodes: [SCNAtomNode] = {
+    return FakeLigands.sample.map() { SCNAtomNode(atom: $0) }
+  }()
+
+  private lazy var sampleHydrogenNodes: [SCNAtomNode] = {
+    return FakeLigands.hydrogenSample.map() { SCNAtomNode(atom: $0) }
+  }()
 
   //----------------------------------------------------------------------------
   // MARK: - Extract Atom Pairs
@@ -69,8 +73,8 @@ class Array_AtomNodeTests: XCTestCase {
   func testAreaCovered_Sample() {
     let atomNodes = sampleAtomNodes
     let expectedArea =
-      Area3D(min: PDBAtomPosition(x: -1.231, y: -0.99, z: -7.421),
-             max: PDBAtomPosition(x: 1.740, y: 1.234, z: -4.304))
+      Area3D(min: SCNVector3(x: -1.231, y: -0.99, z: -7.421),
+             max: SCNVector3(x: 1.740, y: 1.234, z: -4.304))
 
     // When
     let area = atomNodes.areaCovered

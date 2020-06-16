@@ -18,9 +18,9 @@ struct LigandGraphicData {
         lightAtom.position.multiplied(by: config.distanceMultiplier)
 
       let atom = AtomGraphicData(index: lightAtom.index,
+                                 name: lightAtom.symbol,
                                  position: position.toSCNVector3,
                                  color: config.getColor(for: lightAtom),
-                                 name: lightAtom.symbol,
                                  linkedAtomIndexes: lightAtom.linkedAtoms)
       return atom
     }

@@ -8,9 +8,9 @@ struct AtomGraphicData {
   //----------------------------------------------------------------------------
 
   let index: Int
+  let name: String
   let position: SCNVector3
   let color: UIColor?
-  let name: String
   let linkedAtomIndexes: [Int]
 
   /******************** UI Parameters ********************/
