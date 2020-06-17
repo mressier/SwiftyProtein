@@ -13,7 +13,7 @@ class LigandSceneViewController: UIViewController {
   @IBOutlet weak private var sceneView: SCNView!
 
   private var scene: SCNScene!
-  private var cameraNode: SCNNode!
+  private var cameraNode: SCNCameraNode!
   private var viewNode: SCNNode!
 
   /******************** UI Parameters ********************/
@@ -50,6 +50,7 @@ class LigandSceneViewController: UIViewController {
     setupLights(on: scene)
     setupCamera(on: scene.rootNode)
     setupViewNode(on: scene.rootNode)
+    setupLigandNode(on: viewNode)
     setupGesture()
   }
 
@@ -60,13 +61,10 @@ class LigandSceneViewController: UIViewController {
   }
 
   private func setupCamera(on rootNode: SCNNode) {
-    let camera = SCNCamera()
-
-    cameraNode = SCNNode()
-    cameraNode.camera = camera
-    cameraNode.position = cameraPosition
+    cameraNode = SCNCameraNode()
 
     rootNode.addChildNode(cameraNode)
+    cameraNode.setupCamera()
     cameraNode.constraintToLookAt(rootNode)
   }
 
@@ -78,11 +76,13 @@ class LigandSceneViewController: UIViewController {
     viewNode = SCNNode()
 
     rootNode.addChildNode(viewNode)
-
-    let ligand = SCNLigandNode()
-    viewNode.addChildNode(ligand)
-    self.ligand = ligand
 //    startAutoAnimation(on: viewNode)
+  }
+
+  private func setupLigandNode(on rootNode: SCNNode) {
+    let ligand = SCNLigandNode()
+    rootNode.addChildNode(ligand)
+    self.ligand = ligand
   }
 
   private func setupGesture() {
@@ -110,25 +110,7 @@ class LigandSceneViewController: UIViewController {
     ligand?.create(ligand: LigandGraphicData(atoms: atoms,
                                              config: configuration))
 
-    setCameraPosition(forNodes: ligand?.atomNodes ?? [])
-  }
-
-  private func setCameraPosition(forNodes nodes: [SCNAtomNode]) {
-    let area = nodes.areaCovered
-    let distance = PDBAtomPosition(x: area.max.x - area.min.x,
-                                   y: area.max.y - area.min.y,
-                                   z: area.max.z - area.min.z)
-    let highest = [distance.x, distance.y, distance.z].highest ?? -30
-
-    let y = Float(highest * -3)
-    let clampedY = y.clamped(min: -70, max: 70)
-
-    cameraNode.position = SCNVector3(x: 0, y: clampedY, z: 0)
-    cameraPosition = cameraNode.position
-  }
-
-  private func resetCameraPosition() {
-    cameraNode.position = cameraPosition
+    cameraNode.look(at: ligand)
   }
 
   //----------------------------------------------------------------------------
@@ -140,9 +122,19 @@ class LigandSceneViewController: UIViewController {
 
     let location = tap.location(in: sceneView)
 
-    guard let atomNode = sceneView.getNode(at: location),
-      let atomData = ligand?.toggleSelection(on: atomNode),
-      let atom = atoms.first(where: { $0.index == atomData.atom.index }) else {
+    guard let atomNode = sceneView.getNode(at: location) else {
+      print("No node at \(location)")
+      return
+    }
+
+    guard let atomData = ligand?.toggleSelection(on: atomNode) else {
+      print("Node touched is not an atom")
+      return
+    }
+
+    guard let atom =
+      atoms.first(where: { $0.index == atomData.atom.index }) else {
+        print("ERROR: Cannot found an atom with the same index as selected atom node")
         return
     }
 

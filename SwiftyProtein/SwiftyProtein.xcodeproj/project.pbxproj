@@ -46,6 +46,7 @@
 		A922804723F84E2C00BA4F5D /* SCNNode+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A922804623F84E2C00BA4F5D /* SCNNode+extension.swift */; };
 		A926C400248EB78D00B01186 /* LabelStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A926C3FF248EB78D00B01186 /* LabelStackView.swift */; };
 		A92A538A249A156D00E0144D /* UIView+animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92A5389249A156D00E0144D /* UIView+animation.swift */; };
+		A92A538D249A2BC600E0144D /* SCNCameraNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92A538C249A2BC600E0144D /* SCNCameraNode.swift */; };
 		A92A9C0B245352F2004CA5D3 /* Array+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92A9C0A245352F2004CA5D3 /* Array+extension.swift */; };
 		A92A9C0D245353EB004CA5D3 /* PDBLigandConverter+MergeConnectionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92A9C0C245353EB004CA5D3 /* PDBLigandConverter+MergeConnectionsTests.swift */; };
 		A92A9C1024536A1D004CA5D3 /* LigandListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92A9C0F24536A1D004CA5D3 /* LigandListViewController.swift */; };
@@ -180,6 +181,7 @@
 		A922804623F84E2C00BA4F5D /* SCNNode+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNNode+extension.swift"; sourceTree = "<group>"; };
 		A926C3FF248EB78D00B01186 /* LabelStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelStackView.swift; sourceTree = "<group>"; };
 		A92A5389249A156D00E0144D /* UIView+animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+animation.swift"; sourceTree = "<group>"; };
+		A92A538C249A2BC600E0144D /* SCNCameraNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCNCameraNode.swift; sourceTree = "<group>"; };
 		A92A9C0A245352F2004CA5D3 /* Array+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+extension.swift"; sourceTree = "<group>"; };
 		A92A9C0C245353EB004CA5D3 /* PDBLigandConverter+MergeConnectionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDBLigandConverter+MergeConnectionsTests.swift"; sourceTree = "<group>"; };
 		A92A9C0F24536A1D004CA5D3 /* LigandListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigandListViewController.swift; sourceTree = "<group>"; };
@@ -500,6 +502,16 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		A92A538B249A2BAA00E0144D /* Node */ = {
+			isa = PBXGroup;
+			children = (
+				A96BD66424937833004F1678 /* SCNAtomNode.swift */,
+				A96BD66624937880004F1678 /* SCNLigandNode.swift */,
+				A92A538C249A2BC600E0144D /* SCNCameraNode.swift */,
+			);
+			path = Node;
+			sourceTree = "<group>";
+		};
 		A92A9C0E24536A06004CA5D3 /* LigandList */ = {
 			isa = PBXGroup;
 			children = (
@@ -669,13 +681,12 @@
 		A98C1CFE24913D3A00ACE393 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A92A538B249A2BAA00E0144D /* Node */,
 				A9D810AB2497B2B900FDD5E5 /* Graphic */,
 				A9F3E7D524422C1A000D62A1 /* ProteinSceneConfiguration.swift */,
 				A9F3E7D724422C47000D62A1 /* ProteinSceneConfiguration+ColorMode.swift */,
 				A91DC1472491306E00E4A440 /* AtomNodeDictionaryReader.swift */,
 				A91DC14A2491309B00E4A440 /* AtomPair.swift */,
-				A96BD66424937833004F1678 /* SCNAtomNode.swift */,
-				A96BD66624937880004F1678 /* SCNLigandNode.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -951,6 +962,7 @@
 				A94FB070245F2F8D00E4DFA3 /* LoadingView.swift in Sources */,
 				A9718EF3243B9AF5005DA378 /* UIView+extension.swift in Sources */,
 				A91CF35B244C7DE800294568 /* PDBAtom.swift in Sources */,
+				A92A538D249A2BC600E0144D /* SCNCameraNode.swift in Sources */,
 				A94FB072245F3D5C00E4DFA3 /* MessageView.swift in Sources */,
 				A9597A7F244CC719004E732E /* PDBLigand.swift in Sources */,
 				A910E40D23F87ED6008F9020 /* LightLigandProvider.swift in Sources */,
