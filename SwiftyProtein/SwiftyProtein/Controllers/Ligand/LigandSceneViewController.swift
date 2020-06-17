@@ -98,7 +98,7 @@ class LigandSceneViewController: UIViewController {
   }
 
   //----------------------------------------------------------------------------
-  // MARK: - Reload
+  // MARK: - Methods
   //----------------------------------------------------------------------------
 
   func reload() {
@@ -107,6 +107,10 @@ class LigandSceneViewController: UIViewController {
                                              config: configuration))
 
     cameraNode.look(at: ligand)
+  }
+
+  func takeSnapshot() -> UIImage {
+    return sceneView.snapshot()
   }
 
   //----------------------------------------------------------------------------

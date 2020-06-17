@@ -22,7 +22,7 @@ class LigandViewController: UIViewController {
 
   var configuration = LigandSceneConfiguration(colorMode: .cpk)
 
-  let provider = LightLigandProvider()
+  private let provider = LightLigandProvider()
 
   /******************** View controllers ********************/
 
@@ -46,6 +46,30 @@ class LigandViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     loadLigand(ligand)
+  }
+
+  //----------------------------------------------------------------------------
+  // MARK: - Actions
+  //----------------------------------------------------------------------------
+
+  @IBAction func shareButtonTouched(_ sender: UIBarButtonItem) {
+    let image = ligandSceneVC.takeSnapshot().jpegData(compressionQuality: 0.8)
+
+    guard let ligand = ligand, let atomImage = image else {
+      print("Missing ligand or image")
+      return
+    }
+    showShareAction(for: ligand, image: atomImage)
+  }
+
+  private func showShareAction(for ligand: String,
+                               image: Data) {
+    let title = "Take a look at this ligand: \(ligand)"
+    let vc = UIActivityViewController(activityItems: [title, image],
+                                      applicationActivities: [])
+    vc.popoverPresentationController?.barButtonItem =
+      navigationItem.rightBarButtonItem
+    present(vc, animated: true)
   }
 
   //----------------------------------------------------------------------------

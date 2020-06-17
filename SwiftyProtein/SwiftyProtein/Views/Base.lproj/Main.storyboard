@@ -111,6 +111,11 @@
                                 <segue destination="99P-C2-AP1" kind="unwind" unwindAction="unwindToListViewController:" id="tgV-5E-yMW"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="action" id="NXe-AW-RAj">
+                            <connections>
+                                <action selector="shareButtonTouched:" destination="lUM-Sp-M6v" id="D26-2G-rca"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="ligandSceneContainerView" destination="OHZ-mE-Xy3" id="S18-5S-nIP"/>
