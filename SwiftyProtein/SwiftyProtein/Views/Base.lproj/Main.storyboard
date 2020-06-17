@@ -57,7 +57,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RCH-3E-bW1"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Swifty Protein" id="yhL-Lh-InA"/>
+                    <navigationItem key="navigationItem" title="Swifty Protein" largeTitleDisplayMode="always" id="yhL-Lh-InA"/>
                     <connections>
                         <outlet property="ligandListContainerView" destination="Joc-mW-7x1" id="Vbm-6A-RjJ"/>
                         <segue destination="lUM-Sp-M6v" kind="show" identifier="segueToLigandView" id="tbf-gG-6bI"/>
@@ -111,7 +111,7 @@
                                 <segue destination="99P-C2-AP1" kind="unwind" unwindAction="unwindToListViewController:" id="tgV-5E-yMW"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="action" id="NXe-AW-RAj">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" style="plain" systemItem="action" id="NXe-AW-RAj">
                             <connections>
                                 <action selector="shareButtonTouched:" destination="lUM-Sp-M6v" id="D26-2G-rca"/>
                             </connections>
@@ -121,6 +121,7 @@
                         <outlet property="ligandSceneContainerView" destination="OHZ-mE-Xy3" id="S18-5S-nIP"/>
                         <outlet property="loadingView" destination="qnl-iU-vkN" id="Gd2-eG-GHQ"/>
                         <outlet property="messageView" destination="5Qh-lW-5RR" id="HXs-S1-4Ry"/>
+                        <outlet property="shareButtonItem" destination="NXe-AW-RAj" id="tlb-HH-wfc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EBt-TN-X2F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

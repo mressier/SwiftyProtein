@@ -9,6 +9,7 @@ class LigandViewController: UIViewController {
   @IBOutlet weak var ligandSceneContainerView: UIView!
   @IBOutlet weak var loadingView: LoadingView!
   @IBOutlet weak var messageView: MessageView!
+  @IBOutlet weak var shareButtonItem: UIBarButtonItem!
 
   /******************** Computed properties ********************/
 
@@ -164,7 +165,6 @@ class LigandViewController: UIViewController {
     provider.view = self
     provider.delegate = self
   }
-
 }
 
 //==============================================================================
@@ -173,6 +173,7 @@ class LigandViewController: UIViewController {
 
 extension LigandViewController: LightLigandProviderDelegate {
   func didGetLigand(_ ligand: PDBLightLigand) {
+    shareButtonItem.isEnabled = true
     ligandSceneVC.atoms = ligand.atoms
     ligandSceneVC.reload()
   }
