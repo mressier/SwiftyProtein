@@ -30,7 +30,7 @@
             </objects>
             <point key="canvasLocation" x="-1000" y="117"/>
         </scene>
-        <!--Swifty Protein-->
+        <!--Ligands-->
         <scene sceneID="Eyt-ZI-NbW">
             <objects>
                 <viewController id="nnP-5G-zlG" customClass="LigandListViewController" customModule="SwiftyProtein" customModuleProvider="target" sceneMemberID="viewController">
@@ -57,7 +57,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RCH-3E-bW1"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Swifty Protein" largeTitleDisplayMode="always" id="yhL-Lh-InA"/>
+                    <navigationItem key="navigationItem" title="Ligands" id="yhL-Lh-InA"/>
                     <connections>
                         <outlet property="ligandListContainerView" destination="Joc-mW-7x1" id="Vbm-6A-RjJ"/>
                         <segue destination="lUM-Sp-M6v" kind="show" identifier="segueToLigandView" id="tbf-gG-6bI"/>
