@@ -121,6 +121,7 @@
 		A9C7945C2450D77B00B5FFA2 /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7945B2450D77B00B5FFA2 /* URLBuilder.swift */; };
 		A9C7945E2450D89D00B5FFA2 /* PDBRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7945D2450D89D00B5FFA2 /* PDBRequest.swift */; };
 		A9D810AD2497B2D200FDD5E5 /* LigandGraphicData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D810AC2497B2D200FDD5E5 /* LigandGraphicData.swift */; };
+		A9E7A96F249A926B0028DAB3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E7A96E249A926B0028DAB3 /* LoginViewController.swift */; };
 		A9F3E7D4244221CD000D62A1 /* AtomInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F3E7D3244221CD000D62A1 /* AtomInfo.swift */; };
 		A9F3E7D624422C1A000D62A1 /* ProteinSceneConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F3E7D524422C1A000D62A1 /* ProteinSceneConfiguration.swift */; };
 		A9F3E7D824422C47000D62A1 /* ProteinSceneConfiguration+ColorMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F3E7D724422C47000D62A1 /* ProteinSceneConfiguration+ColorMode.swift */; };
@@ -256,6 +257,7 @@
 		A9C7945B2450D77B00B5FFA2 /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
 		A9C7945D2450D89D00B5FFA2 /* PDBRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDBRequest.swift; sourceTree = "<group>"; };
 		A9D810AC2497B2D200FDD5E5 /* LigandGraphicData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigandGraphicData.swift; sourceTree = "<group>"; };
+		A9E7A96E249A926B0028DAB3 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A9F3E7D3244221CD000D62A1 /* AtomInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomInfo.swift; sourceTree = "<group>"; };
 		A9F3E7D524422C1A000D62A1 /* ProteinSceneConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProteinSceneConfiguration.swift; sourceTree = "<group>"; };
 		A9F3E7D724422C47000D62A1 /* ProteinSceneConfiguration+ColorMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProteinSceneConfiguration+ColorMode.swift"; sourceTree = "<group>"; };
@@ -452,6 +454,7 @@
 		A922804223F84DF700BA4F5D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A9E7A96B249A8F2C0028DAB3 /* Welcome */,
 				A91DC13C2491231000E4A440 /* Tips */,
 				A92A9C0E24536A06004CA5D3 /* LigandList */,
 				A9F3E7D92442316F000D62A1 /* Ligand */,
@@ -737,6 +740,14 @@
 			path = Graphic;
 			sourceTree = "<group>";
 		};
+		A9E7A96B249A8F2C0028DAB3 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				A9E7A96E249A926B0028DAB3 /* LoginViewController.swift */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
 		A9F3E7D92442316F000D62A1 /* Ligand */ = {
 			isa = PBXGroup;
 			children = (
@@ -935,6 +946,7 @@
 				A92F4873248F805000294356 /* AtomCoordinatesView.swift in Sources */,
 				A91DC1482491306E00E4A440 /* AtomNodeDictionaryReader.swift in Sources */,
 				A9718EF2243B9AF5005DA378 /* UIView+gradient.swift in Sources */,
+				A9E7A96F249A926B0028DAB3 /* LoginViewController.swift in Sources */,
 				A91DC13F2491232E00E4A440 /* TipPopUpViewController.swift in Sources */,
 				A92A9C1024536A1D004CA5D3 /* LigandListViewController.swift in Sources */,
 				A94DD750244CB9480034C6AF /* PDBLigandConverter+End.swift in Sources */,
