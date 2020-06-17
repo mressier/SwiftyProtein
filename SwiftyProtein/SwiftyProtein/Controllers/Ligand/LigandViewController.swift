@@ -22,7 +22,7 @@ class LigandViewController: UIViewController {
 
   var configuration = LigandSceneConfiguration(colorMode: .cpk)
 
-  private var isLoading: Bool = false
+  let provider = LightLigandProvider()
 
   /******************** View controllers ********************/
 
@@ -45,44 +45,27 @@ class LigandViewController: UIViewController {
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-
-    guard let ligand = ligand else { return }
-    loadLigand(name: ligand)
+    loadLigand(ligand)
   }
 
   //----------------------------------------------------------------------------
   // MARK: - Load
   //----------------------------------------------------------------------------
 
-  private func loadLigand(name: String) {
-    self.title = name
+  private func loadLigand(_ ligand: String?) {
+    guard let ligand = ligand else { return }
 
-    toggleLoagingView(isLoading: true)
-    LightLigandProvider.get(ligand: name) { [weak self] result in
-      switch result {
-      case .success(let ligand):
-        self?.ligandSceneVC.atoms = ligand.atoms
-        self?.ligandSceneVC.reload() { [weak self] in self?.toggleLoagingView(isLoading: false) }
-      default:
-        // change message depending on error
-        self?.toggleMessageView(showMessage: true)
-        self?.toggleLoagingView(isLoading: false)
-      }
-    }
+    title = ligand
+    provider.get(ligand: ligand)
   }
 
-  private func toggleLoagingView(isLoading: Bool, animated: Bool = true) {
-    self.isLoading = isLoading
-
-    UIView.animate(withDuration: animated ? 0.5 : 0.0) {
-      self.loadingView?.alpha = isLoading ? 1.0 : 0.0
-    }
-  }
+  //----------------------------------------------------------------------------
+  // MARK: - Toggle views
+  //----------------------------------------------------------------------------
 
   private func toggleMessageView(showMessage: Bool, animated: Bool = true) {
-    UIView.animate(withDuration: animated ? 0.5 : 0.0) {
-      self.messageView?.alpha = showMessage ? 1.0 : 0.0
-    }
+    showMessage ? messageView.fadeIn(animated: animated)
+      : messageView.fadeOut(animated: animated)
   }
 
   //----------------------------------------------------------------------------
@@ -125,6 +108,7 @@ class LigandViewController: UIViewController {
     setupAtomDetailView()
     setupLoadingView()
     setupMessageView()
+    setupProvider()
   }
 
   private func setupLigandSceneVC() {
@@ -152,4 +136,35 @@ class LigandViewController: UIViewController {
     toggleMessageView(showMessage: false, animated: false)
   }
 
+  private func setupProvider() {
+    provider.view = self
+    provider.delegate = self
+  }
+
+}
+
+//==============================================================================
+// MARK: - LightLigandProviderDelegate
+//==============================================================================
+
+extension LigandViewController: LightLigandProviderDelegate {
+  func didGetLigand(_ ligand: PDBLightLigand) {
+    ligandSceneVC.atoms = ligand.atoms
+    ligandSceneVC.reload()
+  }
+
+  func didFailGetLigand(_ error: Error) {
+    print(error)
+    toggleMessageView(showMessage: true)
+  }
+}
+
+//==============================================================================
+// MARK: - LightLigandProviderView
+//==============================================================================
+
+extension LigandViewController: LightLigandProviderView {
+  func setIsLoading(_ isLoading: Bool) {
+    isLoading ? loadingView.fadeIn() : loadingView.fadeOut()
+  }
 }

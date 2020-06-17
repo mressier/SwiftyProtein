@@ -105,14 +105,12 @@ class LigandSceneViewController: UIViewController {
   // MARK: - Reload
   //----------------------------------------------------------------------------
 
-  func reload(completion: (() -> Void)?) {
+  func reload() {
     ligand?.removeLigand()
     ligand?.create(ligand: LigandGraphicData(atoms: atoms,
                                              config: configuration))
 
     setCameraPosition(forNodes: ligand?.atomNodes ?? [])
-
-    completion?()
   }
 
   private func setCameraPosition(forNodes nodes: [SCNAtomNode]) {
