@@ -45,6 +45,7 @@
 		A922804123F846A700BA4F5D /* ligands.txt in Resources */ = {isa = PBXBuildFile; fileRef = A922803E23F846A700BA4F5D /* ligands.txt */; };
 		A922804723F84E2C00BA4F5D /* SCNNode+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A922804623F84E2C00BA4F5D /* SCNNode+extension.swift */; };
 		A926C400248EB78D00B01186 /* LabelStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A926C3FF248EB78D00B01186 /* LabelStackView.swift */; };
+		A92A538A249A156D00E0144D /* UIView+animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92A5389249A156D00E0144D /* UIView+animation.swift */; };
 		A92A9C0B245352F2004CA5D3 /* Array+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92A9C0A245352F2004CA5D3 /* Array+extension.swift */; };
 		A92A9C0D245353EB004CA5D3 /* PDBLigandConverter+MergeConnectionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92A9C0C245353EB004CA5D3 /* PDBLigandConverter+MergeConnectionsTests.swift */; };
 		A92A9C1024536A1D004CA5D3 /* LigandListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92A9C0F24536A1D004CA5D3 /* LigandListViewController.swift */; };
@@ -113,6 +114,7 @@
 		A993458A242FD1B400C6B043 /* Array+AtomNodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9934589242FD1B400C6B043 /* Array+AtomNodeTests.swift */; };
 		A993458E242FF4FF00C6B043 /* SCNView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A993458D242FF4FF00C6B043 /* SCNView+extension.swift */; };
 		A9A3A9FD23F9CC5D00A19E17 /* SCNVector3+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A3A9FC23F9CC5D00A19E17 /* SCNVector3+extension.swift */; };
+		A9B0B3682499419100207CE1 /* CustomableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B0B3672499419100207CE1 /* CustomableViewController.swift */; };
 		A9C794582450D69E00B5FFA2 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C794572450D69E00B5FFA2 /* NetworkRequest.swift */; };
 		A9C7945A2450D73300B5FFA2 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C794592450D73300B5FFA2 /* RequestError.swift */; };
 		A9C7945C2450D77B00B5FFA2 /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7945B2450D77B00B5FFA2 /* URLBuilder.swift */; };
@@ -177,6 +179,7 @@
 		A922803E23F846A700BA4F5D /* ligands.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ligands.txt; sourceTree = "<group>"; };
 		A922804623F84E2C00BA4F5D /* SCNNode+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNNode+extension.swift"; sourceTree = "<group>"; };
 		A926C3FF248EB78D00B01186 /* LabelStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelStackView.swift; sourceTree = "<group>"; };
+		A92A5389249A156D00E0144D /* UIView+animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+animation.swift"; sourceTree = "<group>"; };
 		A92A9C0A245352F2004CA5D3 /* Array+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+extension.swift"; sourceTree = "<group>"; };
 		A92A9C0C245353EB004CA5D3 /* PDBLigandConverter+MergeConnectionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDBLigandConverter+MergeConnectionsTests.swift"; sourceTree = "<group>"; };
 		A92A9C0F24536A1D004CA5D3 /* LigandListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigandListViewController.swift; sourceTree = "<group>"; };
@@ -245,6 +248,7 @@
 		A9934589242FD1B400C6B043 /* Array+AtomNodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+AtomNodeTests.swift"; sourceTree = "<group>"; };
 		A993458D242FF4FF00C6B043 /* SCNView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNView+extension.swift"; sourceTree = "<group>"; };
 		A9A3A9FC23F9CC5D00A19E17 /* SCNVector3+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNVector3+extension.swift"; sourceTree = "<group>"; };
+		A9B0B3672499419100207CE1 /* CustomableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomableViewController.swift; sourceTree = "<group>"; };
 		A9C794572450D69E00B5FFA2 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		A9C794592450D73300B5FFA2 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		A9C7945B2450D77B00B5FFA2 /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
@@ -456,6 +460,7 @@
 		A922804323F84DFD00BA4F5D /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				A9B0B3662499418000207CE1 /* Controllers */,
 				A92A9C1524537BC3004CA5D3 /* Tools */,
 				A91CF353244C7B8800294568 /* PDB */,
 				A9C794562450D68D00B5FFA2 /* Network */,
@@ -645,6 +650,7 @@
 				A9718EED243B9AF5005DA378 /* UIView+gradient.swift */,
 				A9718EEE243B9AF5005DA378 /* UIView+extension.swift */,
 				A9718EEF243B9AF5005DA378 /* UIView+appearance.swift */,
+				A92A5389249A156D00E0144D /* UIView+animation.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -684,6 +690,23 @@
 			path = SwiftyProteinTests;
 			sourceTree = "<group>";
 		};
+		A9B0B36124993E5A00207CE1 /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				A94FB06F245F2F8D00E4DFA3 /* LoadingView.swift */,
+				A94FB06D245F2F8400E4DFA3 /* LoadingView.xib */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
+		A9B0B3662499418000207CE1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A9B0B3672499419100207CE1 /* CustomableViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		A9C794562450D68D00B5FFA2 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -719,9 +742,8 @@
 		A9F3E7E1244235A8000D62A1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A9B0B36124993E5A00207CE1 /* Loading */,
 				A915628A245830B700960140 /* CollectionViewLayout */,
-				A94FB06D245F2F8400E4DFA3 /* LoadingView.xib */,
-				A94FB06F245F2F8D00E4DFA3 /* LoadingView.swift */,
 				A94FB073245F3D6700E4DFA3 /* MessageView.xib */,
 				A94FB071245F3D5C00E4DFA3 /* MessageView.swift */,
 				A926C3FF248EB78D00B01186 /* LabelStackView.swift */,
@@ -922,6 +944,7 @@
 				A92A9C2424560874004CA5D3 /* DictionarySource.swift in Sources */,
 				A915629C24588F1100960140 /* UIColor+swifty.swift in Sources */,
 				A92F487D248FC11D00294356 /* AtomDetailsInformationsView.swift in Sources */,
+				A9B0B3682499419100207CE1 /* CustomableViewController.swift in Sources */,
 				A9C7945C2450D77B00B5FFA2 /* URLBuilder.swift in Sources */,
 				A90CA9B42456CE5B000BBE60 /* LigandsAppList.swift in Sources */,
 				A922803F23F846A700BA4F5D /* Assets.swift in Sources */,
@@ -933,6 +956,7 @@
 				A910E40D23F87ED6008F9020 /* LightLigandProvider.swift in Sources */,
 				A987F9C2245758EF00086D5C /* Array+string.swift in Sources */,
 				A96D48E72456E422003FE291 /* LigandsCollection.swift in Sources */,
+				A92A538A249A156D00E0144D /* UIView+animation.swift in Sources */,
 				A92A9C1324536EF4004CA5D3 /* LigandCollectionViewController.swift in Sources */,
 				A9F3E7D624422C1A000D62A1 /* ProteinSceneConfiguration.swift in Sources */,
 				A91CF357244C7BC100294568 /* PDBLigandConverter+Atom.swift in Sources */,
