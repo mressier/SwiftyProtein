@@ -47,7 +47,6 @@ class LigandSceneViewController: UIViewController {
 
   private func setup() {
     setupScene()
-    setupLights(on: scene)
     setupCamera(on: scene.rootNode)
     setupViewNode(on: scene.rootNode)
     setupLigandNode(on: viewNode)
@@ -58,6 +57,7 @@ class LigandSceneViewController: UIViewController {
     scene = SCNScene()
     sceneView.scene = scene
     sceneView.allowsCameraControl = true
+    sceneView.autoenablesDefaultLighting = true
   }
 
   private func setupCamera(on rootNode: SCNNode) {
@@ -66,10 +66,6 @@ class LigandSceneViewController: UIViewController {
     rootNode.addChildNode(cameraNode)
     cameraNode.setupCamera()
     cameraNode.constraintToLookAt(rootNode)
-  }
-
-  private func setupLights(on scene: SCNScene) {
-    sceneView.autoenablesDefaultLighting = true
   }
 
   private func setupViewNode(on rootNode: SCNNode) {
