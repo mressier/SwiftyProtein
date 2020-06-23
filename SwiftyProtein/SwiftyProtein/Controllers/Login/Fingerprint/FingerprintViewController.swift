@@ -1,16 +1,13 @@
 import UIKit
 import LocalAuthentication
 
-class AuthButtonViewController: UIViewController {
+class FingerprintViewController: UIViewController {
 
   //----------------------------------------------------------------------------
   // MARK: - Properties
   //----------------------------------------------------------------------------
 
-  @IBOutlet weak var buttonImageView: UIImageView!
-  @IBOutlet weak var buttonLabel: UILabel!
-  @IBOutlet weak var backgroundButtonView: UIView!
-  @IBOutlet weak var blurView: UIVisualEffectView!
+  @IBOutlet weak var fingerprintButton: FingerprintButtonView!
 
   /******************** Parameters ********************/
 
@@ -63,29 +60,22 @@ class AuthButtonViewController: UIViewController {
 
   private func authenticationDidFailed() {
     UIView.animate(withDuration: 0.2) {
-      self.buttonImageView.tintColor = .systemRed
+      self.fingerprintButton.setAsFailure(message: "Touch to retry")
     }
 
-    self.buttonLabel.isHidden = false
-    self.buttonLabel.text = "Touch to retry"
-    self.buttonLabel.textColor = .systemRed
   }
 
   private func authenticationIsUnavailable() {
-    buttonImageView.isHidden = true
-    buttonLabel.isHidden = false
+    fingerprintButton.setAsDefault(message: "Enter")
+    fingerprintButton.hideFingerprintImage()
   }
 
   private func authenticationDidSucceed() {
     let duration = TimeInterval(0.2)
 
     UIView.animate(withDuration: duration) {
-      self.buttonImageView.tintColor = .swiftyBlueGreen
+      self.fingerprintButton.setAsSuccess()
     }
-
-    self.buttonLabel.isHidden = true
-    self.buttonLabel.tintColor = .swiftyDarkBlue
-    self.buttonImageView.tintColor = .swiftyDarkBlue
 
     DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
       self.didComplete?()
@@ -97,40 +87,28 @@ class AuthButtonViewController: UIViewController {
   //----------------------------------------------------------------------------
 
   private func setup() {
-    setupImageView()
-    setupButtonLabel()
-    setupBlurView()
-    setupBackgroundViewAsButton()
+    setupFingerprintButton()
+    setupFingerprintButtonAction()
     setupAuthProvider()
   }
 
-  private func setupImageView() {
+  private func setupFingerprintButton() {
+    fingerprintButton.setAsCircle()
+    fingerprintButton.setAsDefault(message: "Enter")
+    fingerprintButton.successColor = .swiftyBlueGreen
+    fingerprintButton.failureColor = .systemRed
+    fingerprintButton.defaultColor = .swiftyDarkBlue
+
     guard shouldAuthenticate else {
-      buttonImageView.isHidden = true
+      fingerprintButton.hideFingerprintImage()
       return
     }
-
-    buttonImageView.image = SPAssets.fingerprint.image.alwaysTemplate
-    buttonImageView.tintColor = .swiftyDarkBlue
   }
 
-  private func setupButtonLabel() {
-    guard !shouldAuthenticate else {
-      buttonLabel.isHidden = true
-      return
-    }
-
-    buttonLabel.textColor = .swiftyDarkBlue
-  }
-
-  private func setupBlurView() {
-    blurView.setAsCircle()
-  }
-
-  private func setupBackgroundViewAsButton() {
+  private func setupFingerprintButtonAction() {
     let selector = #selector(self.authButtonDidTapped)
     let tap = UITapGestureRecognizer(target: self, action: selector)
-    backgroundButtonView.addGestureRecognizer(tap)
+    fingerprintButton.addGestureRecognizer(tap)
   }
 
   private func setupAuthProvider() {
@@ -143,7 +121,7 @@ class AuthButtonViewController: UIViewController {
 // MARK: - Local Authentication Provider
 //==============================================================================
 
-extension AuthButtonViewController:
+extension FingerprintViewController:
   LocalAuthenticationDelegate,
   LocalAuthenticationView
 {
@@ -159,7 +137,6 @@ extension AuthButtonViewController:
   }
 
   func didStartAuthentication() {
-    buttonLabel.tintColor = .swiftyBlue
   }
 
 }

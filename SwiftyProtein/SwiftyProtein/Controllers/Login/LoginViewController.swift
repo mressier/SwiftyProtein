@@ -12,8 +12,8 @@ class LoginViewController: UIViewController {
 
   /******************** VC ********************/
 
-  private lazy var authButtonVC: AuthButtonViewController = {
-    return AuthButtonViewController(bundle: .main)
+  private lazy var authButtonVC: FingerprintViewController = {
+    return FingerprintViewController(bundle: .main)
   }()
 
   //----------------------------------------------------------------------------
@@ -23,10 +23,6 @@ class LoginViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setup()
-  }
-
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
     authButtonVC.startAuthentication()
   }
 

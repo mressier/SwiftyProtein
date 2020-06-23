@@ -46,8 +46,8 @@
 		A922804123F846A700BA4F5D /* ligands.txt in Resources */ = {isa = PBXBuildFile; fileRef = A922803E23F846A700BA4F5D /* ligands.txt */; };
 		A922804723F84E2C00BA4F5D /* SCNNode+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A922804623F84E2C00BA4F5D /* SCNNode+extension.swift */; };
 		A926C400248EB78D00B01186 /* LabelStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A926C3FF248EB78D00B01186 /* LabelStackView.swift */; };
-		A927CFCB249B960F00F41F74 /* AuthButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A927CFC9249B960F00F41F74 /* AuthButtonViewController.swift */; };
-		A927CFCC249B960F00F41F74 /* AuthButtonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A927CFCA249B960F00F41F74 /* AuthButtonViewController.xib */; };
+		A927CFCB249B960F00F41F74 /* FingerprintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A927CFC9249B960F00F41F74 /* FingerprintViewController.swift */; };
+		A927CFCC249B960F00F41F74 /* FingerprintViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A927CFCA249B960F00F41F74 /* FingerprintViewController.xib */; };
 		A92A538A249A156D00E0144D /* UIView+animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92A5389249A156D00E0144D /* UIView+animation.swift */; };
 		A92A538D249A2BC600E0144D /* SCNCameraNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92A538C249A2BC600E0144D /* SCNCameraNode.swift */; };
 		A92A9C0B245352F2004CA5D3 /* Array+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92A9C0A245352F2004CA5D3 /* Array+extension.swift */; };
@@ -118,6 +118,8 @@
 		A9934582242FD19200C6B043 /* SwiftyProteinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9934581242FD19200C6B043 /* SwiftyProteinTests.swift */; };
 		A993458A242FD1B400C6B043 /* Array+AtomNodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9934589242FD1B400C6B043 /* Array+AtomNodeTests.swift */; };
 		A993458E242FF4FF00C6B043 /* SCNView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A993458D242FF4FF00C6B043 /* SCNView+extension.swift */; };
+		A9A03BAE24A28926004F553E /* FingerprintButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9A03BAD24A28926004F553E /* FingerprintButtonView.xib */; };
+		A9A03BB024A28936004F553E /* FingerprintButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A03BAF24A28936004F553E /* FingerprintButtonView.swift */; };
 		A9A3A9FD23F9CC5D00A19E17 /* SCNVector3+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A3A9FC23F9CC5D00A19E17 /* SCNVector3+extension.swift */; };
 		A9B0B3682499419100207CE1 /* CustomableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B0B3672499419100207CE1 /* CustomableViewController.swift */; };
 		A9C794582450D69E00B5FFA2 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C794572450D69E00B5FFA2 /* NetworkRequest.swift */; };
@@ -186,8 +188,8 @@
 		A922803E23F846A700BA4F5D /* ligands.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ligands.txt; sourceTree = "<group>"; };
 		A922804623F84E2C00BA4F5D /* SCNNode+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNNode+extension.swift"; sourceTree = "<group>"; };
 		A926C3FF248EB78D00B01186 /* LabelStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelStackView.swift; sourceTree = "<group>"; };
-		A927CFC9249B960F00F41F74 /* AuthButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButtonViewController.swift; sourceTree = "<group>"; };
-		A927CFCA249B960F00F41F74 /* AuthButtonViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthButtonViewController.xib; sourceTree = "<group>"; };
+		A927CFC9249B960F00F41F74 /* FingerprintViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FingerprintViewController.swift; sourceTree = "<group>"; };
+		A927CFCA249B960F00F41F74 /* FingerprintViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FingerprintViewController.xib; sourceTree = "<group>"; };
 		A92A5389249A156D00E0144D /* UIView+animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+animation.swift"; sourceTree = "<group>"; };
 		A92A538C249A2BC600E0144D /* SCNCameraNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCNCameraNode.swift; sourceTree = "<group>"; };
 		A92A9C0A245352F2004CA5D3 /* Array+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+extension.swift"; sourceTree = "<group>"; };
@@ -258,6 +260,8 @@
 		A9934583242FD19200C6B043 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9934589242FD1B400C6B043 /* Array+AtomNodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+AtomNodeTests.swift"; sourceTree = "<group>"; };
 		A993458D242FF4FF00C6B043 /* SCNView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNView+extension.swift"; sourceTree = "<group>"; };
+		A9A03BAD24A28926004F553E /* FingerprintButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FingerprintButtonView.xib; sourceTree = "<group>"; };
+		A9A03BAF24A28936004F553E /* FingerprintButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FingerprintButtonView.swift; sourceTree = "<group>"; };
 		A9A3A9FC23F9CC5D00A19E17 /* SCNVector3+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNVector3+extension.swift"; sourceTree = "<group>"; };
 		A9B0B3672499419100207CE1 /* CustomableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomableViewController.swift; sourceTree = "<group>"; };
 		A9C794572450D69E00B5FFA2 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
@@ -535,7 +539,6 @@
 		A92A9C0E24536A06004CA5D3 /* LigandList */ = {
 			isa = PBXGroup;
 			children = (
-				A955605A2459E79200181C91 /* ScrollBar */,
 				A90CA9B22456CE3A000BBE60 /* Models */,
 				A90CA9B12456CE26000BBE60 /* LigandCollectionView */,
 				A92A9C0F24536A1D004CA5D3 /* LigandListViewController.swift */,
@@ -722,6 +725,17 @@
 			path = SwiftyProteinTests;
 			sourceTree = "<group>";
 		};
+		A9A03BAC24A288D8004F553E /* Fingerprint */ = {
+			isa = PBXGroup;
+			children = (
+				A927CFC9249B960F00F41F74 /* FingerprintViewController.swift */,
+				A927CFCA249B960F00F41F74 /* FingerprintViewController.xib */,
+				A9A03BAF24A28936004F553E /* FingerprintButtonView.swift */,
+				A9A03BAD24A28926004F553E /* FingerprintButtonView.xib */,
+			);
+			path = Fingerprint;
+			sourceTree = "<group>";
+		};
 		A9B0B36124993E5A00207CE1 /* Loading */ = {
 			isa = PBXGroup;
 			children = (
@@ -761,9 +775,8 @@
 		A9E7A96B249A8F2C0028DAB3 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				A9A03BAC24A288D8004F553E /* Fingerprint */,
 				A9E7A96E249A926B0028DAB3 /* LoginViewController.swift */,
-				A927CFC9249B960F00F41F74 /* AuthButtonViewController.swift */,
-				A927CFCA249B960F00F41F74 /* AuthButtonViewController.xib */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -784,6 +797,7 @@
 		A9F3E7E1244235A8000D62A1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A955605A2459E79200181C91 /* ScrollBar */,
 				A9B0B36124993E5A00207CE1 /* Loading */,
 				A915628A245830B700960140 /* CollectionViewLayout */,
 				A94FB073245F3D6700E4DFA3 /* MessageView.xib */,
@@ -902,8 +916,9 @@
 				A92A9C2824561F15004CA5D3 /* LigandHeaderCollectionView.xib in Resources */,
 				A92F487F248FC13400294356 /* AtomDetailsInformationsView.xib in Resources */,
 				A91DC1462491237A00E4A440 /* TipPopUpView.xib in Resources */,
+				A9A03BAE24A28926004F553E /* FingerprintButtonView.xib in Resources */,
 				A915629324588E2400960140 /* ScrollBarView.xib in Resources */,
-				A927CFCC249B960F00F41F74 /* AuthButtonViewController.xib in Resources */,
+				A927CFCC249B960F00F41F74 /* FingerprintViewController.xib in Resources */,
 				A94FB078245F452200E4DFA3 /* AtomDetailsView.xib in Resources */,
 				A92F4871248F804600294356 /* AtomCoordinatesView.xib in Resources */,
 				A91DC1402491232E00E4A440 /* TipPopUpViewController.xib in Resources */,
@@ -966,7 +981,7 @@
 				A91CF350244C651400294568 /* AtomsList.swift in Sources */,
 				A92F4873248F805000294356 /* AtomCoordinatesView.swift in Sources */,
 				A91DC1482491306E00E4A440 /* AtomNodeDictionaryReader.swift in Sources */,
-				A927CFCB249B960F00F41F74 /* AuthButtonViewController.swift in Sources */,
+				A927CFCB249B960F00F41F74 /* FingerprintViewController.swift in Sources */,
 				A9718EF2243B9AF5005DA378 /* UIView+gradient.swift in Sources */,
 				A9E7A96F249A926B0028DAB3 /* LoginViewController.swift in Sources */,
 				A91DC13F2491232E00E4A440 /* TipPopUpViewController.swift in Sources */,
@@ -1000,6 +1015,7 @@
 				A92A538D249A2BC600E0144D /* SCNCameraNode.swift in Sources */,
 				A94FB072245F3D5C00E4DFA3 /* MessageView.swift in Sources */,
 				A9597A7F244CC719004E732E /* PDBLigand.swift in Sources */,
+				A9A03BB024A28936004F553E /* FingerprintButtonView.swift in Sources */,
 				A910E40D23F87ED6008F9020 /* LightLigandProvider.swift in Sources */,
 				A987F9C2245758EF00086D5C /* Array+string.swift in Sources */,
 				A96D48E72456E422003FE291 /* LigandsCollection.swift in Sources */,
