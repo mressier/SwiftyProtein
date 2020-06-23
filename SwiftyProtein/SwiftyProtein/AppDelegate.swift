@@ -30,10 +30,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func applicationWillEnterForeground(_ application: UIApplication) {
     // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+    let rootVC = self.window?.rootViewController
+
+    guard let presentedVC = rootVC?.presentedViewController else { return }
+    if presentedVC is WelcomeViewController { return }
+
+    showLoginVC(on: presentedVC)
   }
+
 
   func applicationDidBecomeActive(_ application: UIApplication) {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+  }
+
+  private func showLoginVC(on vc: UIViewController?) {
+    let loginVC = LoginViewController(bundle: .main)
+    loginVC.modalPresentationStyle = .fullScreen
+
+    loginVC.didComplete = { [weak self] in
+      loginVC.dismiss(animated: true)
+    }
+
+    vc?.present(loginVC, animated: true) {
+      loginVC.startAuthentication()
+    }
   }
 
 

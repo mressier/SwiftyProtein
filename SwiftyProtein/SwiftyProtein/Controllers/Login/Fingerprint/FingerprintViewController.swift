@@ -62,7 +62,6 @@ class FingerprintViewController: UIViewController {
     UIView.animate(withDuration: 0.2) {
       self.fingerprintButton.setAsFailure(message: "Touch to retry")
     }
-
   }
 
   private func authenticationIsUnavailable() {

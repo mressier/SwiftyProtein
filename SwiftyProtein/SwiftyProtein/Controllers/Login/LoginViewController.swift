@@ -16,6 +16,10 @@ class LoginViewController: UIViewController {
     return FingerprintViewController(bundle: .main)
   }()
 
+  /******************** Callback ********************/
+
+  var didComplete: (() -> Void)?
+
   //----------------------------------------------------------------------------
   // MARK: - View Life Cycle
   //----------------------------------------------------------------------------
@@ -23,6 +27,13 @@ class LoginViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setup()
+  }
+
+  //----------------------------------------------------------------------------
+  // MARK: - Methods
+  //----------------------------------------------------------------------------
+
+  func startAuthentication() {
     authButtonVC.startAuthentication()
   }
 
@@ -38,7 +49,7 @@ class LoginViewController: UIViewController {
     add(asChildViewController: authButtonVC, on: buttonContainerView)
 
     authButtonVC.didComplete = { [weak self] in
-      self?.performSegue(withIdentifier: "loginSegue", sender: nil)
+      self?.didComplete?()
     }
 
   }
