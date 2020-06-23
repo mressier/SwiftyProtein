@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A900DD9C24A2769800E676B6 /* LocalAuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A900DD9B24A2769800E676B6 /* LocalAuthenticationError.swift */; };
 		A90CA9B42456CE5B000BBE60 /* LigandsAppList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90CA9B32456CE5B000BBE60 /* LigandsAppList.swift */; };
 		A910E40523F85DF0008F9020 /* SCNGeometry+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A910E40423F85DF0008F9020 /* SCNGeometry+extension.swift */; };
 		A910E40823F87B83008F9020 /* PathBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = A910E40723F87B83008F9020 /* PathBounds.swift */; };
@@ -45,6 +46,8 @@
 		A922804123F846A700BA4F5D /* ligands.txt in Resources */ = {isa = PBXBuildFile; fileRef = A922803E23F846A700BA4F5D /* ligands.txt */; };
 		A922804723F84E2C00BA4F5D /* SCNNode+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A922804623F84E2C00BA4F5D /* SCNNode+extension.swift */; };
 		A926C400248EB78D00B01186 /* LabelStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A926C3FF248EB78D00B01186 /* LabelStackView.swift */; };
+		A927CFCB249B960F00F41F74 /* AuthButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A927CFC9249B960F00F41F74 /* AuthButtonViewController.swift */; };
+		A927CFCC249B960F00F41F74 /* AuthButtonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A927CFCA249B960F00F41F74 /* AuthButtonViewController.xib */; };
 		A92A538A249A156D00E0144D /* UIView+animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92A5389249A156D00E0144D /* UIView+animation.swift */; };
 		A92A538D249A2BC600E0144D /* SCNCameraNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92A538C249A2BC600E0144D /* SCNCameraNode.swift */; };
 		A92A9C0B245352F2004CA5D3 /* Array+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92A9C0A245352F2004CA5D3 /* Array+extension.swift */; };
@@ -110,6 +113,7 @@
 		A987F9C42457592F00086D5C /* Array+StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987F9C32457592F00086D5C /* Array+StringTests.swift */; };
 		A987F9C7245760CE00086D5C /* LigandsCollectionBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987F9C6245760CE00086D5C /* LigandsCollectionBuilderTests.swift */; };
 		A98C1D0024913D6500ACE393 /* Area3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98C1CFF24913D6500ACE393 /* Area3D.swift */; };
+		A990B5AD24A0B2FA00586AC5 /* LocalAuthenticationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A990B5AC24A0B2FA00586AC5 /* LocalAuthenticationProvider.swift */; };
 		A9934579242FCDEF00C6B043 /* FakeLigands.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9934578242FCDEF00C6B043 /* FakeLigands.swift */; };
 		A9934582242FD19200C6B043 /* SwiftyProteinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9934581242FD19200C6B043 /* SwiftyProteinTests.swift */; };
 		A993458A242FD1B400C6B043 /* Array+AtomNodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9934589242FD1B400C6B043 /* Array+AtomNodeTests.swift */; };
@@ -141,6 +145,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A900DD9B24A2769800E676B6 /* LocalAuthenticationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAuthenticationError.swift; sourceTree = "<group>"; };
 		A90CA9B32456CE5B000BBE60 /* LigandsAppList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigandsAppList.swift; sourceTree = "<group>"; };
 		A910E40423F85DF0008F9020 /* SCNGeometry+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNGeometry+extension.swift"; sourceTree = "<group>"; };
 		A910E40723F87B83008F9020 /* PathBounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathBounds.swift; sourceTree = "<group>"; };
@@ -181,6 +186,8 @@
 		A922803E23F846A700BA4F5D /* ligands.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ligands.txt; sourceTree = "<group>"; };
 		A922804623F84E2C00BA4F5D /* SCNNode+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNNode+extension.swift"; sourceTree = "<group>"; };
 		A926C3FF248EB78D00B01186 /* LabelStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelStackView.swift; sourceTree = "<group>"; };
+		A927CFC9249B960F00F41F74 /* AuthButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButtonViewController.swift; sourceTree = "<group>"; };
+		A927CFCA249B960F00F41F74 /* AuthButtonViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthButtonViewController.xib; sourceTree = "<group>"; };
 		A92A5389249A156D00E0144D /* UIView+animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+animation.swift"; sourceTree = "<group>"; };
 		A92A538C249A2BC600E0144D /* SCNCameraNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCNCameraNode.swift; sourceTree = "<group>"; };
 		A92A9C0A245352F2004CA5D3 /* Array+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+extension.swift"; sourceTree = "<group>"; };
@@ -244,6 +251,7 @@
 		A987F9C32457592F00086D5C /* Array+StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+StringTests.swift"; sourceTree = "<group>"; };
 		A987F9C6245760CE00086D5C /* LigandsCollectionBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigandsCollectionBuilderTests.swift; sourceTree = "<group>"; };
 		A98C1CFF24913D6500ACE393 /* Area3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Area3D.swift; sourceTree = "<group>"; };
+		A990B5AC24A0B2FA00586AC5 /* LocalAuthenticationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAuthenticationProvider.swift; sourceTree = "<group>"; };
 		A9934578242FCDEF00C6B043 /* FakeLigands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeLigands.swift; sourceTree = "<group>"; };
 		A993457F242FD19200C6B043 /* SwiftyProteinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyProteinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9934581242FD19200C6B043 /* SwiftyProteinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyProteinTests.swift; sourceTree = "<group>"; };
@@ -286,6 +294,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A900DD9A24A2768600E676B6 /* LocalAuthentication */ = {
+			isa = PBXGroup;
+			children = (
+				A990B5AC24A0B2FA00586AC5 /* LocalAuthenticationProvider.swift */,
+				A900DD9B24A2769800E676B6 /* LocalAuthenticationError.swift */,
+			);
+			path = LocalAuthentication;
+			sourceTree = "<group>";
+		};
 		A90CA9B12456CE26000BBE60 /* LigandCollectionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -454,7 +471,7 @@
 		A922804223F84DF700BA4F5D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A9E7A96B249A8F2C0028DAB3 /* Welcome */,
+				A9E7A96B249A8F2C0028DAB3 /* Login */,
 				A91DC13C2491231000E4A440 /* Tips */,
 				A92A9C0E24536A06004CA5D3 /* LigandList */,
 				A9F3E7D92442316F000D62A1 /* Ligand */,
@@ -530,6 +547,7 @@
 		A92A9C1524537BC3004CA5D3 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				A900DD9A24A2768600E676B6 /* LocalAuthentication */,
 				A92A9C1624537BC3004CA5D3 /* TableViewUtils */,
 				A9556065245EDAF500181C91 /* FileReader.swift */,
 			);
@@ -740,12 +758,14 @@
 			path = Graphic;
 			sourceTree = "<group>";
 		};
-		A9E7A96B249A8F2C0028DAB3 /* Welcome */ = {
+		A9E7A96B249A8F2C0028DAB3 /* Login */ = {
 			isa = PBXGroup;
 			children = (
 				A9E7A96E249A926B0028DAB3 /* LoginViewController.swift */,
+				A927CFC9249B960F00F41F74 /* AuthButtonViewController.swift */,
+				A927CFCA249B960F00F41F74 /* AuthButtonViewController.xib */,
 			);
-			path = Welcome;
+			path = Login;
 			sourceTree = "<group>";
 		};
 		A9F3E7D92442316F000D62A1 /* Ligand */ = {
@@ -883,6 +903,7 @@
 				A92F487F248FC13400294356 /* AtomDetailsInformationsView.xib in Resources */,
 				A91DC1462491237A00E4A440 /* TipPopUpView.xib in Resources */,
 				A915629324588E2400960140 /* ScrollBarView.xib in Resources */,
+				A927CFCC249B960F00F41F74 /* AuthButtonViewController.xib in Resources */,
 				A94FB078245F452200E4DFA3 /* AtomDetailsView.xib in Resources */,
 				A92F4871248F804600294356 /* AtomCoordinatesView.xib in Resources */,
 				A91DC1402491232E00E4A440 /* TipPopUpViewController.xib in Resources */,
@@ -945,6 +966,7 @@
 				A91CF350244C651400294568 /* AtomsList.swift in Sources */,
 				A92F4873248F805000294356 /* AtomCoordinatesView.swift in Sources */,
 				A91DC1482491306E00E4A440 /* AtomNodeDictionaryReader.swift in Sources */,
+				A927CFCB249B960F00F41F74 /* AuthButtonViewController.swift in Sources */,
 				A9718EF2243B9AF5005DA378 /* UIView+gradient.swift in Sources */,
 				A9E7A96F249A926B0028DAB3 /* LoginViewController.swift in Sources */,
 				A91DC13F2491232E00E4A440 /* TipPopUpViewController.swift in Sources */,
@@ -960,6 +982,7 @@
 				A96BD66724937880004F1678 /* SCNLigandNode.swift in Sources */,
 				A9718EF7243B9B78005DA378 /* ConstraintType.swift in Sources */,
 				A9556060245AD6F200181C91 /* LigandCollectionViewFlowLayout.swift in Sources */,
+				A900DD9C24A2769800E676B6 /* LocalAuthenticationError.swift in Sources */,
 				A922802723F83DB100BA4F5D /* AppDelegate.swift in Sources */,
 				A9597A7D244CC6E2004E732E /* PDBLigandProvider.swift in Sources */,
 				A96BD66524937833004F1678 /* SCNAtomNode.swift in Sources */,
@@ -981,6 +1004,7 @@
 				A987F9C2245758EF00086D5C /* Array+string.swift in Sources */,
 				A96D48E72456E422003FE291 /* LigandsCollection.swift in Sources */,
 				A92A538A249A156D00E0144D /* UIView+animation.swift in Sources */,
+				A990B5AD24A0B2FA00586AC5 /* LocalAuthenticationProvider.swift in Sources */,
 				A92A9C1324536EF4004CA5D3 /* LigandCollectionViewController.swift in Sources */,
 				A9F3E7D624422C1A000D62A1 /* ProteinSceneConfiguration.swift in Sources */,
 				A91CF357244C7BC100294568 /* PDBLigandConverter+Atom.swift in Sources */,

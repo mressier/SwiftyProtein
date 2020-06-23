@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NVR-Ek-fBQ">
-    <device id="retina6_5" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NVR-Ek-fBQ">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,11 +14,56 @@
                     <view key="view" contentMode="scaleToFill" id="TDX-3N-tNL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="EM8-MJ-vH5">
+                                <rect key="frame" x="-50" y="-50" width="514" height="996"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="btN-56-bAa">
+                                <rect key="frame" x="15" y="44" width="384" height="818"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Title" translatesAutoresizingMaskIntoConstraints="NO" id="agh-Sj-aej">
+                                        <rect key="frame" x="0.0" y="0.0" width="384" height="549"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0nX-JG-RmH">
+                                        <rect key="frame" x="0.0" y="549" width="384" height="269"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="btN-56-bAa" firstAttribute="centerX" secondItem="TDX-3N-tNL" secondAttribute="centerX" id="5lD-YP-qnr"/>
+                            <constraint firstAttribute="bottom" secondItem="EM8-MJ-vH5" secondAttribute="bottom" constant="-50" id="9X7-IW-w7x"/>
+                            <constraint firstItem="ZmI-7t-PcQ" firstAttribute="bottom" secondItem="btN-56-bAa" secondAttribute="bottom" id="Cn6-Fe-fSs"/>
+                            <constraint firstItem="EM8-MJ-vH5" firstAttribute="leading" secondItem="TDX-3N-tNL" secondAttribute="leading" constant="-50" id="Egw-TW-EVO"/>
+                            <constraint firstItem="btN-56-bAa" firstAttribute="top" secondItem="ZmI-7t-PcQ" secondAttribute="top" id="JJC-9j-2F0"/>
+                            <constraint firstAttribute="trailing" secondItem="EM8-MJ-vH5" secondAttribute="trailing" constant="-50" id="MBf-Ge-XL6"/>
+                            <constraint firstItem="btN-56-bAa" firstAttribute="leading" secondItem="ZmI-7t-PcQ" secondAttribute="leading" constant="15" id="Tbv-OY-ung"/>
+                            <constraint firstItem="0nX-JG-RmH" firstAttribute="height" secondItem="TDX-3N-tNL" secondAttribute="height" multiplier="0.3" id="bYz-u4-d6E"/>
+                            <constraint firstItem="btN-56-bAa" firstAttribute="width" secondItem="TDX-3N-tNL" secondAttribute="width" multiplier="0.7" id="kYq-MR-DD9"/>
+                            <constraint firstItem="EM8-MJ-vH5" firstAttribute="top" secondItem="TDX-3N-tNL" secondAttribute="top" constant="-50" id="qXI-X0-Pnl"/>
+                            <constraint firstItem="ZmI-7t-PcQ" firstAttribute="trailing" secondItem="btN-56-bAa" secondAttribute="trailing" constant="15" id="tyi-Zp-Hu1"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ZmI-7t-PcQ"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="kYq-MR-DD9"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="tyi-Zp-Hu1"/>
+                                <exclude reference="Tbv-OY-ung"/>
+                                <include reference="kYq-MR-DD9"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
-                        <segue destination="aD9-Ed-ost" kind="show" id="hdK-pd-sHx"/>
+                        <outlet property="buttonContainerView" destination="0nX-JG-RmH" id="eCG-He-ILD"/>
+                        <outlet property="titleImageView" destination="agh-Sj-aej" id="m59-BE-d04"/>
+                        <segue destination="aD9-Ed-ost" kind="show" identifier="loginSegue" id="hdK-pd-sHx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="twV-Nr-AWZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -28,10 +73,10 @@
         <!--Navigation Controller-->
         <scene sceneID="Lit-Eg-XIR">
             <objects>
-                <navigationController id="aD9-Ed-ost" sceneMemberID="viewController">
+                <navigationController modalPresentationStyle="fullScreen" id="aD9-Ed-ost" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="1Wf-OA-pgO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SO1-Vc-fnO">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.20199120039999999" green="0.71283471580000002" blue="0.76079541439999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
@@ -52,7 +97,7 @@
         <!--Ligands-->
         <scene sceneID="Eyt-ZI-NbW">
             <objects>
-                <viewController id="nnP-5G-zlG" customClass="LigandListViewController" customModule="SwiftyProtein" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="nnP-5G-zlG" customClass="LigandListViewController" customModule="SwiftyProtein" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M1t-oe-Kjq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -89,7 +134,7 @@
         <!--Ligand View-->
         <scene sceneID="XNG-XW-vxg">
             <objects>
-                <viewController id="lUM-Sp-M6v" customClass="LigandViewController" customModule="SwiftyProtein" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="lUM-Sp-M6v" customClass="LigandViewController" customModule="SwiftyProtein" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vkF-1D-m0f">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -150,6 +195,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="chevron.left" catalog="system" width="48" height="64"/>
+        <image name="LaunchScreen" width="897.33331298828125" height="1430.3333740234375"/>
+        <image name="Title" width="1501.6666259765625" height="961"/>
+        <image name="chevron.left" catalog="system" width="96" height="128"/>
     </resources>
 </document>
