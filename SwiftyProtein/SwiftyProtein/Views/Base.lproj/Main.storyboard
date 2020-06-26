@@ -60,8 +60,22 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wTM-Md-trm">
                                 <rect key="frame" x="0.0" y="56" width="414" height="752"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWN-Ra-TiQ" customClass="LineAlertView" customModule="SwiftyProtein" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" id="zmP-Hf-MqY"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="zmP-Hf-MqY"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Joc-mW-7x1">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="752"/>
+                                        <rect key="frame" x="0.0" y="20.5" width="414" height="731.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
                                 </subviews>
@@ -78,6 +92,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Ligands" id="yhL-Lh-InA"/>
                     <connections>
+                        <outlet property="alertLabel" destination="fWN-Ra-TiQ" id="bSM-nf-wTo"/>
+                        <outlet property="alertLabelHeightConstraint" destination="zmP-Hf-MqY" id="N5g-Q7-eBR"/>
                         <outlet property="ligandListContainerView" destination="Joc-mW-7x1" id="Vbm-6A-RjJ"/>
                         <segue destination="lUM-Sp-M6v" kind="show" identifier="segueToLigandView" id="tbf-gG-6bI"/>
                     </connections>
@@ -130,7 +146,7 @@
                                 <segue destination="99P-C2-AP1" kind="unwind" unwindAction="unwindToListViewController:" id="tgV-5E-yMW"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" style="plain" systemItem="action" id="NXe-AW-RAj">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="action" id="NXe-AW-RAj">
                             <connections>
                                 <action selector="shareButtonTouched:" destination="lUM-Sp-M6v" id="D26-2G-rca"/>
                             </connections>

@@ -9,8 +9,8 @@ class LigandListViewController: UIViewController {
   /******************** Outlet ********************/
 
   @IBOutlet weak var ligandListContainerView: UIView!
-
-  /******************** Callbacks ********************/
+  @IBOutlet weak var alertLabel: LineAlertView!
+  @IBOutlet weak var alertLabelHeightConstraint: NSLayoutConstraint!
 
   /******************** Parameters ********************/
 
@@ -31,6 +31,12 @@ class LigandListViewController: UIViewController {
   private let ligandCollectionVC =
     LigandCollectionViewController(bundle: .main)
 
+  /******************** Internet ********************/
+
+  lazy var networkAccess: NetworkAccessor = {
+    return NetworkAccess(delegate: self)
+  }()
+
   //----------------------------------------------------------------------------
   // MARK: - View Life Cycle
   //----------------------------------------------------------------------------
@@ -40,8 +46,14 @@ class LigandListViewController: UIViewController {
     setup()
   }
 
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    setupMessageView()
+  }
+
   private func setup() {
     setupView()
+    setupMessageView()
     setupNavigationBar()
     setupSearchBar()
     setupLigandCollectionVC()
@@ -77,6 +89,16 @@ class LigandListViewController: UIViewController {
         on: ligandListContainerView)
   }
 
+  private func setupMessageView() {
+    alertLabel.message = "No internet connection"
+    alertLabel.alertType = .error
+    setNetworkErrorVisible(!networkAccess.hasNetworkAccess)
+  }
+
+  private func setNetworkErrorVisible(_ isVisible: Bool) {
+    isVisible ? alertLabel.show() : alertLabel.hide()
+  }
+
   //----------------------------------------------------------------------------
   // MARK: - Navigation
   //----------------------------------------------------------------------------
@@ -88,7 +110,6 @@ class LigandListViewController: UIViewController {
   }
 
   @IBAction func unwindToListViewController(_ unwindSegue: UIStoryboardSegue) {
-//    let sourceViewController = unwindSegue.source
   }
 }
 
@@ -108,5 +129,15 @@ extension LigandListViewController: UISearchResultsUpdating {
 
     ligandCollectionVC.ligandsList = collection
     ligandCollectionVC.reloadData()
+  }
+}
+
+extension LigandListViewController: NetworkAccessDelegate {
+  func networkAccessDidChanged(_ hasNetworkAccess: Bool) {
+    setNetworkErrorVisible(!hasNetworkAccess)
+
+    UIView.animate(withDuration: 0.5) {
+      self.view.layoutIfNeeded()
+    }
   }
 }

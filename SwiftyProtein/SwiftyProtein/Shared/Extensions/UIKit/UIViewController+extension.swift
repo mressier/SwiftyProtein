@@ -158,6 +158,7 @@ extension UIViewController {
   var isViewControllerPresented: Bool {
     return viewIfLoaded?.window != nil
   }
+  
 }
 
 //==============================================================================

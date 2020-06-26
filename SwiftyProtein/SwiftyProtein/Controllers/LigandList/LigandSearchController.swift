@@ -48,8 +48,10 @@ class LigandSearchController: UISearchController {
 
     var collection = LigandsCollectionBuilder.build(from: list)
 
-    let sectionStartingWithText =
-      collection.firstIndex() { $0.section.title.starts(with: text) }
+    let firstLetter = text.prefix(1)
+    let sectionStartingWithText = collection.firstIndex() {
+      $0.section.title.starts(with: firstLetter)
+    }
 
     if let index = sectionStartingWithText {
       let item = collection.remove(at: index)
