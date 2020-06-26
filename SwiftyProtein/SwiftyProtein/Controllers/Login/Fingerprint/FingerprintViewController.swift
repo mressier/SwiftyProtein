@@ -35,6 +35,11 @@ class FingerprintViewController: UIViewController {
     setup()
   }
 
+  override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
+    fingerprintButton.setAsCircle()
+  }
+
   //----------------------------------------------------------------------------
   // MARK: - Actions
   //----------------------------------------------------------------------------
@@ -76,9 +81,7 @@ class FingerprintViewController: UIViewController {
       self.fingerprintButton.setAsSuccess()
     }
 
-    DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
-      self.didComplete?()
-    }
+    didComplete?()
   }
 
   //----------------------------------------------------------------------------
@@ -93,10 +96,10 @@ class FingerprintViewController: UIViewController {
 
   private func setupFingerprintButton() {
     fingerprintButton.setAsCircle()
-    fingerprintButton.setAsDefault(message: "Enter")
     fingerprintButton.successColor = .swiftyBlueGreen
     fingerprintButton.failureColor = .systemRed
     fingerprintButton.defaultColor = .swiftyDarkBlue
+    fingerprintButton.setAsDefault(message: "Enter")
 
     guard shouldAuthenticate else {
       fingerprintButton.hideFingerprintImage()

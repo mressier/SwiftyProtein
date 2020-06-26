@@ -9,6 +9,7 @@ class LoginViewController: UIViewController {
 
   @IBOutlet weak var titleImageView: UIImageView!
   @IBOutlet weak var buttonContainerView: UIView!
+  @IBOutlet weak var backgroundImageView: UIImageView!
 
   /******************** VC ********************/
 

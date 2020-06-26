@@ -19,11 +19,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JAy-dx-Joj" customClass="FingerprintButtonView" customModule="SwiftyProtein" customModuleProvider="target">
-                    <rect key="frame" x="136" y="70.5" width="150" height="150"/>
+                    <rect key="frame" x="119.5" y="54" width="183" height="183"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="JAy-dx-Joj" secondAttribute="height" multiplier="1:1" id="69o-Jf-2JI"/>
-                        <constraint firstAttribute="width" constant="150" id="8j4-22-zCn"/>
                     </constraints>
                 </view>
             </subviews>
@@ -31,10 +30,10 @@
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="JAy-dx-Joj" secondAttribute="trailing" id="D22-Ez-aGa"/>
                 <constraint firstItem="JAy-dx-Joj" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Ry1-1i-VNA"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="JAy-dx-Joj" secondAttribute="bottom" id="aOU-qG-fNj"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="JAy-dx-Joj" secondAttribute="bottom" constant="10" id="aOU-qG-fNj"/>
                 <constraint firstItem="JAy-dx-Joj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="lrk-tU-T2J"/>
                 <constraint firstItem="JAy-dx-Joj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="wVu-C9-grF"/>
-                <constraint firstItem="JAy-dx-Joj" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="top" id="x2C-HM-CF4"/>
+                <constraint firstItem="JAy-dx-Joj" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="x2C-HM-CF4"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
