@@ -7,7 +7,7 @@ class PDBLigandProviderTests: XCTestCase {
     let ligand = "ATP"
     let completeExpectation = expectation(description: "Complete")
 
-    PDBLigandProvider.getLigand(ligand) {
+    PDBLigandProvider.shared.getLigand(ligand) {
       result in
       print (result)
       completeExpectation.fulfill()
