@@ -77,7 +77,7 @@ class LigandListViewController: UIViewController {
 
   private func setupLigandCollectionVC() {
     ligandsList = LigandsAppList(ligands: FileReader.readLigandFile(),
-                                  favorites: ["A", "B1"])
+                                  favorites: ["A", "B1", "KIR"])
 
     ligandCollectionVC.ligandsList = ligandCollection
 

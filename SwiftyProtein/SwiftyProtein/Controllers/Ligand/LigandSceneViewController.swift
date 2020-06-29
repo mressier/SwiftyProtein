@@ -27,9 +27,9 @@ class LigandSceneViewController: UIViewController {
   /******************** Ligand Parameters ********************/
 
   /// Atoms to show on the scene
-  var atoms = [PDBAtomLight]()
+  var ligand: PDBLightLigand?
 
-  var ligand: SCNLigandNode?
+  private(set) var ligandNode: SCNLigandNode?
 
   /********************  Callbacks  ********************/
 
@@ -76,9 +76,9 @@ class LigandSceneViewController: UIViewController {
   }
 
   private func setupLigandNode(on rootNode: SCNNode) {
-    let ligand = SCNLigandNode()
-    rootNode.addChildNode(ligand)
-    self.ligand = ligand
+    let node = SCNLigandNode()
+    rootNode.addChildNode(node)
+    self.ligandNode = node
   }
 
   private func setupGesture() {
@@ -102,11 +102,12 @@ class LigandSceneViewController: UIViewController {
   //----------------------------------------------------------------------------
 
   func reload() {
-    ligand?.removeLigand()
-    ligand?.create(ligand: LigandGraphicData(atoms: atoms,
-                                             config: configuration))
+    guard let ligand = ligand else { return }
 
-    cameraNode.look(at: ligand)
+    ligandNode?.removeLigand()
+    ligandNode?.create(ligand: LigandGraphicData(atoms: ligand.atoms,
+                                                 config: configuration))
+    cameraNode.look(at: ligandNode)
   }
 
   func takeSnapshot() -> UIImage {
@@ -127,13 +128,13 @@ class LigandSceneViewController: UIViewController {
       return
     }
 
-    guard let atomData = ligand?.toggleSelection(on: atomNode) else {
+    guard let atomData = ligandNode?.toggleSelection(on: atomNode) else {
       print("Node touched is not an atom")
       return
     }
 
     guard let atom =
-      atoms.first(where: { $0.index == atomData.atom.index }) else {
+      ligand?.atoms.first(where: { $0.index == atomData.atom.index }) else {
         print("ERROR: Cannot found an atom with the same index as selected atom node")
         return
     }

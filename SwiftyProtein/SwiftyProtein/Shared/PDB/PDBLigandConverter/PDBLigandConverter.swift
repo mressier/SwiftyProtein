@@ -7,12 +7,16 @@ struct PDBLigandConverter {
   //----------------------------------------------------------------------------
 
   static func ligand(name: String,
+                     coordinatesModel: PDBCoordinateModel,
                      from fileContent: String) throws -> PDBLigand {
     let lines = fileContent.split(separator: "\n").map() { String($0) }
-    return try ligand(name: name, from: lines)
+    return try ligand(name: name,
+                      coordinatesModel: coordinatesModel,
+                      from: lines)
   }
 
   static func ligand(name: String,
+                     coordinatesModel: PDBCoordinateModel,
                      from lines: [String]) throws -> PDBLigand {
     var state: ReadState = .atomList
     var atoms = [PDBAtom]()
@@ -44,7 +48,9 @@ struct PDBLigandConverter {
 
     atoms.applyConnections(atomsConnections)
 
-    return PDBLigand(name: name, atoms: atoms)
+    return PDBLigand(name: name,
+                     coordinatesModel: coordinatesModel,
+                     atoms: atoms)
   }
 }
 

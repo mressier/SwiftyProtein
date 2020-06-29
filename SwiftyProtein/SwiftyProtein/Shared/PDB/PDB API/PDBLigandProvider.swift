@@ -49,7 +49,9 @@ struct PDBLigandProvider {
       case .success(let fileContent):
         do {
           let ligand =
-            try PDBLigandConverter.ligand(name: name, from: fileContent)
+            try PDBLigandConverter.ligand(name: name,
+                                          coordinatesModel: coordinatesModel,
+                                          from: fileContent)
           completion(.success(ligand))
         } catch {
           completion(.failure(error))
