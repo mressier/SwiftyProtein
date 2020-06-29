@@ -49,11 +49,12 @@ class SectionSource<Section, Element: Equatable>: CollectionSource {
 
   /******************** Section Key ********************/
 
-  func sectionKey(at indexPath: IndexPath) -> Section {
+  func sectionKey(at indexPath: IndexPath) -> Section? {
     return sectionKey(at: indexPath.section)
   }
 
-  func sectionKey(at index: Int) -> Section {
+  func sectionKey(at index: Int) -> Section? {
+    guard index > 0 && index <  elements.count else  { return nil }
     return elements[index].section
   }
 

@@ -24,15 +24,12 @@ class DictionnarySource<Element: Equatable>: CollectionSource {
 
   /******************** Section content ********************/
 
-  private var orderedSectionsKeys: [String] {
-    return elements.keys.sorted(by: sortSection)
+  func sectionKey(at index: Int) -> String? {
+    guard index > 0 && index < elements.count else { return nil }
+    return Array(elements.keys)[index]
   }
 
-  func sectionKey(at index: Int) -> String {
-    return orderedSectionsKeys[index]
-  }
-
-  func sectionKey(at indexPath: IndexPath) -> String {
+  func sectionKey(at indexPath: IndexPath) -> String? {
     return sectionKey(at: indexPath.section)
   }
 
@@ -45,12 +42,12 @@ class DictionnarySource<Element: Equatable>: CollectionSource {
   }
 
   func elements(inSection section: Int) -> [Element] {
-    let key = sectionKey(at: section)
+    guard let key = sectionKey(at: section) else { return [] }
     return elements[key] ?? []
   }
 
   func indexPath(for element: Element) -> IndexPath? {
-    for (index, key) in orderedSectionsKeys.enumerated() {
+    for (index, key) in elements.keys.enumerated() {
       if let rowIndex = elements[key]?.firstIndex(where: { $0 == element }) {
         return IndexPath(row: rowIndex, section: index)
       }

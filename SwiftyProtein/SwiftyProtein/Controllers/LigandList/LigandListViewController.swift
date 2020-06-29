@@ -127,6 +127,7 @@ extension LigandListViewController: UISearchResultsUpdating {
       searchController.getReorderedCollection(from: ligandsList,
                                               withSearchText: searchText)
 
+    print(collection)
     ligandCollectionVC.ligandsList = collection
     ligandCollectionVC.reloadData()
   }

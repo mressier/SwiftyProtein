@@ -119,7 +119,10 @@ class LigandCollectionViewController: UICollectionViewController {
 
   private func setScrollSectionLabel() {
     let section = collectionView.topVisibleSection
-    let sectionName = source.sectionKey(at: section).title
+
+    guard let sectionName = source.sectionKey(at: section)?.title else {
+      return
+    }
 
     scrollBar.scrollLabel.text = sectionName
   }
@@ -158,9 +161,8 @@ extension LigandCollectionViewController {
       for: indexPath
     )
 
-    if let headerView = headerView as? LigandHeaderCollectionView {
-      let section = source.sectionKey(at: indexPath)
-
+    if let headerView = headerView as? LigandHeaderCollectionView,
+      let section = source.sectionKey(at: indexPath) {
       headerView.sectionName = section.title
       headerView.sectionImage = section.image?.alwaysTemplate
     }
