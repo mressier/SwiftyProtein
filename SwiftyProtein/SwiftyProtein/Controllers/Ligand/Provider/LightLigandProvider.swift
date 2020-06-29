@@ -38,7 +38,7 @@ class LightLigandProvider {
 
   private func getLigandRequest(ligand: String,
                                 completion: @escaping (() -> Void)) {
-    PDBLigandProvider.getLigand(ligand) { [weak self] result in
+    PDBLigandProvider.shared.getLigand(ligand) { [weak self] result in
       switch result {
       case .failure(let error):
         self?.delegate?.didFailGetLigand(error)

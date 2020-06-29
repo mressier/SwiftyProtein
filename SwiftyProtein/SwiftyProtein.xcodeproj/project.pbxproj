@@ -72,6 +72,7 @@
 		A92F487B248FB1A000294356 /* LoadingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92F487A248FB1A000294356 /* LoadingImageView.swift */; };
 		A92F487D248FC11D00294356 /* AtomDetailsInformationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92F487C248FC11D00294356 /* AtomDetailsInformationsView.swift */; };
 		A92F487F248FC13400294356 /* AtomDetailsInformationsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A92F487E248FC13400294356 /* AtomDetailsInformationsView.xib */; };
+		A93FCA0B24AA38FE00306264 /* PDBCoordinateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93FCA0A24AA38FE00306264 /* PDBCoordinateModel.swift */; };
 		A94DD736244C92740034C6AF /* PDBLigandConverter+AtomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94DD735244C92740034C6AF /* PDBLigandConverter+AtomTests.swift */; };
 		A94DD738244C957B0034C6AF /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94DD737244C957B0034C6AF /* String+extension.swift */; };
 		A94DD73B244CA9D60034C6AF /* String+TrimmedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94DD73A244CA9D60034C6AF /* String+TrimmedTests.swift */; };
@@ -223,6 +224,7 @@
 		A92F487A248FB1A000294356 /* LoadingImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingImageView.swift; sourceTree = "<group>"; };
 		A92F487C248FC11D00294356 /* AtomDetailsInformationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomDetailsInformationsView.swift; sourceTree = "<group>"; };
 		A92F487E248FC13400294356 /* AtomDetailsInformationsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AtomDetailsInformationsView.xib; sourceTree = "<group>"; };
+		A93FCA0A24AA38FE00306264 /* PDBCoordinateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDBCoordinateModel.swift; sourceTree = "<group>"; };
 		A94DD735244C92740034C6AF /* PDBLigandConverter+AtomTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDBLigandConverter+AtomTests.swift"; sourceTree = "<group>"; };
 		A94DD737244C957B0034C6AF /* String+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
 		A94DD73A244CA9D60034C6AF /* String+TrimmedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+TrimmedTests.swift"; sourceTree = "<group>"; };
@@ -683,6 +685,7 @@
 			children = (
 				A9C7945D2450D89D00B5FFA2 /* PDBRequest.swift */,
 				A9597A7C244CC6E2004E732E /* PDBLigandProvider.swift */,
+				A93FCA0A24AA38FE00306264 /* PDBCoordinateModel.swift */,
 			);
 			path = "PDB API";
 			sourceTree = "<group>";
@@ -1075,6 +1078,7 @@
 				A90CA9B42456CE5B000BBE60 /* LigandsAppList.swift in Sources */,
 				A922803F23F846A700BA4F5D /* Assets.swift in Sources */,
 				A94FB070245F2F8D00E4DFA3 /* LoadingView.swift in Sources */,
+				A93FCA0B24AA38FE00306264 /* PDBCoordinateModel.swift in Sources */,
 				A9718EF3243B9AF5005DA378 /* UIView+extension.swift in Sources */,
 				A91CF35B244C7DE800294568 /* PDBAtom.swift in Sources */,
 				A92A538D249A2BC600E0144D /* SCNCameraNode.swift in Sources */,

@@ -20,10 +20,11 @@ struct PDBRequest {
 
   func getPDBFileContent(
     forLigand ligand: String,
+    coordinateModel: PDBCoordinateModel,
     completion: @escaping (Result<String, Error>) -> Void
   ) {
     let prefix = "http://ligand-expo.rcsb.org/reports/"
-    let suffix = "_ideal.pdb"
+    let suffix = "_\(coordinateModel.urlExtension).pdb"
     let url = URLBuilder.build(forLigand: ligand,
                                urlPrefix: prefix,
                                urlSuffix: suffix)
