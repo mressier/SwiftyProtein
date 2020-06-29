@@ -60,8 +60,8 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wTM-Md-trm">
                                 <rect key="frame" x="0.0" y="56" width="414" height="752"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWN-Ra-TiQ" customClass="LineAlertView" customModule="SwiftyProtein" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWN-Ra-TiQ" customClass="LineAlertView" customModule="SwiftyProtein" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="30.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" id="zmP-Hf-MqY"/>
                                         </constraints>
@@ -75,7 +75,7 @@
                                         </variation>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Joc-mW-7x1">
-                                        <rect key="frame" x="0.0" y="20.5" width="414" height="731.5"/>
+                                        <rect key="frame" x="0.0" y="30.5" width="414" height="721.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
                                 </subviews>
