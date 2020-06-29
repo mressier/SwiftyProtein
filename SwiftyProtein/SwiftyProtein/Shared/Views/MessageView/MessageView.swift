@@ -4,6 +4,15 @@ import UIKit
 class MessageView: UIView, NibInstanciable {
 
   //----------------------------------------------------------------------------
+  // MARK: - Structure
+  //----------------------------------------------------------------------------
+
+  struct Content {
+    let title: String?
+    let image: UIImage?
+  }
+
+  //----------------------------------------------------------------------------
   // MARK: - Properties
   //----------------------------------------------------------------------------
 
@@ -23,6 +32,13 @@ class MessageView: UIView, NibInstanciable {
   @IBInspectable
   var messageImage: UIImage? {
     didSet { messageImageView.image = messageImage }
+  }
+
+  var content: Content? {
+    didSet {
+      messageText = content?.title
+      messageImage = content?.image
+    }
   }
 
   //----------------------------------------------------------------------------

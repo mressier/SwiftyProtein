@@ -61,7 +61,7 @@
                                 <rect key="frame" x="0.0" y="56" width="414" height="752"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWN-Ra-TiQ" customClass="LineAlertView" customModule="SwiftyProtein" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="30.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" id="zmP-Hf-MqY"/>
                                         </constraints>
@@ -75,7 +75,7 @@
                                         </variation>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Joc-mW-7x1">
-                                        <rect key="frame" x="0.0" y="30.5" width="414" height="721.5"/>
+                                        <rect key="frame" x="0.0" y="20.5" width="414" height="731.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
                                 </subviews>
@@ -114,27 +114,19 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
-                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qnl-iU-vkN" customClass="LoadingView" customModule="SwiftyProtein" customModuleProvider="target">
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eCL-eY-G1P">
                                 <rect key="frame" x="0.0" y="56" width="414" height="752"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </view>
-                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Qh-lW-5RR" customClass="ErrorMessageView" customModule="SwiftyProtein" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="56" width="414" height="752"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="5Qh-lW-5RR" firstAttribute="leading" secondItem="cjl-7Y-EXB" secondAttribute="leading" id="3J4-Rk-Zf8"/>
-                            <constraint firstItem="cjl-7Y-EXB" firstAttribute="bottom" secondItem="qnl-iU-vkN" secondAttribute="bottom" id="CHn-fI-2qd"/>
-                            <constraint firstItem="cjl-7Y-EXB" firstAttribute="bottom" secondItem="5Qh-lW-5RR" secondAttribute="bottom" id="PKB-yi-YPN"/>
+                            <constraint firstItem="eCL-eY-G1P" firstAttribute="top" secondItem="cjl-7Y-EXB" secondAttribute="top" id="Cwj-dv-Fw4"/>
+                            <constraint firstItem="cjl-7Y-EXB" firstAttribute="trailing" secondItem="eCL-eY-G1P" secondAttribute="trailing" id="EQq-LV-flU"/>
                             <constraint firstAttribute="top" secondItem="OHZ-mE-Xy3" secondAttribute="top" id="TnV-8b-akv"/>
-                            <constraint firstItem="qnl-iU-vkN" firstAttribute="top" secondItem="cjl-7Y-EXB" secondAttribute="top" id="Vbb-8Z-JBq"/>
-                            <constraint firstItem="cjl-7Y-EXB" firstAttribute="trailing" secondItem="5Qh-lW-5RR" secondAttribute="trailing" id="ZFT-Pf-kY7"/>
-                            <constraint firstItem="5Qh-lW-5RR" firstAttribute="top" secondItem="cjl-7Y-EXB" secondAttribute="top" id="baB-8h-xJM"/>
+                            <constraint firstItem="cjl-7Y-EXB" firstAttribute="bottom" secondItem="eCL-eY-G1P" secondAttribute="bottom" id="W94-mw-SN4"/>
                             <constraint firstAttribute="trailing" secondItem="OHZ-mE-Xy3" secondAttribute="trailing" id="eBH-Ak-0tx"/>
-                            <constraint firstItem="cjl-7Y-EXB" firstAttribute="trailing" secondItem="qnl-iU-vkN" secondAttribute="trailing" id="fkL-Z8-D6d"/>
-                            <constraint firstItem="qnl-iU-vkN" firstAttribute="leading" secondItem="cjl-7Y-EXB" secondAttribute="leading" id="rxm-Yu-5lD"/>
+                            <constraint firstItem="eCL-eY-G1P" firstAttribute="leading" secondItem="cjl-7Y-EXB" secondAttribute="leading" id="oJb-ch-ttQ"/>
                             <constraint firstItem="OHZ-mE-Xy3" firstAttribute="leading" secondItem="vkF-1D-m0f" secondAttribute="leading" id="u5v-Jh-OJq"/>
                             <constraint firstAttribute="bottom" secondItem="OHZ-mE-Xy3" secondAttribute="bottom" id="vlL-jw-MDx"/>
                         </constraints>
@@ -153,9 +145,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="ligandLoaderContainerView" destination="eCL-eY-G1P" id="pO5-68-fKK"/>
                         <outlet property="ligandSceneContainerView" destination="OHZ-mE-Xy3" id="S18-5S-nIP"/>
-                        <outlet property="loadingView" destination="qnl-iU-vkN" id="Gd2-eG-GHQ"/>
-                        <outlet property="messageView" destination="5Qh-lW-5RR" id="HXs-S1-4Ry"/>
                         <outlet property="shareButtonItem" destination="NXe-AW-RAj" id="tlb-HH-wfc"/>
                     </connections>
                 </viewController>

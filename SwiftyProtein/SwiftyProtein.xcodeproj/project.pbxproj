@@ -69,7 +69,6 @@
 		A92A9C2824561F15004CA5D3 /* LigandHeaderCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A92A9C2624561F15004CA5D3 /* LigandHeaderCollectionView.xib */; };
 		A92F4871248F804600294356 /* AtomCoordinatesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A92F4870248F804600294356 /* AtomCoordinatesView.xib */; };
 		A92F4873248F805000294356 /* AtomCoordinatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92F4872248F805000294356 /* AtomCoordinatesView.swift */; };
-		A92F4879248FAF5D00294356 /* ErrorMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92F4878248FAF5D00294356 /* ErrorMessageView.swift */; };
 		A92F487B248FB1A000294356 /* LoadingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92F487A248FB1A000294356 /* LoadingImageView.swift */; };
 		A92F487D248FC11D00294356 /* AtomDetailsInformationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92F487C248FC11D00294356 /* AtomDetailsInformationsView.swift */; };
 		A92F487F248FC13400294356 /* AtomDetailsInformationsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A92F487E248FC13400294356 /* AtomDetailsInformationsView.xib */; };
@@ -113,6 +112,9 @@
 		A9718EF7243B9B78005DA378 /* ConstraintType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9718EF6243B9B78005DA378 /* ConstraintType.swift */; };
 		A9718EF9243B9BBA005DA378 /* NSLayoutConstraint+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9718EF8243B9BBA005DA378 /* NSLayoutConstraint+extension.swift */; };
 		A9718EFD243B9C4B005DA378 /* LigandSceneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9718EFB243B9C4B005DA378 /* LigandSceneViewController.xib */; };
+		A979531324A9FB8A00AD19E8 /* MessageViewContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A979531224A9FB8A00AD19E8 /* MessageViewContent.swift */; };
+		A979531724A9FE3C00AD19E8 /* LigandLoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A979531524A9FE3C00AD19E8 /* LigandLoaderViewController.swift */; };
+		A979531824A9FE3C00AD19E8 /* LigandLoaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A979531624A9FE3C00AD19E8 /* LigandLoaderViewController.xib */; };
 		A987F9C0245754AA00086D5C /* LigandsCollectionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987F9BF245754AA00086D5C /* LigandsCollectionBuilder.swift */; };
 		A987F9C2245758EF00086D5C /* Array+string.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987F9C1245758EF00086D5C /* Array+string.swift */; };
 		A987F9C42457592F00086D5C /* Array+StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987F9C32457592F00086D5C /* Array+StringTests.swift */; };
@@ -218,7 +220,6 @@
 		A92A9C2624561F15004CA5D3 /* LigandHeaderCollectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LigandHeaderCollectionView.xib; sourceTree = "<group>"; };
 		A92F4870248F804600294356 /* AtomCoordinatesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AtomCoordinatesView.xib; sourceTree = "<group>"; };
 		A92F4872248F805000294356 /* AtomCoordinatesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomCoordinatesView.swift; sourceTree = "<group>"; };
-		A92F4878248FAF5D00294356 /* ErrorMessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorMessageView.swift; sourceTree = "<group>"; };
 		A92F487A248FB1A000294356 /* LoadingImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingImageView.swift; sourceTree = "<group>"; };
 		A92F487C248FC11D00294356 /* AtomDetailsInformationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomDetailsInformationsView.swift; sourceTree = "<group>"; };
 		A92F487E248FC13400294356 /* AtomDetailsInformationsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AtomDetailsInformationsView.xib; sourceTree = "<group>"; };
@@ -260,6 +261,9 @@
 		A9718EF6243B9B78005DA378 /* ConstraintType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintType.swift; sourceTree = "<group>"; };
 		A9718EF8243B9BBA005DA378 /* NSLayoutConstraint+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+extension.swift"; sourceTree = "<group>"; };
 		A9718EFB243B9C4B005DA378 /* LigandSceneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LigandSceneViewController.xib; sourceTree = "<group>"; };
+		A979531224A9FB8A00AD19E8 /* MessageViewContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewContent.swift; sourceTree = "<group>"; };
+		A979531524A9FE3C00AD19E8 /* LigandLoaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigandLoaderViewController.swift; sourceTree = "<group>"; };
+		A979531624A9FE3C00AD19E8 /* LigandLoaderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LigandLoaderViewController.xib; sourceTree = "<group>"; };
 		A987F9BF245754AA00086D5C /* LigandsCollectionBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigandsCollectionBuilder.swift; sourceTree = "<group>"; };
 		A987F9C1245758EF00086D5C /* Array+string.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+string.swift"; sourceTree = "<group>"; };
 		A987F9C32457592F00086D5C /* Array+StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+StringTests.swift"; sourceTree = "<group>"; };
@@ -732,6 +736,23 @@
 			path = UIView;
 			sourceTree = "<group>";
 		};
+		A979530D24A9EC3A00AD19E8 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		A979531424A9FD2D00AD19E8 /* MessageView */ = {
+			isa = PBXGroup;
+			children = (
+				A94FB073245F3D6700E4DFA3 /* MessageView.xib */,
+				A94FB071245F3D5C00E4DFA3 /* MessageView.swift */,
+				A979531224A9FB8A00AD19E8 /* MessageViewContent.swift */,
+			);
+			path = MessageView;
+			sourceTree = "<group>";
+		};
 		A987F9C5245760A600086D5C /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -834,6 +855,8 @@
 				A91A550F243B9601003DF261 /* LigandViewController.swift */,
 				A922802A23F83DB100BA4F5D /* LigandSceneViewController.swift */,
 				A9718EFB243B9C4B005DA378 /* LigandSceneViewController.xib */,
+				A979531524A9FE3C00AD19E8 /* LigandLoaderViewController.swift */,
+				A979531624A9FE3C00AD19E8 /* LigandLoaderViewController.xib */,
 			);
 			path = Ligand;
 			sourceTree = "<group>";
@@ -841,13 +864,12 @@
 		A9F3E7E1244235A8000D62A1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A979531424A9FD2D00AD19E8 /* MessageView */,
+				A979530D24A9EC3A00AD19E8 /* Errors */,
 				A955605A2459E79200181C91 /* ScrollBar */,
 				A9B0B36124993E5A00207CE1 /* Loading */,
 				A915628A245830B700960140 /* CollectionViewLayout */,
-				A94FB073245F3D6700E4DFA3 /* MessageView.xib */,
-				A94FB071245F3D5C00E4DFA3 /* MessageView.swift */,
 				A926C3FF248EB78D00B01186 /* LabelStackView.swift */,
-				A92F4878248FAF5D00294356 /* ErrorMessageView.swift */,
 				A92F487A248FB1A000294356 /* LoadingImageView.swift */,
 				A9109C7124A631200021EC2F /* PaddedLabel.swift */,
 			);
@@ -970,6 +992,7 @@
 				A91DC1402491232E00E4A440 /* TipPopUpViewController.xib in Resources */,
 				A92A9C1424536EF4004CA5D3 /* LigandCollectionViewController.xib in Resources */,
 				A92A9C2024560512004CA5D3 /* LigandCollectionViewCell.xib in Resources */,
+				A979531824A9FE3C00AD19E8 /* LigandLoaderViewController.xib in Resources */,
 				A94FB06E245F2F8400E4DFA3 /* LoadingView.xib in Resources */,
 				A91DC13B2490E98000E4A440 /* AtomDetailsPopUpViewController.xib in Resources */,
 			);
@@ -1031,6 +1054,7 @@
 				A9718EF2243B9AF5005DA378 /* UIView+gradient.swift in Sources */,
 				A9E7A96F249A926B0028DAB3 /* LoginViewController.swift in Sources */,
 				A91DC13F2491232E00E4A440 /* TipPopUpViewController.swift in Sources */,
+				A979531724A9FE3C00AD19E8 /* LigandLoaderViewController.swift in Sources */,
 				A92A9C1024536A1D004CA5D3 /* LigandListViewController.swift in Sources */,
 				A94DD750244CB9480034C6AF /* PDBLigandConverter+End.swift in Sources */,
 				A9A03BBF24A2918B004F553E /* WelcomeViewController.swift in Sources */,
@@ -1047,6 +1071,7 @@
 				A9556060245AD6F200181C91 /* LigandCollectionViewFlowLayout.swift in Sources */,
 				A900DD9C24A2769800E676B6 /* LocalAuthenticationError.swift in Sources */,
 				A922802723F83DB100BA4F5D /* AppDelegate.swift in Sources */,
+				A979531324A9FB8A00AD19E8 /* MessageViewContent.swift in Sources */,
 				A9597A7D244CC6E2004E732E /* PDBLigandProvider.swift in Sources */,
 				A96BD66524937833004F1678 /* SCNAtomNode.swift in Sources */,
 				A9556064245C487600181C91 /* Array+comparable.swift in Sources */,
@@ -1101,7 +1126,6 @@
 				A9C794582450D69E00B5FFA2 /* NetworkRequest.swift in Sources */,
 				A9556062245C47EC00181C91 /* UICollectionView+extension.swift in Sources */,
 				A94FB077245F452200E4DFA3 /* AtomDetailsView.swift in Sources */,
-				A92F4879248FAF5D00294356 /* ErrorMessageView.swift in Sources */,
 				A9F3E7EC244247F7000D62A1 /* ClampedPropertyWrapper.swift in Sources */,
 				A9718EF4243B9AF5005DA378 /* UIView+appearance.swift in Sources */,
 				A95560532458B55400181C91 /* UIScrollView+extension.swift in Sources */,

@@ -7,8 +7,7 @@ class LigandViewController: UIViewController {
   //----------------------------------------------------------------------------
 
   @IBOutlet weak var ligandSceneContainerView: UIView!
-  @IBOutlet weak var loadingView: LoadingView!
-  @IBOutlet weak var messageView: MessageView!
+  @IBOutlet weak var ligandLoaderContainerView: UIView!
   @IBOutlet weak var shareButtonItem: UIBarButtonItem!
 
   /******************** Computed properties ********************/
@@ -23,7 +22,11 @@ class LigandViewController: UIViewController {
 
   var configuration = LigandSceneConfiguration(colorMode: .cpk)
 
-  private let provider = LightLigandProvider()
+  /******************** Providers ********************/
+
+  private let ligandProvider = LightLigandProvider()
+
+  private let network = NetworkAccess()
 
   /******************** View controllers ********************/
 
@@ -33,6 +36,10 @@ class LigandViewController: UIViewController {
 
   private lazy var atomDetailVC: AtomDetailsPopUpViewController = {
     return AtomDetailsPopUpViewController(bundle: .main)
+  }()
+
+  private lazy var loaderVC: LigandLoaderViewController = {
+    return LigandLoaderViewController(bundle: .main)
   }()
 
   //----------------------------------------------------------------------------
@@ -81,16 +88,8 @@ class LigandViewController: UIViewController {
     guard let ligand = ligand else { return }
 
     title = ligand
-    provider.get(ligand: ligand)
-  }
 
-  //----------------------------------------------------------------------------
-  // MARK: - Toggle views
-  //----------------------------------------------------------------------------
-
-  private func toggleMessageView(showMessage: Bool, animated: Bool = true) {
-    showMessage ? messageView.fadeIn(animated: animated)
-      : messageView.fadeOut(animated: animated)
+    loaderVC.loadLigand(ligand)
   }
 
   //----------------------------------------------------------------------------
@@ -108,6 +107,10 @@ class LigandViewController: UIViewController {
 
     atomDetailVC.atom = atom
   }
+
+  //----------------------------------------------------------------------------
+  // MARK: - Atom Details
+  //----------------------------------------------------------------------------
 
   private func presentAtomDetailVC(with atom: PDBAtomLight,
                                    previousAtom: PDBAtomLight?) {
@@ -131,9 +134,7 @@ class LigandViewController: UIViewController {
   private func setup() {
     setupLigandSceneVC()
     setupAtomDetailView()
-    setupLoadingView()
-    setupMessageView()
-    setupProvider()
+    setupLoaderVC()
   }
 
   private func setupLigandSceneVC() {
@@ -152,44 +153,13 @@ class LigandViewController: UIViewController {
     atomDetailVC.modalPresentationStyle = .overCurrentContext
   }
 
-  private func setupLoadingView() {
-    loadingView.isUserInteractionEnabled = false
-  }
+  private func setupLoaderVC() {
+    add(asChildViewController: loaderVC, on: ligandLoaderContainerView)
 
-  private func setupMessageView() {
-    messageView.isUserInteractionEnabled = false
-    toggleMessageView(showMessage: false, animated: false)
-  }
-
-  private func setupProvider() {
-    provider.view = self
-    provider.delegate = self
-  }
-}
-
-//==============================================================================
-// MARK: - LightLigandProviderDelegate
-//==============================================================================
-
-extension LigandViewController: LightLigandProviderDelegate {
-  func didGetLigand(_ ligand: PDBLightLigand) {
-    shareButtonItem.isEnabled = true
-    ligandSceneVC.atoms = ligand.atoms
-    ligandSceneVC.reload()
-  }
-
-  func didFailGetLigand(_ error: Error) {
-    print(error)
-    toggleMessageView(showMessage: true)
-  }
-}
-
-//==============================================================================
-// MARK: - LightLigandProviderView
-//==============================================================================
-
-extension LigandViewController: LightLigandProviderView {
-  func setIsLoading(_ isLoading: Bool) {
-    isLoading ? loadingView.fadeIn() : loadingView.fadeOut()
+    loaderVC.didComplete = { [weak self] ligand in
+      self?.shareButtonItem.isEnabled = true
+      self?.ligandSceneVC.atoms = ligand.atoms
+      self?.ligandSceneVC.reload()
+    }
   }
 }
