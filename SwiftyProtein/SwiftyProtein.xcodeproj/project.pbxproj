@@ -736,13 +736,6 @@
 			path = UIView;
 			sourceTree = "<group>";
 		};
-		A979530D24A9EC3A00AD19E8 /* Errors */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Errors;
-			sourceTree = "<group>";
-		};
 		A979531424A9FD2D00AD19E8 /* MessageView */ = {
 			isa = PBXGroup;
 			children = (
@@ -865,7 +858,6 @@
 			isa = PBXGroup;
 			children = (
 				A979531424A9FD2D00AD19E8 /* MessageView */,
-				A979530D24A9EC3A00AD19E8 /* Errors */,
 				A955605A2459E79200181C91 /* ScrollBar */,
 				A9B0B36124993E5A00207CE1 /* Loading */,
 				A915628A245830B700960140 /* CollectionViewLayout */,

@@ -28,7 +28,7 @@ struct PDBRequest {
                                urlPrefix: prefix,
                                urlSuffix: suffix)
 
-    NetworkRequest.get(url) { result in
+    NetworkRequest.shared.get(url) { result in
       switch result {
       case .failure(let error): completion(.failure(error))
       case .success(let data):

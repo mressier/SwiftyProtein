@@ -22,6 +22,8 @@ class LigandLoaderViewController: UIViewController {
 
   private(set) var ligand: String?
 
+  private(set) var isLoading: Bool = false
+
   /******************** Callbacks ********************/
 
   var didComplete: ((PDBLightLigand) -> Void)?
@@ -44,14 +46,28 @@ class LigandLoaderViewController: UIViewController {
   //----------------------------------------------------------------------------
 
   func loadLigand(_ ligand: String) {
+    guard isLoading == false else { return }
+
     self.ligand = ligand
 
     guard network.hasNetworkAccess else {
-      messageView.content = .noInternet
-      messageView.fadeIn()
-      return
+      return showMessageView(withContent: .noInternet)
     }
+
     ligandProvider.get(ligand: ligand)
+  }
+
+  //----------------------------------------------------------------------------
+  // MARK: - Message View
+  //----------------------------------------------------------------------------
+
+  private func showMessageView(withContent content: MessageView.Content) {
+    messageView.content = content
+    messageView.fadeIn()
+  }
+
+  private func hideMessageView() {
+    messageView.fadeOut()
   }
 
   //----------------------------------------------------------------------------
@@ -96,9 +112,26 @@ extension LigandLoaderViewController: LightLigandProviderDelegate {
   }
 
   func didFailGetLigand(_ error: Error) {
+    isLoading = false
     print(error)
-    messageView.content = .ligandNotFound
-    messageView.fadeIn()
+    showMessageView(withContent: getMessageContent(for: error))
+  }
+
+  private func getMessageContent(for error: Error) -> MessageView.Content {
+    if let error = error as? RequestError {
+      switch error {
+      case .noInternet: return .noInternet
+      case .contentDoesNotExist: return .ligandNotFound
+      case .contentNotValid: return .ligandNotReadable
+      default: return .ligandDefaultError
+      }
+    }
+
+    if error is PDBLigandConverter.ContentError {
+      return .ligandNotReadable
+    }
+
+    return .ligandDefaultError
   }
 }
 
@@ -109,6 +142,7 @@ extension LigandLoaderViewController: LightLigandProviderDelegate {
 extension LigandLoaderViewController: LightLigandProviderView {
   func setIsLoading(_ isLoading: Bool) {
     isLoading ? loadingView.fadeIn() : loadingView.fadeOut()
+    self.isLoading = isLoading
   }
 }
 
@@ -118,11 +152,9 @@ extension LigandLoaderViewController: LightLigandProviderView {
 
 extension LigandLoaderViewController: NetworkAccessDelegate {
   func networkAccessDidChanged(_ hasNetworkAccess: Bool) {
-    guard hasNetworkAccess else { return }
-    guard let ligand = ligand else { return }
+    guard hasNetworkAccess, let ligand = ligand else { return }
 
-    messageView.fadeOut()
-
+    hideMessageView()
     loadLigand(ligand)
   }
 }

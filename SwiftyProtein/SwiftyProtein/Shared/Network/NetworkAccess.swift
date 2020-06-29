@@ -43,11 +43,9 @@ class NetworkAccess: NetworkAccessor {
 
   init(delegate: NetworkAccessDelegate? = nil) {
     self.monitor.pathUpdateHandler = { path in
-      self.pathStatus = path.status
-      DispatchQueue.main.async {
-        self.delegate?.networkAccessDidChanged(self.hasNetworkAccess)
-      }
+      self.pathUpdateHandler(path)
     }
+
     self.pathStatus = monitor.currentPath.status
     self.delegate = delegate
     self.monitor.start(queue: queue)
@@ -61,6 +59,15 @@ class NetworkAccess: NetworkAccessor {
   // MARK: - Methods
   //----------------------------------------------------------------------------
 
+  private func pathUpdateHandler(_ path: NWPath) {
+    guard path.status != pathStatus else { return }
+
+    pathStatus = path.status
+
+    DispatchQueue.main.async {
+      self.delegate?.networkAccessDidChanged(self.hasNetworkAccess)
+    }
+  }
 }
 
 
