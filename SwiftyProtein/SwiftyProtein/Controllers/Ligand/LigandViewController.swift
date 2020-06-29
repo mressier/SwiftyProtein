@@ -77,6 +77,8 @@ class LigandViewController: UIViewController {
                                       applicationActivities: [])
     vc.popoverPresentationController?.barButtonItem =
       navigationItem.rightBarButtonItem
+
+    updateSelectedAtom(to: nil)
     present(vc, animated: true)
   }
 

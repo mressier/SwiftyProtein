@@ -19,7 +19,6 @@ class SCNCameraNode: SCNNode {
 
     let area = nodes.areaCovered
     let distance = area.distance
-    let middle = area.middle
 
     let higherDistance = CGFloat(max(distance.x, distance.z) * 3)
     let clampedHigherDistance = higherDistance.clamped(min: -70, max: 70)
