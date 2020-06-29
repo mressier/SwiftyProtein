@@ -16,6 +16,23 @@ class SCNLigandNode: SCNNode {
   // MARK: - Initialization
   //----------------------------------------------------------------------------
 
+  override init() {
+    super.init()
+    setupAspect()
+  }
+
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+
+  private func setupAspect() {
+    position = .zero
+  }
+
+  //----------------------------------------------------------------------------
+  // MARK: - Ligand
+  //----------------------------------------------------------------------------
+
   func create(ligand: LigandGraphicData) {
     atomNodes = createNodes(for: ligand)
     atomNodesByNode = atomNodes.dictionaryByNode

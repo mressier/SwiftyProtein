@@ -1,4 +1,5 @@
 import UIKit
+import SceneKit
 
 class AtomCoordinatesView: UIView, NibInstanciable {
 
@@ -13,7 +14,7 @@ class AtomCoordinatesView: UIView, NibInstanciable {
 
   /******************** Parameters ********************/
 
-  var coordinates: PDBAtomPosition? {
+  var coordinates: SCNVector3? {
     didSet { setupLabelTexts(position: coordinates) }
   }
 
@@ -54,7 +55,7 @@ class AtomCoordinatesView: UIView, NibInstanciable {
     labelsStackView.numberOfLines = 1
   }
 
-  private func setupLabelTexts(position: PDBAtomPosition?) {
+  private func setupLabelTexts(position: SCNVector3?) {
     if let position = position {
       labelsStackView.texts = [
         String(format: "x: %.2f", position.x),

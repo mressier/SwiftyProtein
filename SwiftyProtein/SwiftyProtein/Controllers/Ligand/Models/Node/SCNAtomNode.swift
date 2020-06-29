@@ -7,7 +7,7 @@ import SceneKit
  * Custom class for a node representing an atom
  *
  ******************************************************************************/
-class SCNAtomNode: SCNNode {
+class SCNAtomNode: SCNNode, Positionable3D {
 
   //----------------------------------------------------------------------------
   // MARK: - Properties

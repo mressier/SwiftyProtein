@@ -7,10 +7,10 @@ import SceneKit
  * Represent a light version of an atom with only informations required to display it.
  *
  ******************************************************************************/
-struct PDBAtomLight: Hashable {
+struct PDBAtomLight: Hashable, Positionable3D {
   let index: Int
   let symbol: String
-  let position: PDBAtomPosition
+  var position: SCNVector3
   let linkedAtoms: [Int]
 
   //----------------------------------------------------------------------------
@@ -19,7 +19,7 @@ struct PDBAtomLight: Hashable {
 
   init(index: Int,
        symbol: String? = nil,
-       position: PDBAtomPosition,
+       position: SCNVector3,
        linkedAtoms: [Int]) {
     self.index = index
     self.symbol = symbol ?? "\(index)"
@@ -28,16 +28,8 @@ struct PDBAtomLight: Hashable {
   }
 
   //----------------------------------------------------------------------------
-  // MARK: - Tools
+  // MARK: - Equatable
   //----------------------------------------------------------------------------
-
-  /******************** Conversion ********************/
-
-  var positionSCN: SCNVector3 {
-    return position.toSCNVector3
-  }
-
-  /******************** Equatable ********************/
 
   static func == (lhs: PDBAtomLight, rhs: PDBAtomLight) -> Bool {
     return lhs.index == rhs.index && lhs.symbol == rhs.symbol

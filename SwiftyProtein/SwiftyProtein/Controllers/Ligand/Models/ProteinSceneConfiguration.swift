@@ -2,7 +2,7 @@ import UIKit
 
 struct LigandSceneConfiguration {
   var colorMode: ColorMode
-  var distanceMultiplier = CGFloat(1.5)
+  var distanceMultiplier: Float = 1.5
 
   static var `default` = LigandSceneConfiguration(colorMode: .cpk)
 

@@ -28,7 +28,6 @@
 		A915629E24588F1100960140 /* UIStackView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A915629A24588F1100960140 /* UIStackView+extension.swift */; };
 		A91A5510243B9601003DF261 /* LigandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91A550F243B9601003DF261 /* LigandViewController.swift */; };
 		A91CF350244C651400294568 /* AtomsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91CF34F244C651400294568 /* AtomsList.swift */; };
-		A91CF352244C656B00294568 /* PDBAtomPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91CF351244C656B00294568 /* PDBAtomPosition.swift */; };
 		A91CF355244C7B9900294568 /* PDBLigandConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91CF354244C7B9900294568 /* PDBLigandConverter.swift */; };
 		A91CF357244C7BC100294568 /* PDBLigandConverter+Atom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91CF356244C7BC100294568 /* PDBLigandConverter+Atom.swift */; };
 		A91CF359244C7BEE00294568 /* PDBLigandConverter+Connect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91CF358244C7BEE00294568 /* PDBLigandConverter+Connect.swift */; };
@@ -73,6 +72,7 @@
 		A92F487D248FC11D00294356 /* AtomDetailsInformationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92F487C248FC11D00294356 /* AtomDetailsInformationsView.swift */; };
 		A92F487F248FC13400294356 /* AtomDetailsInformationsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A92F487E248FC13400294356 /* AtomDetailsInformationsView.xib */; };
 		A93FCA0B24AA38FE00306264 /* PDBCoordinateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93FCA0A24AA38FE00306264 /* PDBCoordinateModel.swift */; };
+		A93FCA0D24AA878E00306264 /* Positionable3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93FCA0C24AA878E00306264 /* Positionable3D.swift */; };
 		A94DD736244C92740034C6AF /* PDBLigandConverter+AtomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94DD735244C92740034C6AF /* PDBLigandConverter+AtomTests.swift */; };
 		A94DD738244C957B0034C6AF /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94DD737244C957B0034C6AF /* String+extension.swift */; };
 		A94DD73B244CA9D60034C6AF /* String+TrimmedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94DD73A244CA9D60034C6AF /* String+TrimmedTests.swift */; };
@@ -178,7 +178,6 @@
 		A915629A24588F1100960140 /* UIStackView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackView+extension.swift"; sourceTree = "<group>"; };
 		A91A550F243B9601003DF261 /* LigandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigandViewController.swift; sourceTree = "<group>"; };
 		A91CF34F244C651400294568 /* AtomsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomsList.swift; sourceTree = "<group>"; };
-		A91CF351244C656B00294568 /* PDBAtomPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDBAtomPosition.swift; sourceTree = "<group>"; };
 		A91CF354244C7B9900294568 /* PDBLigandConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDBLigandConverter.swift; sourceTree = "<group>"; };
 		A91CF356244C7BC100294568 /* PDBLigandConverter+Atom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDBLigandConverter+Atom.swift"; sourceTree = "<group>"; };
 		A91CF358244C7BEE00294568 /* PDBLigandConverter+Connect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDBLigandConverter+Connect.swift"; sourceTree = "<group>"; };
@@ -225,6 +224,7 @@
 		A92F487C248FC11D00294356 /* AtomDetailsInformationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomDetailsInformationsView.swift; sourceTree = "<group>"; };
 		A92F487E248FC13400294356 /* AtomDetailsInformationsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AtomDetailsInformationsView.xib; sourceTree = "<group>"; };
 		A93FCA0A24AA38FE00306264 /* PDBCoordinateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDBCoordinateModel.swift; sourceTree = "<group>"; };
+		A93FCA0C24AA878E00306264 /* Positionable3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Positionable3D.swift; sourceTree = "<group>"; };
 		A94DD735244C92740034C6AF /* PDBLigandConverter+AtomTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDBLigandConverter+AtomTests.swift"; sourceTree = "<group>"; };
 		A94DD737244C957B0034C6AF /* String+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
 		A94DD73A244CA9D60034C6AF /* String+TrimmedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+TrimmedTests.swift"; sourceTree = "<group>"; };
@@ -660,7 +660,6 @@
 			children = (
 				A91CF35A244C7DE800294568 /* PDBAtom.swift */,
 				A910E40923F87E78008F9020 /* PDBAtomLight.swift */,
-				A91CF351244C656B00294568 /* PDBAtomPosition.swift */,
 				A94DD751244CB9E40034C6AF /* PDBConnection.swift */,
 				A9597A7E244CC719004E732E /* PDBLigand.swift */,
 			);
@@ -724,6 +723,7 @@
 			children = (
 				A9109C6E24A620AD0021EC2F /* UI */,
 				A9718EE5243B9A4E005DA378 /* Xib */,
+				A93FCA0C24AA878E00306264 /* Positionable3D.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1031,7 +1031,6 @@
 				A922802B23F83DB100BA4F5D /* LigandSceneViewController.swift in Sources */,
 				A9D810AD2497B2D200FDD5E5 /* LigandGraphicData.swift in Sources */,
 				A9934579242FCDEF00C6B043 /* FakeLigands.swift in Sources */,
-				A91CF352244C656B00294568 /* PDBAtomPosition.swift in Sources */,
 				A915629B24588F1100960140 /* UIColor+extension.swift in Sources */,
 				A9718EE4243B9A32005DA378 /* UIViewController+extension.swift in Sources */,
 				A92F487B248FB1A000294356 /* LoadingImageView.swift in Sources */,
@@ -1099,6 +1098,7 @@
 				A993458E242FF4FF00C6B043 /* SCNView+extension.swift in Sources */,
 				A91CF35D244C860A00294568 /* PDBLigandConverter+ReadState.swift in Sources */,
 				A91DC14B2491309B00E4A440 /* AtomPair.swift in Sources */,
+				A93FCA0D24AA878E00306264 /* Positionable3D.swift in Sources */,
 				A915629E24588F1100960140 /* UIStackView+extension.swift in Sources */,
 				A915629D24588F1100960140 /* UIImage+extension.swift in Sources */,
 				A9F3E7E624423731000D62A1 /* Reusable.swift in Sources */,

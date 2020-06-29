@@ -1,4 +1,5 @@
 import Foundation
+import SceneKit
 
 /*******************************************************************************
  * PDBAtom
@@ -30,7 +31,7 @@ struct PDBAtom: Equatable {
   var lightAtom: PDBAtomLight {
     return PDBAtomLight(index: index,
                         symbol: symbol,
-                        position: PDBAtomPosition(x: x, y: y, z: z),
+                        position: SCNVector3(x: x, y: y, z: z),
                         linkedAtoms: linkedAtomIndex)
   }
 

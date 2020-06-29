@@ -16,6 +16,20 @@ class Area3D {
   var min: SCNVector3
   var max: SCNVector3
 
+  /******************** Computed ********************/
+
+  var distance: SCNVector3 {
+    return SCNVector3(x: max.x - min.x,
+                      y: max.y - min.y,
+                      z: max.z - min.z)
+  }
+
+  var middle: SCNVector3 {
+    return SCNVector3(x: max.x - (distance.x / 2),
+                      y: max.y - (distance.y / 2),
+                      z: max.z - (distance.z / 2))
+  }
+
   //----------------------------------------------------------------------------
   // MARK: - Initialization
   //----------------------------------------------------------------------------

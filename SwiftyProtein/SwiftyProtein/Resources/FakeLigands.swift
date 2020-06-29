@@ -1,8 +1,6 @@
 import UIKit
 import SceneKit
 
-fileprivate typealias APos = PDBAtomPosition
-
 let mult = CGFloat(1.5)
 
 struct FakeLigands {

@@ -1,4 +1,5 @@
 import Foundation
+import SceneKit
 
 /*******************************************************************************
  * PDBLigand
@@ -41,6 +42,39 @@ struct PDBLightLigand: Equatable {
     self.name = ligand.name
     self.coordinatesModel = ligand.coordinatesModel
     self.atoms = ligand.atoms.map() { $0.lightAtom }
+  }
+
+  init(name: String,
+       coordinatesModel: PDBCoordinateModel,
+       atoms: [PDBAtomLight]) {
+    self.name = name
+    self.coordinatesModel = coordinatesModel
+    self.atoms = atoms
+  }
+
+  //----------------------------------------------------------------------------
+  // MARK: - Methods
+  //----------------------------------------------------------------------------
+
+  /// Ligand with a position centered around the point 0
+  func centered() -> PDBLightLigand {
+    let area = atoms.areaCovered
+    let middle = area.middle
+
+    let centeredAtoms = atoms.map() { atom -> PDBAtomLight in
+      let position = SCNVector3(x: atom.position.x - middle.x,
+                                y: atom.position.y - middle.y,
+                                z: atom.position.z - middle.z)
+
+      return PDBAtomLight(index: atom.index,
+                          symbol: atom.symbol,
+                          position: position,
+                          linkedAtoms: atom.linkedAtoms)
+    }
+
+    return PDBLightLigand(name: name,
+                          coordinatesModel: coordinatesModel,
+                          atoms: centeredAtoms)
   }
 
   //----------------------------------------------------------------------------

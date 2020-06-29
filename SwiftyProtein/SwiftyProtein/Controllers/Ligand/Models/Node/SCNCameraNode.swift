@@ -18,15 +18,14 @@ class SCNCameraNode: SCNNode {
     guard let nodes = ligand?.atomNodes else { return }
 
     let area = nodes.areaCovered
-    let distance = PDBAtomPosition(x: area.max.x - area.min.x,
-                                   y: area.max.y - area.min.y,
-                                   z: area.max.z - area.min.z)
-    let highest = [distance.x, distance.y, distance.z].highest ?? -30
+    let distance = area.distance
+    let middle = area.middle
 
-    let y = Float(highest * -3)
-    let clampedY = y.clamped(min: -70, max: 70)
+    let higherDistance = CGFloat(max(distance.x, distance.z) * 3)
+    let clampedHigherDistance = higherDistance.clamped(min: -70, max: 70)
+    let y = CGFloat(CGFloat(area.max.y) - clampedHigherDistance)
 
-    position = SCNVector3(x: 0, y: clampedY, z: 0)
+    position = SCNVector3(0, y, 0)
   }
 
   func resetPosition() {

@@ -3,19 +3,6 @@ import SceneKit
 
 extension Array where Element == SCNAtomNode {
 
-  /// Area covered  by the atom
-  var areaCovered: Area3D {
-    let firstPosition = self.first?.atom?.position
-    let area = Area3D(min: firstPosition ?? .zero, max: firstPosition ?? .zero)
-
-    self.forEach() { node in
-      area.update(min: node.atom.position)
-      area.update(max: node.atom.position)
-    }
-
-    return area
-  }
-
   //----------------------------------------------------------------------------
   // MARK: - Convert array to dictionary
   //----------------------------------------------------------------------------

@@ -158,7 +158,7 @@ class LigandViewController: UIViewController {
 
     loaderVC.didComplete = { [weak self] ligand in
       self?.shareButtonItem.isEnabled = true
-      self?.ligandSceneVC.ligand = ligand
+      self?.ligandSceneVC.ligand = ligand.centered()
       self?.ligandSceneVC.reload()
     }
   }

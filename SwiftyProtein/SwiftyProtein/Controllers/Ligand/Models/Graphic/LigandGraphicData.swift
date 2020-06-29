@@ -19,7 +19,7 @@ struct LigandGraphicData {
 
       let atom = AtomGraphicData(index: lightAtom.index,
                                  name: lightAtom.symbol,
-                                 position: position.toSCNVector3,
+                                 position: position,
                                  color: config.getColor(for: lightAtom),
                                  linkedAtomIndexes: lightAtom.linkedAtoms)
       return atom
