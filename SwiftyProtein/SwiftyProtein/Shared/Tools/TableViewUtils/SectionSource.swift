@@ -54,7 +54,7 @@ class SectionSource<Section, Element: Equatable>: CollectionSource {
   }
 
   func sectionKey(at index: Int) -> Section? {
-    guard index > 0 && index <  elements.count else  { return nil }
+    guard index >= 0 && index <  elements.count else  { return nil }
     return elements[index].section
   }
 

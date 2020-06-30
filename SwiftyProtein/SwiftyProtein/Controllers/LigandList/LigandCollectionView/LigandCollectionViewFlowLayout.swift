@@ -43,12 +43,6 @@ class LigandCollectionViewFlowLayout: LeftAlignedCollectionViewFlowLayout {
   override func shouldInvalidateLayout(
     forBoundsChange newBounds: CGRect
   ) -> Bool {
-    guard let collectionView = collectionView else { return false }
-
-    let oldSize = collectionView.bounds.size
-    guard oldSize != newBounds.size else { return false }
-
-    updateEstimatedItemSize()
     return true
   }
 
