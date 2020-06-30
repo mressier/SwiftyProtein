@@ -75,7 +75,7 @@ class SCNLigandNode: SCNNode {
     return atoms.compactMap() { pair in
       return addCylinderBetween(pair.start,
                                 and: pair.end,
-                                color: .black)
+                                color: .label)
     }
   }
 }

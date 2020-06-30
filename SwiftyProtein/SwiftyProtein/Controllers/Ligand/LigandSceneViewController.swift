@@ -58,6 +58,7 @@ class LigandSceneViewController: UIViewController {
     sceneView.scene = scene
     sceneView.allowsCameraControl = true
     sceneView.autoenablesDefaultLighting = true
+    sceneView.backgroundColor = .systemBackground
   }
 
   private func setupCamera(on rootNode: SCNNode) {
@@ -124,18 +125,18 @@ class LigandSceneViewController: UIViewController {
     let location = tap.location(in: sceneView)
 
     guard let atomNode = sceneView.getNode(at: location) else {
-      print("No node at \(location)")
+      // No node at location
       return
     }
 
     guard let atomData = ligandNode?.toggleSelection(on: atomNode) else {
-      print("Node touched is not an atom")
+      // Node touched is not an atom
       return
     }
 
     guard let atom =
       ligand?.atoms.first(where: { $0.index == atomData.atom.index }) else {
-        print("ERROR: Cannot found an atom with the same index as selected atom node")
+        print("ERROR: Cannot found an atom with the same index as selected one")
         return
     }
 
