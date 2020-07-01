@@ -23,6 +23,11 @@ Visualize ligands from RCSB.org in 3D.
 
 ![Share](../assets/share-ligand.png)
       
+##Incoming features
+- Add ligand as favorites
+- Additionnal informations about an atom on ligand view
+- Add some tips as tutorial for first use
+- Add analytics
 
 # Ressources & Credits
 - The bean eater loader is provided by [loading.io](www.loading.io)
