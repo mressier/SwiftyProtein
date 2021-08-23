@@ -1,4 +1,5 @@
 import Foundation
+import Unicorp_DataTypesLibrary
 
 extension PDBLigandConverter {
 
@@ -82,9 +83,11 @@ extension PDBLigandConverter {
   //----------------------------------------------------------------------------
 
   private static func getAtomParts(from line: String) -> [String]? {
-    guard var atomParts = line.substringMatches(regex: ATOM_REGEX).first else {
+    guard var atomParts =
+            try? line.substringMatches(regex: ATOM_REGEX).first else {
       return nil
     }
+
     atomParts.remove(at: 0) // remove global match
 
     guard atomParts.count == 14 else {

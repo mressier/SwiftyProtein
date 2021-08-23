@@ -37,7 +37,7 @@ extension PDBLigandConverter {
 
   private static func getConnectionsParts(from line: String) -> [String]? {
     guard var connections =
-      line.substringMatches(regex: CONNECT_REGEX).first else { return nil }
+      try? line.substringMatches(regex: CONNECT_REGEX).first else { return nil }
 
     connections.remove(at: 0) // remove global match
 

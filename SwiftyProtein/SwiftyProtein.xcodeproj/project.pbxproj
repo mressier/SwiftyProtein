@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58C2499A257FC02600A7CD89 /* Unicorp.DataTypesLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 58C24999257FC02600A7CD89 /* Unicorp.DataTypesLibrary */; };
 		A900DD9C24A2769800E676B6 /* LocalAuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A900DD9B24A2769800E676B6 /* LocalAuthenticationError.swift */; };
 		A90CA9B42456CE5B000BBE60 /* LigandsAppList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90CA9B32456CE5B000BBE60 /* LigandsAppList.swift */; };
 		A9109C7024A621170021EC2F /* Padded.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9109C6F24A621170021EC2F /* Padded.swift */; };
@@ -304,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9597A82244CC8B0004E732E /* Alamofire in Frameworks */,
+				58C2499A257FC02600A7CD89 /* Unicorp.DataTypesLibrary in Frameworks */,
 				A94FB06C245F2F0F00E4DFA3 /* SwiftyGif in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -563,11 +565,11 @@
 				A92A9C0A245352F2004CA5D3 /* Array+extension.swift */,
 				A987F9C1245758EF00086D5C /* Array+string.swift */,
 				A9643D4324977C7600744CED /* Array+SCNAtomNode.swift */,
+				A9556063245C487600181C91 /* Array+comparable.swift */,
 				A94DD737244C957B0034C6AF /* String+extension.swift */,
 				A9718EF8243B9BBA005DA378 /* NSLayoutConstraint+extension.swift */,
 				A9718EEB243B9AF5005DA378 /* UIView */,
 				A9718EE2243B99E9005DA378 /* SceneKit */,
-				A9556063245C487600181C91 /* Array+comparable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -899,6 +901,7 @@
 			packageProductDependencies = (
 				A9597A81244CC8B0004E732E /* Alamofire */,
 				A94FB06B245F2F0F00E4DFA3 /* SwiftyGif */,
+				58C24999257FC02600A7CD89 /* Unicorp.DataTypesLibrary */,
 			);
 			productName = SwiftyProtein;
 			productReference = A922802323F83DB100BA4F5D /* SwiftyProtein.app */;
@@ -953,6 +956,7 @@
 			packageReferences = (
 				A9597A80244CC8B0004E732E /* XCRemoteSwiftPackageReference "Alamofire" */,
 				A94FB06A245F2F0F00E4DFA3 /* XCRemoteSwiftPackageReference "SwiftyGif" */,
+				58C24998257FC02600A7CD89 /* XCRemoteSwiftPackageReference "Unicorp.DataTypesLib.Swift" */,
 			);
 			productRefGroup = A922802423F83DB100BA4F5D /* Products */;
 			projectDirPath = "";
@@ -1301,13 +1305,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 23T8TD424J;
+				DEVELOPMENT_TEAM = CN8ZHRZT3N;
 				INFOPLIST_FILE = SwiftyProtein/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = MathildeRessier.SwiftyProtein;
+				PRODUCT_BUNDLE_IDENTIFIER = unicorp.SwiftyProtein;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1319,13 +1323,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 23T8TD424J;
+				DEVELOPMENT_TEAM = CN8ZHRZT3N;
 				INFOPLIST_FILE = SwiftyProtein/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = MathildeRessier.SwiftyProtein;
+				PRODUCT_BUNDLE_IDENTIFIER = unicorp.SwiftyProtein;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1405,6 +1409,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		58C24998257FC02600A7CD89 /* XCRemoteSwiftPackageReference "Unicorp.DataTypesLib.Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mathilde-unicorp/Unicorp.DataTypesLib.Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		A94FB06A245F2F0F00E4DFA3 /* XCRemoteSwiftPackageReference "SwiftyGif" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kirualex/SwiftyGif";
@@ -1424,6 +1436,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		58C24999257FC02600A7CD89 /* Unicorp.DataTypesLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 58C24998257FC02600A7CD89 /* XCRemoteSwiftPackageReference "Unicorp.DataTypesLib.Swift" */;
+			productName = Unicorp.DataTypesLibrary;
+		};
 		A94FB06B245F2F0F00E4DFA3 /* SwiftyGif */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A94FB06A245F2F0F00E4DFA3 /* XCRemoteSwiftPackageReference "SwiftyGif" */;

@@ -9,7 +9,9 @@ extension Array {
     var index = startIndex
 
     while index != endIndex {
-      if closure(self[index]) { return index }
+      if closure(self[index]) {
+        return index
+      }
       index = self.index(after: index)
     }
 

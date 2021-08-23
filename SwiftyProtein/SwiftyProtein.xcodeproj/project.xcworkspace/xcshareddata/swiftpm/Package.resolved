@@ -18,6 +18,15 @@
           "revision": "4d851de4cdecb6c5453c8d529c3578dd49086408",
           "version": "5.2.0"
         }
+      },
+      {
+        "package": "Unicorp.DataTypesLibrary",
+        "repositoryURL": "https://github.com/mathilde-unicorp/Unicorp.DataTypesLib.Swift.git",
+        "state": {
+          "branch": null,
+          "revision": "5f9802eedf3f5d0fc6589a1c20c31d86d0be5f88",
+          "version": "1.0.0"
+        }
       }
     ]
   },
