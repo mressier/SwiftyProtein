@@ -78,17 +78,17 @@ class AtomDetailsView: UIView, NibInstanciable {
     let moreAtomDetails = AtomsList.atomsBySymbol[symbol]
     let atomName = moreAtomDetails?.name.capitalized
     let atomicNumber = moreAtomDetails?.atomicNumber
+    let numberOfLinks = atomDetails?.atom.linkedAtoms.count ?? 0
+    let occurences = atomDetails?.ligand.numberOfAtoms(withSymbol: symbol) ?? 0
 
     symbolLabel.text = symbol
     atomNameLabel.text = atomName ?? symbol
 
     coordinatesView.coordinates = atom?.position
 
-    guard let details = atomDetails else { return }
-
     usefullInformationsView.informations = [
-      "\(details.ligand.numberOfAtoms(withSymbol: details.atom.symbol)) occur.", // number of occurences of this symbol in the ligand
-      "\(details.atom.linkedAtoms.count) link(s)", // number of links with other atomes
+      "\(occurences) occur.", // number of occurences of this symbol in the ligand
+      "\(numberOfLinks) link\(numberOfLinks > 1 ? "s" : "")", // number of links with other atomes
       "Z = \(atomicNumber ?? 0)" // Z is the atomic number
     ]
   }
