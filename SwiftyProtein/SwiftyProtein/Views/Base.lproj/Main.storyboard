@@ -116,6 +116,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fr9-4m-BkY" customClass="LigandControlsView" customModule="SwiftyProtein" customModuleProvider="target">
+                                <rect key="frame" x="8" y="64" width="150" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="HCm-pM-xRM"/>
+                                    <constraint firstAttribute="height" constant="100" id="wb2-uW-HzD"/>
+                                </constraints>
+                            </view>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eCL-eY-G1P">
                                 <rect key="frame" x="0.0" y="56" width="414" height="752"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -126,8 +134,11 @@
                         <constraints>
                             <constraint firstItem="eCL-eY-G1P" firstAttribute="top" secondItem="cjl-7Y-EXB" secondAttribute="top" id="Cwj-dv-Fw4"/>
                             <constraint firstItem="cjl-7Y-EXB" firstAttribute="trailing" secondItem="eCL-eY-G1P" secondAttribute="trailing" id="EQq-LV-flU"/>
+                            <constraint firstItem="fr9-4m-BkY" firstAttribute="top" secondItem="cjl-7Y-EXB" secondAttribute="top" constant="8" id="EZh-C6-7O8"/>
+                            <constraint firstItem="fr9-4m-BkY" firstAttribute="leading" secondItem="cjl-7Y-EXB" secondAttribute="leading" constant="8" id="RaV-HB-XU7"/>
                             <constraint firstAttribute="top" secondItem="OHZ-mE-Xy3" secondAttribute="top" id="TnV-8b-akv"/>
                             <constraint firstItem="cjl-7Y-EXB" firstAttribute="bottom" secondItem="eCL-eY-G1P" secondAttribute="bottom" id="W94-mw-SN4"/>
+                            <constraint firstItem="cjl-7Y-EXB" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="fr9-4m-BkY" secondAttribute="bottom" constant="8" id="Wka-XZ-JRh"/>
                             <constraint firstAttribute="trailing" secondItem="OHZ-mE-Xy3" secondAttribute="trailing" id="eBH-Ak-0tx"/>
                             <constraint firstItem="eCL-eY-G1P" firstAttribute="leading" secondItem="cjl-7Y-EXB" secondAttribute="leading" id="oJb-ch-ttQ"/>
                             <constraint firstItem="OHZ-mE-Xy3" firstAttribute="leading" secondItem="vkF-1D-m0f" secondAttribute="leading" id="u5v-Jh-OJq"/>
@@ -154,6 +165,7 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="ligandControls" destination="fr9-4m-BkY" id="Eoh-bs-SKu"/>
                         <outlet property="ligandLoaderContainerView" destination="eCL-eY-G1P" id="pO5-68-fKK"/>
                         <outlet property="ligandSceneContainerView" destination="OHZ-mE-Xy3" id="S18-5S-nIP"/>
                         <outlet property="likeButtonItem" destination="ItH-eN-ZNE" id="fSD-qh-XJb"/>

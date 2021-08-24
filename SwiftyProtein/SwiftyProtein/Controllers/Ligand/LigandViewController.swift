@@ -10,6 +10,7 @@ class LigandViewController: UIViewController {
   @IBOutlet weak var ligandLoaderContainerView: UIView!
   @IBOutlet weak var shareButtonItem: UIBarButtonItem!
   @IBOutlet weak var likeButtonItem: UIBarButtonItem!
+  @IBOutlet weak var ligandControls: LigandControlsView!
 
   /******************** Computed properties ********************/
 
@@ -133,6 +134,7 @@ class LigandViewController: UIViewController {
     guard previousAtom != nil else { return }
 
     atomDetailVC.dismiss(animated: true)
+    atomDetailVC.atomDetails = nil
   }
 
   private func toggleLikeButton(isLiked: Bool) {
@@ -149,11 +151,22 @@ class LigandViewController: UIViewController {
     setupLigandSceneVC()
     setupAtomDetailView()
     setupLoaderVC()
+    setupControlsView()
   }
 
 
   private func setupLigandProvider() {
     ligandProvider.delegate = self
+  }
+
+  private func setupControlsView() {
+    ligandControls.didTouchResetZoom = { [weak self] in
+
+    }
+
+    ligandControls.didTouchShowLabels = { [weak self] in
+
+    }
   }
 
   private func setupLigandSceneVC() {

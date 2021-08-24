@@ -10,6 +10,8 @@
 		587C0ADB26D3D08800D9AA66 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587C0ADA26D3D08800D9AA66 /* LocalStorage.swift */; };
 		587C0AE026D3D2F900D9AA66 /* LocalStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587C0ADF26D3D2F900D9AA66 /* LocalStorageTests.swift */; };
 		587C0AE226D51C6500D9AA66 /* PDBLightLigand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587C0AE126D51C6500D9AA66 /* PDBLightLigand.swift */; };
+		587C0AE926D541D400D9AA66 /* LigandControlsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 587C0AE826D541D400D9AA66 /* LigandControlsView.xib */; };
+		587C0AEB26D541E800D9AA66 /* LigandControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587C0AEA26D541E800D9AA66 /* LigandControlsView.swift */; };
 		58C2499A257FC02600A7CD89 /* Unicorp.DataTypesLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 58C24999257FC02600A7CD89 /* Unicorp.DataTypesLibrary */; };
 		A900DD9C24A2769800E676B6 /* LocalAuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A900DD9B24A2769800E676B6 /* LocalAuthenticationError.swift */; };
 		A90CA9B42456CE5B000BBE60 /* LigandsAppList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90CA9B32456CE5B000BBE60 /* LigandsAppList.swift */; };
@@ -164,6 +166,8 @@
 		587C0ADA26D3D08800D9AA66 /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		587C0ADF26D3D2F900D9AA66 /* LocalStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageTests.swift; sourceTree = "<group>"; };
 		587C0AE126D51C6500D9AA66 /* PDBLightLigand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDBLightLigand.swift; sourceTree = "<group>"; };
+		587C0AE826D541D400D9AA66 /* LigandControlsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LigandControlsView.xib; sourceTree = "<group>"; };
+		587C0AEA26D541E800D9AA66 /* LigandControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigandControlsView.swift; sourceTree = "<group>"; };
 		A900DD9B24A2769800E676B6 /* LocalAuthenticationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAuthenticationError.swift; sourceTree = "<group>"; };
 		A90CA9B32456CE5B000BBE60 /* LigandsAppList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigandsAppList.swift; sourceTree = "<group>"; };
 		A9109C6F24A621170021EC2F /* Padded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Padded.swift; sourceTree = "<group>"; };
@@ -340,6 +344,15 @@
 				587C0ADF26D3D2F900D9AA66 /* LocalStorageTests.swift */,
 			);
 			path = Database;
+			sourceTree = "<group>";
+		};
+		587C0AE326D52D9900D9AA66 /* LigandControls */ = {
+			isa = PBXGroup;
+			children = (
+				587C0AE826D541D400D9AA66 /* LigandControlsView.xib */,
+				587C0AEA26D541E800D9AA66 /* LigandControlsView.swift */,
+			);
+			path = LigandControls;
 			sourceTree = "<group>";
 		};
 		A900DD9A24A2768600E676B6 /* LocalAuthentication */ = {
@@ -872,6 +885,7 @@
 		A9F3E7D92442316F000D62A1 /* Ligand */ = {
 			isa = PBXGroup;
 			children = (
+				587C0AE326D52D9900D9AA66 /* LigandControls */,
 				A98C1CFE24913D3A00ACE393 /* Models */,
 				A94FB079245F458800E4DFA3 /* AtomDetails */,
 				A910E40B23F87EB4008F9020 /* Provider */,
@@ -1000,6 +1014,7 @@
 			files = (
 				A9A03BC024A2918B004F553E /* LoginViewController.xib in Resources */,
 				A9718EFD243B9C4B005DA378 /* LigandSceneViewController.xib in Resources */,
+				587C0AE926D541D400D9AA66 /* LigandControlsView.xib in Resources */,
 				A922803323F83DB200BA4F5D /* LaunchScreen.storyboard in Resources */,
 				A94FB074245F3D6700E4DFA3 /* MessageView.xib in Resources */,
 				A922804023F846A700BA4F5D /* Assets.xcassets in Resources */,
@@ -1119,6 +1134,7 @@
 				A96D48E72456E422003FE291 /* LigandsCollection.swift in Sources */,
 				A92A538A249A156D00E0144D /* UIView+animation.swift in Sources */,
 				A990B5AD24A0B2FA00586AC5 /* LocalAuthenticationProvider.swift in Sources */,
+				587C0AEB26D541E800D9AA66 /* LigandControlsView.swift in Sources */,
 				A92A9C1324536EF4004CA5D3 /* LigandCollectionViewController.swift in Sources */,
 				A9F3E7D624422C1A000D62A1 /* ProteinSceneConfiguration.swift in Sources */,
 				A9109C7224A631200021EC2F /* PaddedLabel.swift in Sources */,
