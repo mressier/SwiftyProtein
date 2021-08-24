@@ -28,8 +28,8 @@ struct PDBAtom: Equatable {
   // MARK: - Conversion
   //----------------------------------------------------------------------------
 
-  var lightAtom: PDBAtomLight {
-    return PDBAtomLight(index: index,
+  var lightAtom: PDBLightAtom {
+    return PDBLightAtom(index: index,
                         symbol: symbol,
                         position: SCNVector3(x: x, y: y, z: z),
                         linkedAtoms: linkedAtomIndex)

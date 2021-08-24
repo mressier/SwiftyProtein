@@ -1,5 +1,10 @@
 import UIKit
 
+struct AtomDetails {
+  var atom: PDBLightAtom
+  var ligand: PDBLightLigand
+}
+
 @IBDesignable
 class AtomDetailsView: UIView, NibInstanciable {
 
@@ -17,8 +22,8 @@ class AtomDetailsView: UIView, NibInstanciable {
 
   /******************** Parameter ********************/
 
-  var atom: PDBAtomLight? {
-    didSet { update(with: atom) }
+  var atomDetails: AtomDetails? {
+    didSet { update(with: atomDetails) }
   }
 
   //----------------------------------------------------------------------------
@@ -54,10 +59,12 @@ class AtomDetailsView: UIView, NibInstanciable {
   }
 
   private func setupInformationsLabel() {
+    usefullInformationsView.informationsStackView.numberOfLines = 0
+    usefullInformationsView.informationsStackView.lineBreakMode = .byTruncatingTail
     usefullInformationsView.informations = [
-      "xx info 1",
-      "xx info 2",
-      "xx info 3"
+      "---",
+      "---",
+      "---"
     ]
   }
 
@@ -65,19 +72,26 @@ class AtomDetailsView: UIView, NibInstanciable {
   // MARK: - Update
   //----------------------------------------------------------------------------
 
-  private func update(with atom: PDBAtomLight?) {
+  private func update(with atomDetails: AtomDetails?) {
+    let atom = atomDetails?.atom
     let symbol = atom?.symbol ?? "-"
-    let atomName = AtomsList.atomsBySymbol[symbol]?.name.capitalized
+    let moreAtomDetails = AtomsList.atomsBySymbol[symbol]
+    let atomName = moreAtomDetails?.name.capitalized
+    let atomicNumber = moreAtomDetails?.atomicNumber
 
     symbolLabel.text = symbol
     atomNameLabel.text = atomName ?? symbol
 
     coordinatesView.coordinates = atom?.position
 
+    guard let details = atomDetails else { return }
+
     usefullInformationsView.informations = [
-      "xx info 1",
-      "xx info 2",
-      "xx info 3"
+      "\(details.ligand.numberOfAtoms(withSymbol: details.atom.symbol)) occur.", // number of occurences of this symbol in the ligand
+      "\(details.atom.linkedAtoms.count) link(s)", // number of links with other atomes
+      "Z = \(atomicNumber ?? 0)" // Z is the atomic number
     ]
   }
+
+  
 }

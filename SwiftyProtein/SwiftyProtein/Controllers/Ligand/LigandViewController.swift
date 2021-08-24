@@ -13,11 +13,8 @@ class LigandViewController: UIViewController {
 
   /******************** Computed properties ********************/
 
-  var selectedAtom: PDBAtomLight? {
-    didSet { updateSelectedAtom(to: selectedAtom) }
-  }
-
   var ligand: String?
+  var lightLigand: PDBLightLigand?
 
   /******************** Configuration ********************/
 
@@ -108,24 +105,23 @@ class LigandViewController: UIViewController {
   // MARK: - Update
   //----------------------------------------------------------------------------
 
-  private func updateSelectedAtom(to atom: PDBAtomLight?) {
-    let previousAtom = atomDetailVC.atom
+  private func updateSelectedAtom(to atom: PDBLightAtom?) {
+    let previousAtom = atomDetailVC.atomDetails?.atom
 
-    if let atom = atom {
+    if let atom = atom, let ligand = lightLigand {
       presentAtomDetailVC(with: atom, previousAtom: previousAtom)
+      atomDetailVC.atomDetails = AtomDetails(atom: atom, ligand: ligand)
     } else {
       dismissAtomDetailVC(previousAtom: previousAtom)
     }
-
-    atomDetailVC.atom = atom
   }
 
   //----------------------------------------------------------------------------
   // MARK: - Atom Details
   //----------------------------------------------------------------------------
 
-  private func presentAtomDetailVC(with atom: PDBAtomLight,
-                                   previousAtom: PDBAtomLight?) {
+  private func presentAtomDetailVC(with atom: PDBLightAtom,
+                                   previousAtom: PDBLightAtom?) {
     guard previousAtom == nil else { return }
 
     present(atomDetailVC,
@@ -133,7 +129,7 @@ class LigandViewController: UIViewController {
             shouldDisableUserInteraction: true)
   }
 
-  private func dismissAtomDetailVC(previousAtom: PDBAtomLight?) {
+  private func dismissAtomDetailVC(previousAtom: PDBLightAtom?) {
     guard previousAtom != nil else { return }
 
     atomDetailVC.dismiss(animated: true)
@@ -162,11 +158,11 @@ class LigandViewController: UIViewController {
 
   private func setupLigandSceneVC() {
     ligandSceneVC.didSelectAtom = { [weak self] atom in
-      self?.selectedAtom = atom
+      self?.updateSelectedAtom(to: atom)
     }
 
     ligandSceneVC.didUnselectAtom = { [weak self] in
-      self?.selectedAtom = nil
+      self?.updateSelectedAtom(to: nil)
     }
 
     add(asChildViewController: ligandSceneVC, on: ligandSceneContainerView)
@@ -180,6 +176,7 @@ class LigandViewController: UIViewController {
     add(asChildViewController: loaderVC, on: ligandLoaderContainerView)
 
     loaderVC.didComplete = { [weak self] ligand in
+      self?.lightLigand = ligand
       self?.shareButtonItem.isEnabled = true
       self?.likeButtonItem.isEnabled = true
       self?.toggleLikeButton(isLiked: ligand.isFavorite)

@@ -10,7 +10,7 @@ struct LigandSceneConfiguration {
   // MARK: - Tools
   //----------------------------------------------------------------------------
 
-  func getColor(for atom: PDBAtomLight) -> UIColor {
+  func getColor(for atom: PDBLightAtom) -> UIColor {
     return colorMode.color(for: atom)
   }
 }

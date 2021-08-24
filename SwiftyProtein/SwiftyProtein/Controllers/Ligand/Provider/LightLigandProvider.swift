@@ -19,7 +19,7 @@ class LightLigandProvider {
   weak var view: LightLigandProviderView?
   weak var delegate: LightLigandProviderDelegate?
 
-  var delay: TimeInterval = 0.3
+  var delay: TimeInterval = 0.2
 
   //----------------------------------------------------------------------------
   // MARK: - Methods

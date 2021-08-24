@@ -33,7 +33,7 @@ class LigandSceneViewController: UIViewController {
 
   /********************  Callbacks  ********************/
 
-  var didSelectAtom: ((PDBAtomLight) -> Void)?
+  var didSelectAtom: ((PDBLightAtom) -> Void)?
   var didUnselectAtom: (() -> Void)?
 
   //----------------------------------------------------------------------------

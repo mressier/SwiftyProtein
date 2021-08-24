@@ -12,7 +12,7 @@ struct LigandGraphicData {
   // MARK: - Initialize
   //----------------------------------------------------------------------------
 
-  init(atoms: [PDBAtomLight], config: LigandSceneConfiguration) {
+  init(atoms: [PDBLightAtom], config: LigandSceneConfiguration) {
     self.atoms = atoms.map() { lightAtom -> AtomGraphicData in
       let position =
         lightAtom.position.multiplied(by: config.distanceMultiplier)

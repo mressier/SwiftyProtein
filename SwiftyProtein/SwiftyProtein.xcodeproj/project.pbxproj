@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		587C0ADB26D3D08800D9AA66 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587C0ADA26D3D08800D9AA66 /* LocalStorage.swift */; };
 		587C0AE026D3D2F900D9AA66 /* LocalStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587C0ADF26D3D2F900D9AA66 /* LocalStorageTests.swift */; };
+		587C0AE226D51C6500D9AA66 /* PDBLightLigand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587C0AE126D51C6500D9AA66 /* PDBLightLigand.swift */; };
 		58C2499A257FC02600A7CD89 /* Unicorp.DataTypesLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 58C24999257FC02600A7CD89 /* Unicorp.DataTypesLibrary */; };
 		A900DD9C24A2769800E676B6 /* LocalAuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A900DD9B24A2769800E676B6 /* LocalAuthenticationError.swift */; };
 		A90CA9B42456CE5B000BBE60 /* LigandsAppList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90CA9B32456CE5B000BBE60 /* LigandsAppList.swift */; };
@@ -19,7 +20,7 @@
 		A9109C7E24A669040021EC2F /* LineAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9109C7D24A669040021EC2F /* LineAlertView.swift */; };
 		A910E40523F85DF0008F9020 /* SCNGeometry+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A910E40423F85DF0008F9020 /* SCNGeometry+extension.swift */; };
 		A910E40823F87B83008F9020 /* PathBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = A910E40723F87B83008F9020 /* PathBounds.swift */; };
-		A910E40A23F87E78008F9020 /* PDBAtomLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A910E40923F87E78008F9020 /* PDBAtomLight.swift */; };
+		A910E40A23F87E78008F9020 /* PDBLightAtom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A910E40923F87E78008F9020 /* PDBLightAtom.swift */; };
 		A910E40D23F87ED6008F9020 /* LightLigandProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A910E40C23F87ED6008F9020 /* LightLigandProvider.swift */; };
 		A910E40F23F8838D008F9020 /* AtomGraphicData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A910E40E23F8838D008F9020 /* AtomGraphicData.swift */; };
 		A9156289245830A000960140 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9156288245830A000960140 /* LeftAlignedCollectionViewFlowLayout.swift */; };
@@ -162,6 +163,7 @@
 /* Begin PBXFileReference section */
 		587C0ADA26D3D08800D9AA66 /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		587C0ADF26D3D2F900D9AA66 /* LocalStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageTests.swift; sourceTree = "<group>"; };
+		587C0AE126D51C6500D9AA66 /* PDBLightLigand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDBLightLigand.swift; sourceTree = "<group>"; };
 		A900DD9B24A2769800E676B6 /* LocalAuthenticationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAuthenticationError.swift; sourceTree = "<group>"; };
 		A90CA9B32456CE5B000BBE60 /* LigandsAppList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigandsAppList.swift; sourceTree = "<group>"; };
 		A9109C6F24A621170021EC2F /* Padded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Padded.swift; sourceTree = "<group>"; };
@@ -171,7 +173,7 @@
 		A9109C7D24A669040021EC2F /* LineAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineAlertView.swift; sourceTree = "<group>"; };
 		A910E40423F85DF0008F9020 /* SCNGeometry+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNGeometry+extension.swift"; sourceTree = "<group>"; };
 		A910E40723F87B83008F9020 /* PathBounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathBounds.swift; sourceTree = "<group>"; };
-		A910E40923F87E78008F9020 /* PDBAtomLight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDBAtomLight.swift; sourceTree = "<group>"; };
+		A910E40923F87E78008F9020 /* PDBLightAtom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDBLightAtom.swift; sourceTree = "<group>"; };
 		A910E40C23F87ED6008F9020 /* LightLigandProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightLigandProvider.swift; sourceTree = "<group>"; };
 		A910E40E23F8838D008F9020 /* AtomGraphicData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomGraphicData.swift; sourceTree = "<group>"; };
 		A9156288245830A000960140 /* LeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
@@ -682,9 +684,10 @@
 			isa = PBXGroup;
 			children = (
 				A91CF35A244C7DE800294568 /* PDBAtom.swift */,
-				A910E40923F87E78008F9020 /* PDBAtomLight.swift */,
+				A910E40923F87E78008F9020 /* PDBLightAtom.swift */,
 				A94DD751244CB9E40034C6AF /* PDBConnection.swift */,
 				A9597A7E244CC719004E732E /* PDBLigand.swift */,
+				587C0AE126D51C6500D9AA66 /* PDBLightLigand.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1130,6 +1133,7 @@
 				A9F3E7E624423731000D62A1 /* Reusable.swift in Sources */,
 				A9556066245EDAF500181C91 /* FileReader.swift in Sources */,
 				A9597A7A244CC5F4004E732E /* PDBLigandConverter+ContentError.swift in Sources */,
+				587C0AE226D51C6500D9AA66 /* PDBLightLigand.swift in Sources */,
 				A910E40523F85DF0008F9020 /* SCNGeometry+extension.swift in Sources */,
 				A91DC1442491236200E4A440 /* TipPopUpView.swift in Sources */,
 				A94DD738244C957B0034C6AF /* String+extension.swift in Sources */,
@@ -1139,7 +1143,7 @@
 				A95560512458B48A00181C91 /* Comparable+extension.swift in Sources */,
 				A9C7945A2450D73300B5FFA2 /* RequestError.swift in Sources */,
 				A94DD752244CB9E40034C6AF /* PDBConnection.swift in Sources */,
-				A910E40A23F87E78008F9020 /* PDBAtomLight.swift in Sources */,
+				A910E40A23F87E78008F9020 /* PDBLightAtom.swift in Sources */,
 				A98C1D0024913D6500ACE393 /* Area3D.swift in Sources */,
 				A926C400248EB78D00B01186 /* LabelStackView.swift in Sources */,
 				A910E40823F87B83008F9020 /* PathBounds.swift in Sources */,

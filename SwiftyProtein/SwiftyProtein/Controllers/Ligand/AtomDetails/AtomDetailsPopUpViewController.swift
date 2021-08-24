@@ -13,8 +13,8 @@ class AtomDetailsPopUpViewController: UIViewController {
 
   /******************** Properties ********************/
 
-  var atom: PDBAtomLight? {
-    didSet { setupAtomDetailsView(atom: atom) }
+  var atomDetails: AtomDetails? {
+    didSet { setupAtomDetailsView(atomDetails: atomDetails) }
   }
 
   //----------------------------------------------------------------------------
@@ -28,7 +28,7 @@ class AtomDetailsPopUpViewController: UIViewController {
 
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    atomDetailsView?.atom = atom
+    atomDetailsView?.atomDetails = atomDetails
   }
 
   //----------------------------------------------------------------------------
@@ -41,14 +41,14 @@ class AtomDetailsPopUpViewController: UIViewController {
   }
 
   private func setupAtomDetailsView() {
-    setupAtomDetailsView(atom: atom)
+    setupAtomDetailsView(atomDetails: atomDetails)
     atomDetailsView?.cornerRadius = 5.0
     atomDetailsView?.borderColor = .tertiaryLabel
     atomDetailsView?.borderWidth = 0.5
   }
 
-  private func setupAtomDetailsView(atom: PDBAtomLight?) {
-    atomDetailsView?.atom = atom
+  private func setupAtomDetailsView(atomDetails: AtomDetails?) {
+    atomDetailsView?.atomDetails = atomDetails
   }
 
   private func setupEffectViews() {
