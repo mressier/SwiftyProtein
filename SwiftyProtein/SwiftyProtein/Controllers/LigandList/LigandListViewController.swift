@@ -14,14 +14,7 @@ class LigandListViewController: UIViewController {
 
   /******************** Parameters ********************/
 
-  var ligandsList = LigandsAppList(ligands: [], favorites: []) {
-    didSet {
-      searchController.ligandsList = ligandsList
-      ligandCollection = LigandsCollectionBuilder.build(from: ligandsList)
-    }
-  }
-
-  private var ligandCollection = LigandSectionSource.Sections()
+  var ligandsList = LigandsAppList(ligands: [], favorites: [])
 
   /******************** View Controllers ********************/
 
@@ -49,7 +42,26 @@ class LigandListViewController: UIViewController {
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     setupMessageView()
+    updateLigandList()
   }
+
+  //----------------------------------------------------------------------------
+  // MARK: - Update
+  //----------------------------------------------------------------------------
+
+  private func updateLigandList() {
+    ligandsList = LigandsAppList(ligands: FileReader.readLigandFile(),
+                                 favorites: LocalStorage.shared.favorites)
+
+    searchController.ligandsList = ligandsList
+    ligandCollectionVC.ligandsList =
+      LigandsCollectionBuilder.build(from: ligandsList)
+    ligandCollectionVC.reloadData()
+  }
+
+  //----------------------------------------------------------------------------
+  // MARK: - Setup
+  //----------------------------------------------------------------------------
 
   private func setup() {
     setupView()
@@ -76,11 +88,6 @@ class LigandListViewController: UIViewController {
   }
 
   private func setupLigandCollectionVC() {
-    ligandsList = LigandsAppList(ligands: FileReader.readLigandFile(),
-                                 favorites: ["A", "B1", "KIR"])
-
-    ligandCollectionVC.ligandsList = ligandCollection
-
     ligandCollectionVC.didSelectLigand = { [weak self] ligand in
       self?.performSegue(withIdentifier: "segueToLigandView", sender: ligand)
     }
@@ -123,11 +130,8 @@ extension LigandListViewController: UISearchResultsUpdating {
 
     let ligandsList =
       searchController.getLigandsList(withSearchText: searchText)
-    let collection =
-      searchController.getReorderedCollection(from: ligandsList,
-                                              withSearchText: searchText)
+    let collection = LigandsCollectionBuilder.build(from: ligandsList)
 
-    print(collection)
     ligandCollectionVC.ligandsList = collection
     ligandCollectionVC.reloadData()
   }

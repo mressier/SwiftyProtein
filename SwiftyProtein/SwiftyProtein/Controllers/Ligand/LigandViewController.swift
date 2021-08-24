@@ -9,6 +9,7 @@ class LigandViewController: UIViewController {
   @IBOutlet weak var ligandSceneContainerView: UIView!
   @IBOutlet weak var ligandLoaderContainerView: UIView!
   @IBOutlet weak var shareButtonItem: UIBarButtonItem!
+  @IBOutlet weak var likeButtonItem: UIBarButtonItem!
 
   /******************** Computed properties ********************/
 
@@ -53,12 +54,23 @@ class LigandViewController: UIViewController {
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
+
+    guard let ligand = ligand else { return }
+
     loadLigand(ligand)
   }
 
   //----------------------------------------------------------------------------
   // MARK: - Actions
   //----------------------------------------------------------------------------
+
+  @IBAction func likeButtonTouched(_ sender: UIBarButtonItem) {
+    guard let ligand = ligand else { return }
+
+    ligandProvider.toggleFavorite(ligand: ligand)
+    toggleLikeButton(isLiked: ligandProvider.isFavorite(ligand: ligand))
+  }
+
 
   @IBAction func shareButtonTouched(_ sender: UIBarButtonItem) {
     let image = ligandSceneVC.takeSnapshot().jpegData(compressionQuality: 0.8)
@@ -86,9 +98,7 @@ class LigandViewController: UIViewController {
   // MARK: - Load
   //----------------------------------------------------------------------------
 
-  private func loadLigand(_ ligand: String?) {
-    guard let ligand = ligand else { return }
-
+  private func loadLigand(_ ligand: String) {
     title = ligand
 
     loaderVC.loadLigand(ligand)
@@ -129,14 +139,25 @@ class LigandViewController: UIViewController {
     atomDetailVC.dismiss(animated: true)
   }
 
+  private func toggleLikeButton(isLiked: Bool) {
+    let asset = isLiked ? SPAssets.heartFilled : SPAssets.heartEmpty
+    likeButtonItem.image = asset.image.alwaysTemplate
+  }
+
   //----------------------------------------------------------------------------
   // MARK: - Setup
   //----------------------------------------------------------------------------
 
   private func setup() {
+    setupLigandProvider()
     setupLigandSceneVC()
     setupAtomDetailView()
     setupLoaderVC()
+  }
+
+
+  private func setupLigandProvider() {
+    ligandProvider.delegate = self
   }
 
   private func setupLigandSceneVC() {
@@ -160,8 +181,25 @@ class LigandViewController: UIViewController {
 
     loaderVC.didComplete = { [weak self] ligand in
       self?.shareButtonItem.isEnabled = true
+      self?.likeButtonItem.isEnabled = true
+      self?.toggleLikeButton(isLiked: ligand.isFavorite)
       self?.ligandSceneVC.ligand = ligand.centered()
       self?.ligandSceneVC.reload()
     }
   }
+}
+
+extension LigandViewController: LightLigandProviderDelegate {
+  func didGetLigand(_ ligand: PDBLightLigand) {
+    // Not used here
+  }
+
+  func didFailGetLigand(_ error: Error) {
+    // Not used here
+  }
+
+  func didToogleLikeLigand(_ isLiked: Bool) {
+    toggleLikeButton(isLiked: isLiked)
+  }
+
 }

@@ -33,23 +33,27 @@ struct PDBLightLigand: Equatable {
   let name: String
   let coordinatesModel: PDBCoordinateModel
   let atoms: [PDBAtomLight]
+  let isFavorite: Bool
 
   //----------------------------------------------------------------------------
   // MARK: - Initialization
   //----------------------------------------------------------------------------
 
-  init(ligand: PDBLigand) {
+  init(ligand: PDBLigand, isFavorite: Bool) {
     self.name = ligand.name
     self.coordinatesModel = ligand.coordinatesModel
     self.atoms = ligand.atoms.map() { $0.lightAtom }
+    self.isFavorite = isFavorite
   }
 
   init(name: String,
        coordinatesModel: PDBCoordinateModel,
-       atoms: [PDBAtomLight]) {
+       atoms: [PDBAtomLight],
+       isFavorite: Bool) {
     self.name = name
     self.coordinatesModel = coordinatesModel
     self.atoms = atoms
+    self.isFavorite = isFavorite
   }
 
   //----------------------------------------------------------------------------
@@ -74,7 +78,8 @@ struct PDBLightLigand: Equatable {
 
     return PDBLightLigand(name: name,
                           coordinatesModel: coordinatesModel,
-                          atoms: centeredAtoms)
+                          atoms: centeredAtoms,
+                          isFavorite: isFavorite)
   }
 
   //----------------------------------------------------------------------------

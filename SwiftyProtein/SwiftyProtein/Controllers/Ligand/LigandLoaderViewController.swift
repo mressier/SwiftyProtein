@@ -117,6 +117,10 @@ extension LigandLoaderViewController: LightLigandProviderDelegate {
     showMessageView(withContent: getMessageContent(for: error))
   }
 
+  func didToogleLikeLigand(_ isLiked: Bool) {
+    // Nothing here
+  }
+
   private func getMessageContent(for error: Error) -> MessageView.Content {
     if let error = error as? RequestError {
       switch error {

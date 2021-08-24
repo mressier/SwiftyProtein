@@ -1,12 +1,13 @@
 import UIKit
 
-protocol LightLigandProviderView: class {
+protocol LightLigandProviderView: AnyObject {
   func setIsLoading(_ isLoading: Bool)
 }
 
-protocol LightLigandProviderDelegate: class {
+protocol LightLigandProviderDelegate: AnyObject {
   func didGetLigand(_ ligand: PDBLightLigand)
   func didFailGetLigand(_ error: Error)
+  func didToogleLikeLigand(_ isLiked: Bool)
 }
 
 class LightLigandProvider {
@@ -23,6 +24,20 @@ class LightLigandProvider {
   //----------------------------------------------------------------------------
   // MARK: - Methods
   //----------------------------------------------------------------------------
+
+  func isFavorite(ligand: String) -> Bool {
+    return LocalStorage.shared.isFavorite(value: ligand)
+  }
+
+  func toggleFavorite(ligand: String) {
+    if isFavorite(ligand: ligand) {
+      LocalStorage.shared.remove(favorite: ligand)
+      delegate?.didToogleLikeLigand(false)
+    } else {
+      LocalStorage.shared.add(favorite: ligand)
+      delegate?.didToogleLikeLigand(true)
+    }
+  }
 
   func get(ligand: String) {
     view?.setIsLoading(true)
@@ -43,7 +58,8 @@ class LightLigandProvider {
       case .failure(let error):
         self?.delegate?.didFailGetLigand(error)
       case .success(let ligand):
-        let lightLigand = PDBLightLigand(ligand: ligand)
+        let isFavorite = self?.isFavorite(ligand: ligand.name) ?? false
+        let lightLigand = PDBLightLigand(ligand: ligand, isFavorite: isFavorite)
         self?.delegate?.didGetLigand(lightLigand)
       }
       completion()

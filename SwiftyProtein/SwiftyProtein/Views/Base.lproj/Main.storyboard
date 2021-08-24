@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NVR-Ek-fBQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NVR-Ek-fBQ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,8 +16,8 @@
                     <view key="view" contentMode="scaleToFill" id="TDX-3N-tNL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="ZmI-7t-PcQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
                         <segue destination="aD9-Ed-ost" kind="show" identifier="loginSegue" id="hdK-pd-sHx"/>
@@ -61,7 +63,7 @@
                                 <rect key="frame" x="0.0" y="56" width="414" height="752"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWN-Ra-TiQ" customClass="LineAlertView" customModule="SwiftyProtein" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="30.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" id="zmP-Hf-MqY"/>
                                         </constraints>
@@ -75,20 +77,20 @@
                                         </variation>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Joc-mW-7x1">
-                                        <rect key="frame" x="0.0" y="20.5" width="414" height="731.5"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <rect key="frame" x="0.0" y="30.5" width="414" height="721.5"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="RCH-3E-bW1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="wTM-Md-trm" firstAttribute="top" secondItem="RCH-3E-bW1" secondAttribute="top" id="4as-qS-2CI"/>
                             <constraint firstItem="wTM-Md-trm" firstAttribute="leading" secondItem="RCH-3E-bW1" secondAttribute="leading" id="SBC-ds-e1T"/>
                             <constraint firstItem="RCH-3E-bW1" firstAttribute="bottom" secondItem="wTM-Md-trm" secondAttribute="bottom" id="aCB-sU-y0A"/>
                             <constraint firstItem="RCH-3E-bW1" firstAttribute="trailing" secondItem="wTM-Md-trm" secondAttribute="trailing" id="uyj-e9-VL7"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="RCH-3E-bW1"/>
                     </view>
                     <navigationItem key="navigationItem" title="Ligands" id="yhL-Lh-InA"/>
                     <connections>
@@ -112,14 +114,15 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OHZ-mE-Xy3">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eCL-eY-G1P">
                                 <rect key="frame" x="0.0" y="56" width="414" height="752"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="cjl-7Y-EXB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="eCL-eY-G1P" firstAttribute="top" secondItem="cjl-7Y-EXB" secondAttribute="top" id="Cwj-dv-Fw4"/>
                             <constraint firstItem="cjl-7Y-EXB" firstAttribute="trailing" secondItem="eCL-eY-G1P" secondAttribute="trailing" id="EQq-LV-flU"/>
@@ -130,7 +133,6 @@
                             <constraint firstItem="OHZ-mE-Xy3" firstAttribute="leading" secondItem="vkF-1D-m0f" secondAttribute="leading" id="u5v-Jh-OJq"/>
                             <constraint firstAttribute="bottom" secondItem="OHZ-mE-Xy3" secondAttribute="bottom" id="vlL-jw-MDx"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="cjl-7Y-EXB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Ligand View" id="cW4-y3-wk8">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.left" catalog="system" id="t2M-3C-eq3">
@@ -138,15 +140,23 @@
                                 <segue destination="99P-C2-AP1" kind="unwind" unwindAction="unwindToListViewController:" id="tgV-5E-yMW"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="action" id="NXe-AW-RAj">
-                            <connections>
-                                <action selector="shareButtonTouched:" destination="lUM-Sp-M6v" id="D26-2G-rca"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem enabled="NO" systemItem="action" id="NXe-AW-RAj">
+                                <connections>
+                                    <action selector="shareButtonTouched:" destination="lUM-Sp-M6v" id="D26-2G-rca"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem enabled="NO" title="Item" image="heart-empty" id="ItH-eN-ZNE" userLabel="Like Button Item">
+                                <connections>
+                                    <action selector="likeButtonTouched:" destination="lUM-Sp-M6v" id="ArA-NX-sNf"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="ligandLoaderContainerView" destination="eCL-eY-G1P" id="pO5-68-fKK"/>
                         <outlet property="ligandSceneContainerView" destination="OHZ-mE-Xy3" id="S18-5S-nIP"/>
+                        <outlet property="likeButtonItem" destination="ItH-eN-ZNE" id="fSD-qh-XJb"/>
                         <outlet property="shareButtonItem" destination="NXe-AW-RAj" id="tlb-HH-wfc"/>
                     </connections>
                 </viewController>
@@ -156,7 +166,16 @@
             <point key="canvasLocation" x="771.01449275362324" y="116.51785714285714"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="fWN-Ra-TiQ">
+            <size key="intrinsicContentSize" width="51.5" height="30.5"/>
+        </designable>
+    </designables>
     <resources>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
+        <image name="heart-empty" width="21" height="21"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
