@@ -184,6 +184,7 @@ extension LigandCollectionViewController {
       cell.ligandName = ligand.name
       cell.accessoryImage = ligand.isFavorite ?
         SPAssets.heartFilled.image.alwaysTemplate : nil
+      cell.mainImage = nil
     }
     
     return cell
