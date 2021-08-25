@@ -171,6 +171,8 @@ class LigandViewController: UIViewController {
     ligandControls.didTouchHideLabels = { [weak self] in
       self?.ligandSceneVC.deselectAllAtoms()
     }
+
+    ligandControls.isHidden = true // it will be shown when the ligand is loaded
   }
 
   private func setupLigandSceneVC() {
@@ -199,6 +201,7 @@ class LigandViewController: UIViewController {
       self?.toggleLikeButton(isLiked: ligand.isFavorite)
       self?.ligandSceneVC.ligand = ligand.centered()
       self?.ligandSceneVC.reload()
+      self?.ligandControls.isHidden = false
     }
   }
 }
