@@ -20,6 +20,19 @@ class LigandControlsView: UIView, NibInstanciable {
 
   var didTouchResetZoom: (() -> Void)?
   var didTouchShowLabels: (() -> Void)?
+  var didTouchHideLabels: (() -> Void)?
+
+  private var isShowingLabels: Bool = false {
+    didSet {
+      if isShowingLabels {
+        setupButtonBackgrounded(showLabelsButton)
+        showLabelsButton.setTitle("Hide Labels", for: .normal)
+      } else {
+        setupButtonBordered(showLabelsButton)
+        showLabelsButton.setTitle("Show Labels", for: .normal)
+      }
+    }
+  }
 
   //----------------------------------------------------------------------------
   // MARK: - Initialization
@@ -44,7 +57,9 @@ class LigandControlsView: UIView, NibInstanciable {
   }
 
   @IBAction func didTouchShowLabelsButton(_ sender: Any) {
-    didTouchShowLabels?()
+    isShowingLabels = !isShowingLabels
+
+    isShowingLabels ? didTouchShowLabels?() : didTouchHideLabels?()
   }
 
   //----------------------------------------------------------------------------
@@ -64,18 +79,25 @@ class LigandControlsView: UIView, NibInstanciable {
     let labelButton = UIImage(systemName: "smallcircle.circle")?.alwaysTemplate
 
     resetZoomButton.setImage(zoomButton, for: .normal)
-    setupButton(resetZoomButton)
+    setupButtonBordered(resetZoomButton)
 
     showLabelsButton.setImage(labelButton, for: .normal)
-    setupButton(showLabelsButton)
+    setupButtonBordered(showLabelsButton)
   }
 
-  private func setupButton(_ button: UIButton) {
+  private func setupButtonBordered(_ button: UIButton) {
     button.cornerRadius = 5.0
 
     button.tintColor = .swiftyBlueGreen
     button.borderWidth = 1.0
     button.borderColor = .swiftyBlueGreen
     button.backgroundColor = .white.withAlphaComponent(0.7)
+  }
+
+  private func setupButtonBackgrounded(_ button: UIButton) {
+    button.cornerRadius = 5.0
+
+    button.tintColor = .white
+    button.backgroundColor = .swiftyBlueGreen
   }
 }

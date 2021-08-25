@@ -161,11 +161,15 @@ class LigandViewController: UIViewController {
 
   private func setupControlsView() {
     ligandControls.didTouchResetZoom = { [weak self] in
-
+      self?.ligandSceneVC.resetZoom()
     }
 
     ligandControls.didTouchShowLabels = { [weak self] in
+      self?.ligandSceneVC.selectAllAtoms()
+    }
 
+    ligandControls.didTouchHideLabels = { [weak self] in
+      self?.ligandSceneVC.deselectAllAtoms()
     }
   }
 

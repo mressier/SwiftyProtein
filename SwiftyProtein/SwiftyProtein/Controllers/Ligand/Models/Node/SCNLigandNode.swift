@@ -61,6 +61,14 @@ class SCNLigandNode: SCNNode {
     return atomNodesByNode[node]
   }
 
+  func selectAll() {
+    atomNodesByNode.keys.forEach({ atomNodesByNode[$0]?.setSelected(true) })
+  }
+
+  func deselectAll() {
+    atomNodesByNode.keys.forEach({ atomNodesByNode[$0]?.setSelected(false) })
+  }
+
   //----------------------------------------------------------------------------
   // MARK: - Nodes creation
   //----------------------------------------------------------------------------

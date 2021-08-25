@@ -45,6 +45,22 @@ class LigandSceneViewController: UIViewController {
     setup()
   }
 
+  func resetZoom() {
+    sceneView.pointOfView = cameraNode
+  }
+
+  func selectAllAtoms() {
+    ligandNode?.selectAll()
+  }
+
+  func deselectAllAtoms() {
+    ligandNode?.deselectAll()
+  }
+
+  //----------------------------------------------------------------------------
+  // MARK: - Setup
+  //----------------------------------------------------------------------------
+
   private func setup() {
     setupScene()
     setupCamera(on: scene.rootNode)
@@ -87,6 +103,10 @@ class LigandSceneViewController: UIViewController {
     let tap = UITapGestureRecognizer(target: self, action: selector)
     sceneView.addGestureRecognizer(tap)
   }
+
+  //----------------------------------------------------------------------------
+  // MARK: - Animations
+  //----------------------------------------------------------------------------
 
   private func startAutoAnimation(on node: SCNNode) {
     let rotationAction = SCNAction.rotateBy(x: 0, y: 0.3, z: 0.3, duration: 1)
