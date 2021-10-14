@@ -143,7 +143,7 @@ extension LigandListViewController: UISearchResultsUpdating {
     var list = collection
 
     if shouldDisplaySearchSection(forSearchText: searchText, on: ligandsList) {
-      let searchSection = (section: LigandCollection.Header(title: "", image: nil),
+      let searchSection = (section: LigandCollection.Header(title: "🌐", image: nil),
                             content: [LigandCollection.Ligand(name: searchText, isFavorite: false)])
 
       list.insert(searchSection, at: 0)

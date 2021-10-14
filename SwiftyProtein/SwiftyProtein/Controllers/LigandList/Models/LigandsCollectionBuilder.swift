@@ -16,7 +16,7 @@ struct LigandsCollectionBuilder {
   static func build(
     from ligandsList: LigandsAppList
   ) -> LigandSectionSource.Sections {
-    let alphabeticals = build(from: ligandsList.ligands,
+    let alphabeticals = buildList(from: ligandsList.ligands,
                               alphabeticSections: LigandsAppList.alphabetical,
                               favoriteList: ligandsList.favorites)
     let favorites = buildFavorites(from: ligandsList.favorites)
@@ -26,7 +26,7 @@ struct LigandsCollectionBuilder {
   /// Build sections for a ligand list
   /// Each section match an element of `alphabeticSections`
   /// Section content is find by getting all element fron ligandsList that starts with the section name
-  static func build(
+  static func buildList(
     from ligandsList: [String],
     alphabeticSections: [String],
     favoriteList: [String] = []
@@ -37,11 +37,8 @@ struct LigandsCollectionBuilder {
       let ligandsInSection =
         ligandsList.filter(startingWith: character, ignoringCase: true)
 
-      let ligandsForCollection = ligandsInSection.map() {
-        ligand -> LigandCollection.Ligand in
-        let isFavorite = favoriteList.contains(ligand)
-        return LigandCollection.Ligand(name: ligand, isFavorite: isFavorite)
-      }
+      let ligandsForCollection =
+        ligandsNamesToItems(ligands: ligandsInSection, favoriteList: favoriteList)
 
       return (section: LigandCollection.Header(title: character, image: nil),
               content: ligandsForCollection)
@@ -53,8 +50,9 @@ struct LigandsCollectionBuilder {
   static func buildFavorites(
     from ligandsList: [String]
   ) -> LigandSectionSource.Sections {
+
     let favoriteCollection =
-      ligandsList.map() { LigandCollection.Ligand(name: $0, isFavorite: true) }
+      ligandsNamesToItems(ligands: ligandsList, favoriteList: ligandsList)
 
     guard favoriteCollection.count > 0 else { return [] }
 
@@ -65,5 +63,13 @@ struct LigandsCollectionBuilder {
   //----------------------------------------------------------------------------
   // MARK: - Tools
   //----------------------------------------------------------------------------
+
+  private static func ligandsNamesToItems(ligands: [String],
+                                         favoriteList: [String]) -> [LigandCollection.Ligand] {
+    return ligands.map() { ligand -> LigandCollection.Ligand in
+      let isFavorite = favoriteList.contains(ligand)
+      return LigandCollection.Ligand(name: ligand, isFavorite: isFavorite)
+    }.sorted(by: { $0.name < $1.name })
+  }
 
 }

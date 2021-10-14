@@ -28,5 +28,6 @@ struct LigandsAppList {
 
   func contains(ligand: String) -> Bool {
     return self.ligands.contains(where: { $0 == ligand })
+    || self.favorites.contains(where: { $0 == ligand })
   }
 }

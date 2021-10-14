@@ -12,7 +12,7 @@ class LigandsCollectionBuilderTests: XCTestCase {
     let expectedSections = ["A", "B", "Q", "Z", "1"]
 
     // When
-    let collection = LigandsCollectionBuilder.build(
+    let collection = LigandsCollectionBuilder.buildList(
       from: ligands,
       alphabeticSections: LigandsAppList.alphabetical
     )
