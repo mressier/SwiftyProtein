@@ -55,7 +55,7 @@ class LocalAuthenticationProvider {
 
     context.evaluatePolicy(policy, localizedReason: accessReason)
     { [weak self] success, error in
-      print("Got error ? : \(String(describing: error))")
+      print("Got error ? \(String(describing: error))")
       DispatchQueue.main.async {
         success ? self?.delegate?.didAuthenticate()
           : self?.delegate?.didFailAuthentication(.authenticationFailed(error))

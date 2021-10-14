@@ -27,6 +27,7 @@ class LigandSearchController: UISearchController {
 
   /// Return a collection with elements that match the search text
   func getLigandsList(withSearchText text: String) -> LigandsAppList {
+    let text = text.trimmed()
     if text.isEmpty { return ligandsList }
 
     let startingList = getLigandsList(toSearch: text)

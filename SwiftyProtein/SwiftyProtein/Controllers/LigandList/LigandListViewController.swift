@@ -130,7 +130,7 @@ extension LigandListViewController: UISearchResultsUpdating {
     guard let searchController =
       searchController as? LigandSearchController else { return }
 
-    let searchText = searchController.searchBar.text?.uppercased() ?? ""
+    let searchText = searchController.searchBar.text?.trimmed().uppercased() ?? ""
     let ligandsList = searchController.getLigandsList(withSearchText: searchText)
 
     updateSearchResults(with: ligandsList, searchText: searchText)

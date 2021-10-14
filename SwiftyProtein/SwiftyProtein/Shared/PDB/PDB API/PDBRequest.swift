@@ -23,11 +23,23 @@ struct PDBRequest {
     coordinateModel: PDBCoordinateModel,
     completion: @escaping (Result<String, Error>) -> Void
   ) {
+    let ligand = ligand
+      .trimmed()
+      .addingPercentEncoding(withAllowedCharacters: .alphanumerics)
+
+    guard let escapedLigand = ligand, !escapedLigand.isEmpty else {
+      completion(.failure(RequestError.encodeFailed))
+      return
+    }
+
     let prefix = "http://ligand-expo.rcsb.org/reports/"
     let suffix = "_\(coordinateModel.urlExtension).pdb"
-    let url = URLBuilder.build(forLigand: ligand,
+
+    let url = URLBuilder.build(forLigand: escapedLigand,
                                urlPrefix: prefix,
                                urlSuffix: suffix)
+
+    print("Search ligand: \(escapedLigand)")
 
     NetworkRequest.shared.get(url) { result in
       switch result {
