@@ -120,6 +120,10 @@ class LigandListViewController: UIViewController {
   }
 }
 
+//==============================================================================
+// MARK: - UISearchResultsUpdating
+//==============================================================================
+
 extension LigandListViewController: UISearchResultsUpdating {
 
   func updateSearchResults(for searchController: UISearchController) {
@@ -132,12 +136,13 @@ extension LigandListViewController: UISearchResultsUpdating {
     updateSearchResults(with: ligandsList, searchText: searchText)
   }
 
+  /// Update ligand collection table view with the ligands list filtered with the given search text
   private func updateSearchResults(with ligandsList: LigandsAppList,
                                    searchText: String) {
     let collection = LigandsCollectionBuilder.build(from: ligandsList)
     var list = collection
 
-    if !searchText.isEmpty && !ligandsList.contains(ligand: searchText) {
+    if shouldDisplaySearchSection(forSearchText: searchText, on: ligandsList) {
       let searchSection = (section: LigandCollection.Header(title: "", image: nil),
                             content: [LigandCollection.Ligand(name: searchText, isFavorite: false)])
 
@@ -147,7 +152,20 @@ extension LigandListViewController: UISearchResultsUpdating {
     ligandCollectionVC.ligandsList = list
     ligandCollectionVC.reloadData()
   }
+
+  /// Research section should be displayed when the research is in progress (= something is typed)
+  /// and there is no results on the ligands list that match exactly the result
+  private func shouldDisplaySearchSection(
+    forSearchText searchText: String,
+    on ligandsList: LigandsAppList
+  ) -> Bool {
+    return !searchText.isEmpty && !ligandsList.contains(ligand: searchText)
+  }
 }
+
+//==============================================================================
+// MARK: - NetworkAccessDelegate
+//==============================================================================
 
 extension LigandListViewController: NetworkAccessDelegate {
   func networkAccessDidChanged(_ hasNetworkAccess: Bool) {
