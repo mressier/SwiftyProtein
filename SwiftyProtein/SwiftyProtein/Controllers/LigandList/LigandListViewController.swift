@@ -127,12 +127,24 @@ extension LigandListViewController: UISearchResultsUpdating {
       searchController as? LigandSearchController else { return }
 
     let searchText = searchController.searchBar.text?.uppercased() ?? ""
+    let ligandsList = searchController.getLigandsList(withSearchText: searchText)
 
-    let ligandsList =
-      searchController.getLigandsList(withSearchText: searchText)
+    updateSearchResults(with: ligandsList, searchText: searchText)
+  }
+
+  private func updateSearchResults(with ligandsList: LigandsAppList,
+                                   searchText: String) {
     let collection = LigandsCollectionBuilder.build(from: ligandsList)
+    var list = collection
 
-    ligandCollectionVC.ligandsList = collection
+    if !searchText.isEmpty && !ligandsList.contains(ligand: searchText) {
+      let searchSection = (section: LigandCollection.Header(title: "", image: nil),
+                            content: [LigandCollection.Ligand(name: searchText, isFavorite: false)])
+
+      list.insert(searchSection, at: 0)
+    }
+
+    ligandCollectionVC.ligandsList = list
     ligandCollectionVC.reloadData()
   }
 }
