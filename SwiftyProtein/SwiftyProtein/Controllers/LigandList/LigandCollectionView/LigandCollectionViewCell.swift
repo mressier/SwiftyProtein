@@ -11,7 +11,6 @@ class LigandCollectionViewCell: UICollectionViewCell, Reusable {
   @IBOutlet weak var containerView: UIView!
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var accessoryImageView: UIImageView!
-  @IBOutlet weak var mainImageView: UIImageView!
 
   /******************** Parameters ********************/
 
@@ -21,13 +20,6 @@ class LigandCollectionViewCell: UICollectionViewCell, Reusable {
 
   var accessoryImage: UIImage? {
     didSet { accessoryImageView.image = accessoryImage }
-  }
-
-  var mainImage: UIImage? {
-    didSet {
-      mainImageView.image = mainImage
-      mainImageView.isHidden = mainImage == nil
-    }
   }
 
   /******************** UI Parameters ********************/

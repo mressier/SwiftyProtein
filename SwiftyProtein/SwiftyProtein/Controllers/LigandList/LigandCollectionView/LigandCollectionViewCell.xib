@@ -1,46 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ligandCell" id="gTV-IL-0wX" customClass="LigandCollectionViewCell" customModule="SwiftyProtein" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="122" height="144"/>
+            <rect key="frame" x="0.0" y="0.0" width="122" height="137"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="122" height="144"/>
+                <rect key="frame" x="0.0" y="0.0" width="122" height="137"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i4a-jW-Rpd">
-                        <rect key="frame" x="0.0" y="0.0" width="122" height="144"/>
+                        <rect key="frame" x="0.0" y="0.0" width="122" height="137"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="g8Q-Pn-XiO">
-                                <rect key="frame" x="23.5" y="31" width="75" height="82"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RMd-25-yfM">
-                                        <rect key="frame" x="0.0" y="0.5" width="75" height="49"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="75" id="8CA-8P-IIj"/>
-                                            <constraint firstAttribute="height" constant="50" id="GPe-vo-J4G"/>
-                                        </constraints>
-                                        <imageReference key="image" image="network" catalog="system" renderingMode="template"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJ5-hN-SKe">
-                                        <rect key="frame" x="0.0" y="58" width="75" height="24"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                        <color key="textColor" red="0.90593498949999995" green="0.90973275899999995" blue="0.91372668739999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJ5-hN-SKe">
+                                <rect key="frame" x="35" y="56.5" width="52" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" red="0.90593498949999995" green="0.90973275899999995" blue="0.91372668739999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart-filled" translatesAutoresizingMaskIntoConstraints="NO" id="Zmt-FZ-Si7">
                                 <rect key="frame" x="102" y="5" width="15" height="15"/>
                                 <constraints>
@@ -49,38 +33,33 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="g8Q-Pn-XiO" firstAttribute="centerX" secondItem="i4a-jW-Rpd" secondAttribute="centerX" id="1Xd-7r-WC1"/>
-                            <constraint firstItem="g8Q-Pn-XiO" firstAttribute="centerY" secondItem="i4a-jW-Rpd" secondAttribute="centerY" id="7S8-pg-qNY"/>
                             <constraint firstItem="Zmt-FZ-Si7" firstAttribute="top" secondItem="i4a-jW-Rpd" secondAttribute="top" constant="5" id="HbM-jZ-WEO"/>
+                            <constraint firstItem="vJ5-hN-SKe" firstAttribute="centerY" secondItem="i4a-jW-Rpd" secondAttribute="centerY" id="TPa-j1-O7M"/>
                             <constraint firstAttribute="trailing" secondItem="Zmt-FZ-Si7" secondAttribute="trailing" constant="5" id="gab-WO-Eol"/>
+                            <constraint firstItem="vJ5-hN-SKe" firstAttribute="centerX" secondItem="i4a-jW-Rpd" secondAttribute="centerX" id="mqZ-LG-Rr6"/>
                         </constraints>
                     </view>
                 </subviews>
             </view>
-            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstItem="i4a-jW-Rpd" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="U6S-WS-Ubl"/>
                 <constraint firstItem="i4a-jW-Rpd" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="jmS-BW-6A3"/>
                 <constraint firstAttribute="trailing" secondItem="i4a-jW-Rpd" secondAttribute="trailing" id="q1t-E1-WXv"/>
                 <constraint firstAttribute="bottom" secondItem="i4a-jW-Rpd" secondAttribute="bottom" id="zUb-IW-p7y"/>
             </constraints>
-            <size key="customSize" width="122" height="144"/>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="122" height="137"/>
             <connections>
                 <outlet property="accessoryImageView" destination="Zmt-FZ-Si7" id="4jH-Cg-SZi"/>
                 <outlet property="containerView" destination="i4a-jW-Rpd" id="m5t-LD-n37"/>
-                <outlet property="mainImageView" destination="RMd-25-yfM" id="q6m-Zp-qpw"/>
                 <outlet property="titleLabel" destination="vJ5-hN-SKe" id="1bD-FL-PCs"/>
             </connections>
-            <point key="canvasLocation" x="189.85507246376812" y="168.08035714285714"/>
+            <point key="canvasLocation" x="189.85507246376812" y="165.73660714285714"/>
         </collectionViewCell>
     </objects>
     <resources>
         <image name="heart-filled" width="21" height="21"/>
-        <image name="network" catalog="system" width="128" height="121"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
