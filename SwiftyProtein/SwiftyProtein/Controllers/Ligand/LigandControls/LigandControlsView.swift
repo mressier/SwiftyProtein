@@ -91,7 +91,7 @@ class LigandControlsView: UIView, NibInstanciable {
     button.tintColor = .swiftyBlueGreen
     button.borderWidth = 1.0
     button.borderColor = .swiftyBlueGreen
-    button.backgroundColor = .white.withAlphaComponent(0.7)
+    button.backgroundColor = .systemBackground.withAlphaComponent(0.7)
   }
 
   private func setupButtonBackgrounded(_ button: UIButton) {
