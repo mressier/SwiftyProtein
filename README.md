@@ -3,29 +3,31 @@
 
 Visualize ligands from RCSB.org in 3D.
 
-## See a ligand in 3D
+## ⚛️ See a ligand in 3D
 
 ![Ligand](../assets/ligand-with-detail-view.png)
 
-## Consult ligand list
+## 📚 Consult ligand list
 
 ![Ligand List](../assets/ligand-list.png)
 
-## Search a ligand
+## 🔎 Search a ligand
 
 ![Ligand List](../assets/search-ligand.png)
 
-## Protect ligand data with phone security
+## 🔒 Protect ligand data with phone security
 
 ![Login Page](../assets/login.png)
 
-## Share or save a picture of a ligand
+## ✉️ Share or save a picture of a ligand
 
 ![Share](../assets/share-ligand.png)
-      
-##Incoming features
-- Add ligand as favorites
-- Additionnal informations about an atom on ligand view
+
+## More features
+- Favorite list of ligands
+- Search a ligand on the web if it's not in the list
+
+## Incoming features
 - Add some tips as tutorial for first use
 - Add analytics
 
