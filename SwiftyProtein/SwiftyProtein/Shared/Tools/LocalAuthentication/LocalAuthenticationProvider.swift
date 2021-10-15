@@ -68,4 +68,14 @@ class LocalAuthenticationProvider {
   func canAuthenticate(withPolicy policy: LAPolicy) -> Bool {
     return context.canEvaluatePolicy(policy, error: &error)
   }
+
+  /// Check if authentication is possible with the different policy. Return nil if ok, or an error if an error occurs.
+  func preferredAuthenticationPolicy() -> LAPolicy? {
+    let availablePolicies = [
+      LAPolicy.deviceOwnerAuthenticationWithBiometrics,
+      LAPolicy.deviceOwnerAuthentication
+    ]
+
+    return availablePolicies.first(where: { canAuthenticate(withPolicy: $0) })
+  }
 }

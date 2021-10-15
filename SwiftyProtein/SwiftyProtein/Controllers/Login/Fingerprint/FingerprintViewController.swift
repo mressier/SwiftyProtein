@@ -12,10 +12,12 @@ class FingerprintViewController: UIViewController {
   /******************** Parameters ********************/
 
   var accessReason = "Authentify to access to very secret atoms informations"
-  var authPolicy = LAPolicy.deviceOwnerAuthentication
+  var authPolicy: LAPolicy? {
+    return authProvider.preferredAuthenticationPolicy()
+  }
 
   var shouldAuthenticate: Bool {
-    return authProvider.canAuthenticate(withPolicy: authPolicy)
+    return authPolicy != nil
   }
 
   /******************** Authentication ********************/
@@ -57,8 +59,13 @@ class FingerprintViewController: UIViewController {
   //----------------------------------------------------------------------------
 
   func startAuthentication() {
+    guard let policy = authPolicy else {
+      authenticationDidFailed()
+      return
+    }
+
     authProvider.authenticate(
-      withPolicy: authPolicy,
+      withPolicy: policy,
       accessReason: accessReason
     )
   }

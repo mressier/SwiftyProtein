@@ -50,5 +50,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSFaceIDUsageDescription</key>
+	<string>Please allow access to be able to lock your app when you aren&apos;t using it</string>
 </dict>
 </plist>
