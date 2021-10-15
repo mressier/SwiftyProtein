@@ -1367,7 +1367,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CN8ZHRZT3N;
+				DEVELOPMENT_TEAM = 5P65VGL43G;
 				INFOPLIST_FILE = SwiftyProtein/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
