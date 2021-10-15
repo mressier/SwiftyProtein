@@ -105,7 +105,7 @@ class FingerprintViewController: UIViewController {
     fingerprintButton.setAsCircle()
     fingerprintButton.successColor = .swiftyBlueGreen
     fingerprintButton.failureColor = .systemRed
-    fingerprintButton.defaultColor = .swiftyDarkBlue
+    fingerprintButton.defaultColor = .gray
     fingerprintButton.setAsDefault(message: "Enter")
 
     guard shouldAuthenticate else {
